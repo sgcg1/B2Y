@@ -1,18 +1,54 @@
 # Ascend 950：TileLang 首次运行指南
 
-本文针对当前 TileLang 仓库的 Ascend 950 后端，供在 Linux 服务器上手动执行。整理时 PC 上的源码版本为 `8df3fed1`；以下步骤尚未在服务器上验证。
+本文针对当前 TileLang 仓库的 Ascend 950 后端，供在公用 Linux 服务器的 `yjl` Docker 容器内手动执行。已确认使用宿主机 7 号 Ascend 设备，CANN 环境脚本为 `/data/setenv.bash`。整理时 PC 上的源码版本为 `8df3fed1`；以下步骤尚未在服务器上验证。
 
 每个编号下的代码框算一次输入：整框复制到 Linux 终端，按回车，等待完成后再进行下一步。包含 `PY` 的多行代码框也必须整体复制。如果某一步报错，停在该步，保留执行命令、第一处错误和末尾约 80 行日志。
+
+## Docker 容器入口
+
+### 0.1. 创建容器（仅首次，在宿主机执行）
+
+如果 `yjl` 已经创建且正在运行，跳过此步，直接执行 0.2。以下沿用提供的配置，将重复的 `--shm-size` 合并为 `300g`。
+
+```bash
+docker run -u 0 -dit --name=yjl --net=host --privileged=true --shm-size=300g --ulimit memlock=150000000000:150000000000 -e ASCEND_RT_VISIBLE_DEVICES=7 -v /data:/data -v /home:/home -v /root/.ssh:/root/.ssh -v /usr/local/Ascend/driver/:/usr/local/Ascend/driver/ -v /etc/ascend_install.info:/etc/ascend_install.info triton_op_pipeline:v1.0 /bin/bash
+```
+
+镜像需要包含匹配的 CANN toolkit、PyTorch 和 torch_npu；driver 挂载本身不提供完整设备编译环境。`--privileged` 并不隔离设备访问权限，按团队分配仅使用 7 号设备。
+
+### 0.2. 进入容器（在宿主机执行）
+
+```bash
+docker exec -it yjl /bin/bash
+```
+
+后续第 1–20 步和增量构建均在这个容器终端执行。新开容器终端后，重新执行第 1、1.1 步。
 
 ## 环境检查
 
 ### 1. 加载 CANN 环境
 
-以下是常见路径；若文件不存在，请向管理员确认实际的 `set_env.sh` 路径。
+使用已确认的服务器环境脚本。在容器内加载，宿主机上执行 source 不会自动传入新的容器终端。
 
 ```bash
-source /usr/local/Ascend/ascend-toolkit/set_env.sh
+source /data/setenv.bash
 ```
+
+### 1.1. 明确使用宿主机 7 号设备
+
+在 CANN 环境脚本之后执行，保证本终端后续启动的 Python 进程继承此设置。
+
+```bash
+export ASCEND_RT_VISIBLE_DEVICES=7
+```
+
+### 1.2. 核对设备选择
+
+```bash
+printenv ASCEND_RT_VISIBLE_DEVICES
+```
+
+预期输出 `7`。该变量限制运行时设备可见性，不是 Docker 设备权限隔离。容器内逻辑设备编号可能与宿主机编号不同；不要据此直接写 `torch.npu.set_device(7)` 或 `device="npu:7"`。
 
 ### 2. 查看 NPU 信息
 
@@ -20,7 +56,7 @@ source /usr/local/Ascend/ascend-toolkit/set_env.sh
 npu-smi info
 ```
 
-确认设备为 Ascend 950。
+确认设备为 Ascend 950。npu-smi 可能显示宿主机多个设备；不要仅凭列表判断 PyTorch 的运行时可见设备。
 
 ### 3. 查看 Python 版本
 
@@ -58,13 +94,17 @@ g++ --version
 
 ```bash
 python3 - <<'PY'
+import os
 import torch
 import torch_npu
 
+print("ASCEND_RT_VISIBLE_DEVICES:", os.environ.get("ASCEND_RT_VISIBLE_DEVICES"))
 print("torch:", torch.__version__)
 print("torch_npu:", torch_npu.__version__)
 print("NPU available:", torch.npu.is_available())
 assert torch.npu.is_available()
+print("visible device count:", torch.npu.device_count())
+print("current logical device:", torch.npu.current_device())
 
 x = torch.ones(4, device="npu")
 print((x + x).cpu())
@@ -77,7 +117,7 @@ PY
 
 ### 8. 进入服务器上的 TileLang 仓库
 
-先将 PC 上的源码传到服务器。将下面路径替换为实际路径后执行。
+先将 PC 上的源码传到自己独立的服务器目录，例如 `/data/yjl/tilelang`。`/data` 和 `/home` 已挂载，宿主机与容器内对应路径可见，文件修改也会作用到宿主机。不要与同事共用源码或 build 目录。将下面路径替换为实际路径后执行。
 
 ```bash
 cd /你的实际路径/tilelang
@@ -109,7 +149,7 @@ git submodule update --init --recursive
 
 ### 12. 安装构建依赖
 
-继续使用第 7 步已经能访问 NPU 的 Python 环境。
+继续使用第 7 步已经能访问 NPU 的容器 Python 环境，保留镜像中配套的 PyTorch/torch_npu，不自行升级。安装仅在自己的容器中进行。
 
 ```bash
 python3 -m pip install -r requirements-dev.txt
