@@ -341,3 +341,72 @@ cmake --build build -j8
 - `testing/ascend/README.md`：Ascend 测试分层和运行要求。
 
 本指南仅包含 TileLang 的安装与基线验证。E5M2 矩阵 copy 的 SDK 类型匹配缺口需单独修复和回归，不由基础测试通过推断已解决。
+
+
+
+python3 -u - <<'PY'
+import importlib
+import os
+import shutil
+import sys
+
+print("Python:", sys.version)
+print("Executable:", sys.executable)
+print("Device setting:", os.environ.get("ASCEND_RT_VISIBLE_DEVICES"))
+
+modules = [
+    "torch", "torch_npu", "numpy", "tvm_ffi",
+    "Cython", "scikit_build_core", "setuptools",
+    "packaging", "z3", "pytest",
+    "cloudpickle", "ml_dtypes", "psutil", "tqdm",
+    "typing_extensions",
+]
+missing = []
+
+
+```bash
+python3 -u - <<'PY'
+import importlib
+import os
+import shutil
+import sys
+
+print("Python:", sys.version)
+print("Executable:", sys.executable)
+print("Device setting:", os.environ.get("ASCEND_RT_VISIBLE_DEVICES"))
+
+modules = [
+    "torch", "torch_npu", "numpy", "tvm_ffi",
+    "Cython", "scikit_build_core", "setuptools",
+    "packaging", "z3", "pytest",
+    "cloudpickle", "ml_dtypes", "psutil", "tqdm",
+    "typing_extensions",
+]
+missing = []
+
+print("\n=== Python dependencies ===")
+for name in modules:
+    try:
+        module = importlib.import_module(name)
+        version = getattr(module, "__version__", "version unavailable")
+        print(f"OK   {name}: {version}")
+    except Exception as exc:
+        missing.append(name)
+        print(f"FAIL {name}: {type(exc).__name__}: {exc}")
+
+print("\n=== Build tools ===")
+for name in ["git", "cmake", "ninja", "g++", "bisheng", "ld.lld", "patchelf"]:
+    print(f"{name}: {shutil.which(name) or 'NOT FOUND'}")
+
+print("\n=== TileLang ===")
+try:
+    import tilelang
+    print("Version:", tilelang.__version__)
+    print("Source:", tilelang.__file__)
+except Exception as exc:
+    print(f"FAIL: {type(exc).__name__}: {exc}")
+
+print("\nFailed Python imports:", missing)
+PY
+```
+
