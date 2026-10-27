@@ -1,7 +1,3 @@
-# FP4 GM→L1 转置修复代码评审讲稿
-
-日期：2026-10-27。建议讲解时长：8～10 分钟。
-
 评审对象：[FP4 PR #9](https://github.com/yangsichan/tilelang-asc/pull/9)。本文固定对应处理冲突后的提交 `5a5fb725dbe4d3eac52c845e6f7ab7fba3d5c6b2`，相对目标基线 `87605f43a2ba1012ff002eca1712d2ce3f629d29` 说明修改，不代表其他仓库或分支的实现情况。
 
 ## 1. 开场：这次修复解决什么问题
