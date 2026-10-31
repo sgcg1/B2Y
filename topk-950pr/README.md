@@ -19,6 +19,7 @@
 | START_HERE.md | 按执行位置排列的完整操作步骤 |
 | DOCKER.md | 已有 yjl 的进入方式、共享目录及镜像传输参考 |
 | DEPENDENCIES.md | 私人Python/CANN/主仓TileLang要求，缺项处理 |
+| [TORCH_213_UPGRADE.md](TORCH_213_UPGRADE.md) | 已下载2.13 wheel后的安装、NPU/TileLang复测与TopK续跑 |
 | RESULTS_TEMPLATE.md | 可手填、可审核的最少回传摘要 |
 | SOURCE.json / MANIFEST.sha256 | 源码参考与工具完整性 |
 | env.sh | 选择设备/SOC/源码目录；每轮独立缓存、tmp、日志 |

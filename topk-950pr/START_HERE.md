@@ -47,6 +47,8 @@ git -C /home/y00937463/TileOPs fetch origin --tags
 
 ## 4. 容器内：使用镜像 Python，核实 CANN
 
+当前已下载 torch2.13 / torch_npu2.13 wheel，准备从2.10升级时，先按 [TORCH_213_UPGRADE.md](TORCH_213_UPGRADE.md) 完成安装、TileLang复测和新一轮预检/14项测试，再从本指南第5步的 `control 1` 继续。
+
 不执行 conda activate。先在容器内检查：
 
 ```bash

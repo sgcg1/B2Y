@@ -48,3 +48,7 @@ env.sh会把私人python-deps加入PYTHONPATH；这个目录仅用于缺少的�
 操作者报告 Python3.12.14 / torch2.10.0+cpu / torch_npu2.10.0 / TileLang0.1.15+cpu.git0176ba14，TileLang 仓内测试已通过。保留此环境；不要求为预检升级框架。r5 预检接受 torch/torch_npu 同为2.10或同为2.13，拒绝主次版本不匹配与其他未评估版本。2.10 会明确警告并记录 project_torch_requirement_met=false。
 
 先更新 B2Y、新建 EVIDENCE，再执行 preflight 和14项TopK测试；通过后再继续性能测量。预检放行本身不证明TopK正确性或整个项目兼容性。+cpu 版本后缀不能替代实际 NPU 可用性检查，后续真实计算与传输检查仍保留。
+
+## 已下载2.13 wheel后的升级
+
+升级步骤见 [TORCH_213_UPGRADE.md](TORCH_213_UPGRADE.md)，包括私人容器内同时安装两份wheel、重新验证TileLang和NPU、使用新EVIDENCE继续TopK。2.10放行仍只是兼容性实测选项；准备升级时按该文档走2.13路线，不在同一轮中切换框架版本。
