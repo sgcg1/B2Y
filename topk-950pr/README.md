@@ -1,14 +1,16 @@
-# TopKSelect 950PR 新服务器工具包（20261031-r2）
+# TopKSelect 950PR 新服务器工具包（20261031-r3）
 
 **第一次使用只看 [START_HERE.md](START_HERE.md)**，按“宿主机 → yjl 容器 → 个人 fork → 预检 → 14项 → Decode → 完整Prefill”逐步执行。这里是补充说明和故障定位。
 
 ## 交付内容与当前状态
 
 - 实现代码唯一同步入口：`https://github.com/sgcg1/TileOPs.git` 的 `main`。
-- B2Y 仅放本工具目录；服务器不克隆 B2Y。可下载 B2Y 的 `deliveries/topk-950pr-tools-20261031-r2.zip`，解压后手动传入所需子目录。
+- B2Y 仅放本工具目录；服务器不克隆 B2Y。可下载 B2Y 的 `deliveries/topk-950pr-tools-20261031-r3.zip`，解压后手动传入所需子目录。
 - 包中没有 TileOPs 实现源码副本、镜像、SDK、旧服务器 .om/缓存、凭据或业务数据。历史对照代码由脚本从个人 fork 标签读取。
 - `SOURCE.json` 给出已知源码哈希、参考 main 提交和实际通过14项的源码提交。旧服务器 H128 默认已在独立缓存下通过14项；**新服务器必须重新验证**。H256仍为试验配置，v0.1.4尚未完成四组性能验收。
 - 不需要、也不会连接你的新服务器。原始输出留在现场，回传方式见 RESULTS_TEMPLATE.md。
+
+本版目标固定为已有 **yjl** 容器，基础镜像 Weekly **20260930**，私人目录 **/home/y00937463**。/home 已挂载共享；使用容器内 python3，不执行 Conda 激活、宿主机pip安装或重新创建容器。env.sh默认目录、所有命令和SOURCE.json均已按这个配置更新。
 
 ## 文件地图
 
@@ -59,8 +61,8 @@ git -C TileOPs-transfer bundle create ../TileOPs-main.bundle main --tags
 容器首次获取：
 
 ```bash
-git clone --branch main /实际传入路径/TileOPs-main.bundle /data/yjl/topk/TileOPs
-git -C /data/yjl/topk/TileOPs remote set-url origin https://github.com/sgcg1/TileOPs.git
+git clone --branch main /实际传入路径/TileOPs-main.bundle /home/y00937463/TileOPs
+git -C /home/y00937463/TileOPs remote set-url origin https://github.com/sgcg1/TileOPs.git
 ```
 
 已有checkout离线更新：

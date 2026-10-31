@@ -1,69 +1,64 @@
-# yjl 容器与镜像（所有创建/导入命令在服务器宿主机执行）
+# 当前已存在的 yjl 容器
 
-已有可用 yjl 时，只执行 `docker exec -it yjl /bin/bash`，不要重复创建或删除容器。
+本版不要求再次创建Docker、不使用Conda。你的实际配置为：
 
-## 镜像拉取
+- 容器名：`yjl`。
+- 基础镜像：`quay.io/celenewyear/tilelang-ascend:cann9.3.0-weekly.20260930-ubuntu22.04-py3.12`。
+- 私人目录：`/home/y00937463`，目前为空。
+- 已挂载 `/home:/home`，因此私人目录在宿主机和容器内共享，路径相同。
+- 已映射davinci0～7、davinci_manager、hisi_hdc；挂载driver库、版本文件、dcmi和npu-smi；使用seccomp=unconfined和SYS_ADMIN。
 
-服务器已确认 x86_64。本指南不使用需要实验功能的 `--platform`：
+**不要重复运行docker run、删除或重建已有容器。** 映射了8张卡不代表应该同时占用8张；本工具只暴露一个获准设备，默认TOPK_DEVICE=0，按实际分配修改。
+
+## 宿主机：检查并进入
 
 ```bash
-export TOPK_IMAGE=quay.io/celenewyear/tilelang-ascend:cann9.3.0-weekly.20261021-ubuntu22.04-py3.12
+docker ps -a --filter name=yjl
+docker inspect yjl --format '{{.Config.Image}}'
+docker inspect yjl --format '{{json .Mounts}}'
+docker exec -it yjl /bin/bash
+```
+
+如果已创建但停止，且允许启动，在宿主机执行 `docker start yjl`，再进入。后续Python、pip、Git clone和NPU测试均在容器内运行；不激活宿主机Conda。
+
+## 私人目录布局
+
+```text
+/home/y00937463/
+  TileOPs/          # 个人fork main；服务器通过git同步实现
+  tools/            # B2Y工具包手动传入，不克隆B2Y
+  runs/             # 每轮独立原始结果、cache和logs
+  tmp/              # 私人短临时目录
+  python-deps/      # 可选：缺少的小型测试依赖，不用Conda
+  unpacked-tools/   # ZIP解压中转目录，可以保留
+```
+
+只写这个私人目录。不要更改宿主机driver、其他用户目录、共享Docker daemon或系统时钟。无需新增/data挂载；配置脚本不会修改HOME。
+
+## 镜像内的环境仍需检查
+
+镜像标签表明其发布名称中的CANN Weekly日期是 **20260930**，不是旧服务器的20261021。实际toolkit版本、torch/torch_npu、TileLang主仓后端、编译器和SOC以容器预检为准。driver版本不等于CANN toolkit版本，镜像名含tilelang-ascend也不证明其源码路线。
+
+若ASCEND_HOME_PATH已有效设置，env.sh直接使用它；否则设置CANN_ENV_SCRIPT为容器内真实的toolkit环境脚本。不要默认source /data/setenv.bash，也不要把toolbox的环境脚本当作toolkit激活脚本。直接使用镜像的python3，检查要求见DEPENDENCIES.md。
+
+## 仅供以后需要镜像传输时参考
+
+当前yjl已创建，无需为了本任务重新拉取镜像。确需在获准机器准备同一镜像时：
+
+```bash
+export TOPK_IMAGE=quay.io/celenewyear/tilelang-ascend:cann9.3.0-weekly.20260930-ubuntu22.04-py3.12
 docker pull "$TOPK_IMAGE"
 docker image inspect "$TOPK_IMAGE" --format '{{.Os}}/{{.Architecture}}'
 ```
 
-应显示 linux/amd64。`Unable to find image ... locally` 只是本地没有镜像；`context deadline exceeded` 等后续信息才说明访问仓库失败。
-
-Docker daemon 拉取镜像不一定使用当前 shell 的代理变量。不要为了个人镜像重启或修改共享 Docker daemon。若现场已有 skopeo，可使用获准的 shell 网络/代理配置下载到私人目录，再让 Docker 离线导入：
+服务器为x86_64，不需要开启--platform实验功能。若Docker daemon不能访问Quay，而现场已有skopeo及获准的shell代理，可以在私人目录导出后导入：
 
 ```bash
-export TOPK_HOST_ROOT="$HOME/yjl-topk"
-mkdir -p "$TOPK_HOST_ROOT"
-skopeo copy \
-  "docker://$TOPK_IMAGE" \
-  "docker-archive:$TOPK_HOST_ROOT/tilelang-ascend.tar:$TOPK_IMAGE"
-docker load -i "$TOPK_HOST_ROOT/tilelang-ascend.tar"
-docker image inspect "$TOPK_IMAGE" --format '{{.Os}}/{{.Architecture}}'
+export TOPK_IMAGE=quay.io/celenewyear/tilelang-ascend:cann9.3.0-weekly.20260930-ubuntu22.04-py3.12
+skopeo copy "docker://$TOPK_IMAGE" "docker-archive:/home/y00937463/tilelang-ascend.tar:$TOPK_IMAGE"
+docker load -i /home/y00937463/tilelang-ascend.tar
 ```
 
-确保 `$TOPK_IMAGE` 已按上方完整名称设置。archive 的最后一段也使用完整镜像名称，避免导入后标签与 docker run 不匹配。没有 skopeo 时先询问环境负责人提供获准工具或内部镜像源；这里不执行系统级 apt/yum 安装。
+archive最后使用完整镜像名称，避免导入后标签不匹配。没有skopeo时由现场提供工具或内部镜像源，不为个人任务修改共享daemon或执行系统级安装。镜像tar不提交B2Y。
 
-archive 格式参考 [Skopeo 官方说明](https://github.com/containers/skopeo/blob/main/docs/skopeo.1.md)。
-
-如果已有 tar 从别的获准机器传入，只需 docker load。若导入的镜像名不一致，先 `docker image ls` 核实，再用 `docker tag 实际镜像ID "$TOPK_IMAGE"` 添加正确标签。不要把多 GB 镜像放进普通 Git 历史，也不需要上传到 B2Y。
-
-## 仅在 yjl 尚不存在时创建
-
-先确认分配的设备号和设备文件。下例仅暴露获准的物理卡 0；保留之前使用的 seccomp/SYS_ADMIN 配置，不新增 privileged：
-
-```bash
-export TOPK_IMAGE=quay.io/celenewyear/tilelang-ascend:cann9.3.0-weekly.20261021-ubuntu22.04-py3.12
-export TOPK_HOST_ROOT="$HOME/yjl-topk"
-mkdir -p "$TOPK_HOST_ROOT"
-docker image inspect "$TOPK_IMAGE" >/dev/null
-docker run -it -d \
-  --name yjl \
-  --security-opt seccomp=unconfined \
-  --cap-add SYS_ADMIN \
-  --device /dev/davinci0 \
-  --device /dev/davinci_manager \
-  --device /dev/hisi_hdc \
-  -e ASCEND_RT_VISIBLE_DEVICES=0 \
-  -v "$TOPK_HOST_ROOT:/data/yjl/topk" \
-  -v /home:/home \
-  -v /usr/local/dcmi:/usr/local/dcmi \
-  -v /usr/local/bin/npu-smi:/usr/local/bin/npu-smi \
-  -v /usr/local/Ascend/driver/lib64/:/usr/local/Ascend/driver/lib64/ \
-  -v /usr/local/Ascend/driver/version.info:/usr/local/Ascend/driver/version.info \
-  -v /etc/ascend_install.info:/etc/ascend_install.info \
-  "$TOPK_IMAGE" /bin/bash
-docker exec -it yjl /bin/bash
-```
-
-先检查这些宿主机路径确实存在，再运行。分配其他卡时同步替换 davinci0 和设备环境变量。某些平台还要求 `/dev/devmm_svm` 等设备，按该机器的官方部署规范补充，不凭旧服务器配置猜测；不要挂载不存在的设备。
-
-此命令使用本地已有的相同镜像标签，默认不会重复拉取。为兼容较旧的 Docker，没有要求 `--pull` 或 `--platform` 实验开关。
-
-本地镜像复用行为参考 [Docker run 官方说明](https://docs.docker.com/reference/cli/docker/container/run/)。
-
-镜像名含 tilelang-ascend 不代表其中一定是最终交付要求的主仓后端。进入容器后仍需按 DEPENDENCIES.md 和 preflight 检查实际安装。镜像标签中的 CANN 版本也要以容器实际安装信息核实；宿主机 driver 版本不是 toolkit 版本。
+参考：[Skopeo官方archive格式](https://github.com/containers/skopeo/blob/main/docs/skopeo.1.md)、[Docker镜像复用行为](https://docs.docker.com/reference/cli/docker/container/run/)。

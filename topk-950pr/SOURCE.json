@@ -13,5 +13,13 @@
     "topk-npu-v0.1.0",
     "topk-npu-v0.1.2"
   ],
-  "kit_version": "20261031-r2"
+  "kit_version": "20261031-r3",
+  "target_environment": {
+    "manager": "docker",
+    "container": "yjl",
+    "private_root": "/home/y00937463",
+    "home_bind_mount": "/home:/home",
+    "user_reported_base_image": "quay.io/celenewyear/tilelang-ascend:cann9.3.0-weekly.20260930-ubuntu22.04-py3.12",
+    "python_usage": "Use python3 inside yjl; do not activate Conda; verify actual runtime versions"
+  }
 }

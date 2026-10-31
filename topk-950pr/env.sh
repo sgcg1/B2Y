@@ -1,5 +1,5 @@
 # Source this file inside the existing yjl container, after choosing paths.
-export TOPK_ROOT="${TOPK_ROOT:-/data/yjl/topk}"
+export TOPK_ROOT="${TOPK_ROOT:-/home/y00937463}"
 export TOPK_REPO="${TOPK_REPO:-$TOPK_ROOT/TileOPs}"
 export TOPK_TOOLS="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 export TOPK_DEVICE="${TOPK_DEVICE:-0}"
@@ -26,7 +26,7 @@ export TORCH_EXTENSIONS_DIR="$EVIDENCE/cache/torch"
 export TORCHINDUCTOR_CACHE_DIR="$EVIDENCE/cache/inductor"
 export PYTHONDONTWRITEBYTECODE=1
 export TASK_QUEUE_ENABLE=0
-export PYTHONPATH="$TOPK_REPO:$TOPK_REPO/src${PYTHONPATH:+:$PYTHONPATH}"
+export PYTHONPATH="$TOPK_REPO:$TOPK_REPO/src:$TOPK_ROOT/python-deps${PYTHONPATH:+:$PYTHONPATH}"
 export TOPK_NPU_SMI="${TOPK_NPU_SMI:-$(command -v npu-smi || true)}"
 if [ -z "$TOPK_NPU_SMI" ]; then export TOPK_NPU_SMI=/usr/local/Ascend/driver/tools/npu-smi; fi
 ulimit -c 0

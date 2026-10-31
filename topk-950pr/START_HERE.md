@@ -1,14 +1,16 @@
-# 新服务器从这里开始（20261031-r2）
+# 新服务器从这里开始（20261031-r3）
 
 分工保持不变：**TileOPs 源码从个人 fork main 获取；本工具目录从 B2Y 下载后手动传入。服务器不克隆 B2Y。**
 
 工具包不包含 Docker 镜像、CANN SDK、Python wheel 或旧服务器缓存。镜像和容器尚未准备好时先看 `DOCKER.md`；Python/TileLang 环境尚未通过基础验证时先看 `DEPENDENCIES.md`。
 
+本版按你的实际配置编写：**已有容器 yjl，私人目录 /home/y00937463，/home:/home 已挂载，镜像为 CANN Weekly 20260930 / Ubuntu22.04 / Python3.12。直接使用容器内 python3，不使用 Conda。**
+
 ## 1. 只下载 B2Y 中这一份工具包
 
-在可以访问 GitCode 的电脑下载 B2Y 的 `deliveries/topk-950pr-tools-20261031-r2.zip`，或直接下载 `topk-950pr/` 子目录。解压后得到 `topk-950pr/`。
+在可以访问 GitCode 的电脑下载 B2Y 的 `deliveries/topk-950pr-tools-20261031-r3.zip`，或直接下载 `topk-950pr/` 子目录。解压后得到 `topk-950pr/`。
 
-把子目录手动上传到服务器。例如宿主机上的 `/YOUR/UPLOAD/topk-950pr/`。不要上传旧服务器的 `.om`、cache、环境文件或日志。
+把 ZIP 和同名 `.sha256` 文件手动上传到宿主机 `/home/y00937463/`。不要上传旧服务器的 `.om`、cache、环境文件或日志。
 
 ## 2. 宿主机：传入已有 yjl
 
@@ -17,36 +19,50 @@ docker ps -a --filter name=yjl
 docker inspect yjl --format '{{json .Mounts}}'
 ```
 
-确认容器可用后，将工具复制到容器内。把第一行源路径改成实际上传目录：
+你的 `/home:/home` 挂载已经使私人目录在宿主机和容器内共享。以下在**宿主机**执行，用容器自带 Python 解压，不依赖目标 PC 的 Docker 或宿主机 Python 环境：
 
 ```bash
-docker exec yjl mkdir -p /data/yjl/topk/tools
-docker cp /YOUR/UPLOAD/topk-950pr/. yjl:/data/yjl/topk/tools/
+cd /home/y00937463
+sha256sum --check topk-950pr-tools-20261031-r3.zip.sha256
+mkdir -p /home/y00937463/tools
+docker exec yjl python3 -m zipfile -e \
+  /home/y00937463/topk-950pr-tools-20261031-r3.zip \
+  /home/y00937463/unpacked-tools
+cp -R /home/y00937463/unpacked-tools/topk-950pr/. /home/y00937463/tools/
 docker exec -it yjl /bin/bash
 ```
 
-`/data/yjl/topk` 是这里选择的**容器内目录**。若已有 yjl 仅挂载了 `/home`，这里不会自动与宿主机共享；可以继续使用 docker cp 传入/取出，或把后续 TOPK_ROOT 改为 `/home` 下你获准使用且已挂载的私人目录。不要为了增加挂载删除已有容器。
+也可以在 PC 解压后，把 topk-950pr 文件夹中的内容直接上传为 `/home/y00937463/tools/`，再进入容器。无需 docker cp、增加挂载或重建 yjl。后续目录 TileOPs、tools、runs、tmp 都位于你的私人目录内；不修改其他用户目录。
 
 ## 3. 容器内：获取个人 fork
 
 首次执行，目录必须不存在：
 
 ```bash
-mkdir -p /data/yjl/topk
-git clone --branch main https://github.com/sgcg1/TileOPs.git /data/yjl/topk/TileOPs
-git -C /data/yjl/topk/TileOPs fetch origin --tags
-git -C /data/yjl/topk/TileOPs status -sb
-git -C /data/yjl/topk/TileOPs log -1 --oneline
+mkdir -p /home/y00937463
+git clone --branch main https://github.com/sgcg1/TileOPs.git /home/y00937463/TileOPs
+git -C /home/y00937463/TileOPs fetch origin --tags
+git -C /home/y00937463/TileOPs status -sb
+git -C /home/y00937463/TileOPs log -1 --oneline
 ```
 
 已有 checkout 时用 README 的“后续同步”，不要重复 clone 或覆盖源目录。
 
-## 4. 容器内：加载环境
+## 4. 容器内：使用镜像 Python，核实 CANN
 
-先激活现场已经准备好的私人 Python 环境，并加载实际 CANN 环境。镜像若已经设置有效的 ASCEND_HOME_PATH，可直接继续；若没有，先执行现场真实的 `source /实际/CANN/set_env.sh`。不要照抄旧服务器的安装路径。
+不执行 conda activate。先在容器内检查：
 
 ```bash
-export TOPK_ROOT=/data/yjl/topk
+cd /home/y00937463
+python3 --version
+printf 'ASCEND_HOME_PATH=%s\n' "${ASCEND_HOME_PATH:-未设置}"
+command -v bisheng || true
+```
+
+镜像若已经设置有效的 ASCEND_HOME_PATH，可直接继续；若没有，先加载容器内真实的 CANN toolkit 环境脚本。不要照抄旧服务器路径，也不要把 toolbox 脚本当作 toolkit 脚本。具体检查见 DEPENDENCIES.md。
+
+```bash
+export TOPK_ROOT=/home/y00937463
 export TOPK_REPO="$TOPK_ROOT/TileOPs"
 export TOPK_DEVICE=0
 export TOPK_PYTHON=python3
@@ -60,7 +76,7 @@ cd "$TOPK_REPO"
 
 设备号和 SOC 以实际分配与芯片为准。需要由 env.sh 加载特定 CANN 脚本时，在 source env.sh 之前设置 `export CANN_ENV_SCRIPT=/实际/CANN/set_env.sh`。Python 必须满足项目要求的 3.12+、torch2.13.x，并有兼容 torch_npu 和主仓 Ascend TileLang。
 
-**记下输出的 EVIDENCE。** 后续所有步骤在同一个终端、同一个实验目录执行。重开终端时重新激活环境，export EVIDENCE 为记下的原目录，再 source env.sh；新实验才换新的 EVIDENCE。
+**记下输出的 EVIDENCE。** 后续所有步骤在同一个容器终端、同一个实验目录执行。重开终端时先 docker exec 进入 yjl，按需加载 CANN，export EVIDENCE 为记下的原目录，再 source env.sh；不激活 Conda。新实验才换新的 EVIDENCE。
 
 ## 5. 先完成小规格闭环，逐条执行
 
@@ -104,10 +120,10 @@ bash "$TOPK_TOOLS/run.sh" summary all
 
 原始结果留在服务器。按照 `RESULTS_TEMPLATE.md`，只填写当地允许披露的摘要，经手动取回后放入 B2Y 即可；不能出域的字段留空。这里不要求你导出 environment.json、完整 profiler、业务输入或机器路径。
 
-若使用容器内未挂载目录，需要取出允许导出的摘要，可在**宿主机**使用：
+由于私人目录已通过 /home 挂载共享，摘要文件也会直接出现在宿主机相同路径。若希望显式复制到宿主机当前目录，可使用：
 
 ```bash
-docker cp yjl:/data/yjl/topk/runs/实际实验目录/summary-decode-local.json ./
+docker cp yjl:/home/y00937463/runs/实际实验目录/summary-decode-local.json ./
 ```
 
 先在保密环境内审核文件是否允许出域。完整流程、失败定位和可选诊断见 README。
