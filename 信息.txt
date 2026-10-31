@@ -1,3 +1,17 @@
+# 确认当前 Python 能加载你编译的 TileLang
+python3 -c 'import tilelang; print(tilelang.__file__); print(getattr(tilelang, "__version__", "unknown"))'
+
+export TOPK_ROOT=/home/y00937463
+export TOPK_DEVICE=0
+export TOPK_PYTHON="$(command -v python3)"
+export TOPK_SOC=Ascend950PR_9579
+export EVIDENCE="$TOPK_ROOT/runs/topk-$(date +%Y%m%d-%H%M%S)"
+
+source "$TOPK_ROOT/B2Y/topk-950pr/env.sh"
+
+
+
+
 CONDA_BASE="$(conda info --base)"
 echo "宿主机 Conda 路径：$CONDA_BASE"
 
