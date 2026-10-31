@@ -1,3 +1,45 @@
+root@1c26d9767e3f:/home/y00937463# mkdir -p /home/y00937463/wheels/torch213
+root@1c26d9767e3f:/home/y00937463# python3 -m pip download \
+  --dest /home/y00937463/wheels/torch213 \
+  --only-binary=:all: --no-deps \
+  --index-url https://download.pytorch.org/whl/cpu \
+  'torch==2.13.0+cpu'
+Looking in indexes: https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/cpu
+Collecting torch==2.13.0+cpu
+  WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)')': /whl/cpu/torch-2.13.0%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata
+  WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)')': /whl/cpu/torch-2.13.0%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata
+  WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)')': /whl/cpu/torch-2.13.0%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata
+  WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)')': /whl/cpu/torch-2.13.0%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata
+  WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)')': /whl/cpu/torch-2.13.0%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata
+error: ssl-verification-failed
+
+× Failed to establish a secure connection to download-r2.pytorch.org while fetching https://download-r2.pytorch.org/whl/cpu/torch-2.13.0%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata
+╰─> [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)
+
+hint: You may need to use --cert or check your proxy/firewall configuration
+root@1c26d9767e3f:/home/y00937463# python3 -m pip download \
+  --dest /home/y00937463/wheels/torch213 \
+  --only-binary=:all: --no-deps \
+  --index-url https://pypi.org/simple \
+  'torch_npu==2.13.0'
+Looking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cpu
+Collecting torch_npu==2.13.0
+  Downloading torch_npu-2.13.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (22 kB)
+Downloading torch_npu-2.13.0-cp312-cp312-manylinux_2_28_x86_64.whl (43.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.6/43.6 MB 2.0 MB/s  0:00:21
+Saved ./wheels/torch213/torch_npu-2.13.0-cp312-cp312-manylinux_2_28_x86_64.whl
+Successfully downloaded torch_npu
+root@1c26d9767e3f:/home/y00937463# 
+
+
+
+
+
+
+
+
+
+
 mkdir -p /home/y00937463/wheels/torch213
 
 python3 -m pip download \
