@@ -1,3 +1,31 @@
+CONDA_BASE="$(conda info --base)"
+echo "宿主机 Conda 路径：$CONDA_BASE"
+
+docker exec yjl /bin/bash -c '
+  test -r "$1/etc/profile.d/conda.sh" || {
+    echo "容器无法访问此 Conda 安装目录"
+    exit 1
+  }
+  source "$1/etc/profile.d/conda.sh"
+  conda --version
+' _ "$CONDA_BASE"
+
+
+
+
+CONDA_BASE="$(conda info --base)"
+
+docker exec -it yjl /bin/bash -c '
+  source "$1/etc/profile.d/conda.sh"
+  conda create -p /home/y00937463/envs/tileops-topk python=3.12 pip -y
+  conda activate /home/y00937463/envs/tileops-topk
+  exec /bin/bash
+' _ "$CONDA_BASE"
+
+
+
+
+
 docker pull --platform linux/amd64 quay.io/celenewyear/tilelang-ascend:cann9.3.0-weekly.20261021-ubuntu22.04-py3.12
 
 docker run -it -d \
