@@ -1,15 +1,16 @@
-"""Select a chronological tail of 50 real TopKV2 records per fresh run."""
+"""Select 50 chronological real TopKV2 records from one fresh case directory."""
 
+import argparse
 import csv
 import json
 import statistics
 from collections import Counter
 from pathlib import Path
 
-summary = {}
-for name in ["decode", "prefill-k1024", "prefill-k2048"]:
-    profiles = list(Path(".").glob("profile-final-" + name + "/**/kernel_details.csv"))
-    assert len(profiles) == 1, (name, "Use a fresh directory; expected one profile", profiles)
+
+def summarize(root, name):
+    profiles = list(root.glob("profile-final-" + name + "/**/kernel_details.csv"))
+    assert len(profiles) == 1, (name, "Expected one fresh profile", profiles)
     with profiles[0].open() as handle:
         captured = list(csv.DictReader(handle))
     assert 50 <= len(captured) <= 60, (name, len(captured))
@@ -17,26 +18,47 @@ for name in ["decode", "prefill-k1024", "prefill-k2048"]:
     captured.sort(key=lambda row: float(row["Start Time(us)"].strip()))
     selected = captured[-50:]
     tasks = []
-    for path in Path(".").glob("profile-final-" + name + "/**/task_time.csv"):
+    for path in root.glob("profile-final-" + name + "/**/task_time.csv"):
         with path.open() as handle:
             tasks.extend(csv.DictReader(handle))
-    assert tasks, "Missing task_time.csv: inspect profiler output"
-    summary[name] = {
+    assert tasks, "Missing task_time.csv"
+    task_types = Counter(row.get("kernel_type", row.get("Task Type", "unknown")) for row in tasks)
+    assert not any("AICPU" in kind.upper() for kind in task_types), (
+        "Unexpected AICPU task: review baseline route"
+    )
+    compute_types = sorted(kind for kind in task_types if kind.startswith("KERNEL"))
+    assert compute_types, "No underlying computation tasks found"
+    result = {
+        "case": name,
         "kernel_records": selected,
         "task_records": tasks,
         "profile_captured_records": len(captured),
         "profile_launched_records": 60,
         "profile_selection": "last 50 records in device timestamp order",
+        "kernel_samples_us": [float(r["Duration(us)"]) for r in selected],
         "kernel_median_us": statistics.median(float(r["Duration(us)"]) for r in selected),
+        "task_types": dict(task_types),
+        "compute_task_types": compute_types,
+        "expected_vector_route": set(compute_types) <= {"KERNEL_MIX_AIV", "KERNEL_AIV"},
     }
-    task_types = Counter(row.get("Task Type", row.get("kernel_type", "unknown")) for row in tasks)
+    (root / "profile-summary.json").write_text(json.dumps(result, indent=2) + "\n")
     print(
         name,
-        "n",
-        len(selected),
+        "selected",
+        50,
         "median_us",
-        summary[name]["kernel_median_us"],
+        result["kernel_median_us"],
         "task_types",
         dict(task_types),
     )
-Path("profile-summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    return result
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--case", required=True, choices=["decode", "prefill-k1024", "prefill-k2048"]
+    )
+    parser.add_argument("--root", type=Path, default=Path("."))
+    args = parser.parse_args()
+    summarize(args.root, args.case)

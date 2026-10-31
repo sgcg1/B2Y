@@ -4,6 +4,7 @@
 #include <graph/graph.h>
 #include <graph/tensor.h>
 #include <iostream>
+#include <cstdlib>
 #include <map>
 #include "top_k_v2_proto.h"
 
@@ -37,7 +38,12 @@ int main(int argc, char **argv) {
     ge::Graph graph("static_topkv2");
     std::vector<ge::Operator> inputs{data}, outputs{topk};
     graph.SetInputs(inputs).SetOutputs(outputs);
-    std::map<ge::AscendString, ge::AscendString> options{{ge::ir_option::SOC_VERSION,"Ascend950PR_9579"}};
+    const char *soc = std::getenv("TOPK_SOC");
+    if (soc == nullptr || *soc == '\0') {
+        std::cerr << "TOPK_SOC must match the preflight device" << std::endl;
+        return 2;
+    }
+    std::map<ge::AscendString, ge::AscendString> options{{ge::ir_option::SOC_VERSION,soc}};
     auto status = aclgrphBuildInitialize(options);
     std::cout << "initialize_status=" << status << std::endl;
     if (status) {

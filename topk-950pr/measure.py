@@ -12,12 +12,14 @@ from pathlib import Path
 
 import torch
 import torch_npu
+from provenance import check
 
 from tileops._kernels.attention.topk_select_ascend import topk_select_ascend
 from tileops.ascend.topk_select import AscendTopKSelect
 
 
 def main():
+    check()
     parser = argparse.ArgumentParser()
     parser.add_argument("--version", required=True)
     parser.add_argument(

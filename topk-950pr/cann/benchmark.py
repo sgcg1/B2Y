@@ -14,7 +14,9 @@ import torch_npu
 root = Path(os.environ["EVIDENCE"])
 rows, length, k = map(int, sys.argv[1:4])
 name = sys.argv[4]
+print("SET_DEVICE_BEGIN", flush=True)
 torch.npu.set_device(0)
+print("SET_DEVICE_OK", flush=True)
 torch.manual_seed(20261030)
 torch.npu.manual_seed_all(20261030)
 api = C.CDLL(os.environ["ASCEND_HOME_PATH"] + "/lib64/libascendcl.so", mode=C.RTLD_GLOBAL)
@@ -52,8 +54,10 @@ event_record = bind("aclrtRecordEvent", [P, P])
 event_sync = bind("aclrtSynchronizeEvent", [P])
 elapsed = bind("aclrtEventElapsedTime", [C.POINTER(C.c_float), P, P])
 
+print("LOAD_MODEL_BEGIN", flush=True)
 model = U()
 check(load(str(root / (name + ".om")).encode(), C.byref(model)))
+print("LOAD_MODEL_OK", flush=True)
 desc = desc_new()
 check(desc_get(desc, model))
 assert num_in(desc) == 1 and num_out(desc) == 2
@@ -85,10 +89,14 @@ def run():
     check(execute(model, inputs, outputs, stream))
 
 
+print("INPUT_READY", flush=True)
 torch.npu.synchronize()
+print("INPUT_SYNC_OK", flush=True)
 for _ in range(10):
     run()
+print("WARMUP_QUEUED", flush=True)
 torch.npu.synchronize()
+print("WARMUP_OK", flush=True)
 
 # Verify full input domain in bounded chunks outside the timing region.
 input_hash = hashlib.sha256()
