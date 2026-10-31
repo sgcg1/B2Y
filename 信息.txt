@@ -25,3 +25,6 @@ docker run -it -d \
   /bin/bash
 
   docker exec -it yjl /bin/bash
+
+  这是什么意思？：(python3.11) [root@localhost ~]# docker pull quay.io/celenewyear/tilelang-ascend:cann9.3.0-weekly.20261021-ubuntu22.04-py3.12
+Error response from daemon: Get "https://quay.io/v2/": context deadline exceeded
