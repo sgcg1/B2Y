@@ -30,22 +30,21 @@ docker run -it -d \
 Error response from daemon: Get "https://quay.io/v2/": context deadline exceeded
 
 
-(python3.11) [root@localhost yjl]# env | grep -i proxy
-https_proxy=http://p_atlas:proxy%40123@141.3.158.200:8080
-http_proxy=http://10.174.54.191:3128
-(python3.11) [root@localhost yjl]# curl -I --max-time 15 https://quay.io/v2/
-HTTP/1.1 200 Connection established
-Proxy-agent: netentsec
+# 1. 看 skopeo 装没装
+which skopeo
 
-HTTP/2 401 
-date: Sat, 31 Oct 2026 07:02:51 GMT
-content-type: text/html; charset=utf-8
-content-length: 4
-server: nginx
-www-authenticate: Bearer realm="https://quay.io/v2/auth",service="quay.io"
-docker-distribution-api-version: registry/2.0
-x-sparse-manifest-support: false
-vary: Cookie
+# 2. 没装就装（root 可装，只装一个独立工具，不影响 docker 和容器）
+apt-get install -y skopeo      # Ubuntu/Debian
+# 或 yum install -y skopeo     # CentOS/RHEL
 
-(python3.11) [root@localhost yjl]# docker pull quay.io/celenewyear/tilelang-ascend:cann9.3.0-weekly.20261021-ubuntu22.04-py3.12
-Error response from daemon: Get "https://quay.io/v2/": net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
+# 3. 走 shell 代理把镜像拉成 tar（写到你自己的目录）
+cd /home/yjl
+skopeo copy \
+  docker://quay.io/celenewyear/tilelang-ascend:cann9.3.0-weekly.20261021-ubuntu22.04-py3.12 \
+  docker-archive:/home/yjl/tilelang-ascend.tar:cann9.3.0-weekly.20261021-ubuntu22.04-py3.12
+
+# 4. 本地导入（不联网、不重启、不影响同事）
+docker load -i /home/yjl/tilelang-ascend.tar
+
+# 5. 确认能看到完整名字
+docker images | grep tilelang
