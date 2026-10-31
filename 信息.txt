@@ -1,3 +1,17 @@
+Python: /usr/local/python3.12.14/bin/python3
+torch version: 2.10.0+cpu
+torch path: /usr/local/python3.12.14/lib/python3.12/site-packages/torch/__init__.py
+torch_npu version: 2.10.0
+torch_npu path: /usr/local/python3.12.14/lib/python3.12/site-packages/torch_npu/__init__.py
+tilelang version: 0.1.15+cpu.git0176ba14
+tilelang path: /usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/__init__.py
+
+
+
+
+
+
+
 python3 - <<'PY'
 import sys
 import torch
