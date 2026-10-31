@@ -13,7 +13,7 @@
     "topk-npu-v0.1.0",
     "topk-npu-v0.1.2"
   ],
-  "kit_version": "20261031-r4",
+  "kit_version": "20261031-r5",
   "target_environment": {
     "manager": "docker",
     "container": "yjl",
@@ -22,6 +22,13 @@
     "user_reported_base_image": "quay.io/celenewyear/tilelang-ascend:cann9.3.0-weekly.20260930-ubuntu22.04-py3.12",
     "python_usage": "Use python3 inside yjl; do not activate Conda; verify actual runtime versions",
     "tools_directory": "/home/y00937463/B2Y/topk-950pr",
-    "tools_sync": "Clone and pull B2Y inside yjl; no separate tools directory or ZIP transfer required"
+    "tools_sync": "Clone and pull B2Y inside yjl; no separate tools directory or ZIP transfer required",
+    "reported_runtime": {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "torch_npu": "2.10.0",
+      "tilelang": "0.1.15+cpu.git0176ba14",
+      "validation": "Operator reports TileLang tests passed; TopK compatibility trial pending"
+    }
   }
 }

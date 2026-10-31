@@ -1,4 +1,4 @@
-# TopKSelect 950PR 新服务器工具包（20261031-r4）
+# TopKSelect 950PR 新服务器工具包（20261031-r5）
 
 **第一次使用只看 [START_HERE.md](START_HERE.md)**，按“宿主机 → yjl 容器 → 个人 fork → 预检 → 14项 → Decode → 完整Prefill”逐步执行。这里是补充说明和故障定位。
 
@@ -131,7 +131,7 @@ H64/H128/H256受支持。不要拿单次最小值改默认，也不把诊断结�
 
 ## 故障定位顺序
 
-1. **preflight失败**：看最后一个IMPORT/TRANSFER阶段、Python是否3.12+、torch是否2.13.x、主仓Ascend是否真的安装、实际SOC是否与TOPK_SOC一致。环境安装看DEPENDENCIES.md。
+1. **preflight失败**：看最后一个IMPORT/TRANSFER阶段、Python是否3.12+、torch/torch_npu是否同为2.13或同为2.10（2.10仅兼容性实测）、主仓Ascend是否真的安装、实际SOC是否与TOPK_SOC一致。环境安装看DEPENDENCIES.md。
 2. **健康不是OK**：先由平台管理员处理；不重置共享卡或升级驱动。
 3. **test超时**：保留首个完整栈。超时在CPU→NPU或NPU→CPU拷贝不证明TopK算法错误。另开新实验可用 `bash "$TOPK_TOOLS/run.sh" transfer`；默认和单CPU线程都不是自动修复。
 4. **延迟显著漂移**：先control两轮，必要时执行 `bash "$TOPK_TOOLS/run.sh" binary`（需control 1已完成）。binary_check依赖主仓当前缓存API，版本布局变化时保留错误，不虚构二进制哈希。

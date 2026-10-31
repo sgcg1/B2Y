@@ -8,7 +8,7 @@
 | --- | --- |
 | Linux x86_64，目标 Ascend950PR | 本次目标机器架构和算子支持范围 |
 | Python >=3.12 | 当前 TileOPs pyproject 要求 |
-| torch >=2.13,<2.14 + 兼容 torch_npu | 当前声明的框架范围；torch 的 +cpu 标签不等于不能用 NPU |
+| torch2.13.x + torch_npu2.13.x；或2.10.x配对进入兼容性实测 | 项目声明仍为 >=2.13,<2.14；2.10 仅允许本 TopK 流程实测，不代表项目整体支持 |
 | TileLang 主仓 Ascend 后端 | 必须有 tilelang.ascend.language、Ascend target、SIMT lowering 和运行时支持 |
 | 兼容的 CANN toolkit、算子包及宿主机驱动 | 必须含 bisheng；不能仅挂载 driver 就认定开发环境完整 |
 | git、pytest、pytest-timeout、PyYAML | 源码加载和契约测试；按实际导入缺项补齐私人环境 |
@@ -42,3 +42,9 @@ env.sh会把私人python-deps加入PYTHONPATH；这个目录仅用于缺少的�
 若需要自行构建 TileLang，以实际主仓说明和当前SDK为准，先通过 SIMT 向量加法。B2Y 旧《TileLang-Ascend950-运行指南.md》只能作为构建方法参考，其 /data 环境脚本路径不适用本次配置，不照抄。独立 tilelang-ascend 仓不作为本任务交付路线；版本号或镜像名字不足以证明源码来自主仓。无法追溯 commit 时如实记 unknown。
 
 本工具的 GE 构建默认 `_GLIBCXX_USE_CXX11_ABI=0`。新 SDK 有差异时先看 compile.log，由环境负责人确认库/ABI；必要时在新一轮前设置 TOPK_CXX11_ABI，或修改工具、更新清单再新建 EVIDENCE。不要为了通过编译修改共享 SDK。
+
+## 当前容器的 2.10 兼容性实测
+
+操作者报告 Python3.12.14 / torch2.10.0+cpu / torch_npu2.10.0 / TileLang0.1.15+cpu.git0176ba14，TileLang 仓内测试已通过。保留此环境；不要求为预检升级框架。r5 预检接受 torch/torch_npu 同为2.10或同为2.13，拒绝主次版本不匹配与其他未评估版本。2.10 会明确警告并记录 project_torch_requirement_met=false。
+
+先更新 B2Y、新建 EVIDENCE，再执行 preflight 和14项TopK测试；通过后再继续性能测量。预检放行本身不证明TopK正确性或整个项目兼容性。+cpu 版本后缀不能替代实际 NPU 可用性检查，后续真实计算与传输检查仍保留。

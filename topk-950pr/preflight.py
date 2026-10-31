@@ -11,6 +11,23 @@ import sys
 from pathlib import Path
 
 
+def check_framework_versions(torch_version, torch_npu_version):
+    def major_minor(value):
+        return tuple(int(part) for part in value.split("+")[0].split(".")[:2])
+
+    version = major_minor(torch_version)
+    assert version in {(2, 10), (2, 13)}, "TopK preflight permits torch 2.10 or 2.13 only"
+    assert major_minor(torch_npu_version) == version, "torch and torch_npu major/minor must match"
+    declared_requirement_met = version == (2, 13)
+    if not declared_requirement_met:
+        print(
+            "WARNING: torch 2.10 is a TopK compatibility trial outside the project's "
+            "declared torch>=2.13,<2.14 requirement; NPU and TopK tests are still required",
+            flush=True,
+        )
+    return declared_requirement_met
+
+
 def main():
     faulthandler.enable()
     faulthandler.dump_traceback_later(120, repeat=True)
@@ -41,10 +58,10 @@ def main():
             "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
         }
     import torch
+    import torch_npu
 
-    version = tuple(int(part) for part in torch.__version__.split("+")[0].split(".")[:2])
-    assert version == (2, 13), (
-        "This TileOPs checkout declares torch>=2.13,<2.14; use a compatible private environment"
+    data["project_torch_requirement_met"] = check_framework_versions(
+        torch.__version__, torch_npu.__version__
     )
     assert torch.npu.is_available()
     torch.npu.set_device(0)

@@ -1,4 +1,4 @@
-# 新服务器从这里开始（20261031-r4）
+# 新服务器从这里开始（20261031-r5）
 
 当前分工：**在 yjl 内直接克隆两个仓库。TileOPs 源码从个人 fork main 获取，辅助工具从 B2Y/topk-950pr 运行。**
 
@@ -71,7 +71,7 @@ sha256sum --check MANIFEST.sha256
 cd "$TOPK_REPO"
 ```
 
-设备号和 SOC 以实际分配与芯片为准。需要由 env.sh 加载特定 CANN 脚本时，在 source env.sh 之前设置 `export CANN_ENV_SCRIPT=/实际/CANN/set_env.sh`。Python 必须满足项目要求的 3.12+、torch2.13.x，并有兼容 torch_npu 和主仓 Ascend TileLang。
+设备号和 SOC 以实际分配与芯片为准。需要由 env.sh 加载特定 CANN 脚本时，在 source env.sh 之前设置 `export CANN_ENV_SCRIPT=/实际/CANN/set_env.sh`。Python 必须为 3.12+，并有主仓 Ascend TileLang。项目声明 torch2.13.x；本工具也允许 torch2.10.x + torch_npu2.10.x 进入 TopK 兼容性实测，会输出警告并在 environment.json 记录未满足项目声明，不代表项目整体支持2.10。
 
 **记下输出的 EVIDENCE。** 后续所有步骤在同一个容器终端、同一个实验目录执行。重开终端时先 docker exec 进入 yjl，按需加载 CANN，export EVIDENCE 为记下的原目录，再 source env.sh；不激活 Conda。新实验才换新的 EVIDENCE。
 
