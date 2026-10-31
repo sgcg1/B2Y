@@ -1,11 +1,11 @@
-# TopKSelect 950PR 新服务器工具包（20261031-r3）
+# TopKSelect 950PR 新服务器工具包（20261031-r4）
 
 **第一次使用只看 [START_HERE.md](START_HERE.md)**，按“宿主机 → yjl 容器 → 个人 fork → 预检 → 14项 → Decode → 完整Prefill”逐步执行。这里是补充说明和故障定位。
 
 ## 交付内容与当前状态
 
 - 实现代码唯一同步入口：`https://github.com/sgcg1/TileOPs.git` 的 `main`。
-- B2Y 仅放本工具目录；服务器不克隆 B2Y。可下载 B2Y 的 `deliveries/topk-950pr-tools-20261031-r3.zip`，解压后手动传入所需子目录。
+- 在 yjl 内直接克隆 B2Y 到 `/home/y00937463/B2Y`，工具从 `B2Y/topk-950pr` 运行；无需额外 tools 目录或 ZIP 传输。
 - 包中没有 TileOPs 实现源码副本、镜像、SDK、旧服务器 .om/缓存、凭据或业务数据。历史对照代码由脚本从个人 fork 标签读取。
 - `SOURCE.json` 给出已知源码哈希、参考 main 提交和实际通过14项的源码提交。旧服务器 H128 默认已在独立缓存下通过14项；**新服务器必须重新验证**。H256仍为试验配置，v0.1.4尚未完成四组性能验收。
 - 不需要、也不会连接你的新服务器。原始输出留在现场，回传方式见 RESULTS_TEMPLATE.md。
@@ -17,7 +17,7 @@
 | 文件 | 用途 |
 | --- | --- |
 | START_HERE.md | 按执行位置排列的完整操作步骤 |
-| DOCKER.md | 镜像、已有yjl、首次创建、shell代理与离线导入 |
+| DOCKER.md | 已有 yjl 的进入方式、共享目录及镜像传输参考 |
 | DEPENDENCIES.md | 私人Python/CANN/主仓TileLang要求，缺项处理 |
 | RESULTS_TEMPLATE.md | 可手填、可审核的最少回传摘要 |
 | SOURCE.json / MANIFEST.sha256 | 源码参考与工具完整性 |
@@ -47,7 +47,15 @@ git pull --ff-only origin main
 git fetch origin --tags
 ```
 
-工作区必须干净，origin必须是个人fork。dirty时先另外保存差异，不reset/clean覆盖。实现修改优先本地main提交并推送，再由你在服务器pull；每次改代码后换新EVIDENCE并重新preflight。工具修改也先经B2Y同步并更新清单，不在已有实验中混用不同脚本。
+工作区必须干净，origin必须是个人fork。dirty时先另外保存差异，不reset/clean覆盖。实现修改优先本地main提交并推送，再由你在服务器pull；每次改代码后换新EVIDENCE并重新preflight。工具修改也先经 B2Y 同步并更新清单；没有实验运行且工作区干净时，在容器内更新：
+
+```bash
+git -C /home/y00937463/B2Y status --short
+# 确认工作区干净后执行：
+git -C /home/y00937463/B2Y pull --ff-only origin main
+```
+
+不要在已有实验中混用不同脚本；更新后使用新 EVIDENCE。
 
 如果服务器不能访问GitHub，应先使用现场获准网络/代理渠道。也可在获准中转电脑从个人fork完整克隆、制作Git bundle，经获准文件通道传入（**不把源码bundle提交到B2Y**）：
 

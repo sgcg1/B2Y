@@ -1,20 +1,25 @@
-# 当前新服务器交付：r3
+# 当前新服务器指南：r4
 
-下载 `topk-950pr-tools-20261031-r3.zip` 及同名 `.sha256`。本版对应用户已有yjl、Weekly 20260930镜像、私人目录/home/y00937463、/home:/home挂载；直接使用容器python3，不使用Conda。
+当前流程在已有 yjl 容器内直接克隆 B2Y，使用镜像自带 python3。工具入口为 `/home/y00937463/B2Y/topk-950pr`，完整步骤见 `../topk-950pr/START_HERE.md`。
 
-工具源文件在本仓库 `topk-950pr/`。ZIP仅含辅助材料，不含TileOPs实现、镜像或SDK。源码仍通过个人fork main同步，服务器不克隆B2Y。
-
-将ZIP和SHA文件手动上传到宿主机/home/y00937463，然后按包内START_HERE.md在宿主机校验、使用yjl内Python解压，再进入容器运行。
+在宿主机进入容器：
 
 ```bash
-cd /home/y00937463
-sha256sum --check topk-950pr-tools-20261031-r3.zip.sha256
-mkdir -p /home/y00937463/tools
-docker exec yjl python3 -m zipfile -e /home/y00937463/topk-950pr-tools-20261031-r3.zip /home/y00937463/unpacked-tools
-cp -R /home/y00937463/unpacked-tools/topk-950pr/. /home/y00937463/tools/
 docker exec -it yjl /bin/bash
 ```
 
-本包未在新服务器实测；先完成小规格闭环，再运行完整Prefill。原始输出留在保密环境，按RESULTS_TEMPLATE.md仅回传允许披露的摘要。
+随后在容器内首次克隆：
 
-r2 ZIP保留历史校验，不再作为这台机器的操作入口；其通用/data路径与新提供的实际配置不同。
+```bash
+git clone --branch main https://gitcode.com/JotaroSSR/B2Y.git /home/y00937463/B2Y
+git clone --branch main https://github.com/sgcg1/TileOPs.git /home/y00937463/TileOPs
+git -C /home/y00937463/TileOPs fetch origin --tags
+```
+
+无需下载交付 ZIP、创建额外 tools 目录或安装 Conda。已有仓库应检查工作区干净后 pull，不重复 clone。后续读取 START_HERE.md，核实 Python/CANN 依赖并设置本轮 EVIDENCE，再运行 preflight。
+
+配置仍为已有 yjl、Weekly 20260930 镜像、私人目录 /home/y00937463、/home:/home 挂载。源码仅通过个人 fork main 同步。本仓只提供辅助材料，不包含镜像、SDK或源码副本。
+
+目录内 r2/r3 ZIP 和 SHA 文件保留用于历史校验，反映当时的传输流程；不作为当前执行入口。r4 直接通过本仓 topk-950pr/ 提供，不另发 ZIP。
+
+本工具尚未在新服务器实测。先完成小规格闭环，再运行完整 Prefill。原始输出留在保密环境，只按 RESULTS_TEMPLATE.md 回传允许披露的摘要。

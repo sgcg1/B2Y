@@ -26,11 +26,10 @@ docker exec -it yjl /bin/bash
 ```text
 /home/y00937463/
   TileOPs/          # 个人fork main；服务器通过git同步实现
-  tools/            # B2Y工具包手动传入，不克隆B2Y
+  B2Y/topk-950pr/  # 容器内直接克隆 B2Y 后使用的辅助工具
   runs/             # 每轮独立原始结果、cache和logs
   tmp/              # 私人短临时目录
   python-deps/      # 可选：缺少的小型测试依赖，不用Conda
-  unpacked-tools/   # ZIP解压中转目录，可以保留
 ```
 
 只写这个私人目录。不要更改宿主机driver、其他用户目录、共享Docker daemon或系统时钟。无需新增/data挂载；配置脚本不会修改HOME。

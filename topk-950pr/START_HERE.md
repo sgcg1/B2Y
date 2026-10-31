@@ -1,52 +1,49 @@
-# 新服务器从这里开始（20261031-r3）
+# 新服务器从这里开始（20261031-r4）
 
-分工保持不变：**TileOPs 源码从个人 fork main 获取；本工具目录从 B2Y 下载后手动传入。服务器不克隆 B2Y。**
+当前分工：**在 yjl 内直接克隆两个仓库。TileOPs 源码从个人 fork main 获取，辅助工具从 B2Y/topk-950pr 运行。**
 
 工具包不包含 Docker 镜像、CANN SDK、Python wheel 或旧服务器缓存。镜像和容器尚未准备好时先看 `DOCKER.md`；Python/TileLang 环境尚未通过基础验证时先看 `DEPENDENCIES.md`。
 
 本版按你的实际配置编写：**已有容器 yjl，私人目录 /home/y00937463，/home:/home 已挂载，镜像为 CANN Weekly 20260930 / Ubuntu22.04 / Python3.12。直接使用容器内 python3，不使用 Conda。**
 
-## 1. 只下载 B2Y 中这一份工具包
-
-在可以访问 GitCode 的电脑下载 B2Y 的 `deliveries/topk-950pr-tools-20261031-r3.zip`，或直接下载 `topk-950pr/` 子目录。解压后得到 `topk-950pr/`。
-
-把 ZIP 和同名 `.sha256` 文件手动上传到宿主机 `/home/y00937463/`。不要上传旧服务器的 `.om`、cache、环境文件或日志。
-
-## 2. 宿主机：传入已有 yjl
+## 1. 宿主机：进入已有 yjl
 
 ```bash
 docker ps -a --filter name=yjl
-docker inspect yjl --format '{{json .Mounts}}'
-```
-
-你的 `/home:/home` 挂载已经使私人目录在宿主机和容器内共享。以下在**宿主机**执行，用容器自带 Python 解压，不依赖目标 PC 的 Docker 或宿主机 Python 环境：
-
-```bash
-cd /home/y00937463
-sha256sum --check topk-950pr-tools-20261031-r3.zip.sha256
-mkdir -p /home/y00937463/tools
-docker exec yjl python3 -m zipfile -e \
-  /home/y00937463/topk-950pr-tools-20261031-r3.zip \
-  /home/y00937463/unpacked-tools
-cp -R /home/y00937463/unpacked-tools/topk-950pr/. /home/y00937463/tools/
 docker exec -it yjl /bin/bash
 ```
 
-也可以在 PC 解压后，把 topk-950pr 文件夹中的内容直接上传为 `/home/y00937463/tools/`，再进入容器。无需 docker cp、增加挂载或重建 yjl。后续目录 TileOPs、tools、runs、tmp 都位于你的私人目录内；不修改其他用户目录。
+如果容器已停止，先执行 `docker start yjl`。以下步骤全部在容器内运行，直接使用镜像自带的 python3。无需安装或激活 Conda，也无需重新创建容器。
 
-## 3. 容器内：获取个人 fork
+## 2. 容器内：克隆 B2Y 和个人 fork
 
-首次执行，目录必须不存在：
+首次执行，两个目标目录必须不存在：
 
 ```bash
 mkdir -p /home/y00937463
+git clone --branch main https://gitcode.com/JotaroSSR/B2Y.git /home/y00937463/B2Y
 git clone --branch main https://github.com/sgcg1/TileOPs.git /home/y00937463/TileOPs
 git -C /home/y00937463/TileOPs fetch origin --tags
 git -C /home/y00937463/TileOPs status -sb
 git -C /home/y00937463/TileOPs log -1 --oneline
 ```
 
-已有 checkout 时用 README 的“后续同步”，不要重复 clone 或覆盖源目录。
+B2Y 工具直接从 `/home/y00937463/B2Y/topk-950pr` 运行；不再创建 tools 目录，也不需要下载或解压交付 ZIP。源码仍只通过个人 fork 同步。
+
+## 3. 容器内：已有仓库的后续更新
+
+只有目录已经存在时执行，首次 clone 后可跳过。先检查两个工作区均干净，再逐条更新；存在修改时先保存差异，不覆盖：
+
+```bash
+git -C /home/y00937463/B2Y status --short
+git -C /home/y00937463/TileOPs status --short
+# 确认两个工作区干净，且没有实验运行后，再执行：
+git -C /home/y00937463/B2Y pull --ff-only origin main
+git -C /home/y00937463/TileOPs pull --ff-only origin main
+git -C /home/y00937463/TileOPs fetch origin --tags
+```
+
+工具、源码更新后使用新的 EVIDENCE，不能混入已开始的实验。
 
 ## 4. 容器内：使用镜像 Python，核实 CANN
 
@@ -68,7 +65,7 @@ export TOPK_DEVICE=0
 export TOPK_PYTHON=python3
 export TOPK_SOC=Ascend950PR_9579
 export EVIDENCE="$TOPK_ROOT/runs/newhost-$(date +%Y%m%d-%H%M%S)"
-source "$TOPK_ROOT/tools/env.sh"
+source "$TOPK_ROOT/B2Y/topk-950pr/env.sh"
 cd "$TOPK_TOOLS"
 sha256sum --check MANIFEST.sha256
 cd "$TOPK_REPO"
