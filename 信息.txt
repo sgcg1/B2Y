@@ -1,3 +1,23 @@
+mkdir -p /home/y00937463/wheels/torch213
+
+python3 -m pip download \
+  --dest /home/y00937463/wheels/torch213 \
+  --only-binary=:all: --no-deps \
+  --index-url https://download.pytorch.org/whl/cpu \
+  'torch==2.13.0+cpu'
+
+python3 -m pip download \
+  --dest /home/y00937463/wheels/torch213 \
+  --only-binary=:all: --no-deps \
+  --index-url https://pypi.org/simple \
+  'torch_npu==2.13.0'
+  
+
+
+
+
+
+
 Python: /usr/local/python3.12.14/bin/python3
 torch version: 2.10.0+cpu
 torch path: /usr/local/python3.12.14/lib/python3.12/site-packages/torch/__init__.py
