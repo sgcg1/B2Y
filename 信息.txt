@@ -1,3 +1,24 @@
+python3 - <<'PY'
+import sys
+import torch
+import torch_npu
+import tilelang
+
+print("Python:", sys.executable)
+for name, module in [
+    ("torch", torch),
+    ("torch_npu", torch_npu),
+    ("tilelang", tilelang),
+]:
+    print(name, "version:", getattr(module, "__version__", "unknown"))
+    print(name, "path:", module.__file__)
+PY
+
+
+
+
+
+
 root@1c26d9767e3f:/home/y00937463# python3 -c 'import tilelang; print(tilelang.__file__); print(getattr(tilelang, "__version__", "unknown"))'
 /usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/__init__.py
 0.1.15+cpu.git0176ba14
