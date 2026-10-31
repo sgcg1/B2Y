@@ -48,3 +48,22 @@ docker load -i /home/yjl/tilelang-ascend.tar
 
 # 5. 确认能看到完整名字
 docker images | grep tilelang
+
+
+root@1c26d9767e3f:/home/y00937463# cat /home/g00946757/set_proxy.sh
+export http_proxy=http://141.1.71.72:4128
+export https_proxy=${http_proxy}
+export no_proxy=127.0.0.1,*.huawei.com,localhost,local,.local,inhuawei.com
+export GIT_SSL_NO_VERIFY=true
+
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+
+git config --global --unset user.email
+git config --global --unset user.name
+git config --global --unset remote.origin.proxy
+git config --global --unset 'http.https://gitcode.com.proxy'
+git config --global --unset core.editor
+
+
+# source /home/CANN/toolbox/set_env.sh
