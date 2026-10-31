@@ -1,3 +1,16 @@
+python3 -m pip download \
+  --dest /home/y00937463/wheels/torch213 \
+  --only-binary=:all: --no-deps \
+  --index-url https://download.pytorch.org/whl/cpu \
+  --trusted-host download.pytorch.org \
+  --trusted-host download-r2.pytorch.org \
+  'torch==2.13.0+cpu'
+
+
+
+
+
+
 root@1c26d9767e3f:/home/y00937463# mkdir -p /home/y00937463/wheels/torch213
 root@1c26d9767e3f:/home/y00937463# python3 -m pip download \
   --dest /home/y00937463/wheels/torch213 \
