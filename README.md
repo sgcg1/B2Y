@@ -4,12 +4,13 @@
 
 **新会话接手先读：[2026-11-02完整交接](deliveries/topk-handoff-20261102.md)。** 包含当前实测版本、证据入口、下一步候选、已踩坑和最新协作条件。 个人fork交接文档本地提交e444083d因GitHub连接超时待推送；B2Y交接已可用。
 
-当前进展：已结合Decode阶段数据与交接第4.2节完成[后续性能优化路线复评](deliveries/topk-optimization-roadmap-20261102.md)。主线为首轮粗键复用、分片计数/压缩，再验证Decode首轮分核；缓存溢出、尾部与扫描按证据降级。[本轮阶段结果](experiments/topk/20261102-stage1-decode-163258/analysis.md)及原始数据保留。本轮没有新增待执行命令，也无需重跑旧探针。
+当前进展：已结合Decode阶段数据与交接第4.2节完成[后续性能优化路线复评](deliveries/topk-optimization-roadmap-20261102.md)。主线为首轮粗键复用、分片计数/压缩，再验证Decode首轮分核；缓存溢出、尾部与扫描按证据降级。[本轮阶段结果](experiments/topk/20261102-stage1-decode-163258/analysis.md)及原始数据保留。新增默认关闭的A0粗键表达式复用候选；[当前设备筛选入口](diagnostics/topk-a0-r1/README.md)。TileOPs候选fda84f78因GitHub 443超时尚未确认推送，远端同步前暂不运行；尚无新NPU结果，无需重跑旧探针。
 
 ## 操作入口
 
 | 需要做什么 | 文档 |
 | --- | --- |
+| 当前：A0独立候选设备筛选 | [diagnostics/topk-a0-r1/README.md](diagnostics/topk-a0-r1/README.md) |
 | 新会话接手：完整交接 | [deliveries/topk-handoff-20261102.md](deliveries/topk-handoff-20261102.md) |
 | 查看项目阶段进展总结 | [deliveries/topk-progress-summary-20261102.md](deliveries/topk-progress-summary-20261102.md) |
 | 当前：后续性能优化路线复评 | [deliveries/topk-optimization-roadmap-20261102.md](deliveries/topk-optimization-roadmap-20261102.md) |
