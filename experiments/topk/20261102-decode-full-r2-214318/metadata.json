@@ -1,0 +1,36 @@
+{
+  "id": "20261102-decode-full-r2-214318",
+  "source_commit": "d10b9b6",
+  "status": "full_pipeline_overflow_improved_small_boundary_tradeoff_pending",
+  "accepted": false,
+  "files": [
+    {
+      "source": "AAA_Results/topk-decode-full-r2-20261102-214318-34241-repeat-1.log",
+      "bytes": 2141,
+      "sha256": "3660f8929a60931a7615e0d8faab0acef753bdd216de0e26306205f240760dfb"
+    },
+    {
+      "source": "AAA_Results/topk-decode-full-r2-20261102-214318-34241-repeat-1.txt",
+      "bytes": 236782,
+      "sha256": "2090f70b50a866a2c0d2ef042ef67f97039075c88245e24afc2debfd47eb5869"
+    },
+    {
+      "source": "AAA_Results/topk-decode-full-r2-20261102-214318-34241-repeat-2.log",
+      "bytes": 2141,
+      "sha256": "9411907c3c1aa8235e5299362be754c9a9a3fd76badd35763b91f629d8e74420"
+    },
+    {
+      "source": "AAA_Results/topk-decode-full-r2-20261102-214318-34241-repeat-2.txt",
+      "bytes": 236785,
+      "sha256": "af71957b299e6def9624f85b4316a363e00065335c76ae235851ba61a3b8a141"
+    }
+  ],
+  "candidate_commit": "0d4063e66e4a0defb49de2ca091b364b04795d8d",
+  "missing": [
+    "full contract suite",
+    "device-adaptive tail assessment",
+    "profiler task envelope",
+    "same-round CANN",
+    "broader input distribution coverage"
+  ]
+}

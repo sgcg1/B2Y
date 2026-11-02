@@ -42,3 +42,5 @@
 - [Decode小P成本结果](20261102-decode-pilot-r1-211917/analysis.md)，1200事件完整，不是完整TopK。
 
 - [完整Decode full-r1结果](20261102-decode-full-r1-213318/analysis.md)：1200事件完整，默认拒绝因溢出回退。
+
+- [Decode full-r2尾段权衡](20261102-decode-full-r2-214318/analysis.md)，1200事件完整，默认未接受。

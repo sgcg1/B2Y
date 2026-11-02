@@ -126,6 +126,12 @@
       "title": "完整Decode流水随机约43%收益但溢出约42%回退",
       "status": "full_pipeline_random_gain_overflow_regression_not_accepted",
       "metadata": "20261102-decode-full-r1-213318/metadata.json"
+    },
+    {
+      "id": "20261102-decode-full-r2-214318",
+      "title": "Decode r2消除溢出回退但小边界较r1变慢",
+      "status": "full_pipeline_overflow_improved_small_boundary_tradeoff_pending",
+      "metadata": "20261102-decode-full-r2-214318/metadata.json"
     }
   ]
 }
