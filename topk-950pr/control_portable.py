@@ -32,7 +32,13 @@ def main():
     starts = torch.zeros(args.rows, device="npu", dtype=torch.int32)
     ends = torch.full_like(starts, args.length)
     programs = {}
-    for version in ["v0.1.0", "v0.1.2"]:
+    source_refs = {
+        "v0.1.0": "topk-npu-v0.1.0",
+        "v0.1.2": "topk-npu-v0.1.2",
+        "v0.1.4-before-scan": "49aaea3608d97d666f535053e974903547f94ad3",
+    }
+    source_hashes = {}
+    for version, ref in source_refs.items():
         source_path = args.output / f"kernel-{version}.py"
         source_path.write_bytes(
             subprocess.check_output(
@@ -41,11 +47,14 @@ def main():
                     "-C",
                     str(args.repo),
                     "show",
-                    f"topk-npu-{version}:src/tileops/_kernels/attention/topk_select_ascend.py",
+                    f"{ref}:src/tileops/_kernels/attention/topk_select_ascend.py",
                 ]
             )
         )
-        spec = importlib.util.spec_from_file_location(version.replace(".", "_"), source_path)
+        source_hashes[version] = hashlib.sha256(source_path.read_bytes()).hexdigest()
+        spec = importlib.util.spec_from_file_location(
+            version.replace(".", "_").replace("-", "_"), source_path
+        )
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         programs[version] = module.topk_select_ascend(
@@ -55,6 +64,9 @@ def main():
         programs[f"candidate-h{threads}"] = topk_select_ascend(
             args.rows, args.length, args.k, args.workers, 1, COARSE=True, H=threads
         )
+    programs["candidate-serial-h128"] = topk_select_ascend(
+        args.rows, args.length, args.k, args.workers, 1, COARSE=True, H=128, PARALLEL_SCAN=False
+    )
     outputs = {
         name: torch.empty((args.rows, args.k), device="npu", dtype=torch.int32) for name in programs
     }
@@ -100,13 +112,31 @@ def main():
         "input_sha256": hashlib.sha256(x.cpu().numpy().tobytes()).hexdigest(),
         "physical_device": os.environ["ASCEND_RT_VISIBLE_DEVICES"],
         "generated_source_sha256": sources,
+        "source_refs": source_refs,
+        "historical_kernel_source_sha256": source_hashes,
+        "candidate_scan_modes": {
+            "candidate-h128": "parallel-16x16",
+            "candidate-h256": "parallel-16x16",
+            "candidate-serial-h128": "serial-256",
+        },
         "event_samples_us": samples,
         "event_median_us": {name: statistics.median(v) for name, v in samples.items()},
+        "scan_event_speedup_vs_previous_h128": statistics.median(samples["v0.1.4-before-scan"])
+        / statistics.median(samples["candidate-h128"]),
+        "scan_event_speedup_vs_serial_ablation_h128": statistics.median(
+            samples["candidate-serial-h128"]
+        )
+        / statistics.median(samples["candidate-h128"]),
         "correctness": "finite random input; bounds, unique, threshold, equal selected sets",
         "timing": "same process, alternating forward/reverse order; preallocated device events",
     }
     (args.output / "control.json").write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result["event_median_us"], indent=2), flush=True)
+    print(
+        "Scan event speedup vs previous H128:",
+        result["scan_event_speedup_vs_previous_h128"],
+        flush=True,
+    )
 
 
 if __name__ == "__main__":

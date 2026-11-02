@@ -1,6 +1,8 @@
-# TopKSelect 950PR 新服务器工具包（20261031-r5）
+# TopKSelect 950PR 新服务器工具包（20261102-r6）
 
 **第一次使用只看 [START_HERE.md](START_HERE.md)**，按“宿主机 → yjl 容器 → 个人 fork → 预检 → 14项 → Decode → 完整Prefill”逐步执行。这里是补充说明和故障定位。
+
+桶扫描优化候选的更新、同进程新旧对照及验收流程见 [SCAN_OPTIMIZATION.md](SCAN_OPTIMIZATION.md)。这是待NPU验证的候选，不能沿用旧版本的14项通过记录。
 
 ## 交付内容与当前状态
 
@@ -17,6 +19,7 @@
 | 文件 | 用途 |
 | --- | --- |
 | START_HERE.md | 按执行位置排列的完整操作步骤 |
+| [SCAN_OPTIMIZATION.md](SCAN_OPTIMIZATION.md) | v0.1.4-scan-r1候选的更新、验证与新旧对照 |
 | DOCKER.md | 已有 yjl 的进入方式、共享目录及镜像传输参考 |
 | DEPENDENCIES.md | 私人Python/CANN/主仓TileLang要求，缺项处理 |
 | [TORCH_213_UPGRADE.md](TORCH_213_UPGRADE.md) | 已下载2.13 wheel后的安装、NPU/TileLang复测与TopK续跑 |
@@ -26,7 +29,7 @@
 | run.sh | 分阶段执行；失败即退出；不覆盖旧输出 |
 | provenance.py | 防止一轮中混入不同源码、工具、Python、设备或缓存 |
 | preflight.py | 模块路径/版本、真实NPU运算与512KiB往返拷贝、库哈希 |
-| control_portable.py | 同进程初版/v0.1.2/H128/H256，正反顺序、固定输入 |
+| control_portable.py | 同进程初版/v0.1.2/旧v0.1.4/候选H128/H256/串行消融，正反顺序 |
 | clock_check.py | 设备事件与包围它的主机单调时钟交叉核对 |
 | frequency.py | 单worker/56核以内的诊断负载期间只读遥测；不调频 |
 | transfer_check.py | 不导入TileLang的最小传输诊断 |

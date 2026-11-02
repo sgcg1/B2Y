@@ -1,19 +1,19 @@
 {
   "repository": "https://github.com/sgcg1/TileOPs.git",
   "branch": "main",
-  "reference_main_commit": "e1ad344f049301b4c5933e01d52b056f6eedbe15",
+  "reference_main_commit": "d5bc27e6d50db8831a4d551b15a05abb6e5de8bb",
   "last_tested_source_commit": "49aaea3608d97d666f535053e974903547f94ad3",
-  "status": "H128 default passed 14 tests on the old server in isolated caches; v0.1.4 final performance acceptance incomplete",
+  "status": "v0.1.4-scan-r1 grouped scan candidate: CPU arithmetic checks passed; NPU correctness and performance pending",
   "source_sha256": {
-    "src/tileops/_kernels/attention/topk_select_ascend.py": "70f8ca82ebc92238e8c916c7ea9a729481d291a498643a69dab954114a0f41a0",
-    "src/tileops/ascend/topk_select.py": "c866bef8b87d6cad053a0a32101a12c3919e5e0e99d8bcf9886d99606ff731f4",
+    "src/tileops/_kernels/attention/topk_select_ascend.py": "51480955f97542e607635be1e19c597e03ad71e2866d5a46ff74d811cd7cfded",
+    "src/tileops/ascend/topk_select.py": "54a49bf8fb122fc1073e28d4c61e110fa62b3a36be2b3caff9513ee031da6d24",
     "tests/ops/test_topk_select_ascend.py": "a985ffbaf1404206a0a6247d0923df80988ddb3039812d6cf064ebf249af432b"
   },
   "required_control_tags": [
     "topk-npu-v0.1.0",
     "topk-npu-v0.1.2"
   ],
-  "kit_version": "20261031-r5",
+  "kit_version": "20261102-r6",
   "target_environment": {
     "manager": "docker",
     "container": "yjl",
@@ -30,5 +30,10 @@
       "tilelang": "0.1.15+cpu.git0176ba14",
       "validation": "Operator reports TileLang tests passed; TopK compatibility trial pending"
     }
-  }
+  },
+  "candidate_version": "v0.1.4-scan-r1",
+  "control_reference_commits": [
+    "49aaea3608d97d666f535053e974903547f94ad3"
+  ],
+  "operator_reported_tested_source_commit": "252ad607e3a86e09f880baf785f982eca81060c2"
 }

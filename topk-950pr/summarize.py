@@ -47,6 +47,7 @@ def summarize(root, scope="all"):
                 "workers",
                 "threads",
                 "coarse",
+                "parallel_scan",
                 "input_sha256",
                 "kernel_source_sha256",
                 "kernel_median_us",

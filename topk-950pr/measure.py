@@ -153,6 +153,7 @@ def measure(args):
         "workers": workers,
         "threads": threads,
         "coarse": adapter.config["coarse"],
+        "parallel_scan": adapter.config["parallel_scan"],
         "input_sha256": digest.hexdigest(),
         "historical_input_match": historical_input_match,
         "correctness": "all rows: bounds, uniqueness, exact FP32 threshold",
