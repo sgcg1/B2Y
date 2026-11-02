@@ -1,0 +1,36 @@
+{
+  "id": "20261102-decode-full-r1-213318",
+  "source_commit": "43c2d26",
+  "status": "full_pipeline_random_gain_overflow_regression_not_accepted",
+  "accepted": false,
+  "files": [
+    {
+      "source": "AAA_Results/topk-decode-full-r1-20261102-213318-32787-repeat-1.log",
+      "bytes": 2455,
+      "sha256": "4ff2db43db6ced61651f21b22b99bb423aebd30bcb0ecc94724c4198984e4f0d"
+    },
+    {
+      "source": "AAA_Results/topk-decode-full-r1-20261102-213318-32787-repeat-1.txt",
+      "bytes": 186557,
+      "sha256": "53958fc92cb4ee2071a9352789c4efbbe92d29af17e239f09052cbf971bf42d3"
+    },
+    {
+      "source": "AAA_Results/topk-decode-full-r1-20261102-213318-32787-repeat-2.log",
+      "bytes": 2455,
+      "sha256": "6e367012f80fa749d714ce9e8a97b59e869ff1d901878f6a45bcd1d988f89abb"
+    },
+    {
+      "source": "AAA_Results/topk-decode-full-r1-20261102-213318-32787-repeat-2.txt",
+      "bytes": 186571,
+      "sha256": "7e5a5f4b1bb1413c8abee9a7a6854632d0cd40f50ab978d79ed4ca58ec009944"
+    }
+  ],
+  "candidate_commit": "03c8f916864a6423ea4353d179fe9ef64db44f26",
+  "missing": [
+    "full 14-contract suite",
+    "profiler multi-kernel task envelope",
+    "same-round CANN",
+    "overflow regression resolution",
+    "other shape and noncontiguous support"
+  ]
+}

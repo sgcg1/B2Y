@@ -120,6 +120,12 @@
       "title": "Decode P4直方图加归并成本有继续投入空间",
       "status": "partial_pipeline_cost_promising_not_full_topk",
       "metadata": "20261102-decode-pilot-r1-211917/metadata.json"
+    },
+    {
+      "id": "20261102-decode-full-r1-213318",
+      "title": "完整Decode流水随机约43%收益但溢出约42%回退",
+      "status": "full_pipeline_random_gain_overflow_regression_not_accepted",
+      "metadata": "20261102-decode-full-r1-213318/metadata.json"
     }
   ]
 }

@@ -40,3 +40,5 @@
 - [A2 r4性能回退](20261102-a2-r4-211000/analysis.md)，600事件完整，候选不接受。
 
 - [Decode小P成本结果](20261102-decode-pilot-r1-211917/analysis.md)，1200事件完整，不是完整TopK。
+
+- [完整Decode full-r1结果](20261102-decode-full-r1-213318/analysis.md)：1200事件完整，默认拒绝因溢出回退。
