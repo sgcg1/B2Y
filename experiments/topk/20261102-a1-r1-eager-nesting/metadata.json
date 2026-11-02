@@ -1,0 +1,34 @@
+{
+  "id": "20261102-a1-r1-eager-nesting",
+  "source_commit": "1dc0a60",
+  "status": "failed_eager_python_nesting",
+  "accepted": false,
+  "files": [
+    {
+      "source": "AAA_Results/topk-a1-r1-20261102-202906-28565-repeat-1.log",
+      "bytes": 205915,
+      "sha256": "6e289c2b22f6254cec691dc62fd2a17443ea84ff89700dd7f549297f12407a03"
+    },
+    {
+      "source": "AAA_Results/topk-a1-r1-20261102-202906-28565-repeat-1.txt",
+      "bytes": 243471,
+      "sha256": "324c57df70a9f55afa69a767e0ca4b30bb3d4ced3fdc36bc30de4c765b7141fc"
+    },
+    {
+      "source": "AAA_Results/topk-a1-r1-20261102-203005-28756-repeat-1.log",
+      "bytes": 205915,
+      "sha256": "d9562c8efc0b5746bdd455c26ba8dfc66e17179b0353f67782770c18c17527c9"
+    },
+    {
+      "source": "AAA_Results/topk-a1-r1-20261102-203005-28756-repeat-1.txt",
+      "bytes": 243471,
+      "sha256": "a66485094857012c137e3b5e04e79f019a8b30f11ef14efa04559bbe4cd64c8b"
+    }
+  ],
+  "missing": [
+    "A1 generated C++",
+    "correctness samples",
+    "performance samples"
+  ],
+  "fix_commit": "944bc00d"
+}

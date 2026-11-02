@@ -22,3 +22,5 @@
 当前操作入口见[仓库首页](../../README.md)。[Decode阶段结果](20261102-stage1-decode-163258/analysis.md)已复核，首轮histogram/compact占已测区间约81%；当前无需重复运行stage1。生产版本与全规格性能仍未接受，历史数据和结论均保留。
 
 - [A0 r1双进程筛选：未证明稳定收益](20261102-a0-r1-201744/analysis.md)，原始上传、SHA及复算见同目录。
+
+- [A1 r1前端嵌套失败与修复](20261102-a1-r1-eager-nesting/analysis.md)，两次失败原文均保存。

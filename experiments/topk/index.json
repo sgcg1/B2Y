@@ -66,6 +66,12 @@
       "title": "A0粗键表达式复用：双进程筛选未证明收益",
       "status": "screening_no_demonstrated_gain",
       "metadata": "20261102-a0-r1-201744/metadata.json"
+    },
+    {
+      "id": "20261102-a1-r1-eager-nesting",
+      "title": "A1 r1 eager嵌套失败与修复",
+      "status": "failed_eager_python_nesting",
+      "metadata": "20261102-a1-r1-eager-nesting/metadata.json"
     }
   ]
 }
