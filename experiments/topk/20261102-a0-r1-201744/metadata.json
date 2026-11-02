@@ -1,0 +1,37 @@
+{
+  "id": "20261102-a0-r1-201744",
+  "source_commit": "f9bbe69",
+  "source_repository": "https://gitcode.com/JotaroSSR/B2Y",
+  "status": "screening_no_demonstrated_gain",
+  "accepted": false,
+  "files": [
+    {
+      "source": "AAA_Results/topk-a0-r1-20261102-201744-27951-repeat-1.log",
+      "bytes": 787,
+      "sha256": "10b81ab6ee649da25c07a8bcf0f5dd4bcb221cc2bdeb99a107af9e267b98db6c"
+    },
+    {
+      "source": "AAA_Results/topk-a0-r1-20261102-201744-27951-repeat-1.txt",
+      "bytes": 108692,
+      "sha256": "e351ea08cdbd4531cc709921070920466333174e3b3d1d5e36938116f98db9a6"
+    },
+    {
+      "source": "AAA_Results/topk-a0-r1-20261102-201744-27951-repeat-2.log",
+      "bytes": 787,
+      "sha256": "ca3c844b6e2460a85fae29447f65535eb06b05111b074e11bb26010aca83eba2"
+    },
+    {
+      "source": "AAA_Results/topk-a0-r1-20261102-201744-27951-repeat-2.txt",
+      "bytes": 108693,
+      "sha256": "460917e3aac55aa343b11be1044d5da2c2bd957f0b0e5f59dc49e8e7f71306c1"
+    }
+  ],
+  "missing": [
+    "profiler pure kernel samples",
+    "final binary/assembly identity",
+    "full 14-contract suite",
+    "Prefill regression",
+    "same-round CANN"
+  ],
+  "candidate_commit": "fda84f78637cb1c1515c71c63c0e1480b59bb6e7"
+}

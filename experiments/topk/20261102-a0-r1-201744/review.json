@@ -1,0 +1,43 @@
+{
+  "event_samples": 600,
+  "source_hashes_verified": true,
+  "default_off_source_equals_baseline": true,
+  "rows": [
+    {
+      "repeat": 1,
+      "seed": 20261030,
+      "baseline": 162.14299947023392,
+      "control": 161.31149977445602,
+      "a0": 162.26600110530853,
+      "a0_change_percent": 0.07585997266394973,
+      "control_change_percent": -0.5128187454867872
+    },
+    {
+      "repeat": 1,
+      "seed": 20261102,
+      "baseline": 161.47399693727493,
+      "control": 162.49150037765503,
+      "a0": 161.4055037498474,
+      "a0_change_percent": -0.04241747199341672,
+      "control_change_percent": 0.630134547778205
+    },
+    {
+      "repeat": 2,
+      "seed": 20261030,
+      "baseline": 161.8020012974739,
+      "control": 161.9345024228096,
+      "a0": 161.7090031504631,
+      "a0_change_percent": -0.057476512197041085,
+      "control_change_percent": 0.08189090633810014
+    },
+    {
+      "repeat": 2,
+      "seed": 20261102,
+      "baseline": 161.72099858522415,
+      "control": 163.55599462985992,
+      "a0": 161.23849898576736,
+      "a0_change_percent": -0.2983530918543753,
+      "control_change_percent": 1.1346677677535943
+    }
+  ]
+}

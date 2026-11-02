@@ -60,6 +60,12 @@
       "title": "Decode阶段定位：首轮histogram与compact占已测区间约81%",
       "status": "decode_stage_evidence_reviewed_candidate_optimization_pending",
       "metadata": "20261102-stage1-decode-163258/metadata.json"
+    },
+    {
+      "id": "20261102-a0-r1-201744",
+      "title": "A0粗键表达式复用：双进程筛选未证明收益",
+      "status": "screening_no_demonstrated_gain",
+      "metadata": "20261102-a0-r1-201744/metadata.json"
     }
   ]
 }
