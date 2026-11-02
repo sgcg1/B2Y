@@ -34,3 +34,5 @@
 - [A2 r1工具身份错误](20261102-a2-r1-baseline-digest/analysis.md)，未开始设备编译。
 
 - [A2 r2布局失败](20261102-a2-r2-layout-handle/analysis.md)，基线/control编译成功，A2未产源码。
+
+- [A2 r3原子参数代码生成失败](20261102-a2-r3-atomic-codegen/analysis.md)，已提取回传C++。

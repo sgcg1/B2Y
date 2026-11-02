@@ -1,0 +1,24 @@
+{
+  "id": "20261102-a2-r3-atomic-codegen",
+  "source_commit": "810d7ba",
+  "status": "failed_bisheng_atomic_argument_codegen",
+  "accepted": false,
+  "files": [
+    {
+      "source": "AAA_Results/topk-a2-r3-20261102-210456-30487-repeat-1.log",
+      "bytes": 47049,
+      "sha256": "b0936fd43dff2c5346044361640832edda5bbcc67d8bb4bf4b97fcf0d740d7d3"
+    },
+    {
+      "source": "AAA_Results/topk-a2-r3-20261102-210456-30487-repeat-1.txt",
+      "bytes": 112505,
+      "sha256": "3a241184fbd939a0455244c07d33eeaadd80e7e99a79810a77ae010b17c9f270"
+    }
+  ],
+  "missing": [
+    "A2 binary",
+    "correctness samples",
+    "performance samples"
+  ],
+  "candidate_fix": "4774e7ea"
+}

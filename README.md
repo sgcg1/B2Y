@@ -75,3 +75,5 @@ A1 r1两次前端嵌套失败已归档，当前使用r2修复指南；尚无A1�
 当前使用[A2 r2指南](diagnostics/topk-a2-r2/README.md)，r1工具生成误改基线哈希，已归档并修正。内核仍34f3bf36；离线身份回归已捕获r1并验证r2，尚无A2设备结果。
 
 当前入口：[A2 r3](diagnostics/topk-a2-r3/README.md)。r2在布局推导失败，候选67b9e72f已改成常量并行长度并推送；12项CPU检查与离线身份通过，尚待现场编译，无A2性能结果。
+
+当前入口：[A2 r4](diagnostics/topk-a2-r4/README.md)。r3已过布局但Bisheng因原子条件下标生成语句失败；4774e7ea改为显式int32索引，13项CPU检查通过，工具预存生成源码；尚无A2性能结果。

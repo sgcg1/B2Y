@@ -102,6 +102,12 @@
       "title": "A2 r2布局推导handle/int32失败",
       "status": "failed_a2_layout_inference_handle_int32",
       "metadata": "20261102-a2-r2-layout-handle/metadata.json"
+    },
+    {
+      "id": "20261102-a2-r3-atomic-codegen",
+      "title": "A2 r3原子条件下标生成非法C++",
+      "status": "failed_bisheng_atomic_argument_codegen",
+      "metadata": "20261102-a2-r3-atomic-codegen/metadata.json"
     }
   ]
 }
