@@ -2,7 +2,7 @@
 
 本任务最新交接见[deliveries/topk-handoff-20261102.md](deliveries/topk-handoff-20261102.md)。新会话先读该文，历史未提交/权限/环境状态不作为当前前提。
 
-交接同步状态（2026-11-02）：用户已确认个人fork候选fda84f78推送成功，其中包含交接文档提交e444083d。agent独立查询仍遇GitHub DNS解析失败，不冒称独立核验。当前设备筛选入口为diagnostics/topk-a0-r1/README.md；按指南更新仓库，工具核对候选SHA后执行。尚无新NPU结果。
+交接同步状态（2026-11-02）：B2Y远端为GitCode，交接与A0工具已发布。TileOPs当前origin为GitHub，候选fda84f78及其祖先e444083d的远端同步尚未独立确认；agent推送遇连接超时、查询遇DNS失败。不要将B2Y推送成功视为TileOPs同步成功。当前入口diagnostics/topk-a0-r1/README.md，取得候选源码后再运行；尚无新NPU结果。
 
 用户于2026-11-02确认：
 
