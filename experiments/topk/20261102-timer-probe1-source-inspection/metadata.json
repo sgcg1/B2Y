@@ -1,0 +1,58 @@
+{
+  "id": "20261102-timer-probe1-source-inspection",
+  "title": "probe1生成源码确认预期屏障/计时顺序未保留",
+  "archived_date": "2026-11-02",
+  "status": "source_sequence_mismatch_confirmed",
+  "source": "User-provided source-inspection attachment; raw text preserved",
+  "reported_run_label": "timer-probe-20261102-142548",
+  "related_record": "20261102-timer-probe1-source-order",
+  "code_reconstruction": "Numbered source prefixes removed; reconstructed bytes SHA matches inspector exactly",
+  "summary_reconstruction": "Canonical JSON reconstruction SHA matches server-reported summary SHA exactly",
+  "findings": {
+    "entry_lines": [
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "sequence": [
+      "input VF",
+      "start counter",
+      "work VF",
+      "fence",
+      "end counter",
+      "fence",
+      "output VF"
+    ],
+    "intended_source_boundary_order_preserved": false,
+    "legacy_checker_false_positive_for_this_source": false,
+    "native_instruction_order_verified": false,
+    "timing_calibration_accepted": false
+  },
+  "next_step": "probe2 uses strict mainline postproc instrumentation after TileLang scheduling; runtime validation pending",
+  "files": {
+    "inspection.txt": {
+      "sha256": "0b86eba55b3b090bd3735404bb7a319477028a153e21eeb5a553ac15bf4b6c6f",
+      "bytes": 9770
+    },
+    "inspection.json": {
+      "sha256": "f779652106dfbe9f13fb6d0003aca936364e2f8ec559be75166f4194c349d682",
+      "bytes": 7109
+    },
+    "r1-timed.cpp": {
+      "sha256": "0c3c1d405730f844ed6ea28a96f9cdbe769f2b98d37a0e92bd4bbb5d97220b91",
+      "bytes": 1985
+    },
+    "reconstructed-probe-summary.txt": {
+      "sha256": "33f2314997f98d7565f385996b96df2060a4e3ee0577ec2fb14e20a615f5c6ec",
+      "bytes": 2549
+    },
+    "analysis.md": {
+      "sha256": "b7cd66df2d6320831e13827b63e645dd697002c2316b57f03245e0827aa258bb",
+      "bytes": 948
+    }
+  }
+}

@@ -37,3 +37,5 @@ git -C /home/y00937463/TileOPs fetch origin --tags
 当前统一入口：[仓库README](../README.md)。用户已确认项目完全开源并授权本任务分析报告同步；[H128完整实验分析](scan-r1-results-20261102.md)现纳入本仓。后续待执行命令均先写入本仓并推送，聊天不作为唯一命令来源。
 
 probe1首次现场失败于Counter/fence源码顺序检查，尚无计时校准结果。当前按 [只读源码导出指南](../diagnostics/topk-timer-probe/INSPECT_SOURCE.md) 收集原失败目录源码，不重跑NPU。已建立 [长期实验档案](../experiments/topk/README.md)，保存原始回传、失败和缺失信息；不覆盖历史数据。
+
+probe1源码回传已确认预期边界顺序未保留，旧检查器在该例没有误报；原文、还原C++和哈希存入实验档案第7条。当前下一步为 [probe2后处理计时校准](../diagnostics/topk-timer-probe/README.md)，不修改TopK实现或SDK。所有命令与结果回传步骤已在该指南中。

@@ -1,0 +1,234 @@
+root@1c26d9767e3f:/home/y00937463/runs# cat "$TOPK_TIMER_INSPECTION"
+{
+  "inspector_version": "20261102-source1",
+  "run_directory": "/home/y00937463/runs/timer-probe-20261102-142548",
+  "probe_summary_sha256": "33f2314997f98d7565f385996b96df2060a4e3ee0577ec2fb14e20a615f5c6ec",
+  "original_probe_summary": {
+    "version": "20261102-probe1",
+    "status": "failed",
+    "stage": "compile:r1-timed",
+    "physical_device": 0,
+    "documented_ticks_per_us": 1000,
+    "stage_profiling_accepted": false,
+    "timing_scope": "Events include launch, input load and output store; counter interval measures dependent UB VF work plus observer costs. Compare workload deltas, not absolute equality.",
+    "probe_files_sha256": {
+      ".gitattributes": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9",
+      "README.md": "f74098160006de82a10768b7a1d2141fb6effff1558a6feb37dfd9b57912a62c",
+      "kernels.py": "43c5adc9cf9e232df879b04da5094216699bbabcfba24b312b1a264ea90069a7",
+      "probe.py": "9a9e4426e8bec556ff024dbcab8e735f957f5cd189719c27408b3e11a228f69b",
+      "tests.py": "3c57e9212f903c1a2c6c226eae1510b35d478ddea4c5a6cb1a452cccf7e8e68b"
+    },
+    "compiler_version": [
+      "2026-09-29T23:53:43+08:00 clang version 15.0.5 (clang-5c68a1cb1231 flang-5c68a1cb1231)",
+      "Target: x86_64-unknown-linux-gnu",
+      "Thread model: posix",
+      "InstalledDir: /usr/local/Ascend/cann-current/bin"
+    ],
+    "cann_installation_info": "package_name=Ascend-cann-toolkit\nversion=9.3.0\ninnerversion=V100R001C12B136\ncompatible_version=[V100R001C15],[V100R001C23],[V100R001C10],[V100R001C11],[V100R001C12]\narch=x86_64\nos=linux\npath=/usr/local/Ascend/cann-9.3.0\n",
+    "runtime": {
+      "python": "/usr/local/python3.12.14/bin/python3",
+      "torch": "2.13.0+cpu",
+      "torch_npu": "2.13.0",
+      "tilelang": "0.1.15+cpu.git0176ba14",
+      "tilelang_path": "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/__init__.py",
+      "cann_home": "/usr/local/Ascend/cann-9.3.0",
+      "Kernel_signature": "(*blocks: 'int | tirx.PrimExpr', prelude: 'str | None' = None) -> 'KernelLaunchFrame'",
+      "has_call_extern": true
+    },
+    "device": "Ascend950PR_9579",
+    "error_type": "AssertionError",
+    "error": "Counter/fence source order changed",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/y00937463/B2Y/diagnostics/topk-timer-probe/probe.py\", line 259, in main\n    execute(report, root, args.device)\n  File \"/home/y00937463/B2Y/diagnostics/topk-timer-probe/probe.py\", line 168, in execute\n    check_generated_source(code, mode, repeats)\n  File \"/home/y00937463/B2Y/diagnostics/topk-timer-probe/probe.py\", line 31, in check_generated_source\n    assert fences[1] < clocks[1] < fences[2] < clocks[2], \"Counter/fence source order changed\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Counter/fence source order changed\n"
+  },
+  "source_order_root_cause_established": false,
+  "note": "Read-only snapshot of existing source files; no compilation, counter calls or NPU execution.",
+  "sources": {
+    "r1-plain.cpp": {
+      "sha256": "eff0568b92ec3383f92d2e35465a547e851bc04ad2e19b363dac112256d4275c",
+      "line_count": 34,
+      "clock_occurrence_offsets": [],
+      "fence_occurrence_offsets": [],
+      "legacy_positional_order_check": null,
+      "marker_lines": [
+        {
+          "line": 30,
+          "text": "  asc_vf_call<main_kernel_simt_vf_0>(cce::dim3(128), values, x);"
+        },
+        {
+          "line": 31,
+          "text": "  asc_vf_call<main_kernel_simt_vf_1>(cce::dim3(128), values);"
+        },
+        {
+          "line": 32,
+          "text": "  asc_vf_call<main_kernel_simt_vf_2>(cce::dim3(128), y, values);"
+        }
+      ],
+      "interpretation": "Occurrences are not classified as declarations, definitions or calls. No order is accepted by this exporter."
+    },
+    "r1-fenced.cpp": {
+      "sha256": "bfe4d4b9037dc4a94558db6349d7b24b040f2c174ececcdbc23f049a819c2ea6",
+      "line_count": 45,
+      "clock_occurrence_offsets": [
+        239
+      ],
+      "fence_occurrence_offsets": [
+        135,
+        1571,
+        1658
+      ],
+      "legacy_positional_order_check": null,
+      "marker_lines": [
+        {
+          "line": 5,
+          "text": "__aicore__ inline int32_t tileops_probe_fence() {"
+        },
+        {
+          "line": 6,
+          "text": "    AscendC::PipeBarrier<PIPE_ALL>();"
+        },
+        {
+          "line": 9,
+          "text": "__aicore__ inline int64_t tileops_probe_clock() {"
+        },
+        {
+          "line": 10,
+          "text": "    return AscendC::GetSystemCycle();"
+        },
+        {
+          "line": 39,
+          "text": "  asc_vf_call<main_kernel_simt_vf_0>(cce::dim3(128), values, x);"
+        },
+        {
+          "line": 40,
+          "text": "  tileops_probe_fence();"
+        },
+        {
+          "line": 41,
+          "text": "  asc_vf_call<main_kernel_simt_vf_1>(cce::dim3(128), values);"
+        },
+        {
+          "line": 42,
+          "text": "  tileops_probe_fence();"
+        },
+        {
+          "line": 43,
+          "text": "  asc_vf_call<main_kernel_simt_vf_2>(cce::dim3(128), y, values);"
+        }
+      ],
+      "interpretation": "Occurrences are not classified as declarations, definitions or calls. No order is accepted by this exporter."
+    },
+    "r1-timed.cpp": {
+      "sha256": "0c3c1d405730f844ed6ea28a96f9cdbe769f2b98d37a0e92bd4bbb5d97220b91",
+      "line_count": 48,
+      "clock_occurrence_offsets": [
+        286,
+        1698,
+        1868
+      ],
+      "fence_occurrence_offsets": [
+        182,
+        1786,
+        1894
+      ],
+      "legacy_positional_order_check": false,
+      "marker_lines": [
+        {
+          "line": 6,
+          "text": "__aicore__ inline int32_t tileops_probe_fence() {"
+        },
+        {
+          "line": 7,
+          "text": "    AscendC::PipeBarrier<PIPE_ALL>();"
+        },
+        {
+          "line": 10,
+          "text": "__aicore__ inline int64_t tileops_probe_clock() {"
+        },
+        {
+          "line": 11,
+          "text": "    return AscendC::GetSystemCycle();"
+        },
+        {
+          "line": 40,
+          "text": "  asc_vf_call<main_kernel_simt_vf_0>(cce::dim3(128), values, x);"
+        },
+        {
+          "line": 41,
+          "text": "  tl::write_gm_bypass_dcache(((__gm__ int64_t*)ticks + 0), tileops_probe_clock());"
+        },
+        {
+          "line": 42,
+          "text": "  asc_vf_call<main_kernel_simt_vf_1>(cce::dim3(128), values);"
+        },
+        {
+          "line": 43,
+          "text": "  tileops_probe_fence();"
+        },
+        {
+          "line": 44,
+          "text": "  tl::write_gm_bypass_dcache(((__gm__ int64_t*)ticks + 1), tileops_probe_clock());"
+        },
+        {
+          "line": 45,
+          "text": "  tileops_probe_fence();"
+        },
+        {
+          "line": 46,
+          "text": "  asc_vf_call<main_kernel_simt_vf_2>(cce::dim3(128), y, values);"
+        }
+      ],
+      "interpretation": "Occurrences are not classified as declarations, definitions or calls. No order is accepted by this exporter."
+    }
+  }
+}
+
+===== r1-timed.cpp (numbered source) =====
+0001: #include <tl_templates/ascend/common.h>
+0002: #include <tl_templates/ascend/debug.h>
+0003: #include <tl_templates/ascend/dcache_bypass.h>
+0004: 
+0005: #include "kernel_operator.h"
+0006: __aicore__ inline int32_t tileops_probe_fence() {
+0007:     AscendC::PipeBarrier<PIPE_ALL>();
+0008:     return 0;
+0009: }
+0010: __aicore__ inline int64_t tileops_probe_clock() {
+0011:     return AscendC::GetSystemCycle();
+0012: }
+0013: 
+0014: 
+0015: __simt_vf__ __launch_bounds__(128) inline void main_kernel_simt_vf_0(__ubuf__ float* values, __gm__ float* x) {
+0016:   #pragma unroll
+0017:   for (int32_t i = 0; i < 16; ++i) {
+0018:     *(__ubuf__ float2*)(values + ((i * 256) + (((int32_t)threadIdx.x) * 2))) = *(__gm__ float2*)(x + ((i * 256) + (((int32_t)threadIdx.x) * 2)));
+0019:   }
+0020: }
+0021: 
+0022: __simt_vf__ __launch_bounds__(128) inline void main_kernel_simt_vf_1(__ubuf__ float* values) {
+0023:   #pragma unroll
+0024:   for (int32_t i = 0; i < 16; ++i) {
+0025:     float broadcast_var = float(0x1p+0f/*1.000000e+00*/);
+0026:     *(__ubuf__ float2*)(values + ((i * 256) + (((int32_t)threadIdx.x) * 2))) = (*(__ubuf__ float2*)(values + ((i * 256) + (((int32_t)threadIdx.x) * 2))) + make_float2(broadcast_var, broadcast_var));
+0027:   }
+0028: }
+0029: 
+0030: __simt_vf__ __launch_bounds__(128) inline void main_kernel_simt_vf_2(__gm__ float* y, __ubuf__ float* values) {
+0031:   #pragma unroll
+0032:   for (int32_t i = 0; i < 16; ++i) {
+0033:     *(__gm__ float2*)(y + ((i * 256) + (((int32_t)threadIdx.x) * 2))) = *(__ubuf__ float2*)(values + ((i * 256) + (((int32_t)threadIdx.x) * 2)));
+0034:   }
+0035: }
+0036: 
+0037: extern "C" __global__ __vector__ void main_kernel(__gm__ int64_t* ticks, __gm__ float* x, __gm__ float* y) {
+0038:   asc_init();
+0039:   __ubuf__ float *values = (__ubuf__ float *)0;
+0040:   asc_vf_call<main_kernel_simt_vf_0>(cce::dim3(128), values, x);
+0041:   tl::write_gm_bypass_dcache(((__gm__ int64_t*)ticks + 0), tileops_probe_clock());
+0042:   asc_vf_call<main_kernel_simt_vf_1>(cce::dim3(128), values);
+0043:   tileops_probe_fence();
+0044:   tl::write_gm_bypass_dcache(((__gm__ int64_t*)ticks + 1), tileops_probe_clock());
+0045:   tileops_probe_fence();
+0046:   asc_vf_call<main_kernel_simt_vf_2>(cce::dim3(128), y, values);
+0047: }
+0048: 
+root@1c26d9767e3f:/home/y00937463/runs# 

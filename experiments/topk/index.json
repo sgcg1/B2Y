@@ -36,6 +36,12 @@
       "title": "计时探针源码顺序检查失败",
       "status": "failed_source_validation",
       "metadata": "20261102-timer-probe1-source-order/metadata.json"
+    },
+    {
+      "id": "20261102-timer-probe1-source-inspection",
+      "title": "probe1生成源码确认预期屏障/计时顺序未保留",
+      "status": "source_sequence_mismatch_confirmed",
+      "metadata": "20261102-timer-probe1-source-inspection/metadata.json"
     }
   ]
 }

@@ -1,22 +1,18 @@
-# 最小设备计时探针：20261102-probe1
+# 最小设备计时探针：20261102-probe2
 
-目的：先验证当前TileLang/CANN能否编译并使用设备计数器，以及完成屏障和时间戳对执行时间的影响。此工具不修改TopK内核，不直接给出TopK各阶段耗时，也不接受最终v0.1.4。主体通过主仓 `target="ascend"` 编译；prelude只提供计数器和屏障辅助函数。
+当前下一步：在独立新目录运行probe2，验证源码后处理插桩、计数器单位和观察开销。它不修改TopK、不接受最终v0.1.4，也不直接给出TopK各阶段耗时。服务器只需更新B2Y，不需更新TileOPs或重跑14项。
 
-本地只有CPU和静态检查能力。尚未在你的SDK运行；编译失败、计数异常或检查不一致时停在探针阶段，不升级torch/CANN、不改变设备频率、不进入正式阶段插桩。
+## 为什么替换probe1
 
-## 当前失败的下一步
+回传源码SHA为0c3c1d405730f844ed6ea28a96f9cdbe769f2b98d37a0e92bd4bbb5d97220b91。实际entry第40～46行顺序为：初始化VF → 开始计数器 → 工作VF → 屏障 → 结束计数器 → 屏障 → 输出VF。第一个屏障不在开始读取之前，旧检查器此次没有误报。这只证明生成C++不符合预期边界，不能据此证明最终指令或硬件同步行为。
 
-若已遇到Counter/fence source order changed，先按 [只读源码检查指南](INSPECT_SOURCE.md) 导出原失败目录的r1-timed.cpp及标记位置，不要重跑探针或删除断言。源码未回传前，不能确认编译器重排或检查器误报。
+probe2先让主仓生成普通VF负载，再用register_ascend_postproc_callback，在TileLang调度完成后，对唯一标记的Vector入口严格后处理。begin/end辅助调用分别包围工作区间，每次内部固定“完成屏障 → 计数器读取 → 记录”。这样避开先前在TileLang生成流程中观察到的移动；具体责任pass尚未定位，CANN编译后的行为仍需探针验证。
 
-## 1. 环境与更新
+probe1失败和源码回传保存在[实验档案](../../experiments/topk/README.md)。旧目录不删除；历史只读导出见[INSPECT_SOURCE.md](INSPECT_SOURCE.md)，该指南不用于判断probe2。
 
-使用已有Docker容器yjl，以及此前跑通TopK的Python/CANN环境。宿主机进入容器，已经在容器内则跳过：
+## 1. 更新B2Y
 
-```bash
-docker exec -it yjl /bin/bash
-```
-
-在容器内确认B2Y工作区干净，且物理卡0仍获分配、无竞争任务后，再更新B2Y：
+在已有yjl容器内，沿用此前成功的Python/CANN环境，确认获准物理卡0无竞争任务。工作区干净后更新：
 
 ```bash
 git -C /home/y00937463/B2Y status --short
@@ -26,56 +22,50 @@ git -C /home/y00937463/B2Y status --short
 git -C /home/y00937463/B2Y pull --ff-only origin main
 ```
 
-本次新增目录为B2Y的 `diagnostics/topk-timer-probe/`，不修改已有 `topk-950pr/` 工具或其MANIFEST。服务器TileOPs不需要更新，不需要重跑14项测试，不需要重建容器或使用Conda。
+不升级torch/CANN、不重建容器。若当前构建缺少主仓后处理接口，工具在postprocessor_registration阶段停止，回传摘要即可。
 
-## 2. 执行探针
-
-以下在容器内、已加载实际CANN toolkit环境的终端执行：
+## 2. 在新目录执行
 
 ```bash
-TOPK_TIMER_RUN="/home/y00937463/runs/timer-probe-$(date +%Y%m%d-%H%M%S)"
+TOPK_TIMER_RUN="/home/y00937463/runs/timer-probe2-$(date +%Y%m%d-%H%M%S)"
 timeout --kill-after=10s 900s "${TOPK_PYTHON:-python3}" \
   /home/y00937463/B2Y/diagnostics/topk-timer-probe/probe.py \
   --device 0 --output "$TOPK_TIMER_RUN"
 ```
 
-设备号按获准物理卡调整，子进程内映射为npu:0。输出目录必须不存在；工具只允许在 `/home/y00937463` 内新建目录。它在自己的子进程内配置独立cache/tmp/logs，不修改HOME、父终端EVIDENCE、现有实验或共享安装。
+不能复用probe1目录。设备号按实际获准物理卡调整，进程内映射npu:0。工具只写私人目录，独立cache/tmp/logs只在子进程中设置，不改HOME、父终端EVIDENCE或旧实验。首次编译10种配置可能需要几分钟，PROBE_COMPILE显示当前名称。
 
-首次编译10种小型配置可能需要几分钟；PROBE_COMPILE会打印配置名称。超时或编译错误时停止，保留该目录和终端首个错误，不反复延长超时。正常Python异常会写出错误摘要；外部强制终止时文件可能尚未生成。
+## 3. 回传一份文本
 
-## 3. 复制一份文本回来
-
-执行结束后：
+完成或正常Python报错后：
 
 ```bash
 cat "$TOPK_TIMER_RUN/probe-summary.txt"
 ```
 
-直接复制全部文本回来即可。失败时也可复制此文件；若文件不存在，复制最后一个PROBE_COMPILE/PROBE_SAMPLE及其后错误。原始样本在probe-report.json，生成源码在各配置的.cpp，均留在私人目录供后续定位。
+将全部文本复制回来或提交B2Y收件文件。强制终止导致文件未生成时，复制最后一个PROBE_COMPILE/PROBE_SAMPLE及其后错误。原始样本在probe-report.json，每次回传按独立ID归档。
 
-## 测了什么
+每种配置保存后处理前的*-original.cpp、回调返回给编译的*-postproc.cpp、get_kernel_source接口返回的*.cpp，以及各自SHA。接口可能处于不同捕获点，是否与后处理源码相同会记录。要求回调实际执行，未观察到时拒绝缓存命中，不继续测量。
 
-单worker、H128、4096个FP32数，先将输入读入UB，反复进行相互依赖的 `values += 1`，最后写回输出。输入为CPU生成的精确整数，结果逐元素等于输入加重复次数，同时检查输入未被修改。
+## 测量设计与限制
 
-| 配置 | 含义 |
+单worker、H128、4096个FP32数驻留UB。加载输入，重复进行有数据依赖的加1，最终写回；逐元素检查结果和输入未修改。
+
+| 配置 | 工作量和插桩 |
 | --- | --- |
-| r1/r16/r64-plain | 原工作负载，无额外屏障/计数器 |
-| r1/r16/r64-fenced | 工作区间前后增加PIPE_ALL完成屏障 |
-| r1/r16/r64-timed | 相同屏障，加起止系统计数器读取和记录 |
-| r0-timed | 同样加载/写回数据，但计时区间没有VF工作，估计空区间观测成本 |
+| r1/r16/r64-plain | 无测量屏障或计数器 |
+| r1/r16/r64-fenced | 加载与最终输出之间，用屏障包围工作VF |
+| r1/r16/r64-timed | 相同边界，用屏障与计数器包围工作VF |
+| r0-timed | 无工作VF，空计数区间放在输出之后，仅参考观察成本 |
 
-每种预热5次；随后在同进程交替正反序采集50次。NPU事件覆盖整个调用，包含初始化、最终写回与调度；系统计数器区间只覆盖中间VF工作和观测成本，两列不能要求绝对相等。时间戳缓冲预填-1及回读位于事件区间之外，各配置做相同的回读。
+每种预热5次，同进程交替正反序采50次。事件包含整个调用、初始化、写回及调度；counter只覆盖中间VF与观察成本。全部配置在事件外回读同样的时间戳缓冲。plain/fenced保留相同ticks参数ABI，但不写入测量时间戳。
 
-## 如何判读
+TIR中仅用无效ABI锚点保留ticks参数，后处理时移除。每种模式带独立源码标记区分缓存。入口、VF布局/数量、输入输出及注入边界均严格检查，未知形态不猜测、不放宽。回调仅在独立Python进程注册，不影响其他进程或公共编译器。
 
-- status=completed仅表示采集与数值计算完成，始终保留stage_profiling_accepted=false。它不表示当前TopK阶段计时已经可靠。
-- outputs_equal_reference必须为true；all_counter_intervals_positive、counter_medians_increase_with_work应为true。
-- CANN对950的文档换算为1000 ticks/μs。使用64次与16次工作量的中位数差，比较counter差与NPU事件差，减少固定初始化/调度成本影响。rate_within_10_percent_of_documentation只是显式10%诊断窗口，不是硬件认证标准，不自动调整换算倍率；明显不符时继续定位。
-- r*-changes给出加入屏障、再加入计数器后的事件耗时变化百分比。允许出现负值，不能强行截成0；变化可能包含噪声或编译调度变化，不能直接解释为某条指令的精确成本。
-- 同时报告r1/r16/r64相对空区间的counter差与事件差，尤其检查单次VF是否因未完成而被漏计。差分仍受编译和观测成本影响，不能单独证明完成语义。counter_intervals_fit_inside_events_at_documented_rate检查计数器区间是否能容纳在整个调用的事件区间内。
-- 空区间值保留原值，不机械扣除。新增屏障可能改变流水；即使探针通过，真实TopK的histogram/scan/compact依赖还需验证。
-- 生成源码检查确保计数器/屏障数量及源代码顺序符合预期，且非空计数区间包含VF调用，但不等于已核实最终指令顺序、完成语义或指令成本。下一步结合源码/必要时反汇编与重复测量审核，再设计TopK阶段统计。
+status=completed只指采集完成；stage_profiling_accepted始终false。先看输出正确、时间戳递增、区间能否容纳于完整事件、随工作量增长关系，再审阅源码和观察扰动。还需验证完成语义和真实TopK依赖。
 
-此探针选择 `T.Kernel(prelude=...)` 与 `T.call_extern` 路线。它们在当前公开主仓有文档，但安装的0.1.15构建能否支持仍由实际编译确认；若接口不支持，回传Kernel_signature和失败阶段，再做针对性适配，不盲目升级环境。GetSystemCycle的计数域与Aicore curFreq=1650MHz字段不同。
+950文档值为1000 ticks/μs，与Aicore curFreq=1650MHz无关。用64轮减16轮的counter/事件中位数差检查尺度；10%窗口只是诊断启发式，不自动调整倍率。屏障/计数器引入的事件变化和所有原始数值保留，不把负变化截为0，也不机械扣除空区间。
 
-参考：[CANN GetSystemCycle（950换算及屏障示例）](https://www.hiascend.com/document/detail/en/CANNCommunityEdition/910/API/ascendcopapi/docs/en/api/SIMD-API/basic_api/tool_interface/system_resources_and_variables/GetSystemCycle_ISASI.md)、[主仓Kernel prelude接口](https://github.com/tile-ai/tilelang/blob/main/tilelang/ascend/language/kernel.py)、[主仓测量说明](https://github.com/tile-ai/tilelang/blob/main/.agents/skills/tilelang-ascend/references/profiling.md)。
+空区间可能经历不同VF融合/调度，counter和事件差分只是辅助信息，不能视为原始阶段真实成本。源代码顺序正确仍不等于最终指令或硬件完成语义正确。本地只有CPU与静态回归，没有NPU运行结果。
+
+参考：[主仓后处理接口](https://github.com/tile-ai/tilelang/blob/main/tilelang/ascend/callback.py)、[CANN GetSystemCycle及950换算](https://www.hiascend.com/document/detail/en/CANNCommunityEdition/910/API/ascendcopapi/docs/en/api/SIMD-API/basic_api/tool_interface/system_resources_and_variables/GetSystemCycle_ISASI.md)。

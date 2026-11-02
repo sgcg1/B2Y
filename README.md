@@ -2,14 +2,14 @@
 
 本仓用于同步辅助脚本、操作指南、实验结果和分析。TileOPs实现代码通过个人fork `https://github.com/sgcg1/TileOPs` 的main同步；B2Y辅助材料在服务器容器内直接克隆和更新。
 
-当前下一步：probe1已在源码顺序检查处失败，先按 [只读源码导出指南](diagnostics/topk-timer-probe/INSPECT_SOURCE.md) 从原失败目录导出带行号的r1-timed.cpp及标记位置。只更新B2Y，暂不重跑探针或TopK测试。
+当前下一步：probe1源码已确认屏障/计时顺序不符合预期。按 [probe2计时校准指南](diagnostics/topk-timer-probe/README.md) 在新目录运行主仓源码后处理版。只更新B2Y，不更新TileOPs，不重跑14项测试；旧失败记录保留。
 
 ## 操作入口
 
 | 需要做什么 | 文档 |
 | --- | --- |
 | 查阅全部已归档实验（含失败、原始数据和哈希） | [experiments/topk/README.md](experiments/topk/README.md) |
-| 当前probe1源码顺序错误：只读导出原源码 | [diagnostics/topk-timer-probe/INSPECT_SOURCE.md](diagnostics/topk-timer-probe/INSPECT_SOURCE.md) |
+| 历史probe1源码错误：只读导出与复查 | [diagnostics/topk-timer-probe/INSPECT_SOURCE.md](diagnostics/topk-timer-probe/INSPECT_SOURCE.md) |
 | 最小计时探针：验证计数器、完成屏障和观察开销 | [diagnostics/topk-timer-probe/README.md](diagnostics/topk-timer-probe/README.md) |
 | 查看已完成的H128扫描实验结论 | [deliveries/scan-r1-results-20261102.md](deliveries/scan-r1-results-20261102.md) |
 | 新服务器部署与完整实验流程 | [topk-950pr/START_HERE.md](topk-950pr/START_HERE.md) |

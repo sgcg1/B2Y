@@ -7,7 +7,6 @@ import hashlib
 import inspect
 import json
 import os
-import re
 import shutil
 import statistics
 import subprocess
@@ -15,22 +14,8 @@ import sys
 import traceback
 from pathlib import Path
 
-VERSION = "20261102-probe1"
+VERSION = "20261102-probe2"
 EXPECTED_TICKS_PER_US = 1000  # CANN GetSystemCycle documentation for Ascend 950.
-
-
-def check_generated_source(code, mode, repeats):
-    clocks = [m.start() for m in re.finditer(r"tileops_probe_clock\(", code)]
-    fences = [m.start() for m in re.finditer(r"tileops_probe_fence\(", code)]
-    if mode == 0:
-        assert not clocks and not fences, "Plain source unexpectedly contains observer calls"
-        return
-    assert len(fences) == 3, "Expected fence definition and two calls"
-    assert len(clocks) == (3 if mode == 2 else 1), "Unexpected number of clock definitions/calls"
-    if mode == 2:
-        assert fences[1] < clocks[1] < fences[2] < clocks[2], "Counter/fence source order changed"
-        if repeats:
-            assert "asc_vf_call" in code[clocks[1] : fences[2]], "No VF launch in counter region"
 
 
 def analyze(cases):
@@ -137,6 +122,7 @@ def execute(report, root, device):
     import torch
     import torch_npu
     from kernels import timer_probe
+    from postproc import install
 
     report["runtime"] = {
         "python": sys.executable,
@@ -147,7 +133,11 @@ def execute(report, root, device):
         "cann_home": str(cann),
         "Kernel_signature": str(inspect.signature(T.Kernel)),
         "has_call_extern": hasattr(T, "call_extern"),
+        "has_address_of": hasattr(T, "address_of"),
     }
+    report["stage"] = "postprocessor_registration"
+    captures = install(root)
+    report["postproc_captures"] = captures
     assert torch.npu.is_available()
     torch.npu.set_device(0)
     chip = torch.npu.get_device_name(0)
@@ -165,7 +155,10 @@ def execute(report, root, device):
         program = timer_probe(4096, repeats, mode)
         code = program.get_kernel_source()
         (root / (name + ".cpp")).write_text(code)
-        check_generated_source(code, mode, repeats)
+        assert name in captures, (
+            "Postprocessor not observed; refuse a stale or uninstrumented cache hit"
+        )
+        api_hash = hashlib.sha256(code.encode()).hexdigest()
         y = torch.empty_like(x)
         clocks = torch.full((2,), -1, device="npu", dtype=torch.int64)
         for _ in range(5):
@@ -177,7 +170,10 @@ def execute(report, root, device):
         cases[name] = {
             "repeats": repeats,
             "mode": mode,
-            "generated_source_sha256": hashlib.sha256(code.encode()).hexdigest(),
+            "generated_source_sha256": captures[name]["postproc_source_sha256"],
+            "api_source_sha256": api_hash,
+            "api_source_matches_postprocessed_source": api_hash
+            == captures[name]["postproc_source_sha256"],
             "execution_backend": str(program.execution_backend),
             "event_samples_us": [],
             "counter_samples": [],
@@ -201,6 +197,8 @@ def execute(report, root, device):
             if cases[name]["mode"] == 2:
                 assert values[0] > 0 and values[1] > values[0], (name, values)
                 cases[name]["counter_samples"].append(values[1] - values[0])
+            else:
+                assert values == [-1, -1], (name, "Unexpected clock-buffer writes", values)
     report["stage"] = "output_validation"
     assert torch.equal(x.cpu(), x_cpu), "Input was modified"
     for name, (y, _clocks) in buffers.items():
@@ -220,7 +218,7 @@ def main():
     private = Path("/home/y00937463").resolve()
     root = (
         args.output
-        or private / "runs" / datetime.datetime.now().strftime("timer-probe-%Y%m%d-%H%M%S")
+        or private / "runs" / datetime.datetime.now().strftime("timer-probe2-%Y%m%d-%H%M%S")
     ).resolve()
     assert root.is_relative_to(private) and root != private, (
         "Use a fresh directory in the private home"
@@ -253,6 +251,7 @@ def main():
         "physical_device": args.device,
         "documented_ticks_per_us": EXPECTED_TICKS_PER_US,
         "stage_profiling_accepted": False,
+        "instrumentation_route": "Mainline Ascend postproc callback after TileLang task scheduling",
         "timing_scope": "Events include launch, input load and output store; counter interval measures dependent UB VF work plus observer costs. Compare workload deltas, not absolute equality.",
     }
     try:
