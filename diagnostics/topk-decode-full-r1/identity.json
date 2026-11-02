@@ -1,0 +1,11 @@
+{
+  "version": "20261102-decode-full-r1",
+  "candidate_commit": "03c8f916",
+  "baseline_commit": "7247ad4f355c62a8679dcdc8fdf182c0b219db5e",
+  "baseline_sha256": "987da9f9d314f8744bef05a628e60a14b88e63db320374f36a3b6411ce5eb2e3",
+  "sources": {
+    "src/tileops/_kernels/attention/topk_select_decode_probe_ascend.py": "7fb0145bfad549b223201ef930979d8c6f89de0f0e8275df502d47034ccb5de5",
+    "src/tileops/_kernels/attention/topk_select_decode_pipeline_ascend.py": "39345963a4e281b890178871a7872dc786041e5fe8f8a5434f882970d4ddc1f5"
+  },
+  "run_sha256": "b5cfbfe0e7ac9839f67cf4475c5f3e1707cb3cebcf45a30ecf399997fe5b9704"
+}

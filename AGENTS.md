@@ -45,3 +45,5 @@ A1 r1两次前端嵌套失败已归档，当前使用r2修复指南；尚无A1�
 Decode pilot启动脚本run.sh原中文提示误以GBK保存，保留原件；当前指南使用新增run-ascii.sh。run.py和identity未变；用户已运行结果不因提示乱码重跑，照常上传。后续终端脚本提示一律ASCII，并检查原始字节可按ASCII解码。
 
 最新：[Decode成本探针已复核](experiments/topk/20261102-decode-pilot-r1-211917/analysis.md)，P4直方图+归并约18.87–19.05μs，有继续实现compact与精确后续的空间，但不是完整TopK收益。两进程成功，1200样本完整，不因提示编码重跑。
+
+最新任务：完整Decode四kernel实验候选03c8f916已推送GitHub，入口diagnostics/topk-decode-full-r1/README.md。hist→prepare→compact→finish，P2/P4、固定N16384/K2048/G1；边界≤2048装UB，溢出重扫原窗口，FP32+小索引精确选择。4项CPU AST/分块检查、离线身份与语法通过，尚无本候选NPU结果，不进入默认。完整四kernel事件与冻结baseline对照，含随机和溢出分布；ASCII启动提示，源码预捕获、同步诊断守卫保留。

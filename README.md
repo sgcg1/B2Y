@@ -1,5 +1,7 @@
 # B2Y执行材料入口
 
+**当前执行入口：[完整Decode四kernel实验候选](diagnostics/topk-decode-full-r1/README.md)。** 提交03c8f916已推送，P2/P4完成选择并与冻结基线对照；默认路由不变，尚无本候选NPU结果。成本探针已完成，无需重跑。
+
 **当前执行入口：[Decode首轮P1/P2/P4成本验证](diagnostics/topk-decode-pilot-r1/README.md)。** 独立探针72a84811已推送，测直方图和两kernel阈值归并事件；不是完整TopK，不启用A0/A1/A2。此前候选与失败记录见下方历史进展。
 
 本仓用于同步辅助脚本、操作指南、实验结果和分析。TileOPs实现代码通过个人fork `https://github.com/sgcg1/TileOPs` 的main同步；B2Y辅助材料在服务器容器内直接克隆和更新。
