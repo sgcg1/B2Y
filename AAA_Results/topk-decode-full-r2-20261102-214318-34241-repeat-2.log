@@ -1,0 +1,35 @@
+COMPILE_BEGIN baseline
+
+2026-11-02 21:44:32  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 21:44:50  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END baseline
+COMPILE_BEGIN finish-r1
+
+2026-11-02 21:44:50  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 21:45:02  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END finish-r1
+COMPILE_BEGIN finish-control
+
+2026-11-02 21:45:02  [TileLang:tilelang.cache.kernel_cache:WARNING] (kernel_cache.py:379): Found kernel 'main' in memory cache. For better performance, consider using `@tilelang.jit` instead of direct kernel caching.
+COMPILE_END finish-control
+COMPILE_BEGIN finish-new
+
+2026-11-02 21:45:02  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 21:45:18  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END finish-new
+COMPILE_BEGIN hist-p4
+
+2026-11-02 21:45:18  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 21:45:20  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END hist-p4
+COMPILE_BEGIN prepare-p4
+
+2026-11-02 21:45:20  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 21:45:22  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END prepare-p4
+COMPILE_BEGIN compact-p4
+
+2026-11-02 21:45:22  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 21:45:25  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END compact-p4
+FULL_OUTPUT /home/y00937463/topk-decode-full-r2-20261102-214318-34241/repeat-2
