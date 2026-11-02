@@ -49,3 +49,5 @@ Decode pilot启动脚本run.sh原中文提示误以GBK保存，保留原件；�
 最新任务：完整Decode四kernel实验候选03c8f916已推送GitHub，入口diagnostics/topk-decode-full-r1/README.md。hist→prepare→compact→finish，P2/P4、固定N16384/K2048/G1；边界≤2048装UB，溢出重扫原窗口，FP32+小索引精确选择。4项CPU AST/分块检查、离线身份与语法通过，尚无本候选NPU结果，不进入默认。完整四kernel事件与冻结baseline对照，含随机和溢出分布；ASCII启动提示，源码预捕获、同步诊断守卫保留。
 
 最新：[完整Decode full-r1已复核](experiments/topk/20261102-decode-full-r1-213318/analysis.md)。P4随机耗时下降42.7%–43.1%，小边界下降61.3%–61.9%，全同分溢出增加约42%；1200事件及校验通过、编译无同步诊断，但不接受默认。下一步优先改进溢出尾段，暂不重跑。
+
+当前任务：Decode full-r2 0d4063e6，将4轮FP32后的4轮索引radix替为按绝对索引稳定tie；STABLE_TIE默认false。5项CPU测试及旧模块AST一致性、离线身份与语法通过。入口diagnostics/topk-decode-full-r2/README.md，P4-r1/r2/default同轮比较，保留四输入和完整四kernel事件、同步守卫。尚无r2设备结果。
