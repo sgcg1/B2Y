@@ -39,3 +39,5 @@ A1 r1两次前端嵌套失败已归档，当前使用r2修复指南；尚无A1�
 当前入口：[A2 r4](diagnostics/topk-a2-r4/README.md)。r3已过布局但Bisheng因原子条件下标生成语句失败；4774e7ea改为显式int32索引，13项CPU检查通过，工具预存生成源码；尚无A2性能结果。
 
 最新：[A2 r4复核](experiments/topk/20261102-a2-r4-211000/analysis.md)：四组事件耗时增加4.04%–4.36%，无编译同步警告，筛选正确性通过但性能回退；保持关闭，不扩大或重跑。下一步评估Decode首轮小P并行成本，尚无新指令。
+
+最新主线：Decode首轮分块成本探针72a84811已推送GitHub；执行入口diagnostics/topk-decode-pilot-r1/README.md。测P1/P2/P4私有直方图及hist+merge两kernel事件；尚未做compact和后续精确选择，不能当完整TopK结果。2项CPU AST/分块检查、离线身份与语法通过；尚无本探针NPU结果。旧A0/A1/A2保持关闭，不重跑。

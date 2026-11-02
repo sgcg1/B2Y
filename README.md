@@ -1,5 +1,7 @@
 # B2Y执行材料入口
 
+**当前执行入口：[Decode首轮P1/P2/P4成本验证](diagnostics/topk-decode-pilot-r1/README.md)。** 独立探针72a84811已推送，测直方图和两kernel阈值归并事件；不是完整TopK，不启用A0/A1/A2。此前候选与失败记录见下方历史进展。
+
 本仓用于同步辅助脚本、操作指南、实验结果和分析。TileOPs实现代码通过个人fork `https://github.com/sgcg1/TileOPs` 的main同步；B2Y辅助材料在服务器容器内直接克隆和更新。
 
 **新会话接手先读：[2026-11-02完整交接](deliveries/topk-handoff-20261102.md)。** 包含当前实测版本、证据入口、下一步候选、已踩坑和最新协作条件。 用户已确认B2Y（GitCode）与TileOPs（GitHub）均推送成功。

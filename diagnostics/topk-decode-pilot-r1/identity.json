@@ -1,0 +1,7 @@
+{
+  "version": "20261102-decode-pilot-r1",
+  "source_path": "src/tileops/_kernels/attention/topk_select_decode_probe_ascend.py",
+  "source_sha256": "7fb0145bfad549b223201ef930979d8c6f89de0f0e8275df502d47034ccb5de5",
+  "run_sha256": "18662cd702245d95ce66ef9b5194642d577b57f969d4f95b126dee5a14f81bda",
+  "candidate_commit": "72a84811"
+}
