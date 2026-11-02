@@ -1,0 +1,70 @@
+{
+  "id": "20261102-stage1-decode-163258",
+  "title": "Decode阶段定位：首轮histogram与compact占已测区间约81%",
+  "archived_date": "2026-11-02",
+  "status": "decode_stage_evidence_reviewed_candidate_optimization_pending",
+  "source_path": "AAA_Results/topk-stage1-20261102-163258.txt",
+  "source_commit": "7a389907815ebe6354a4636084df7f69892d18a9",
+  "run_label": "topk-stage1-20261102-163258",
+  "producer_tools_commit": "f8bc23f",
+  "tileops_commit": "7247ad4f355c62a8679dcdc8fdf182c0b219db5e",
+  "kernel_sha256": "987da9f9d314f8744bef05a628e60a14b88e63db320374f36a3b6411ce5eb2e3",
+  "input_sha256": "c59b9485e9750eaf04d4668934c0383510a15b2cc9365ef9c6c4b9eaf2bf7593",
+  "embedded_cpp_bytes_sha_verified": true,
+  "all_summary_and_50x27_timestamps_recomputed": true,
+  "diagnostic_usable_for_this_decode_case": true,
+  "all_shapes_stage_profiling_accepted": false,
+  "final_version_accepted": false,
+  "reported_random_and_equal_input_validation": true,
+  "new_full_14_contract_tests_in_this_run": false,
+  "missing": [
+    "native disassembly/hardware dependency trace",
+    "same-round CANN measurements",
+    "Prefill stage timings",
+    "independent repeated stage run",
+    "device load/frequency timeline"
+  ],
+  "files": {
+    "raw-return.txt": {
+      "bytes": 220182,
+      "sha256": "6cf74dc9cfc9c65fb873baadd6b770cd631e4feea2106c0def13ad0af3f0fb45"
+    },
+    "report.json": {
+      "sha256": "6a7454c044d115623904cc7966a782bdfcf2a99e33c8b1356a9c4912ee28613b",
+      "bytes": 118131
+    },
+    "review.json": {
+      "sha256": "372dc1abb9a57494ee1877bb0963b2b22501a5062e4ad6e3e52f631c30495bb1",
+      "bytes": 21504
+    },
+    "production-api.cpp": {
+      "sha256": "751a82889d13811a199edf8358af0d3fc84e6a54d17f985b6a27c877a1c10626",
+      "bytes": 28341
+    },
+    "timed-original.cpp": {
+      "sha256": "bb54a8633e5f0e29adbe75462b890d3f0d3e1c532600668fcde4aba635eea427",
+      "bytes": 30103
+    },
+    "timed-postproc.cpp": {
+      "sha256": "2cbafd1a62b475c7948028037f66568c085cb9434cc0448de72ed83e6e4bad64",
+      "bytes": 30918
+    },
+    "analysis.md": {
+      "bytes": 8539,
+      "sha256": "00acc3f14b3bfedf61aad65413a60a013564dca88d9081c2c0ed0651deb47db3"
+    },
+    "local-checkout.txt": {
+      "bytes": 225341,
+      "sha256": "ec1ba0aaac184c2aefc0a47d6c1a979ff762a3070f5be593d2ffb2d49b248316"
+    }
+  },
+  "newline_provenance": {
+    "git_source_bytes": 220182,
+    "git_source_sha256": "6cf74dc9cfc9c65fb873baadd6b770cd631e4feea2106c0def13ad0af3f0fb45",
+    "windows_checkout_bytes": 225341,
+    "windows_checkout_sha256": "ec1ba0aaac184c2aefc0a47d6c1a979ff762a3070f5be593d2ffb2d49b248316",
+    "crlf_pairs": 5159,
+    "only_crlf_to_lf_change": true,
+    "parsed_json_identical": true
+  }
+}

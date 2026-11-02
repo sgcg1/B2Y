@@ -2,13 +2,14 @@
 
 本仓用于同步辅助脚本、操作指南、实验结果和分析。TileOPs实现代码通过个人fork `https://github.com/sgcg1/TileOPs` 的main同步；B2Y辅助材料在服务器容器内直接克隆和更新。
 
-当前下一步：probe2完整原始样本和源码已复核，counter稳定，完整事件存在明显漂移；不能据原摘要宣称插桩零开销。按 [Decode真实TopK阶段诊断](diagnostics/topk-stage-timing/README.md) 在新目录比较production/traced/fenced/timed并记录27个区间和候选轨迹。只更新B2Y，不改生产实现；[完整复核报告](experiments/topk/20261102-timer-probe2-complete/analysis.md)与原始证据已归档。新工具仅通过本地CPU验证，NPU结果待运行。
+当前进展：Decode阶段诊断已完成复核，首轮histogram与compact合计约129.206μs，占已测区间总和约81%；完整插桩事件中位数增加3.65%。[本轮结果与优化优先级](experiments/topk/20261102-stage1-decode-163258/analysis.md)及原始证据已独立归档。当前无需重复运行Probe2或stage1；生产实现未修改，最终性能版本未接受。
 
 ## 操作入口
 
 | 需要做什么 | 文档 |
 | --- | --- |
-| 当前：Decode真实TopK阶段诊断 | [diagnostics/topk-stage-timing/README.md](diagnostics/topk-stage-timing/README.md) |
+| 当前：查看Decode阶段结果与优化优先级 | [阶段结果报告](experiments/topk/20261102-stage1-decode-163258/analysis.md) |
+| 重现实验：Decode真实TopK阶段诊断 | [diagnostics/topk-stage-timing/README.md](diagnostics/topk-stage-timing/README.md) |
 | 历史：导出已完成probe2的原始样本与源码 | [diagnostics/topk-timer-probe/EXPORT_COMPLETE.md](diagnostics/topk-timer-probe/EXPORT_COMPLETE.md) |
 | 上传结果到根目录AAA_Results | [AAA_Results/README.md](AAA_Results/README.md) |
 | 查阅全部已归档实验（含失败、原始数据和哈希） | [experiments/topk/README.md](experiments/topk/README.md) |

@@ -3,3 +3,5 @@ console.txt -text
 raw-export.txt -text
 raw-report.json -text
 inspection.txt -text
+raw-return.txt -text
+local-checkout.txt -text
