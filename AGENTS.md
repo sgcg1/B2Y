@@ -53,3 +53,5 @@ Decode pilot启动脚本run.sh原中文提示误以GBK保存，保留原件；�
 当前任务：Decode full-r2 0d4063e6，将4轮FP32后的4轮索引radix替为按绝对索引稳定tie；STABLE_TIE默认false。5项CPU测试及旧模块AST一致性、离线身份与语法通过。入口diagnostics/topk-decode-full-r2/README.md，P4-r1/r2/default同轮比较，保留四输入和完整四kernel事件、同步守卫。尚无r2设备结果。
 
 最新：[Decode full-r2已复核](experiments/topk/20261102-decode-full-r2-214318/analysis.md)。随机较默认下降43.5%–44.1%，溢出下降17.4%；小边界仍比默认快约30%，但比r1慢约82%。下一步设备内按候选容量选择尾段，不能D2H路由；当前未接受默认，无需重跑。
+
+当前入口：[Decode full-r3设备容量路由](diagnostics/topk-decode-full-r3/README.md)，c022114c已推送、默认关闭。≤2048用r1、溢出用r2，无D2H；5项CPU测试及身份/语法通过，尚无r3设备结果。一次对照默认/r1/r2/r3，完整调用事件，新增2048/2049边界校验。

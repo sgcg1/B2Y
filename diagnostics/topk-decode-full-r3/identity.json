@@ -1,0 +1,23 @@
+{
+  "version": "20261102-decode-full-r3",
+  "candidate_commit": "c022114c",
+  "baseline_commit": "7247ad4f355c62a8679dcdc8fdf182c0b219db5e",
+  "baseline_sha256": "987da9f9d314f8744bef05a628e60a14b88e63db320374f36a3b6411ce5eb2e3",
+  "sources": {
+    "src/tileops/_kernels/attention/topk_select_decode_probe_ascend.py": "7fb0145bfad549b223201ef930979d8c6f89de0f0e8275df502d47034ccb5de5",
+    "src/tileops/_kernels/attention/topk_select_decode_pipeline_ascend.py": "0b76dc5ad88641781a41fcd8164f4728d7e51bd1f02769533d412d891dc878a2"
+  },
+  "run_sha256": "e4ac2ecc1e31e369da30a266f0284d70517fa29ca1995d152016b3343ccbf73e",
+  "r1_commit": "03c8f916864a6423ea4353d179fe9ef64db44f26",
+  "r1_pipeline_sha256": "39345963a4e281b890178871a7872dc786041e5fe8f8a5434f882970d4ddc1f5",
+  "unchanged_generated": {
+    "baseline": "751a82889d13811a199edf8358af0d3fc84e6a54d17f985b6a27c877a1c10626",
+    "hist-p4": "05b55889990def7ec6ed53b158a73f6dcf4fa559dd6bf2fa0e7749296bd106cf",
+    "prepare-p4": "ffccee31f02741dd3467b88ba800e355dfcd13cd0ba406d57b3593118a2fb095",
+    "compact-p4": "066091237843ff88a0b7a27f2dc0783af8443cdeb1f5fd72497df3e7fb6bcdb4",
+    "finish-r1": "44be7b592af87d9eab9c18bb8df13bf4ed42b45e7608fc74d6af66fb2b49136d",
+    "finish-r2": "626930b48eea486543e4b8437cf92356bdf70f91422987cf4c6f68a17a8d40b2"
+  },
+  "r2_commit": "0d4063e66e4a0defb49de2ca091b364b04795d8d",
+  "r2_pipeline_sha256": "3db44fb882792e3e54fd449c8a4d9a8363d2150489ef71a63446de1eed8d5131"
+}
