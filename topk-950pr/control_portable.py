@@ -14,6 +14,10 @@ import torch_npu  # noqa: F401
 
 from tileops._kernels.attention.topk_select_ascend import topk_select_ascend
 
+EXCLUDED_CANDIDATES = {
+    "candidate-h256": "Rejected: operator observed 253 unfilled slots in grouped-scan Decode"
+}
+
 
 def check_indices(indices, reference, length):
     invalid = [
@@ -88,11 +92,11 @@ def main():
         programs[version] = module.topk_select_ascend(
             args.rows, args.length, args.k, args.workers, 1
         )
-    for threads in [128, 256]:
-        print("CONTROL_COMPILE", f"candidate-h{threads}", flush=True)
-        programs[f"candidate-h{threads}"] = topk_select_ascend(
-            args.rows, args.length, args.k, args.workers, 1, COARSE=True, H=threads
-        )
+    print("CONTROL_EXCLUDED", json.dumps(EXCLUDED_CANDIDATES), flush=True)
+    print("CONTROL_COMPILE candidate-h128", flush=True)
+    programs["candidate-h128"] = topk_select_ascend(
+        args.rows, args.length, args.k, args.workers, 1, COARSE=True, H=128
+    )
     print("CONTROL_COMPILE candidate-serial-h128", flush=True)
     programs["candidate-serial-h128"] = topk_select_ascend(
         args.rows, args.length, args.k, args.workers, 1, COARSE=True, H=128, PARALLEL_SCAN=False
@@ -103,6 +107,7 @@ def main():
     sources = {}
     validation = {
         "diagnostic_only": args.diagnostic,
+        "excluded_candidates": EXCLUDED_CANDIDATES,
         "tileops_commit": subprocess.check_output(
             ["git", "-C", str(args.repo), "rev-parse", "HEAD"], text=True
         ).strip(),
@@ -172,9 +177,9 @@ def main():
         "historical_kernel_source_sha256": source_hashes,
         "candidate_scan_modes": {
             "candidate-h128": "parallel-16x16",
-            "candidate-h256": "parallel-16x16",
             "candidate-serial-h128": "serial-256",
         },
+        "excluded_candidates": EXCLUDED_CANDIDATES,
         "event_samples_us": samples,
         "event_median_us": {name: statistics.median(v) for name, v in samples.items()},
         "scan_event_speedup_vs_previous_h128": statistics.median(samples["v0.1.4-before-scan"])
@@ -183,7 +188,7 @@ def main():
             samples["candidate-serial-h128"]
         )
         / statistics.median(samples["candidate-h128"]),
-        "correctness": "finite random input; bounds, unique, threshold, equal selected sets",
+        "correctness": "finite random input; bounds, unique, exact stable-reference selected sets",
         "timing": "same process, alternating forward/reverse order; preallocated device events",
     }
     (args.output / "control.json").write_text(json.dumps(result, indent=2) + "\n")

@@ -4,6 +4,12 @@
 
 **这是待NPU验证的优化候选，没有实测加速结论，未发布正式v0.1.4标签。** 本地通过的CPU算术检查不能证明设备编译或同步正确。新增1088字节显式UB scratch，实际编译资源需现场核查。出现编译错误、unsafe ThreadSync/race警告或结果不一致时停止，保留原始日志，不继续大规模测量。
 
+## 已定位的失败与本次范围
+
+操作者逐版本诊断中仅candidate-h256失败：253个输出仍为16384哨兵。H128分组扫描、H128串行及历史实现均通过该轮检查。当前kernel明确禁止PARALLEL_SCAN=True配合H64/H256；H256底层原因尚未修复，H64尚未验证。正式比较只针对H128，已拒绝H256会打印CONTROL_EXCLUDED并写入control.json和validation.json，不能将本轮通过外推为H256通过。
+
+此轮H128计算主体不改，只增加配置保护及缩小验收范围。工具、源码已变，保留原记录，新建EVIDENCE重新运行本指南CPU/预检/14项及两轮H128对照。
+
 ## 1. 更新两个仓库
 
 宿主机进入容器；已经在yjl内就跳过：
@@ -49,7 +55,7 @@ source "$TOPK_ROOT/B2Y/topk-950pr/env.sh"
 "$TOPK_PYTHON" "$TOPK_REPO/tests/kernels/test_topk_select_ascend_scan.py"
 ```
 
-预期5项CPU检查通过；这不会执行NPU kernel。检查的是实际kernel扫描AST的整数算术，不是完整设备模拟。
+预期6项CPU检查通过（含配置保护）；这不会执行NPU kernel。检查的是实际kernel扫描AST的整数算术，不是完整设备模拟。
 
 ## 3. 预检与14项设备契约
 
@@ -77,21 +83,20 @@ bash "$TOPK_TOOLS/run.sh" control 1
 bash "$TOPK_TOOLS/run.sh" control 2
 ```
 
-每轮比较以下6项，采用同一输入、预分配输出、50次事件采样，交替正反序执行：
+每轮比较以下5项，采用同一输入、预分配输出、50次事件采样，交替正反序执行：
 
 | 名称 | 含义 |
 | --- | --- |
 | v0.1.0 / v0.1.2 | 历史控制，源码取自已有标签 |
 | v0.1.4-before-scan | 优化前保存点49aaea36，内核与用户回传的252ad607相同 |
 | candidate-h128 | 新候选，分组并行扫描，H128；当前host默认 |
-| candidate-h256 | 分组并行扫描，H256；仅诊断，不改host默认 |
 | candidate-serial-h128 | 同一新kernel中关闭PARALLEL_SCAN，保留串行256桶扫描，做消融对照 |
 
 控制会检查随机有限输入的范围、唯一性、阈值及选中集合一致；它不代替第3步特殊值契约。每轮的control.json记录原始样本、中位数、引用与源码哈希。
 
 `scan_event_speedup_vs_previous_h128` = 旧v0.1.4事件中位数 / 新H128事件中位数。大于1才更快。`scan_event_speedup_vs_serial_ablation_h128` 用候选串行路径作分子，用于隔离扫描变化。两者均为设备事件比，不是CANN纯内核倍数。
 
-**两轮没有稳定改善或任一路径错误时先停在这里。** 回传允许披露的6项中位数和首个错误；不要继续放大到完整Prefill，也不要以一次最小值决定默认。
+**两轮没有稳定改善或任一路径错误时先停在这里。** 回传允许披露的5项中位数和首个错误；不要继续放大到完整Prefill，也不要以一次最小值决定默认。
 
 ## 5. 小规格正式测量
 

@@ -29,6 +29,7 @@ def main():
     )
     parser.add_argument("--workers", type=int)
     parser.add_argument("--threads", type=int, choices=[64, 128, 256])
+    parser.add_argument("--serial-scan", action="store_true", help="Use the serial scan ablation")
     parser.add_argument("--samples", type=int, default=50)
     parser.add_argument("--profile-samples", type=int, default=10)
     args = parser.parse_args()
@@ -53,6 +54,7 @@ def measure(args):
         args.case
         + (f"-w{args.workers}" if args.workers else "")
         + (f"-t{args.threads}" if args.threads else "")
+        + ("-serial-scan" if args.serial_scan else "")
     )
     assert args.samples > 0 and args.profile_samples > 0
     assert not (root / (suffix + ".json")).exists(), "Use a new version/run directory"
@@ -68,9 +70,17 @@ def measure(args):
     adapter = AscendTopKSelect(scores, k)
     workers = args.workers or adapter.config["workers"]
     threads = args.threads or adapter.config["threads"]
-    if args.workers or args.threads:
+    parallel_scan = adapter.config["parallel_scan"] and not args.serial_scan
+    if args.workers or args.threads or args.serial_scan:
         program = topk_select_ascend(
-            rows, length, k, workers, 1, COARSE=adapter.config["coarse"], H=threads
+            rows,
+            length,
+            k,
+            workers,
+            1,
+            COARSE=adapter.config["coarse"],
+            H=threads,
+            PARALLEL_SCAN=parallel_scan,
         )
     else:
         program = adapter.program
@@ -153,7 +163,7 @@ def measure(args):
         "workers": workers,
         "threads": threads,
         "coarse": adapter.config["coarse"],
-        "parallel_scan": adapter.config["parallel_scan"],
+        "parallel_scan": parallel_scan,
         "input_sha256": digest.hexdigest(),
         "historical_input_match": historical_input_match,
         "correctness": "all rows: bounds, uniqueness, exact FP32 threshold",

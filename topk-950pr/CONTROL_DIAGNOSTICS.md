@@ -10,9 +10,15 @@
 - validation.json记录版本、阶段、越界数量及最多8个越界值，另检查重复索引与错误集合。此输入是脚本固定种子的随机有限FP32分数。
 - 正式control仍遇错即停。control-diagnose检查所有版本的结果，不输出任何性能数据；发现错误会以非零状态退出。
 
+## 后续定位结果
+
+逐版本输出已确认本轮仅candidate-h256失败，single_call即有253个16384哨兵，after_all_versions相同；其余实现各阶段通过。当前r8已禁止此配置，控制范围缩为H128，CONTROL_EXCLUDED及JSON保存H256拒绝状态。内核也加了保护，因此需要按SCAN_OPTIMIZATION.md更新两个仓库，而不是只更新B2Y。此前仅从旧脚本顺序推断历史初版失败的说法不构成根因结论。
+
+以下是仅诊断工具更新的通用步骤；本次r8请优先按SCAN_OPTIMIZATION.md执行新源码完整流程。若只需检查当前允许的5项，可在新一轮preflight后运行control-diagnose；它不会重新执行被禁止的H256组合，也不表示H256已修复。
+
 ## 容器内执行
 
-无需更新TileOPs或改内核。先保留原失败实验，确认B2Y工作区干净后更新：
+本次r8先按SCAN_OPTIMIZATION.md更新两个仓库；仅后续纯诊断工具更新时可只更新B2Y。先保留原失败实验，确认B2Y工作区干净后更新：
 
 ```bash
 git -C /home/y00937463/B2Y status --short

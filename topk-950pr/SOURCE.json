@@ -1,11 +1,11 @@
 {
   "repository": "https://github.com/sgcg1/TileOPs.git",
   "branch": "main",
-  "reference_main_commit": "d5bc27e6d50db8831a4d551b15a05abb6e5de8bb",
+  "reference_main_commit": "7247ad4f355c62a8679dcdc8fdf182c0b219db5e",
   "last_tested_source_commit": "49aaea3608d97d666f535053e974903547f94ad3",
-  "status": "Operator reports 14 device tests passed; unlabeled control bounds failure under investigation; scan candidate not accepted",
+  "status": "Initial scan candidate: operator reported 14 tests passed and H128 controls passed; grouped H256 rejected; H128 configuration guard and performance pending device validation",
   "source_sha256": {
-    "src/tileops/_kernels/attention/topk_select_ascend.py": "51480955f97542e607635be1e19c597e03ad71e2866d5a46ff74d811cd7cfded",
+    "src/tileops/_kernels/attention/topk_select_ascend.py": "987da9f9d314f8744bef05a628e60a14b88e63db320374f36a3b6411ce5eb2e3",
     "src/tileops/ascend/topk_select.py": "54a49bf8fb122fc1073e28d4c61e110fa62b3a36be2b3caff9513ee031da6d24",
     "tests/ops/test_topk_select_ascend.py": "a985ffbaf1404206a0a6247d0923df80988ddb3039812d6cf064ebf249af432b"
   },
@@ -13,7 +13,7 @@
     "topk-npu-v0.1.0",
     "topk-npu-v0.1.2"
   ],
-  "kit_version": "20261102-r7",
+  "kit_version": "20261102-r8",
   "target_environment": {
     "manager": "docker",
     "container": "yjl",
@@ -31,7 +31,7 @@
       "validation": "Operator reports TileLang tests passed; TopK compatibility trial pending"
     }
   },
-  "candidate_version": "v0.1.4-scan-r1",
+  "candidate_version": "v0.1.4-scan-r1-h128",
   "control_reference_commits": [
     "49aaea3608d97d666f535053e974903547f94ad3"
   ],
@@ -40,6 +40,16 @@
     "tests_passed": 14,
     "duration_seconds": 231.59,
     "commit_in_pasted_log": null,
-    "control": "bounds assertion before labeled diagnostics"
-  }
+    "control": "Only grouped H256 failed with 253 sentinel values; other five variants passed all diagnostic phases"
+  },
+  "rejected_configurations": [
+    {
+      "threads": 256,
+      "parallel_scan": true,
+      "case": "Decode N16384 K2048",
+      "operator_reported_invalid_count": 253,
+      "invalid_value": 16384,
+      "root_cause": "not established"
+    }
+  ]
 }

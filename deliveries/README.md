@@ -1,4 +1,4 @@
-# 当前新服务器指南：r7
+# 当前新服务器指南：r8
 
 当前流程在已有 yjl 容器内直接克隆 B2Y，使用镜像自带 python3。工具入口为 `/home/y00937463/B2Y/topk-950pr`，完整步骤见 `../topk-950pr/START_HERE.md`。
 
@@ -20,7 +20,7 @@ git -C /home/y00937463/TileOPs fetch origin --tags
 
 配置仍为已有 yjl、Weekly 20260930 镜像、私人目录 /home/y00937463、/home:/home 挂载。源码仅通过个人 fork main 同步。本仓只提供辅助材料，不包含镜像、SDK或源码副本。
 
-目录内 r2/r3 ZIP 和 SHA 文件保留用于历史校验，反映当时的传输流程；不作为当前执行入口。r7 直接通过本仓 topk-950pr/ 提供，不另发 ZIP。
+目录内 r2/r3 ZIP 和 SHA 文件保留用于历史校验，反映当时的传输流程；不作为当前执行入口。r8 直接通过本仓 topk-950pr/ 提供，不另发 ZIP。
 
 本工具尚未在新服务器实测。先完成小规格闭环，再运行完整 Prefill。原始输出留在保密环境，只按 RESULTS_TEMPLATE.md 回传允许披露的摘要。
 
@@ -28,4 +28,6 @@ git -C /home/y00937463/TileOPs fetch origin --tags
 
 2026-11-02新增v0.1.4-scan-r1桶扫描候选。扫描候选初始工具版本20261102-r6；专项现场步骤见 [SCAN_OPTIMIZATION.md](../topk-950pr/SCAN_OPTIMIZATION.md)。先更新个人fork和B2Y，再新建EVIDENCE完成CPU检查、14项NPU测试及两轮新旧扫描事件对照；稳定改善后才扩大规格。候选尚无NPU实测结论，未打正式v0.1.4标签。
 
-当前工具20261102-r7补齐control逐版本校验和只诊断模式。发生无版本标识的索引断言时，按 [CONTROL_DIAGNOSTICS.md](../topk-950pr/CONTROL_DIAGNOSTICS.md) 更新B2Y、新建诊断EVIDENCE，再运行preflight和control-diagnose。此步不改内核、不要求先重跑14项，也不产出性能数据。
+此前工具20261102-r7补齐control逐版本校验和只诊断模式。发生无版本标识的索引断言时，按 [CONTROL_DIAGNOSTICS.md](../topk-950pr/CONTROL_DIAGNOSTICS.md) 更新B2Y、新建诊断EVIDENCE，再运行preflight和control-diagnose。此步不改内核、不要求先重跑14项，也不产出性能数据。
+
+当前20261102-r8根据逐版本诊断明确拒绝H256分组扫描（253个哨兵未补齐），kernel配置保护只放行H128分组扫描。H256底层原因未修复；正式对照限5项H128相关实现，并打印/记录排除项。按SCAN_OPTIMIZATION.md更新个人fork与B2Y，新建EVIDENCE完成CPU6项、预检、14项契约和两轮对照；H128性能仍待实测。

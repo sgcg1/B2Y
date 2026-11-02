@@ -1,4 +1,4 @@
-# TopKSelect 950PR 新服务器工具包（20261102-r7）
+# TopKSelect 950PR 新服务器工具包（20261102-r8）
 
 **第一次使用只看 [START_HERE.md](START_HERE.md)**，按“宿主机 → yjl 容器 → 个人 fork → 预检 → 14项 → Decode → 完整Prefill”逐步执行。这里是补充说明和故障定位。
 
@@ -9,7 +9,7 @@
 - 实现代码唯一同步入口：`https://github.com/sgcg1/TileOPs.git` 的 `main`。
 - 在 yjl 内直接克隆 B2Y 到 `/home/y00937463/B2Y`，工具从 `B2Y/topk-950pr` 运行；无需额外 tools 目录或 ZIP 传输。
 - 包中没有 TileOPs 实现源码副本、镜像、SDK、旧服务器 .om/缓存、凭据或业务数据。历史对照代码由脚本从个人 fork 标签读取。
-- `SOURCE.json` 给出已知源码哈希、参考 main 提交和实际通过14项的源码提交。旧服务器 H128 默认已在独立缓存下通过14项；**新服务器必须重新验证**。H256仍为试验配置，v0.1.4尚未完成四组性能验收。
+- `SOURCE.json` 给出已知源码哈希、参考 main 提交和实际通过14项的源码提交。旧服务器 H128 默认已在独立缓存下通过14项；**新服务器必须重新验证**。H256分组扫描已被现场诊断拒绝，当前仅放行H128分组扫描，v0.1.4尚未完成四组性能验收。
 - 不需要、也不会连接你的新服务器。原始输出留在现场，回传方式见 RESULTS_TEMPLATE.md。
 
 本版目标固定为已有 **yjl** 容器，基础镜像 Weekly **20260930**，私人目录 **/home/y00937463**。/home 已挂载共享；使用容器内 python3，不执行 Conda 激活、宿主机pip安装或重新创建容器。env.sh默认目录、所有命令和SOURCE.json均已按这个配置更新。
@@ -30,7 +30,7 @@
 | run.sh | 分阶段执行；失败即退出；不覆盖旧输出 |
 | provenance.py | 防止一轮中混入不同源码、工具、Python、设备或缓存 |
 | preflight.py | 模块路径/版本、真实NPU运算与512KiB往返拷贝、库哈希 |
-| control_portable.py | 同进程初版/v0.1.2/旧v0.1.4/候选H128/H256/串行消融，正反顺序 |
+| control_portable.py | 同进程初版/v0.1.2/旧v0.1.4/候选H128/串行H128消融；H256已拒绝并记录，正反顺序 |
 | clock_check.py | 设备事件与包围它的主机单调时钟交叉核对 |
 | frequency.py | 单worker/56核以内的诊断负载期间只读遥测；不调频 |
 | transfer_check.py | 不导入TileLang的最小传输诊断 |
@@ -132,7 +132,7 @@ EVIDENCE/
 "$TOPK_PYTHON" "$TOPK_TOOLS/measure.py" --version tune-w32-repeat --case small --workers 32 --threads 128 --profile-samples 50
 ```
 
-H64/H128/H256受支持。不要拿单次最小值改默认，也不把诊断结果放进正式candidate文件冒充默认配置的验收。
+分组扫描仅放行H128。H64/H256需显式使用 `--serial-scan` 走串行诊断路径；串行H256的设备正确性仍需实测，不能据此认定H256已修复。不要拿单次最小值改默认，也不把诊断结果放进正式candidate文件冒充默认配置的验收。
 
 ## 故障定位顺序
 

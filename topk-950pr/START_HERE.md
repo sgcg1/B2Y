@@ -1,4 +1,4 @@
-# 新服务器从这里开始（20261102-r7）
+# 新服务器从这里开始（20261102-r8）
 
 当前分工：**在 yjl 内直接克隆两个仓库。TileOPs 源码从个人 fork main 获取，辅助工具从 B2Y/topk-950pr 运行。**
 
@@ -79,7 +79,7 @@ cd "$TOPK_REPO"
 
 ## 5. 先完成小规格闭环，逐条执行
 
-当前scan-r1候选先按 [SCAN_OPTIMIZATION.md](SCAN_OPTIMIZATION.md) 完成CPU检查、14项设备契约及两轮新旧扫描对照；若未稳定改善，先停止放大。控制实验现含旧v0.1.4、候选并行H128/H256及候选串行H128，不只比较历史初版/v0.1.2。已在该指南完成的阶段不要重复执行。
+当前scan-r1候选先按 [SCAN_OPTIMIZATION.md](SCAN_OPTIMIZATION.md) 完成CPU检查、14项设备契约及两轮新旧扫描对照；若未稳定改善，先停止放大。控制实验现含旧v0.1.4、候选并行H128及候选串行H128（H256已拒绝并显式记录），不只比较历史初版/v0.1.2。已在该指南完成的阶段不要重复执行。
 
 ```bash
 bash "$TOPK_TOOLS/run.sh" preflight
