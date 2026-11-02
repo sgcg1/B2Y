@@ -1,0 +1,221 @@
+root@1c26d9767e3f:/home/y00937463/runs# cat "$TOPK_TIMER_RUN/probe-summary.txt"
+{
+  "version": "20261102-probe2",
+  "status": "completed",
+  "stage": "review_required",
+  "physical_device": 0,
+  "documented_ticks_per_us": 1000,
+  "stage_profiling_accepted": false,
+  "instrumentation_route": "Mainline Ascend postproc callback after TileLang task scheduling",
+  "timing_scope": "Events include launch, input load and output store; counter interval measures dependent UB VF work plus observer costs. Compare workload deltas, not absolute equality.",
+  "probe_files_sha256": {
+    ".gitattributes": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9",
+    "INSPECT_SOURCE.md": "057c2861f8bf4de6635dc14c325e59b6278090d71c402cd065ecff9fb7b59eb8",
+    "README.md": "d7f4249f5b9a004de1168fefb4df67e5f4466afb15e255f924f70f282b861bdb",
+    "inspect_source.py": "f4c2a7db1b5e958ea9d90270c38d7b8b6a4cc54479967b15c2cb433f9bf7b252",
+    "kernels.py": "8dc4e71c015a4bfc04ea442290b1f484e6fdcbd4f961068f740b32d12668186e",
+    "postproc.py": "baa5a4b442e39fed0edf648dcf3b30a2846d1b7d9ee6a1975e7315f82ff90755",
+    "probe.py": "cc12c506f1bb05d525cf5fe3e1d144897856f7ee8c0e586a17853085b472429e",
+    "tests.py": "99eb8dcf351cf355b4365ff8a75babd237db7f07fa0b82c188f30fd322eaaf26"
+  },
+  "compiler_version": [
+    "2026-09-29T23:53:43+08:00 clang version 15.0.5 (clang-5c68a1cb1231 flang-5c68a1cb1231)",
+    "Target: x86_64-unknown-linux-gnu",
+    "Thread model: posix",
+    "InstalledDir: /usr/local/Ascend/cann-current/bin"
+  ],
+  "cann_installation_info": "package_name=Ascend-cann-toolkit\nversion=9.3.0\ninnerversion=V100R001C12B136\ncompatible_version=[V100R001C15],[V100R001C23],[V100R001C10],[V100R001C11],[V100R001C12]\narch=x86_64\nos=linux\npath=/usr/local/Ascend/cann-9.3.0\n",
+  "runtime": {
+    "python": "/usr/local/python3.12.14/bin/python3",
+    "torch": "2.13.0+cpu",
+    "torch_npu": "2.13.0",
+    "tilelang": "0.1.15+cpu.git0176ba14",
+    "tilelang_path": "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/__init__.py",
+    "cann_home": "/usr/local/Ascend/cann-9.3.0",
+    "Kernel_signature": "(*blocks: 'int | tirx.PrimExpr', prelude: 'str | None' = None) -> 'KernelLaunchFrame'",
+    "has_call_extern": true,
+    "has_address_of": true
+  },
+  "postproc_captures": {
+    "r1-plain": {
+      "mode": 0,
+      "repeats": 1,
+      "placement": "between-load-and-output",
+      "target": "{\"kind\":\"ascend\",\"tag\":\"\",\"keys\":[\"ascend\"],\"host\":{\"kind\":\"c\",\"tag\":\"\",\"keys\":[\"cpu\"]},\"max_vector_bits\":64,\"supports_vector_predicate\":true,\"launch_grid_only\":true,\"supports_kernel_status_return\":false}",
+      "original_source_sha256": "d1bec8d997d553dba65ba0b42e9595fd4dc4a9a6afa60d164f621a5925dc3686",
+      "postproc_source_sha256": "58487381a205ffb5ec94aaa890c9160a0c5c94446b90e8d105b1773a4fd6f7dc",
+      "entry_boundary_check_passed": true
+    },
+    "r1-fenced": {
+      "mode": 1,
+      "repeats": 1,
+      "placement": "between-load-and-output",
+      "target": "{\"kind\":\"ascend\",\"tag\":\"\",\"keys\":[\"ascend\"],\"host\":{\"kind\":\"c\",\"tag\":\"\",\"keys\":[\"cpu\"]},\"max_vector_bits\":64,\"supports_vector_predicate\":true,\"launch_grid_only\":true,\"supports_kernel_status_return\":false}",
+      "original_source_sha256": "7fd34e225f1e0b76c8b85c15596432236ccce47f18bed917b32df35aabf513ff",
+      "postproc_source_sha256": "72486b72c518780504883e5557b073ed5fd42977e00c1091925b232b7e1507a7",
+      "entry_boundary_check_passed": true
+    },
+    "r1-timed": {
+      "mode": 2,
+      "repeats": 1,
+      "placement": "between-load-and-output",
+      "target": "{\"kind\":\"ascend\",\"tag\":\"\",\"keys\":[\"ascend\"],\"host\":{\"kind\":\"c\",\"tag\":\"\",\"keys\":[\"cpu\"]},\"max_vector_bits\":64,\"supports_vector_predicate\":true,\"launch_grid_only\":true,\"supports_kernel_status_return\":false}",
+      "original_source_sha256": "a831f84655dc9bb221a8dc51e8f3c634a540f649b4d547e4ef3e4fd7afa920b6",
+      "postproc_source_sha256": "98f6cf9b00ac60b47959842e5a2ca111568a1ab8db5f24c8118f347a77df8a95",
+      "entry_boundary_check_passed": true
+    },
+    "r16-plain": {
+      "mode": 0,
+      "repeats": 16,
+      "placement": "between-load-and-output",
+      "target": "{\"kind\":\"ascend\",\"tag\":\"\",\"keys\":[\"ascend\"],\"host\":{\"kind\":\"c\",\"tag\":\"\",\"keys\":[\"cpu\"]},\"max_vector_bits\":64,\"supports_vector_predicate\":true,\"launch_grid_only\":true,\"supports_kernel_status_return\":false}",
+      "original_source_sha256": "d8e816b248413e5cb104a8f927cdb82605eb5f3d49fdb8a21f489cea714d94c0",
+      "postproc_source_sha256": "01ab929273f783294ff8e03d3c435ca8cc338d09920b89868907697d29b75f0f",
+      "entry_boundary_check_passed": true
+    },
+    "r16-fenced": {
+      "mode": 1,
+      "repeats": 16,
+      "placement": "between-load-and-output",
+      "target": "{\"kind\":\"ascend\",\"tag\":\"\",\"keys\":[\"ascend\"],\"host\":{\"kind\":\"c\",\"tag\":\"\",\"keys\":[\"cpu\"]},\"max_vector_bits\":64,\"supports_vector_predicate\":true,\"launch_grid_only\":true,\"supports_kernel_status_return\":false}",
+      "original_source_sha256": "9217a61e4e1357b4e20df512d1efba345e57b7f66a6bb333a2c2f0e594e0a3aa",
+      "postproc_source_sha256": "58a3ecf8582a7d6e380fde1a53550b3ae9402f869dbd1cc14f185755fe9c60b1",
+      "entry_boundary_check_passed": true
+    },
+    "r16-timed": {
+      "mode": 2,
+      "repeats": 16,
+      "placement": "between-load-and-output",
+      "target": "{\"kind\":\"ascend\",\"tag\":\"\",\"keys\":[\"ascend\"],\"host\":{\"kind\":\"c\",\"tag\":\"\",\"keys\":[\"cpu\"]},\"max_vector_bits\":64,\"supports_vector_predicate\":true,\"launch_grid_only\":true,\"supports_kernel_status_return\":false}",
+      "original_source_sha256": "7b4fb3a286fb8c5ee080df8a1a9ecc6c251eeb28b463bea73b22a914bc7d0df6",
+      "postproc_source_sha256": "fdbcc01dc58f897e107a2263dd5c1433e109a9afeff8a86e9932224663bfd36d",
+      "entry_boundary_check_passed": true
+    },
+    "r64-plain": {
+      "mode": 0,
+      "repeats": 64,
+      "placement": "between-load-and-output",
+      "target": "{\"kind\":\"ascend\",\"tag\":\"\",\"keys\":[\"ascend\"],\"host\":{\"kind\":\"c\",\"tag\":\"\",\"keys\":[\"cpu\"]},\"max_vector_bits\":64,\"supports_vector_predicate\":true,\"launch_grid_only\":true,\"supports_kernel_status_return\":false}",
+      "original_source_sha256": "ecc37ef59ceb853bb50d0be998fc8475edc8e29f740f5cfad580442c48c19f6c",
+      "postproc_source_sha256": "a717f4edfdb462df1c7e193e63c58907ea67a12dce4255014b957622c9edbcd0",
+      "entry_boundary_check_passed": true
+    },
+    "r64-fenced": {
+      "mode": 1,
+      "repeats": 64,
+      "placement": "between-load-and-output",
+      "target": "{\"kind\":\"ascend\",\"tag\":\"\",\"keys\":[\"ascend\"],\"host\":{\"kind\":\"c\",\"tag\":\"\",\"keys\":[\"cpu\"]},\"max_vector_bits\":64,\"supports_vector_predicate\":true,\"launch_grid_only\":true,\"supports_kernel_status_return\":false}",
+      "original_source_sha256": "dbfddf7ccbdaf0760dab09fe5199b92fc75fe6718ea32bc9439c4fd1fe5d0add",
+      "postproc_source_sha256": "445094645313452c742757061b94cb8e318e03136ad414e69e45666f7938c29f",
+      "entry_boundary_check_passed": true
+    },
+    "r64-timed": {
+      "mode": 2,
+      "repeats": 64,
+      "placement": "between-load-and-output",
+      "target": "{\"kind\":\"ascend\",\"tag\":\"\",\"keys\":[\"ascend\"],\"host\":{\"kind\":\"c\",\"tag\":\"\",\"keys\":[\"cpu\"]},\"max_vector_bits\":64,\"supports_vector_predicate\":true,\"launch_grid_only\":true,\"supports_kernel_status_return\":false}",
+      "original_source_sha256": "424ca8a0a60694b3ab2825ed58c5d860f0cfcc857228af3ee47b71543127d85f",
+      "postproc_source_sha256": "7cda52b2efa2c1cb939a9672b0cf751aed4719c849d2bbc84578670961b2ec0b",
+      "entry_boundary_check_passed": true
+    },
+    "r0-timed": {
+      "mode": 2,
+      "repeats": 0,
+      "placement": "empty-after-output",
+      "target": "{\"kind\":\"ascend\",\"tag\":\"\",\"keys\":[\"ascend\"],\"host\":{\"kind\":\"c\",\"tag\":\"\",\"keys\":[\"cpu\"]},\"max_vector_bits\":64,\"supports_vector_predicate\":true,\"launch_grid_only\":true,\"supports_kernel_status_return\":false}",
+      "original_source_sha256": "e09e9e8f9a6bf90b9cb3082910d6d2394d91fda95173a361c5ed7c5bd81011b2",
+      "postproc_source_sha256": "dd683437577ea76d033050716dce745854b40a2004b767b911ec9413b1195870",
+      "entry_boundary_check_passed": true
+    }
+  },
+  "device": "Ascend950PR_9579",
+  "outputs_equal_reference": true,
+  "summary": {
+    "r1-plain": {
+      "event_sample_count": 50,
+      "counter_sample_count": 0,
+      "event_median_us": 14.14350001141429
+    },
+    "r1-fenced": {
+      "event_sample_count": 50,
+      "counter_sample_count": 0,
+      "event_median_us": 14.139999635517597
+    },
+    "r1-timed": {
+      "event_sample_count": 50,
+      "counter_sample_count": 50,
+      "event_median_us": 14.165500178933144,
+      "counter_median": 615.0,
+      "counter_interval_us_at_documented_rate": 0.615
+    },
+    "r16-plain": {
+      "event_sample_count": 50,
+      "counter_sample_count": 0,
+      "event_median_us": 17.265000380575657
+    },
+    "r16-fenced": {
+      "event_sample_count": 50,
+      "counter_sample_count": 0,
+      "event_median_us": 17.327500507235527
+    },
+    "r16-timed": {
+      "event_sample_count": 50,
+      "counter_sample_count": 50,
+      "event_median_us": 17.21400022506714,
+      "counter_median": 8807.0,
+      "counter_interval_us_at_documented_rate": 8.807
+    },
+    "r64-plain": {
+      "event_sample_count": 50,
+      "counter_sample_count": 0,
+      "event_median_us": 43.468499556183815
+    },
+    "r64-fenced": {
+      "event_sample_count": 50,
+      "counter_sample_count": 0,
+      "event_median_us": 43.573999777436256
+    },
+    "r64-timed": {
+      "event_sample_count": 50,
+      "counter_sample_count": 50,
+      "event_median_us": 43.438998982310295,
+      "counter_median": 35140.0,
+      "counter_interval_us_at_documented_rate": 35.14
+    },
+    "r0-timed": {
+      "event_sample_count": 50,
+      "counter_sample_count": 50,
+      "event_median_us": 14.050500001758337,
+      "counter_median": 92.0,
+      "counter_interval_us_at_documented_rate": 0.092
+    },
+    "r1-changes": {
+      "fenced_vs_plain_event_percent": -0.02474900762801102,
+      "timed_vs_fenced_event_percent": 0.18034331027485528,
+      "timed_vs_plain_event_percent": 0.15554966946724758,
+      "timed_event_delta_vs_empty_us": 0.1150001771748066,
+      "counter_delta_vs_empty_us_at_documented_rate": 0.523
+    },
+    "r16-changes": {
+      "fenced_vs_plain_event_percent": 0.3620047800878545,
+      "timed_vs_fenced_event_percent": -0.6550297437359354,
+      "timed_vs_plain_event_percent": -0.29539620263140387,
+      "timed_event_delta_vs_empty_us": 3.1635002233088017,
+      "counter_delta_vs_empty_us_at_documented_rate": 8.715
+    },
+    "r64-changes": {
+      "fenced_vs_plain_event_percent": 0.24270499863028316,
+      "timed_vs_fenced_event_percent": -0.30981960759973726,
+      "timed_vs_plain_event_percent": -0.06786655664382524,
+      "timed_event_delta_vs_empty_us": 29.388498980551958,
+      "counter_delta_vs_empty_us_at_documented_rate": 35.048
+    }
+  },
+  "checks": {
+    "all_counter_intervals_positive": true,
+    "counter_medians_increase_with_work": true,
+    "observed_ticks_per_event_us_from_64_minus_16": 1004.118255400375,
+    "counter_intervals_fit_inside_events_at_documented_rate": true,
+    "rate_within_10_percent_of_documentation": true
+  }
+}

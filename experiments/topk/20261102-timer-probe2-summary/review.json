@@ -1,0 +1,44 @@
+{
+  "status": "summary_calibration_promising_raw_review_pending",
+  "producer_commit": "6853356",
+  "producer_files_sha256_match": true,
+  "reported_configuration_count": 10,
+  "reported_event_sample_count": 500,
+  "reported_counter_sample_count": 200,
+  "observed_large_workload_ticks_per_event_us": 1004.118255400375,
+  "deviation_from_1000_percent": 0.4118255400374915,
+  "small_workload_counter_delta_us": 8.192,
+  "small_workload_event_delta_us": 3.048500046133995,
+  "empty_counter_us": 0.092,
+  "rows": [
+    {
+      "repeats": 1,
+      "plain_event_us": 14.14350001141429,
+      "fenced_event_us": 14.139999635517597,
+      "timed_event_us": 14.165500178933144,
+      "timed_counter_us": 0.615,
+      "timed_vs_plain_event_percent": 0.15554966946724758
+    },
+    {
+      "repeats": 16,
+      "plain_event_us": 17.265000380575657,
+      "fenced_event_us": 17.327500507235527,
+      "timed_event_us": 17.21400022506714,
+      "timed_counter_us": 8.807,
+      "timed_vs_plain_event_percent": -0.29539620263140387
+    },
+    {
+      "repeats": 64,
+      "plain_event_us": 43.468499556183815,
+      "fenced_event_us": 43.573999777436256,
+      "timed_event_us": 43.438998982310295,
+      "timed_counter_us": 35.14,
+      "timed_vs_plain_event_percent": -0.06786655664382524
+    }
+  ],
+  "raw_samples_received": false,
+  "generated_sources_received": false,
+  "native_instruction_order_verified": false,
+  "topk_stage_times_available": false,
+  "stage_profiling_accepted": false
+}

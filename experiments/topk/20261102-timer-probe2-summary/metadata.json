@@ -1,0 +1,47 @@
+{
+  "id": "20261102-timer-probe2-summary",
+  "title": "probe2完成最小采样，摘要尺度检查通过，原始证据待复核",
+  "archived_date": "2026-11-02",
+  "execution_date": "not included in received summary",
+  "status": "summary_calibration_promising_raw_review_pending",
+  "source": "User pasted attachment ae03d40e-13d6-4a30-9c05-ea3f0508d3f2; console bytes preserved",
+  "producer_commit": "6853356",
+  "probe_version": "20261102-probe2",
+  "summary_reconstruction": "Parsed JSON from console; not a byte-identical reconstruction of server summary or full report",
+  "reported_checks": {
+    "all_counter_intervals_positive": true,
+    "counter_medians_increase_with_work": true,
+    "observed_ticks_per_event_us_from_64_minus_16": 1004.118255400375,
+    "counter_intervals_fit_inside_events_at_documented_rate": true,
+    "rate_within_10_percent_of_documentation": true
+  },
+  "independent_checks": [
+    "All 8 producer hashes match published probe2 files",
+    "Summary percentages and 64-minus-16 slope recomputed from reported medians"
+  ],
+  "missing": [
+    "probe-report.json raw samples",
+    "original/postprocessed/API generated C++",
+    "native instruction ordering",
+    "device load/frequency telemetry"
+  ],
+  "stage_profiling_accepted": false,
+  "files": {
+    "console.txt": {
+      "sha256": "f3214c5d971d9e3c435afb7cff6d141db772516188e878269875cdce5329d786",
+      "bytes": 11679
+    },
+    "reported-summary.json": {
+      "sha256": "9b2eb4d83a39b7f386b5b77ee5a00bcf3cf9962efc4a4fbd65eb20ec33aa9ef3",
+      "bytes": 11378
+    },
+    "review.json": {
+      "sha256": "b21b83362b8653e33ca50eff6815ad8bcb529ce2773e9abfa0247a013d72bd30",
+      "bytes": 1484
+    },
+    "analysis.md": {
+      "sha256": "aecc125d2f601210e75f11cebc040d596f4fd47e2c109c271be9ffd1373fbd79",
+      "bytes": 4100
+    }
+  }
+}

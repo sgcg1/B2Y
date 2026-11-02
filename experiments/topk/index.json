@@ -42,6 +42,12 @@
       "title": "probe1生成源码确认预期屏障/计时顺序未保留",
       "status": "source_sequence_mismatch_confirmed",
       "metadata": "20261102-timer-probe1-source-inspection/metadata.json"
+    },
+    {
+      "id": "20261102-timer-probe2-summary",
+      "title": "probe2完成最小采样，摘要尺度检查通过，原始证据待复核",
+      "status": "summary_calibration_promising_raw_review_pending",
+      "metadata": "20261102-timer-probe2-summary/metadata.json"
     }
   ]
 }
