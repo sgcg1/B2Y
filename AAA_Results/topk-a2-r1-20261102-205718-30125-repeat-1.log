@@ -1,0 +1,10 @@
+A2_OUTPUT /home/y00937463/topk-a2-r1-20261102-205718-30125/repeat-1
+Traceback (most recent call last):
+  File "/home/y00937463/B2Y/diagnostics/topk-a2-r1/run.py", line 192, in <module>
+    main()
+  File "/home/y00937463/B2Y/diagnostics/topk-a2-r1/run.py", line 181, in main
+    execute(report, args.repo.resolve(), root)
+  File "/home/y00937463/B2Y/diagnostics/topk-a2-r1/run.py", line 35, in execute
+    assert digest(baseline) == BASE
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

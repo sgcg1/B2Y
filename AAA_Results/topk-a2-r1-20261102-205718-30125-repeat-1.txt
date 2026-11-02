@@ -1,0 +1,21 @@
+{
+  "report": {
+    "shape": [
+      1,
+      16384,
+      1
+    ],
+    "k": 2048,
+    "workers": 1,
+    "threads": 128,
+    "coarse": true,
+    "version": "20261102-a2-r1",
+    "status": "failed",
+    "physical_device": 0,
+    "timing_scope": "Uninstrumented single kernel call NPU events; not pure kernel time",
+    "accepted": false,
+    "commit": "34f3bf36e552f588283b069ba16b29b2b81b9750",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/y00937463/B2Y/diagnostics/topk-a2-r1/run.py\", line 181, in main\n    execute(report, args.repo.resolve(), root)\n  File \"/home/y00937463/B2Y/diagnostics/topk-a2-r1/run.py\", line 35, in execute\n    assert digest(baseline) == BASE\n           ^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  "sources": {}
+}
