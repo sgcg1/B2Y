@@ -3,7 +3,7 @@
   "branch": "main",
   "reference_main_commit": "d5bc27e6d50db8831a4d551b15a05abb6e5de8bb",
   "last_tested_source_commit": "49aaea3608d97d666f535053e974903547f94ad3",
-  "status": "v0.1.4-scan-r1 grouped scan candidate: CPU arithmetic checks passed; NPU correctness and performance pending",
+  "status": "Operator reports 14 device tests passed; unlabeled control bounds failure under investigation; scan candidate not accepted",
   "source_sha256": {
     "src/tileops/_kernels/attention/topk_select_ascend.py": "51480955f97542e607635be1e19c597e03ad71e2866d5a46ff74d811cd7cfded",
     "src/tileops/ascend/topk_select.py": "54a49bf8fb122fc1073e28d4c61e110fa62b3a36be2b3caff9513ee031da6d24",
@@ -13,7 +13,7 @@
     "topk-npu-v0.1.0",
     "topk-npu-v0.1.2"
   ],
-  "kit_version": "20261102-r6",
+  "kit_version": "20261102-r7",
   "target_environment": {
     "manager": "docker",
     "container": "yjl",
@@ -35,5 +35,11 @@
   "control_reference_commits": [
     "49aaea3608d97d666f535053e974903547f94ad3"
   ],
-  "operator_reported_tested_source_commit": "252ad607e3a86e09f880baf785f982eca81060c2"
+  "operator_reported_tested_source_commit": "252ad607e3a86e09f880baf785f982eca81060c2",
+  "operator_reported_scan_validation": {
+    "tests_passed": 14,
+    "duration_seconds": 231.59,
+    "commit_in_pasted_log": null,
+    "control": "bounds assertion before labeled diagnostics"
+  }
 }

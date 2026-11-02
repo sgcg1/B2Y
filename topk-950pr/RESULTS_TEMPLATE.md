@@ -4,7 +4,7 @@
 
 ```text
 实验代号：
-工具版本：20261102-r6
+工具版本：20261102-r7
 TileOPs commit（如允许）：
 是否与 SOURCE.json 的已知源码相同：是/否/未核实
 环境：目标950PR？ Python/torch/torch_npu/TileLang/CANN版本（可披露部分）

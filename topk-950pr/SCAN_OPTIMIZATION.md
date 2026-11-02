@@ -67,6 +67,8 @@ bash "$TOPK_TOOLS/run.sh" test
 
 ## 4. 两轮同进程事件对照
 
+若遇到control索引断言失败，先按 [CONTROL_DIAGNOSTICS.md](CONTROL_DIAGNOSTICS.md) 定位版本和阶段；不继续性能测量。新版control使用独立CPU稳定排序参考，输出CONTROL_CHECK版本标识及validation.json，不把历史初版视为正确性参考。
+
 ```bash
 bash "$TOPK_TOOLS/run.sh" control 1
 ```

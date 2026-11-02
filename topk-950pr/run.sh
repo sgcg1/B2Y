@@ -72,6 +72,12 @@ case "$stage" in
             --repo "$TOPK_REPO" --output "$EVIDENCE/control-decode-$repetition" \
             2>&1 | tee "$EVIDENCE/control-decode-$repetition.log"
         ;;
+    control-diagnose)
+        fresh_log "$EVIDENCE/control-diagnostic.log"
+        timeout --kill-after=10s 600s "$TOPK_PYTHON" -u "$TOPK_TOOLS/control_portable.py" \
+            --repo "$TOPK_REPO" --output "$EVIDENCE/control-diagnostic" --diagnostic \
+            2>&1 | tee "$EVIDENCE/control-diagnostic.log"
+        ;;
     clock|frequency|transfer|binary)
         fresh_log "$EVIDENCE/diagnostic-$stage.log"
         case "$stage" in
@@ -103,5 +109,5 @@ case "$stage" in
     summary)
         "$TOPK_PYTHON" "$TOPK_TOOLS/summarize.py" --evidence "$EVIDENCE" --scope "${2:-all}"
         ;;
-    *) echo 'Usage: bash run.sh {preflight|test|control [1/2]|clock|frequency|transfer|binary|cann-build [case/all]|cann-measure [case/all]|measure [case/all]|summary [decode/all]}'; exit 2 ;;
+    *) echo 'Usage: bash run.sh {preflight|test|control [1/2]|control-diagnose|clock|frequency|transfer|binary|cann-build [case/all]|cann-measure [case/all]|measure [case/all]|summary [decode/all]}'; exit 2 ;;
 esac

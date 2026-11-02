@@ -1,4 +1,4 @@
-# TopKSelect 950PR 新服务器工具包（20261102-r6）
+# TopKSelect 950PR 新服务器工具包（20261102-r7）
 
 **第一次使用只看 [START_HERE.md](START_HERE.md)**，按“宿主机 → yjl 容器 → 个人 fork → 预检 → 14项 → Decode → 完整Prefill”逐步执行。这里是补充说明和故障定位。
 
@@ -19,6 +19,7 @@
 | 文件 | 用途 |
 | --- | --- |
 | START_HERE.md | 按执行位置排列的完整操作步骤 |
+| [CONTROL_DIAGNOSTICS.md](CONTROL_DIAGNOSTICS.md) | control校验失败时逐版本定位，不测性能 |
 | [SCAN_OPTIMIZATION.md](SCAN_OPTIMIZATION.md) | v0.1.4-scan-r1候选的更新、验证与新旧对照 |
 | DOCKER.md | 已有 yjl 的进入方式、共享目录及镜像传输参考 |
 | DEPENDENCIES.md | 私人Python/CANN/主仓TileLang要求，缺项处理 |
