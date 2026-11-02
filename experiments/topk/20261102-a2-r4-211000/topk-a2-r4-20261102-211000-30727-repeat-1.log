@@ -1,0 +1,16 @@
+COMPILE_BEGIN baseline
+
+2026-11-02 21:10:18  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 21:10:36  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END baseline
+COMPILE_BEGIN control
+
+2026-11-02 21:10:37  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 21:10:53  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END control
+COMPILE_BEGIN a2
+
+2026-11-02 21:10:53  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 21:11:11  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END a2
+A2_OUTPUT /home/y00937463/topk-a2-r4-20261102-211000-30727/repeat-1

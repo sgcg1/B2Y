@@ -108,6 +108,12 @@
       "title": "A2 r3原子条件下标生成非法C++",
       "status": "failed_bisheng_atomic_argument_codegen",
       "metadata": "20261102-a2-r3-atomic-codegen/metadata.json"
+    },
+    {
+      "id": "20261102-a2-r4-211000",
+      "title": "A2 r4四组Decode约4%回退，停止扩大",
+      "status": "screening_performance_regression_rejected",
+      "metadata": "20261102-a2-r4-211000/metadata.json"
     }
   ]
 }

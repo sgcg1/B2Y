@@ -1,0 +1,36 @@
+{
+  "id": "20261102-a2-r4-211000",
+  "source_commit": "d6c1518",
+  "status": "screening_performance_regression_rejected",
+  "accepted": false,
+  "files": [
+    {
+      "source": "AAA_Results/topk-a2-r4-20261102-211000-30727-repeat-1.log",
+      "bytes": 942,
+      "sha256": "fd0fc0ba7cd3daa30087f8a65ba3571cf705ee7a9f098ec4c55b5bebd7301825"
+    },
+    {
+      "source": "AAA_Results/topk-a2-r4-20261102-211000-30727-repeat-1.txt",
+      "bytes": 200371,
+      "sha256": "9e73c197fdccfbbe099081e6e54ce5aedce246ec5012d2bb2a564d544382d1cf"
+    },
+    {
+      "source": "AAA_Results/topk-a2-r4-20261102-211000-30727-repeat-2.log",
+      "bytes": 942,
+      "sha256": "43a18eb2e1c3171a242526e1cc09b8fc86cd47c85702211be986eba4fe44253e"
+    },
+    {
+      "source": "AAA_Results/topk-a2-r4-20261102-211000-30727-repeat-2.txt",
+      "bytes": 200348,
+      "sha256": "da9677971d78b941ed3be22103f0618a770554762b5fffdf3fdf0c29db796fdb"
+    }
+  ],
+  "candidate_commit": "4774e7eaa15dcb670e1624e3c70203bfd146d905",
+  "missing": [
+    "full contract suite",
+    "Prefill regression",
+    "pure kernel profiler",
+    "same-round CANN",
+    "stage attribution"
+  ]
+}
