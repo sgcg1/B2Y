@@ -29,3 +29,5 @@ A1 r1两次前端嵌套失败已归档，当前使用r2修复指南；尚无A1�
 最新：[同步最小复现r2已复核](experiments/topk/20261102-a1-sync-repro-r2-204739/analysis.md)，四配置编译通过；uint8有额外屏障、uint32无，但未重现生产外提警告，A1仍关闭。下一步回到生产访问对排查，无需重跑此复现。
 
 最新：[A1同步源码审计及候选补丁](diagnostics/topk-a1-sync-source-review/README.md)。指针区间混合元素单位缺陷可构造；补丁仅做应用及4项CPU算术检查，未编译/未安装，A1继续关闭。约1%收益暂不值得主线依赖工具链重建，下一项优先独立A2 int32分片histogram；没有新服务器指令。
+
+当前执行入口：[A2 r1首轮4组int32直方图](diagnostics/topk-a2-r1/README.md)。候选34f3bf36已推送GitHub，默认关闭；A0/A1关闭，10项CPU检查通过，尚无A2 NPU结果。先编译/正确性后对照，ThreadSync诊断出现即拒绝计时。
