@@ -1,0 +1,36 @@
+{
+  "id": "20261102-a1-r2-203417",
+  "source_commit": "03e2078",
+  "status": "screening_gain_sync_warning_unresolved",
+  "accepted": false,
+  "files": [
+    {
+      "source": "AAA_Results/topk-a1-r2-20261102-203417-29000-repeat-1.log",
+      "bytes": 3642,
+      "sha256": "f6db2a913af744f9aa7ccae2ef80bd4a9298a80ab800fcee3f44c7643ce88cb6"
+    },
+    {
+      "source": "AAA_Results/topk-a1-r2-20261102-203417-29000-repeat-1.txt",
+      "bytes": 113640,
+      "sha256": "bb95d18667fa2f21c9d877dfa64a5148833b9f967fbe1405e1150562881df7f7"
+    },
+    {
+      "source": "AAA_Results/topk-a1-r2-20261102-203417-29000-repeat-2.log",
+      "bytes": 3642,
+      "sha256": "745e3b63007eb42ee80716a0810e919488cc4dc0e82b1304ca6a8c0404aa14cd"
+    },
+    {
+      "source": "AAA_Results/topk-a1-r2-20261102-203417-29000-repeat-2.txt",
+      "bytes": 113632,
+      "sha256": "6c4428a675cc0061ce66634fcfe25e3c93c4b9619cbdd635f9f1022313f8e2dd"
+    }
+  ],
+  "missing": [
+    "sync warning resolution",
+    "full contract suite",
+    "Prefill regression",
+    "pure kernel profiler",
+    "same-round CANN",
+    "final binary/assembly"
+  ]
+}

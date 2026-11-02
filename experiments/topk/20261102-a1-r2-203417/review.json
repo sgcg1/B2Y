@@ -1,0 +1,50 @@
+{
+  "event_samples": 600,
+  "source_hashes_verified": true,
+  "rows": [
+    {
+      "file": "topk-a1-r2-20261102-203417-29000-repeat-1.txt",
+      "seed": 20261030,
+      "median_us": {
+        "baseline": 161.78549826145172,
+        "control": 161.6484969854355,
+        "a1": 160.26949882507324
+      },
+      "a1_change_percent": -0.9370428454153368,
+      "control_change_percent": -0.08468081347737799
+    },
+    {
+      "file": "topk-a1-r2-20261102-203417-29000-repeat-1.txt",
+      "seed": 20261102,
+      "median_us": {
+        "baseline": 161.4914983510971,
+        "control": 161.29649430513382,
+        "a1": 159.7445011138916
+      },
+      "a1_change_percent": -1.0817889827286042,
+      "control_change_percent": -0.12075189589195734
+    },
+    {
+      "file": "topk-a1-r2-20261102-203417-29000-repeat-2.txt",
+      "seed": 20261030,
+      "median_us": {
+        "baseline": 161.72699630260468,
+        "control": 161.7635041475296,
+        "a1": 160.2484956383705
+      },
+      "a1_change_percent": -0.9141953403176806,
+      "control_change_percent": 0.022573748205045874
+    },
+    {
+      "file": "topk-a1-r2-20261102-203417-29000-repeat-2.txt",
+      "seed": 20261102,
+      "median_us": {
+        "baseline": 161.31649911403656,
+        "control": 161.2595021724701,
+        "a1": 159.47500616312027
+      },
+      "a1_change_percent": -1.141540363837501,
+      "control_change_percent": -0.03533236952171226
+    }
+  ]
+}

@@ -72,6 +72,12 @@
       "title": "A1 r1 eager嵌套失败与修复",
       "status": "failed_eager_python_nesting",
       "metadata": "20261102-a1-r1-eager-nesting/metadata.json"
+    },
+    {
+      "id": "20261102-a1-r2-203417",
+      "title": "A1 r2约1%事件收益但同步风险未解",
+      "status": "screening_gain_sync_warning_unresolved",
+      "metadata": "20261102-a1-r2-203417/metadata.json"
     }
   ]
 }
