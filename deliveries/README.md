@@ -31,3 +31,5 @@ git -C /home/y00937463/TileOPs fetch origin --tags
 此前工具20261102-r7补齐control逐版本校验和只诊断模式。发生无版本标识的索引断言时，按 [CONTROL_DIAGNOSTICS.md](../topk-950pr/CONTROL_DIAGNOSTICS.md) 更新B2Y、新建诊断EVIDENCE，再运行preflight和control-diagnose。此步不改内核、不要求先重跑14项，也不产出性能数据。
 
 当前20261102-r8根据逐版本诊断明确拒绝H256分组扫描（253个哨兵未补齐），kernel配置保护只放行H128分组扫描。H256底层原因未修复；正式对照限5项H128相关实现，并打印/记录排除项。按SCAN_OPTIMIZATION.md更新个人fork与B2Y，新建EVIDENCE完成CPU6项、预检、14项契约和两轮对照；H128性能仍待实测。
+
+新增独立诊断：[最小计时探针20261102-probe1](../diagnostics/topk-timer-probe/README.md)，验证计数器、完成屏障与观察开销。本次仅新增通用探针代码和操作指南，不附带服务器实验结果或分析。已有topk-950pr工具及MANIFEST未改；服务器只需更新B2Y，不必更新TileOPs或重跑契约测试。探针尚未在目标SDK实测，运行后审核probe-summary.txt。
