@@ -1,0 +1,17 @@
+{
+  "id": "undated-before-scan-decode",
+  "title": "优化前Decode摘要",
+  "archived_date": "2026-11-02",
+  "status": "reported_measurement",
+  "source": "Structured excerpt from previously recorded user summary, not a raw original export",
+  "reported_date": null,
+  "raw_samples_available": false,
+  "tileops_commit": "252ad607e3a86e09f880baf785f982eca81060c2",
+  "interpretation": "仅有用户摘要；执行日期与逐次样本未提供，不能补造。",
+  "files": {
+    "reported-summary.json": {
+      "sha256": "05cc386f81998c507e9b87580661922c59544533620ae68a8778e4a28b7ee63a",
+      "bytes": 702
+    }
+  }
+}

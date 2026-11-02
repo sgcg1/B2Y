@@ -1,0 +1,15 @@
+{
+  "id": "20261031-preflight-torch-version",
+  "title": "初次预检版本门槛失败",
+  "archived_date": "2026-11-02",
+  "status": "failed_preflight",
+  "source": "User-provided attachment",
+  "reported_date": "2026-10-31",
+  "interpretation": "失败于torch主次版本门槛；不能据此判定TopK或NPU硬件错误。",
+  "files": {
+    "console.txt": {
+      "sha256": "4fe9ee6a3cb4d6199e63bf991d63742a2f8859d5708c27bb1777c2aadee50400",
+      "bytes": 7428
+    }
+  }
+}

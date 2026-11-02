@@ -1,0 +1,27 @@
+{
+  "id": "20261102-timer-probe1-source-order",
+  "title": "计时探针源码顺序检查失败",
+  "archived_date": "2026-11-02",
+  "status": "failed_source_validation",
+  "source": "User-published B2Y 实验结果; raw Git blob bytes preserved",
+  "source_git_commit": "1b0d34e8959ad69be4096e24a34727ae94ed2825",
+  "source_path": "实验结果",
+  "reported_date": null,
+  "date_basis": "Archive date; execution timestamp not provided",
+  "probe_version": "20261102-probe1",
+  "probe_implementation_commit": "bab99c1",
+  "failed_stage": "compile:r1-timed",
+  "timing_sampling_entered": false,
+  "interpretation": "已取得生成源码并在Python检查器终止；编译器重排与检查器误报均未证实，尚无有效计时数据。",
+  "files": {
+    "raw-report.json": {
+      "sha256": "9951c89824633149dfa218ddedb0262819a06e8eb091086013bb42ae4f73bc37",
+      "bytes": 2586
+    }
+  },
+  "payload_kind": "User-returned summary JSON; not the full server probe-report.json",
+  "not_received": [
+    "r1-timed.cpp",
+    "full server probe-report.json"
+  ]
+}

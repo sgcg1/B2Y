@@ -1,0 +1,87 @@
+{
+  "scope": "all",
+  "final_version_accepted": false,
+  "tileops_commit": "7247ad4f355c62a8679dcdc8fdf182c0b219db5e",
+  "npu_tests": {
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "cases": {
+    "decode": {
+      "shape": [
+        1,
+        1,
+        16384,
+        1
+      ],
+      "k": 2048,
+      "workers": 1,
+      "threads": 128,
+      "coarse": true,
+      "parallel_scan": true,
+      "input_sha256": "c59b9485e9750eaf04d4668934c0383510a15b2cc9365ef9c6c4b9eaf2bf7593",
+      "kernel_source_sha256": "987da9f9d314f8744bef05a628e60a14b88e63db320374f36a3b6411ce5eb2e3",
+      "kernel_median_us": 157.0505,
+      "event_median_us": 161.7864966392517,
+      "cann_kernel_median_us": 9.2275,
+      "performance_x_cann": 0.05875498645340193
+    },
+    "small": {
+      "shape": [
+        1,
+        128,
+        65536,
+        1
+      ],
+      "k": 2048,
+      "workers": 56,
+      "threads": 128,
+      "coarse": true,
+      "parallel_scan": true,
+      "input_sha256": "9867c3cab15a6895d26946eb01a4d833ca8f4c5f562aeb26269d183e1f944286",
+      "kernel_source_sha256": "987da9f9d314f8744bef05a628e60a14b88e63db320374f36a3b6411ce5eb2e3",
+      "kernel_median_us": 1868.6455,
+      "event_median_us": 1875.9610056877136
+    },
+    "prefill-k1024": {
+      "shape": [
+        1,
+        32768,
+        65536,
+        1
+      ],
+      "k": 1024,
+      "workers": 56,
+      "threads": 128,
+      "coarse": false,
+      "parallel_scan": true,
+      "input_sha256": "0c435edd506b44a1cc41ea19a140811275f88c0129da89fb8ecb95e96e48e229",
+      "kernel_source_sha256": "987da9f9d314f8744bef05a628e60a14b88e63db320374f36a3b6411ce5eb2e3",
+      "kernel_median_us": 323821.7785,
+      "event_median_us": 323726.42517089844,
+      "cann_kernel_median_us": 50647.601500000004,
+      "performance_x_cann": 0.15640579128003276
+    },
+    "prefill-k2048": {
+      "shape": [
+        1,
+        32768,
+        65536,
+        1
+      ],
+      "k": 2048,
+      "workers": 56,
+      "threads": 128,
+      "coarse": true,
+      "parallel_scan": true,
+      "input_sha256": "0c435edd506b44a1cc41ea19a140811275f88c0129da89fb8ecb95e96e48e229",
+      "kernel_source_sha256": "987da9f9d314f8744bef05a628e60a14b88e63db320374f36a3b6411ce5eb2e3",
+      "kernel_median_us": 411563.602,
+      "event_median_us": 411402.0080566406,
+      "cann_kernel_median_us": 52295.7615,
+      "performance_x_cann": 0.12706605065624826
+    }
+  }
+}

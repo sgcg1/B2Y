@@ -4,6 +4,10 @@
 
 本地只有CPU和静态检查能力。尚未在你的SDK运行；编译失败、计数异常或检查不一致时停在探针阶段，不升级torch/CANN、不改变设备频率、不进入正式阶段插桩。
 
+## 当前失败的下一步
+
+若已遇到Counter/fence source order changed，先按 [只读源码检查指南](INSPECT_SOURCE.md) 导出原失败目录的r1-timed.cpp及标记位置，不要重跑探针或删除断言。源码未回传前，不能确认编译器重排或检查器误报。
+
 ## 1. 环境与更新
 
 使用已有Docker容器yjl，以及此前跑通TopK的Python/CANN环境。宿主机进入容器，已经在容器内则跳过：

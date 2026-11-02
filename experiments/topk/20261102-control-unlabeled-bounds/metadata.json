@@ -1,0 +1,15 @@
+{
+  "id": "20261102-control-unlabeled-bounds",
+  "title": "初始control无版本标识的范围断言",
+  "archived_date": "2026-11-02",
+  "status": "failed_unlabeled_control",
+  "source": "Excerpt of user chat output; not the complete original terminal log",
+  "reported_date": "2026-11-02",
+  "interpretation": "原日志缺少失败版本标识。后续诊断发现H256失败，但不足以唯一归因此处原始故障。",
+  "files": {
+    "reported-excerpt.txt": {
+      "sha256": "354bf8f4848b0d5d470d4f1b0c2850fe5bc0d45b1c5d1fb18d63fbdd5b4330e2",
+      "bytes": 309
+    }
+  }
+}

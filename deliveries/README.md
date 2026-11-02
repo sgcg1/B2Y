@@ -35,3 +35,5 @@ git -C /home/y00937463/TileOPs fetch origin --tags
 新增独立诊断：[最小计时探针20261102-probe1](../diagnostics/topk-timer-probe/README.md)，验证计数器、完成屏障与观察开销。本次仅新增通用探针代码和操作指南，不附带服务器实验结果或分析。已有topk-950pr工具及MANIFEST未改；服务器只需更新B2Y，不必更新TileOPs或重跑契约测试。探针尚未在目标SDK实测，运行后审核probe-summary.txt。
 
 当前统一入口：[仓库README](../README.md)。用户已确认项目完全开源并授权本任务分析报告同步；[H128完整实验分析](scan-r1-results-20261102.md)现纳入本仓。后续待执行命令均先写入本仓并推送，聊天不作为唯一命令来源。
+
+probe1首次现场失败于Counter/fence源码顺序检查，尚无计时校准结果。当前按 [只读源码导出指南](../diagnostics/topk-timer-probe/INSPECT_SOURCE.md) 收集原失败目录源码，不重跑NPU。已建立 [长期实验档案](../experiments/topk/README.md)，保存原始回传、失败和缺失信息；不覆盖历史数据。

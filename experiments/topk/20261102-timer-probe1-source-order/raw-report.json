@@ -1,0 +1,37 @@
+{
+  "version": "20261102-probe1",
+  "status": "failed",
+  "stage": "compile:r1-timed",
+  "physical_device": 0,
+  "documented_ticks_per_us": 1000,
+  "stage_profiling_accepted": false,
+  "timing_scope": "Events include launch, input load and output store; counter interval measures dependent UB VF work plus observer costs. Compare workload deltas, not absolute equality.",
+  "probe_files_sha256": {
+    ".gitattributes": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9",
+    "README.md": "f74098160006de82a10768b7a1d2141fb6effff1558a6feb37dfd9b57912a62c",
+    "kernels.py": "43c5adc9cf9e232df879b04da5094216699bbabcfba24b312b1a264ea90069a7",
+    "probe.py": "9a9e4426e8bec556ff024dbcab8e735f957f5cd189719c27408b3e11a228f69b",
+    "tests.py": "3c57e9212f903c1a2c6c226eae1510b35d478ddea4c5a6cb1a452cccf7e8e68b"
+  },
+  "compiler_version": [
+    "2026-09-29T23:53:43+08:00 clang version 15.0.5 (clang-5c68a1cb1231 flang-5c68a1cb1231)",
+    "Target: x86_64-unknown-linux-gnu",
+    "Thread model: posix",
+    "InstalledDir: /usr/local/Ascend/cann-current/bin"
+  ],
+  "cann_installation_info": "package_name=Ascend-cann-toolkit\nversion=9.3.0\ninnerversion=V100R001C12B136\ncompatible_version=[V100R001C15],[V100R001C23],[V100R001C10],[V100R001C11],[V100R001C12]\narch=x86_64\nos=linux\npath=/usr/local/Ascend/cann-9.3.0\n",
+  "runtime": {
+    "python": "/usr/local/python3.12.14/bin/python3",
+    "torch": "2.13.0+cpu",
+    "torch_npu": "2.13.0",
+    "tilelang": "0.1.15+cpu.git0176ba14",
+    "tilelang_path": "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/__init__.py",
+    "cann_home": "/usr/local/Ascend/cann-9.3.0",
+    "Kernel_signature": "(*blocks: 'int | tirx.PrimExpr', prelude: 'str | None' = None) -> 'KernelLaunchFrame'",
+    "has_call_extern": true
+  },
+  "device": "Ascend950PR_9579",
+  "error_type": "AssertionError",
+  "error": "Counter/fence source order changed",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/y00937463/B2Y/diagnostics/topk-timer-probe/probe.py\", line 259, in main\n    execute(report, root, args.device)\n  File \"/home/y00937463/B2Y/diagnostics/topk-timer-probe/probe.py\", line 168, in execute\n    check_generated_source(code, mode, repeats)\n  File \"/home/y00937463/B2Y/diagnostics/topk-timer-probe/probe.py\", line 31, in check_generated_source\n    assert fences[1] < clocks[1] < fences[2] < clocks[2], \"Counter/fence source order changed\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Counter/fence source order changed\n"
+}

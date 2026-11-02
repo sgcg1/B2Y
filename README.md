@@ -2,12 +2,14 @@
 
 本仓用于同步辅助脚本、操作指南、实验结果和分析。TileOPs实现代码通过个人fork `https://github.com/sgcg1/TileOPs` 的main同步；B2Y辅助材料在服务器容器内直接克隆和更新。
 
-当前下一步：打开 [最小设备计时探针指南](diagnostics/topk-timer-probe/README.md)，在现有yjl容器内运行探针，复制其中要求的probe-summary.txt。此步骤只需更新B2Y，不需要更新服务器TileOPs或重跑14项测试。
+当前下一步：probe1已在源码顺序检查处失败，先按 [只读源码导出指南](diagnostics/topk-timer-probe/INSPECT_SOURCE.md) 从原失败目录导出带行号的r1-timed.cpp及标记位置。只更新B2Y，暂不重跑探针或TopK测试。
 
 ## 操作入口
 
 | 需要做什么 | 文档 |
 | --- | --- |
+| 查阅全部已归档实验（含失败、原始数据和哈希） | [experiments/topk/README.md](experiments/topk/README.md) |
+| 当前probe1源码顺序错误：只读导出原源码 | [diagnostics/topk-timer-probe/INSPECT_SOURCE.md](diagnostics/topk-timer-probe/INSPECT_SOURCE.md) |
 | 最小计时探针：验证计数器、完成屏障和观察开销 | [diagnostics/topk-timer-probe/README.md](diagnostics/topk-timer-probe/README.md) |
 | 查看已完成的H128扫描实验结论 | [deliveries/scan-r1-results-20261102.md](deliveries/scan-r1-results-20261102.md) |
 | 新服务器部署与完整实验流程 | [topk-950pr/START_HERE.md](topk-950pr/START_HERE.md) |
@@ -42,3 +44,5 @@ git -C /home/y00937463/B2Y pull --ff-only origin main
 两台电脑之间无法直接复制粘贴。今后所有要求操作者执行的命令，必须先写入本仓的指南或脚本并推送；聊天提供文档链接、目的和结果，不把聊天当作唯一命令来源。执行位置、所用环境、输出文件及失败处理应在文档中说明。
 
 用户已确认本项目完全开源，并明确授权将本任务的相关实验结果、分析报告、脚本和指南同步到B2Y。此前关于服务器产出不能传出或不能发布的限制已更新，不应继续作为该范围内同步的阻塞理由。账户令牌、密码等凭据不进入仓库。
+
+实验保存规则：以后每次收到的结果均按独立ID归档到experiments/topk/，成功、失败和不完整结果都保留。原始数据不覆盖，并记录来源、版本、状态、缺失项和SHA-256；分析结论与原始数据分开。根目录“实验结果”只作为收件箱，历史数据以实验索引为入口。服务器未回传的文件不能补造。

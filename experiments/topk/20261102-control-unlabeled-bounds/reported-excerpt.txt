@@ -1,0 +1,6 @@
+======================== 14 passed in 231.59s (0:03:51) ========================
+control 1
+2026-11-02 10:01:45: compilation started (time from user log)
+File "/home/y00937463/B2Y/topk-950pr/control_portable.py", line 84, in main
+    assert bool(((ids >= 0) & (ids < args.length)).all().item())
+AssertionError

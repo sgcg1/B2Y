@@ -1,0 +1,4 @@
+* text eol=lf
+console.txt -text
+raw-export.txt -text
+raw-report.json -text

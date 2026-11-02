@@ -1,8 +1,13 @@
 """CPU tests of probe interpretation; never import torch or launch a device."""
 
 import copy
+import hashlib
+import json
+import tempfile
 import unittest
+from pathlib import Path
 
+from inspect_source import collect, describe_source
 from probe import analyze, check_generated_source
 
 
@@ -85,6 +90,39 @@ class InterpretationTest(unittest.TestCase):
         self.assertFalse(
             analyze(cases)[1]["counter_intervals_fit_inside_events_at_documented_rate"]
         )
+
+    def test_source_export_preserves_failed_order_and_original_files(self):
+        raw = b"tileops_probe_fence(){}\ntileops_probe_clock(){}\nvoid main(){\ntileops_probe_fence();\ntileops_probe_fence();\ntileops_probe_clock();\nasc_vf_call<work>();\ntileops_probe_clock();\n}\n"
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            summary = {
+                "version": "20261102-probe1",
+                "status": "failed",
+                "stage": "compile:r1-timed",
+            }
+            (root / "probe-summary.txt").write_text(json.dumps(summary), encoding="utf-8")
+            (root / "r1-timed.cpp").write_bytes(raw)
+            text = collect(root)
+            meta = json.loads(text.split("\n\n=====", 1)[0])
+            info = meta["sources"]["r1-timed.cpp"]
+            self.assertFalse(info["legacy_positional_order_check"])
+            self.assertFalse(meta["source_order_root_cause_established"])
+            self.assertTrue(meta["sources"]["r1-plain.cpp"]["missing"])
+            self.assertEqual(info["sha256"], hashlib.sha256(raw).hexdigest())
+            self.assertIn("0007: asc_vf_call<work>();", text)
+            self.assertEqual((root / "r1-timed.cpp").read_bytes(), raw)
+
+    def test_source_export_requires_primary_source(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "probe-summary.txt").write_text("{}", encoding="utf-8")
+            with self.assertRaisesRegex(AssertionError, "Expected r1-timed.cpp"):
+                collect(root)
+
+    def test_source_export_does_not_invent_missing_occurrences(self):
+        info = describe_source(b"tileops_probe_clock();\n")
+        self.assertIsNone(info["legacy_positional_order_check"])
+        self.assertEqual(len(info["clock_occurrence_offsets"]), 1)
 
 
 if __name__ == "__main__":

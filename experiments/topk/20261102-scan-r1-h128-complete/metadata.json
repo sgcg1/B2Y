@@ -1,0 +1,27 @@
+{
+  "id": "20261102-scan-r1-h128-complete",
+  "title": "H128完整回传及两轮控制",
+  "archived_date": "2026-11-02",
+  "status": "measured_candidate_not_final_accepted",
+  "source": "User-provided compact export attachment; summary-all.json is a parsed representation of its summary",
+  "reported_date": "2026-11-02",
+  "run_label": "scan-r1-20261102-103230",
+  "tileops_commit": "7247ad4f355c62a8679dcdc8fdf182c0b219db5e",
+  "tests_passed": 14,
+  "interpretation": "Decode两轮事件收益约1.26倍；完整Prefill对CANN已测，缺少同轮旧扫描对照。原始profiler逐条记录未包含于导出。",
+  "files": {
+    "raw-export.txt": {
+      "sha256": "1b5051098644b22a4ed90d4260cc7a490adde3d8d0aaad026042221bb91bbe80",
+      "bytes": 89460
+    },
+    "summary-all.json": {
+      "sha256": "e97ff37a809897f900f4cc216742bfdaf7a331ed3ac896b124f1ffb9073655d7",
+      "bytes": 2436
+    },
+    "analysis.md": {
+      "sha256": "8493b6ddf8d4e53bedd39f73e544d93d46446063cd3182ce03aa7c579dac87f3",
+      "bytes": 3295
+    }
+  },
+  "analysis_note": "Analysis snapshot; relative guide link adjusted for archive location; numeric results unchanged"
+}

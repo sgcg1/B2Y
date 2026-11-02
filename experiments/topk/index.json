@@ -1,0 +1,41 @@
+{
+  "scope": "Experiments received in this chat; unreturned server files are not synthesized",
+  "entries": [
+    {
+      "id": "20261031-preflight-torch-version",
+      "title": "初次预检版本门槛失败",
+      "status": "failed_preflight",
+      "metadata": "20261031-preflight-torch-version/metadata.json"
+    },
+    {
+      "id": "undated-before-scan-decode",
+      "title": "优化前Decode摘要",
+      "status": "reported_measurement",
+      "metadata": "undated-before-scan-decode/metadata.json"
+    },
+    {
+      "id": "20261102-control-unlabeled-bounds",
+      "title": "初始control无版本标识的范围断言",
+      "status": "failed_unlabeled_control",
+      "metadata": "20261102-control-unlabeled-bounds/metadata.json"
+    },
+    {
+      "id": "20261102-grouped-h256-diagnostic",
+      "title": "逐版本诊断定位H256未填槽位",
+      "status": "failed_grouped_h256",
+      "metadata": "20261102-grouped-h256-diagnostic/metadata.json"
+    },
+    {
+      "id": "20261102-scan-r1-h128-complete",
+      "title": "H128完整回传及两轮控制",
+      "status": "measured_candidate_not_final_accepted",
+      "metadata": "20261102-scan-r1-h128-complete/metadata.json"
+    },
+    {
+      "id": "20261102-timer-probe1-source-order",
+      "title": "计时探针源码顺序检查失败",
+      "status": "failed_source_validation",
+      "metadata": "20261102-timer-probe1-source-order/metadata.json"
+    }
+  ]
+}

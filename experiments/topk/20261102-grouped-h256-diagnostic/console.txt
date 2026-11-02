@@ -1,0 +1,51 @@
+root@1c26d9767e3f:/home/y00937463/TileOPs# bash "$TOPK_TOOLS/run.sh" control-diagnose
+RUN_CONTEXT_OK
+CONTROL_COMPILE v0.1.0 topk-npu-v0.1.0
+2026-11-02 10:16:30  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 10:16:45  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+CONTROL_COMPILE v0.1.2 topk-npu-v0.1.2
+2026-11-02 10:16:46  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 10:17:04  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+CONTROL_COMPILE v0.1.4-before-scan 49aaea3608d97d666f535053e974903547f94ad3
+2026-11-02 10:17:04  [TileLang:tilelang.cache.kernel_cache:WARNING] (kernel_cache.py:379): Found kernel 'main' in memory cache. For better performance, consider using `@tilelang.jit` instead of direct kernel caching.
+CONTROL_COMPILE candidate-h128
+2026-11-02 10:17:04  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 10:17:23  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+CONTROL_COMPILE candidate-h256
+2026-11-02 10:17:23  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 10:17:42  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+CONTROL_COMPILE candidate-serial-h128
+2026-11-02 10:17:42  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 10:17:58  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+CONTROL_RUN v0.1.0
+CONTROL_CHECK {"version": "v0.1.0", "phase": "single_call", "invalid_count": 0, "invalid_examples": [], "status": "passed"}
+CONTROL_CHECK {"version": "v0.1.0", "phase": "after_warmup", "invalid_count": 0, "invalid_examples": [], "status": "passed"}
+CONTROL_RUN v0.1.2
+CONTROL_CHECK {"version": "v0.1.2", "phase": "single_call", "invalid_count": 0, "invalid_examples": [], "status": "passed"}
+CONTROL_CHECK {"version": "v0.1.2", "phase": "after_warmup", "invalid_count": 0, "invalid_examples": [], "status": "passed"}
+CONTROL_RUN v0.1.4-before-scan
+CONTROL_CHECK {"version": "v0.1.4-before-scan", "phase": "single_call", "invalid_count": 0, "invalid_examples": [], "status": "passed"}
+CONTROL_CHECK {"version": "v0.1.4-before-scan", "phase": "after_warmup", "invalid_count": 0, "invalid_examples": [], "status": "passed"}
+CONTROL_RUN candidate-h128
+CONTROL_CHECK {"version": "candidate-h128", "phase": "single_call", "invalid_count": 0, "invalid_examples": [], "status": "passed"}
+CONTROL_CHECK {"version": "candidate-h128", "phase": "after_warmup", "invalid_count": 0, "invalid_examples": [], "status": "passed"}
+CONTROL_RUN candidate-h256
+CONTROL_CHECK {"version": "candidate-h256", "phase": "single_call", "invalid_count": 253, "invalid_examples": [{"row": 0, "slot": 1795, "value": 16384}, {"row": 0, "slot": 1796, "value": 16384}, {"row": 0, "slot": 1797, "value": 16384}, {"row": 0, "slot": 1798, "value": 16384}, {"row": 0, "slot": 1799, "value": 16384}, {"row": 0, "slot": 1800, "value": 16384}, {"row": 0, "slot": 1801, "value": 16384}, {"row": 0, "slot": 1802, "value": 16384}], "status": "out_of_bounds"}
+CONTROL_RUN candidate-serial-h128
+CONTROL_CHECK {"version": "candidate-serial-h128", "phase": "single_call", "invalid_count": 0, "invalid_examples": [], "status": "passed"}
+CONTROL_CHECK {"version": "candidate-serial-h128", "phase": "after_warmup", "invalid_count": 0, "invalid_examples": [], "status": "passed"}
+CONTROL_CHECK {"version": "v0.1.0", "phase": "after_all_versions", "invalid_count": 0, "invalid_examples": [], "status": "passed"}
+CONTROL_CHECK {"version": "v0.1.2", "phase": "after_all_versions", "invalid_count": 0, "invalid_examples": [], "status": "passed"}
+CONTROL_CHECK {"version": "v0.1.4-before-scan", "phase": "after_all_versions", "invalid_count": 0, "invalid_examples": [], "status": "passed"}
+CONTROL_CHECK {"version": "candidate-h128", "phase": "after_all_versions", "invalid_count": 0, "invalid_examples": [], "status": "passed"}
+CONTROL_CHECK {"version": "candidate-h256", "phase": "after_all_versions", "invalid_count": 253, "invalid_examples": [{"row": 0, "slot": 1795, "value": 16384}, {"row": 0, "slot": 1796, "value": 16384}, {"row": 0, "slot": 1797, "value": 16384}, {"row": 0, "slot": 1798, "value": 16384}, {"row": 0, "slot": 1799, "value": 16384}, {"row": 0, "slot": 1800, "value": 16384}, {"row": 0, "slot": 1801, "value": 16384}, {"row": 0, "slot": 1802, "value": 16384}], "status": "out_of_bounds"}
+CONTROL_CHECK {"version": "candidate-serial-h128", "phase": "after_all_versions", "invalid_count": 0, "invalid_examples": [], "status": "passed"}
+CONTROL_DIAGNOSTIC_FAILED_VERSIONS ["candidate-h256"]
+Traceback (most recent call last):
+  File "/home/y00937463/B2Y/topk-950pr/control_portable.py", line 199, in <module>
+    main()
+  File "/home/y00937463/B2Y/topk-950pr/control_portable.py", line 146, in main
+    assert not failed, "Diagnostic failures recorded in validation.json; no timings produced"
+           ^^^^^^^^^^
+AssertionError: Diagnostic failures recorded in validation.json; no timings produced
+[ERROR] 2026-11-02-10:18:05 (PID:19306, Device:0, RankID:-1) ERR99999 UNKNOWN applicaiton exception

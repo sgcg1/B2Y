@@ -1,0 +1,25 @@
+{
+  "id": "20261102-grouped-h256-diagnostic",
+  "title": "逐版本诊断定位H256未填槽位",
+  "archived_date": "2026-11-02",
+  "status": "failed_grouped_h256",
+  "source": "User-provided attachment",
+  "reported_date": "2026-11-02",
+  "failed_version": "candidate-h256",
+  "invalid_count": 253,
+  "invalid_value": 16384,
+  "passed_versions": [
+    "v0.1.0",
+    "v0.1.2",
+    "v0.1.4-before-scan",
+    "candidate-h128",
+    "candidate-serial-h128"
+  ],
+  "interpretation": "H256首次执行即有未填哨兵，配置已拒绝；底层原因未确定。",
+  "files": {
+    "console.txt": {
+      "sha256": "6381d7cd3c76115e0f39ae96767d76388e986eb49fc82c2bf21ffdbb48f4f303",
+      "bytes": 5560
+    }
+  }
+}
