@@ -1,0 +1,24 @@
+{
+  "id": "20261102-a2-r2-layout-handle",
+  "source_commit": "d1a6c7d",
+  "status": "failed_a2_layout_inference_handle_int32",
+  "accepted": false,
+  "files": [
+    {
+      "source": "AAA_Results/topk-a2-r2-20261102-210059-30250-repeat-1.log",
+      "bytes": 7008,
+      "sha256": "4187d77a2cbaa076f4c89f35847ee612f29d23d19dae8cab864bdfff8f1b5e9b"
+    },
+    {
+      "source": "AAA_Results/topk-a2-r2-20261102-210059-30250-repeat-1.txt",
+      "bytes": 71695,
+      "sha256": "459c6ddffd4f7ca536a60e095a110a9735180330fdde303485aaf2dc4fa81660"
+    }
+  ],
+  "missing": [
+    "A2 generated source",
+    "correctness samples",
+    "performance samples"
+  ],
+  "candidate_fix": "67b9e72f"
+}

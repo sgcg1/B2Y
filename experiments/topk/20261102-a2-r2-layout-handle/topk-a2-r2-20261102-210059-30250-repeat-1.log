@@ -1,0 +1,90 @@
+COMPILE_BEGIN baseline
+
+2026-11-02 21:01:24  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 21:01:42  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END baseline
+COMPILE_BEGIN control
+
+2026-11-02 21:01:42  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 21:01:59  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END control
+COMPILE_BEGIN a2
+[21:02:02] /home/y00937463/tilelang/3rdparty/tvm/src/tirx/op/op.cc:248: pos_inf 0
+
+2026-11-02 21:01:59  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+A2_OUTPUT /home/y00937463/topk-a2-r2-20261102-210059-30250/repeat-1
+Traceback (most recent call last):
+  File "/home/y00937463/B2Y/diagnostics/topk-a2-r2/run.py", line 194, in <module>
+    main()
+  File "/home/y00937463/B2Y/diagnostics/topk-a2-r2/run.py", line 183, in main
+    execute(report, args.repo.resolve(), root)
+  File "/home/y00937463/B2Y/diagnostics/topk-a2-r2/run.py", line 69, in execute
+    program = module.topk_select_ascend(1, 16384, 2048, 1, 1, COARSE=True, H=128,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/jit/__init__.py", line 566, in __call__
+    kernel = self.compile(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/jit/__init__.py", line 481, in compile
+    kernel_result = compile(
+                    ^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/jit/__init__.py", line 168, in compile
+    return cached(
+           ^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/cache/__init__.py", line 91, in cached
+    return cache.cached(
+           ^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/cache/kernel_cache.py", line 427, in cached
+    kernel = JITKernel(
+             ^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/jit/kernel.py", line 140, in __init__
+    adapter = self._compile_and_create_adapter(func, out_idx)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/jit/kernel.py", line 280, in _compile_and_create_adapter
+    self.artifact = self._compile_artifact(tilelang_func, pass_configs, compile_metadata)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/jit/kernel.py", line 321, in _compile_artifact
+    artifact = lower_with_context(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/engine/lower.py", line 165, in lower_with_context
+    return _lower_with_context_impl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/engine/lower.py", line 184, in _lower_with_context_impl
+    host_mod, device_mod, params, target, target_host = lower_to_host_device_ir(
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/engine/lower.py", line 136, in lower_to_host_device_ir
+    mod = context.lower(mod)
+          ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/backend/module.py", line 214, in lower
+    return self.module.lower(mod, self.target)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/backend/module.py", line 115, in lower
+    return self.get_pipeline(target).lower(mod, target)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/backend/pass_pipeline/pipeline.py", line 31, in lower
+    return self._lower(mod, target)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/ascend/pipeline.py", line 93, in AscendPassPipelineBody
+    mod = ascend_transform.AscendLayoutInference()(mod)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/3rdparty/tvm/python/tvm/ir/transform.py", line 171, in __call__
+    return _ffi_transform_api.RunPass(self, mod)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "python/tvm_ffi/cython/function.pxi", line 968, in tvm_ffi.core.Function.__call__
+  File "<unknown>", line 0, in tvm::transform::Pass::operator()(tvm::IRModule) const
+  File "<unknown>", line 0, in tvm::transform::Pass::operator()(tvm::IRModule, tvm::transform::PassContext const&) const
+  File "<unknown>", line 0, in tvm::tirx::transform::PrimFuncPassNode::operator()(tvm::IRModule, tvm::transform::PassContext const&) const
+  File "<unknown>", line 0, in tvm::tl::ascend::LayoutInferencer::Substitute(tvm::tirx::PrimFunc)
+  File "<unknown>", line 0, in tvm::tl::ascend::BufferUseDefCollector::Run()
+  File "<unknown>", line 0, in tvm::tl::ascend::BufferUseDefCollector::InferInFreeMode(tvm::ffi::Map<tvm::tirx::Buffer, tvm::tl::Layout, void>&, tvm::ffi::Map<tvm::tirx::Buffer, tvm::tl::Layout, void> const&)
+  File "<unknown>", line 0, in tvm::tl::ascend::BufferUseDefCollector::RunOneAttempt(int, std::vector<int, std::allocator<int> > const&, tvm::ffi::Map<tvm::tirx::Buffer, tvm::tl::Layout, void> const&, tvm::ffi::Map<tvm::tirx::Buffer, tvm::tl::Layout, void> const&, std::vector<std::pair<tvm::tirx::Buffer, tvm::tl::Fragment>, std::allocator<std::pair<tvm::tirx::Buffer, tvm::tl::Fragment> > > const&, tvm::tl::LayoutCostModel const&, int)
+  File "<unknown>", line 0, in tvm::tl::FragmentThreadIndexProbe::FragmentThreadIndexProbe(tvm::tl::Fragment const&, tvm::ffi::Array<tvm::tirx::IterVar, void> const&, tvm::arith::Analyzer*)
+  File "<unknown>", line 0, in tvm::arith::Analyzer::Bind(tvm::tirx::Var const&, tvm::Range const&, bool)
+  File "<unknown>", line 0, in tvm::arith::IntSetAnalyzer::Bind(tvm::tirx::Var const&, tvm::Range const&, bool)
+  File "<unknown>", line 0, in tvm::arith::IntSet::FromRange(tvm::Range)
+  File "<unknown>", line 0, in tvm::operator+(tvm::PrimExpr, tvm::PrimExpr)
+  File "<unknown>", line 0, in tvm::add(tvm::PrimExpr, tvm::PrimExpr, tvm::Span)
+  File "/home/y00937463/tilelang/3rdparty/tvm/src/tirx/op/op.cc", line 249, in void tvm::BinaryOpMatchTypes(tvm::PrimExpr&, tvm::PrimExpr&, tvm::Span)
+    TVM_FFI_THROW(InternalError) << "Cannot match type " << ltype << " vs " << rtype;
+
+tvm.error.InternalError: Cannot match type handle vs int32
+[ERROR] 2026-11-02-21:02:07 (PID:30253, Device:0, RankID:-1) ERR99999 UNKNOWN applicaiton exception

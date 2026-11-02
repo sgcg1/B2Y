@@ -96,6 +96,12 @@
       "title": "A2 r1冻结基线哈希被工具替换破坏",
       "status": "failed_tool_baseline_digest_corruption",
       "metadata": "20261102-a2-r1-baseline-digest/metadata.json"
+    },
+    {
+      "id": "20261102-a2-r2-layout-handle",
+      "title": "A2 r2布局推导handle/int32失败",
+      "status": "failed_a2_layout_inference_handle_int32",
+      "metadata": "20261102-a2-r2-layout-handle/metadata.json"
     }
   ]
 }

@@ -32,3 +32,5 @@
 最新：[同步最小复现r2已复核](20261102-a1-sync-repro-r2-204739/analysis.md)，四配置编译通过；uint8有额外屏障、uint32无，但未重现生产外提警告，A1仍关闭。下一步回到生产访问对排查，无需重跑此复现。
 
 - [A2 r1工具身份错误](20261102-a2-r1-baseline-digest/analysis.md)，未开始设备编译。
+
+- [A2 r2布局失败](20261102-a2-r2-layout-handle/analysis.md)，基线/control编译成功，A2未产源码。
