@@ -8,6 +8,7 @@
 
 | 需要做什么 | 文档 |
 | --- | --- |
+| 查看项目阶段进展总结 | [deliveries/topk-progress-summary-20261102.md](deliveries/topk-progress-summary-20261102.md) |
 | 当前：后续性能优化路线复评 | [deliveries/topk-optimization-roadmap-20261102.md](deliveries/topk-optimization-roadmap-20261102.md) |
 | 查看Decode阶段结果与定位依据 | [阶段结果报告](experiments/topk/20261102-stage1-decode-163258/analysis.md) |
 | 重现实验：Decode真实TopK阶段诊断 | [diagnostics/topk-stage-timing/README.md](diagnostics/topk-stage-timing/README.md) |
