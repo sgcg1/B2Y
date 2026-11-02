@@ -2,7 +2,7 @@
 
 本仓用于同步辅助脚本、操作指南、实验结果和分析。TileOPs实现代码通过个人fork `https://github.com/sgcg1/TileOPs` 的main同步；B2Y辅助材料在服务器容器内直接克隆和更新。
 
-**新会话接手先读：[2026-11-02完整交接](deliveries/topk-handoff-20261102.md)。** 包含当前实测版本、证据入口、下一步候选、已踩坑和最新协作条件。
+**新会话接手先读：[2026-11-02完整交接](deliveries/topk-handoff-20261102.md)。** 包含当前实测版本、证据入口、下一步候选、已踩坑和最新协作条件。 个人fork交接文档本地提交e444083d因GitHub连接超时待推送；B2Y交接已可用。
 
 当前进展：已结合Decode阶段数据与交接第4.2节完成[后续性能优化路线复评](deliveries/topk-optimization-roadmap-20261102.md)。主线为首轮粗键复用、分片计数/压缩，再验证Decode首轮分核；缓存溢出、尾部与扫描按证据降级。[本轮阶段结果](experiments/topk/20261102-stage1-decode-163258/analysis.md)及原始数据保留。本轮没有新增待执行命令，也无需重跑旧探针。
 
