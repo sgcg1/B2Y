@@ -1,3 +1,65 @@
+python3 - <<'PY'
+import json
+import os
+from pathlib import Path
+
+root = Path(os.environ["EVIDENCE"])
+assert root.is_dir(), f"实验目录不存在：{root}"
+
+# 保留数值样本；省略体积大的逐条 profiler 明细和重复遥测文本。
+def compact(value):
+    if isinstance(value, dict):
+        result = {}
+        for key, item in value.items():
+            if key in {"kernel_records", "task_records"}:
+                result[key + "_count"] = len(item)
+            elif key != "text":
+                result[key] = compact(item)
+        return result
+    if isinstance(value, list):
+        return [compact(item) for item in value]
+    return value
+
+files = set()
+for pattern in [
+    "*.json",
+    "control-*/*.json",
+    "candidate/*.json",
+    "cann/*/*.json",
+]:
+    files.update(root.glob(pattern))
+
+parts = [f"EVIDENCE: {root}"]
+for path in sorted(files):
+    data = compact(json.loads(path.read_text(encoding="utf-8")))
+    parts.append(f"\n===== {path.relative_to(root)} =====")
+    parts.append(json.dumps(data, ensure_ascii=False, separators=(",", ":")))
+
+for name in ["candidate/tests.xml", "health-before.txt"]:
+    path = root / name
+    if path.is_file():
+        parts.extend([f"\n===== {name} =====", path.read_text(encoding="utf-8")])
+
+output = root.parent / (root.name + "-results.txt")
+output.write_text("\n".join(parts) + "\n", encoding="utf-8")
+print(f"生成文件：{output}")
+print(f"文件大小：{output.stat().st_size} 字节")
+PY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 root@1c26d9767e3f:/home/y00937463/TileOPs# bash "$TOPK_TOOLS/run.sh" control-diagnose
 RUN_CONTEXT_OK
 CONTROL_COMPILE v0.1.0 topk-npu-v0.1.0
