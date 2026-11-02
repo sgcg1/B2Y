@@ -38,3 +38,5 @@
 - [A2 r3原子参数代码生成失败](20261102-a2-r3-atomic-codegen/analysis.md)，已提取回传C++。
 
 - [A2 r4性能回退](20261102-a2-r4-211000/analysis.md)，600事件完整，候选不接受。
+
+- [Decode小P成本结果](20261102-decode-pilot-r1-211917/analysis.md)，1200事件完整，不是完整TopK。

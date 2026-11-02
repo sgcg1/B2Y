@@ -1,0 +1,35 @@
+{
+  "id": "20261102-decode-pilot-r1-211917",
+  "source_commit": "d512737",
+  "status": "partial_pipeline_cost_promising_not_full_topk",
+  "accepted": false,
+  "files": [
+    {
+      "source": "AAA_Results/topk-decode-pilot-r1-20261102-211917-31373-repeat-1.log",
+      "bytes": 1851,
+      "sha256": "f50e16260426478d4f6445b48a738e6f09f4e4a7e2de6ebec5b300611771dfc5"
+    },
+    {
+      "source": "AAA_Results/topk-decode-pilot-r1-20261102-211917-31373-repeat-1.txt",
+      "bytes": 69305,
+      "sha256": "0870fbb374d7e38a92db3b48ac70a765499de60d3525f66e0f1b6d8fc9789fad"
+    },
+    {
+      "source": "AAA_Results/topk-decode-pilot-r1-20261102-211917-31373-repeat-2.log",
+      "bytes": 1851,
+      "sha256": "698a250ec8037787e381fe8efdba78a37b83e08bc8075c559c11a61de8952bdf"
+    },
+    {
+      "source": "AAA_Results/topk-decode-pilot-r1-20261102-211917-31373-repeat-2.txt",
+      "bytes": 69307,
+      "sha256": "46adf37d74828512dcd3122288426d02b890995998520a80cd197089a5b8bf1a"
+    }
+  ],
+  "missing": [
+    "compact stage",
+    "exact selection remainder",
+    "full TopK correctness and latency",
+    "profiler kernel envelope",
+    "same-round CANN"
+  ]
+}

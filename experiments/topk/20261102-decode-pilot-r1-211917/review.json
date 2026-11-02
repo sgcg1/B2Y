@@ -1,0 +1,66 @@
+{
+  "event_samples": 1200,
+  "source_and_tool_identities_verified": true,
+  "rows": [
+    {
+      "repeat": 1,
+      "seed": 20261030,
+      "input_sha256": "c59b9485e9750eaf04d4668934c0383510a15b2cc9365ef9c6c4b9eaf2bf7593",
+      "median_us": {
+        "hist-p1": 45.85600085556507,
+        "pipeline-p1": 48.57550002634525,
+        "hist-p2": 26.57150011509657,
+        "pipeline-p2": 29.24400009214878,
+        "hist-p4": 16.189999878406525,
+        "pipeline-p4": 19.053000025451183
+      },
+      "pipeline_p1_over_p4": 2.549493516058239,
+      "pipeline_p4_vs_hist_p1_change_percent": -58.45036708398674
+    },
+    {
+      "repeat": 1,
+      "seed": 20261102,
+      "input_sha256": "55634e8079ab39848e098592d95e6e5caee4a3cbd76c17cbee93062deb8c4db5",
+      "median_us": {
+        "hist-p1": 45.491499826312065,
+        "pipeline-p1": 48.190999776124954,
+        "hist-p2": 26.36399958282709,
+        "pipeline-p2": 28.96150015294552,
+        "hist-p4": 16.17900002747774,
+        "pipeline-p4": 18.95549986511469
+      },
+      "pipeline_p1_over_p4": 2.542322814963834,
+      "pipeline_p4_vs_hist_p1_change_percent": -58.331776403311906
+    },
+    {
+      "repeat": 2,
+      "seed": 20261030,
+      "input_sha256": "c59b9485e9750eaf04d4668934c0383510a15b2cc9365ef9c6c4b9eaf2bf7593",
+      "median_us": {
+        "hist-p1": 46.236999332904816,
+        "pipeline-p1": 48.96149970591068,
+        "hist-p2": 26.573000475764275,
+        "pipeline-p2": 29.356000013649464,
+        "hist-p4": 16.286000609397888,
+        "pipeline-p4": 19.008999690413475
+      },
+      "pipeline_p1_over_p4": 2.5757010102221582,
+      "pipeline_p4_vs_hist_p1_change_percent": -58.887903703375464
+    },
+    {
+      "repeat": 2,
+      "seed": 20261102,
+      "input_sha256": "55634e8079ab39848e098592d95e6e5caee4a3cbd76c17cbee93062deb8c4db5",
+      "median_us": {
+        "hist-p1": 46.53199948370457,
+        "pipeline-p1": 48.630500212311745,
+        "hist-p2": 26.52199938893318,
+        "pipeline-p2": 28.986500576138496,
+        "hist-p4": 16.09050016850233,
+        "pipeline-p4": 18.87349970638752
+      },
+      "pipeline_p1_over_p4": 2.5766551497522903,
+      "pipeline_p4_vs_hist_p1_change_percent": -59.43974057466198
+    }
+  ]
+}

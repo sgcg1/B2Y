@@ -114,6 +114,12 @@
       "title": "A2 r4四组Decode约4%回退，停止扩大",
       "status": "screening_performance_regression_rejected",
       "metadata": "20261102-a2-r4-211000/metadata.json"
+    },
+    {
+      "id": "20261102-decode-pilot-r1-211917",
+      "title": "Decode P4直方图加归并成本有继续投入空间",
+      "status": "partial_pipeline_cost_promising_not_full_topk",
+      "metadata": "20261102-decode-pilot-r1-211917/metadata.json"
     }
   ]
 }
