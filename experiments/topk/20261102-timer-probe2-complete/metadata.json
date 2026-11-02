@@ -1,0 +1,122 @@
+{
+  "id": "20261102-timer-probe2-complete",
+  "title": "probe2完整原始样本与源码复核；进入Decode阶段诊断",
+  "archived_date": "2026-11-02",
+  "status": "minimal_probe_reviewed_topk_diagnostic_pending",
+  "source": "User attachment 5fbd4117-dcfc-4218-b00f-076012231b5e, exact bytes preserved",
+  "related_record": "20261102-timer-probe2-summary",
+  "same_run_not_independent_replication": true,
+  "run_directory": "/home/y00937463/runs/timer-probe2-20261102-154618",
+  "producer_commit": "6853356",
+  "export_tool_commit": "8690f3d",
+  "embedded_file_reconstruction": "UTF-8 text fields re-encoded, all 21 byte counts and SHA match export",
+  "summary_recomputed": true,
+  "all_10_source_transforms_reproduced": true,
+  "native_instruction_order_verified": false,
+  "topk_stage_profiling_accepted": false,
+  "missing": [
+    "native disassembly or hardware dependency trace",
+    "load/frequency and host scheduling timelines",
+    "TopK stage measurements",
+    "independent repeated probe process"
+  ],
+  "files": {
+    "raw-export.txt": {
+      "bytes": 77462,
+      "sha256": "50d2f27a5866f6a2728458d021fce835efad3acebe18c546a1b547637ac654a7"
+    },
+    "probe-report.json": {
+      "bytes": 32055,
+      "sha256": "e142c7be21a8aee1e52f7f71f0c8f801c9a26563e1c1658e008a0b8b805d10ac"
+    },
+    "review.json": {
+      "bytes": 9151,
+      "sha256": "ea40d3e3e4a085bb22b3b05cd10d17e50c2813f5147875efd90e93706005c909"
+    },
+    "analysis.md": {
+      "bytes": 5656,
+      "sha256": "a37111544f4652187b962ae8aa4a17ca3d39bad53023f6c0928aa3e908c2a5e1"
+    },
+    "r0-timed-original.cpp": {
+      "bytes": 1231,
+      "sha256": "e09e9e8f9a6bf90b9cb3082910d6d2394d91fda95173a361c5ed7c5bd81011b2"
+    },
+    "r0-timed-postproc.cpp": {
+      "bytes": 1707,
+      "sha256": "dd683437577ea76d033050716dce745854b40a2004b767b911ec9413b1195870"
+    },
+    "r1-fenced-original.cpp": {
+      "bytes": 1706,
+      "sha256": "7fd34e225f1e0b76c8b85c15596432236ccce47f18bed917b32df35aabf513ff"
+    },
+    "r1-fenced-postproc.cpp": {
+      "bytes": 1998,
+      "sha256": "72486b72c518780504883e5557b073ed5fd42977e00c1091925b232b7e1507a7"
+    },
+    "r1-plain-original.cpp": {
+      "bytes": 1706,
+      "sha256": "d1bec8d997d553dba65ba0b42e9595fd4dc4a9a6afa60d164f621a5925dc3686"
+    },
+    "r1-plain-postproc.cpp": {
+      "bytes": 1663,
+      "sha256": "58487381a205ffb5ec94aaa890c9160a0c5c94446b90e8d105b1773a4fd6f7dc"
+    },
+    "r1-timed-original.cpp": {
+      "bytes": 1706,
+      "sha256": "a831f84655dc9bb221a8dc51e8f3c634a540f649b4d547e4ef3e4fd7afa920b6"
+    },
+    "r1-timed-postproc.cpp": {
+      "bytes": 2182,
+      "sha256": "98f6cf9b00ac60b47959842e5a2ca111568a1ab8db5f24c8118f347a77df8a95"
+    },
+    "r16-fenced-original.cpp": {
+      "bytes": 1768,
+      "sha256": "9217a61e4e1357b4e20df512d1efba345e57b7f66a6bb333a2c2f0e594e0a3aa"
+    },
+    "r16-fenced-postproc.cpp": {
+      "bytes": 2060,
+      "sha256": "58a3ecf8582a7d6e380fde1a53550b3ae9402f869dbd1cc14f185755fe9c60b1"
+    },
+    "r16-plain-original.cpp": {
+      "bytes": 1768,
+      "sha256": "d8e816b248413e5cb104a8f927cdb82605eb5f3d49fdb8a21f489cea714d94c0"
+    },
+    "r16-plain-postproc.cpp": {
+      "bytes": 1725,
+      "sha256": "01ab929273f783294ff8e03d3c435ca8cc338d09920b89868907697d29b75f0f"
+    },
+    "r16-timed-original.cpp": {
+      "bytes": 1768,
+      "sha256": "7b4fb3a286fb8c5ee080df8a1a9ecc6c251eeb28b463bea73b22a914bc7d0df6"
+    },
+    "r16-timed-postproc.cpp": {
+      "bytes": 2244,
+      "sha256": "fdbcc01dc58f897e107a2263dd5c1433e109a9afeff8a86e9932224663bfd36d"
+    },
+    "r64-fenced-original.cpp": {
+      "bytes": 1768,
+      "sha256": "dbfddf7ccbdaf0760dab09fe5199b92fc75fe6718ea32bc9439c4fd1fe5d0add"
+    },
+    "r64-fenced-postproc.cpp": {
+      "bytes": 2060,
+      "sha256": "445094645313452c742757061b94cb8e318e03136ad414e69e45666f7938c29f"
+    },
+    "r64-plain-original.cpp": {
+      "bytes": 1768,
+      "sha256": "ecc37ef59ceb853bb50d0be998fc8475edc8e29f740f5cfad580442c48c19f6c"
+    },
+    "r64-plain-postproc.cpp": {
+      "bytes": 1725,
+      "sha256": "a717f4edfdb462df1c7e193e63c58907ea67a12dce4255014b957622c9edbcd0"
+    },
+    "r64-timed-original.cpp": {
+      "bytes": 1768,
+      "sha256": "424ca8a0a60694b3ab2825ed58c5d860f0cfcc857228af3ee47b71543127d85f"
+    },
+    "r64-timed-postproc.cpp": {
+      "bytes": 2244,
+      "sha256": "7cda52b2efa2c1cb939a9672b0cf751aed4719c849d2bbc84578670961b2ec0b"
+    }
+  },
+  "source_landing_commit": "40e7a78"
+}

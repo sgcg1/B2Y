@@ -48,6 +48,12 @@
       "title": "probe2完成最小采样，摘要尺度检查通过，原始证据待复核",
       "status": "summary_calibration_promising_raw_review_pending",
       "metadata": "20261102-timer-probe2-summary/metadata.json"
+    },
+    {
+      "id": "20261102-timer-probe2-complete",
+      "title": "probe2完整原始样本与源码复核；进入Decode阶段诊断",
+      "status": "minimal_probe_reviewed_topk_diagnostic_pending",
+      "metadata": "20261102-timer-probe2-complete/metadata.json"
     }
   ]
 }

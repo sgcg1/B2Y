@@ -2,13 +2,14 @@
 
 本仓用于同步辅助脚本、操作指南、实验结果和分析。TileOPs实现代码通过个人fork `https://github.com/sgcg1/TileOPs` 的main同步；B2Y辅助材料在服务器容器内直接克隆和更新。
 
-当前下一步：probe2已完成采样，摘要尺度检查通过；短区间差分仍需解释。按 [Probe2完整证据只读导出](diagnostics/topk-timer-probe/EXPORT_COMPLETE.md)，把现有原始样本和源码合成一份文本回传。只更新B2Y，无需重跑探针、TopK测试或编译；[本轮分析与归档](experiments/topk/20261102-timer-probe2-summary/analysis.md)已保存。
+当前下一步：probe2完整原始样本和源码已复核，counter稳定，完整事件存在明显漂移；不能据原摘要宣称插桩零开销。按 [Decode真实TopK阶段诊断](diagnostics/topk-stage-timing/README.md) 在新目录比较production/traced/fenced/timed并记录27个区间和候选轨迹。只更新B2Y，不改生产实现；[完整复核报告](experiments/topk/20261102-timer-probe2-complete/analysis.md)与原始证据已归档。新工具仅通过本地CPU验证，NPU结果待运行。
 
 ## 操作入口
 
 | 需要做什么 | 文档 |
 | --- | --- |
-| 当前：导出已完成probe2的原始样本与源码 | [diagnostics/topk-timer-probe/EXPORT_COMPLETE.md](diagnostics/topk-timer-probe/EXPORT_COMPLETE.md) |
+| 当前：Decode真实TopK阶段诊断 | [diagnostics/topk-stage-timing/README.md](diagnostics/topk-stage-timing/README.md) |
+| 历史：导出已完成probe2的原始样本与源码 | [diagnostics/topk-timer-probe/EXPORT_COMPLETE.md](diagnostics/topk-timer-probe/EXPORT_COMPLETE.md) |
 | 查阅全部已归档实验（含失败、原始数据和哈希） | [experiments/topk/README.md](experiments/topk/README.md) |
 | 历史probe1源码错误：只读导出与复查 | [diagnostics/topk-timer-probe/INSPECT_SOURCE.md](diagnostics/topk-timer-probe/INSPECT_SOURCE.md) |
 | 最小计时探针：验证计数器、完成屏障和观察开销 | [diagnostics/topk-timer-probe/README.md](diagnostics/topk-timer-probe/README.md) |
