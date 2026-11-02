@@ -4,13 +4,14 @@
 
 **新会话接手先读：[2026-11-02完整交接](deliveries/topk-handoff-20261102.md)。** 包含当前实测版本、证据入口、下一步候选、已踩坑和最新协作条件。 用户已确认B2Y（GitCode）与TileOPs（GitHub）均推送成功。
 
-当前进展：已结合Decode阶段数据与交接第4.2节完成[后续性能优化路线复评](deliveries/topk-optimization-roadmap-20261102.md)。主线为首轮粗键复用、分片计数/压缩，再验证Decode首轮分核；缓存溢出、尾部与扫描按证据降级。[本轮阶段结果](experiments/topk/20261102-stage1-decode-163258/analysis.md)及原始数据保留。新增默认关闭的A0粗键表达式复用候选；[当前设备筛选入口](diagnostics/topk-a0-r1/README.md)。用户已确认两个仓库均推送成功，按指南更新仓库后可开始设备筛选；[A0双进程筛选已复核](experiments/topk/20261102-a0-r1-201744/analysis.md)：未证明稳定收益，保持默认关闭，不再扩大A0测试；下一项为独立A1粗键缓存候选，尚未实现，无需重跑旧探针。
+当前进展：已结合Decode阶段数据与交接第4.2节完成[后续性能优化路线复评](deliveries/topk-optimization-roadmap-20261102.md)。主线为首轮粗键复用、分片计数/压缩，再验证Decode首轮分核；缓存溢出、尾部与扫描按证据降级。[本轮阶段结果](experiments/topk/20261102-stage1-decode-163258/analysis.md)及原始数据保留。新增默认关闭的A0粗键表达式复用候选；[当前设备筛选入口](diagnostics/topk-a0-r1/README.md)。用户已确认两个仓库均推送成功，按指南更新仓库后可开始设备筛选；[A0双进程筛选已复核](experiments/topk/20261102-a0-r1-201744/analysis.md)：未证明稳定收益，保持默认关闭，不再扩大A0测试；独立A1粗键缓存候选已实现并推送7519e5c6，默认关闭，当前请按[A1设备筛选指南](diagnostics/topk-a1-r1/README.md)执行，无需重跑旧探针。
 
 ## 操作入口
 
 | 需要做什么 | 文档 |
 | --- | --- |
-| 当前：A0独立候选设备筛选 | [diagnostics/topk-a0-r1/README.md](diagnostics/topk-a0-r1/README.md) |
+| 当前：A1独立候选设备筛选 | [diagnostics/topk-a1-r1/README.md](diagnostics/topk-a1-r1/README.md) |
+| 历史：A0独立候选设备筛选 | [diagnostics/topk-a0-r1/README.md](diagnostics/topk-a0-r1/README.md) |
 | 新会话接手：完整交接 | [deliveries/topk-handoff-20261102.md](deliveries/topk-handoff-20261102.md) |
 | 查看项目阶段进展总结 | [deliveries/topk-progress-summary-20261102.md](deliveries/topk-progress-summary-20261102.md) |
 | 当前：后续性能优化路线复评 | [deliveries/topk-optimization-roadmap-20261102.md](deliveries/topk-optimization-roadmap-20261102.md) |

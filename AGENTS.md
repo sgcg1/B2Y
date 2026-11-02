@@ -2,7 +2,7 @@
 
 本任务最新交接见[deliveries/topk-handoff-20261102.md](deliveries/topk-handoff-20261102.md)。新会话先读该文，历史未提交/权限/环境状态不作为当前前提。
 
-交接同步状态（2026-11-02）：用户确认两个仓库均已推送成功：B2Y远端为GitCode，TileOPs远端为GitHub，候选fda84f78及其祖先e444083d已同步。此状态来源为用户确认，不冒称agent独立核验。当前设备筛选入口diagnostics/topk-a0-r1/README.md；更新两个仓库后按指南运行，工具核对候选SHA。尚无新NPU结果。
+交接同步状态（2026-11-02）：用户确认两个仓库均已推送成功：B2Y远端为GitCode，TileOPs远端为GitHub，候选fda84f78及其祖先e444083d已同步。此状态来源为用户确认，不冒称agent独立核验。A0双进程结果已归档，未证明收益，保持关闭。A1候选7519e5c6已推送GitHub，当前入口diagnostics/topk-a1-r1/README.md；更新两个仓库后运行，工具核对候选SHA。尚无A1 NPU结果。
 
 用户于2026-11-02确认：
 
