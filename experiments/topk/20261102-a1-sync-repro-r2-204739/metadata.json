@@ -1,0 +1,24 @@
+{
+  "id": "20261102-a1-sync-repro-r2-204739",
+  "source_commit": "cb6ecf5",
+  "status": "compile_repro_completed_production_warning_unresolved",
+  "accepted": false,
+  "files": [
+    {
+      "source": "AAA_Results/topk-a1-sync-repro-r2-20261102-204739-29740-repeat-1.log",
+      "bytes": 1333,
+      "sha256": "50afda7b948fc166cd1aae4ad29fb4f944e117660e483328b83fe673c956a13a"
+    },
+    {
+      "source": "AAA_Results/topk-a1-sync-repro-r2-20261102-204739-29740-repeat-1.txt",
+      "bytes": 89915,
+      "sha256": "68e0652e397e94a0dc9e0ea7143be5bbd2998bd2955c8965de023e76e8c79d4f"
+    }
+  ],
+  "missing": [
+    "original production warning conflict pairs",
+    "production sync warning resolution",
+    "kernel execution correctness",
+    "performance samples"
+  ]
+}

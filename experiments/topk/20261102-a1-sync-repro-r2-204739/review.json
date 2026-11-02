@@ -1,0 +1,23 @@
+{
+  "generated": {
+    "n4096-uint32.cpp": {
+      "source_sha256": "0c9c911f8cffa2c18df6b097a1b4053428c3cee120e83efa239ace6815cfc1fa",
+      "asc_syncthreads_count": 0
+    },
+    "n16384-uint8.cpp": {
+      "source_sha256": "043c329ff61d3979cbfd60ac62b7efb242c9f793894a3ce12f424e24f13e1ee6",
+      "asc_syncthreads_count": 2
+    },
+    "n4096-uint8.cpp": {
+      "source_sha256": "b686a42f52e4188d44dd0419d79be7bec9c49da063e4e36dba5f62b8cb93c547",
+      "asc_syncthreads_count": 2
+    },
+    "n16384-uint32.cpp": {
+      "source_sha256": "3dd1048556428c7111f08275de18e815fd06865e01d6b53c75adbec08ac68c87",
+      "asc_syncthreads_count": 0
+    }
+  },
+  "installed_sync_source_matches_official": true,
+  "warnings_in_log": 0,
+  "kernel_execution": false
+}

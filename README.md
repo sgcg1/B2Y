@@ -65,3 +65,5 @@ A1 r1两次前端嵌套失败已归档，当前使用r2修复指南；尚无A1�
 当前下一步：[A1同步最小编译复现](diagnostics/topk-a1-sync-repro/README.md)。已发现官方0176ba14原子指针别名检查疑似混合dtype单位问题；尚未证明全部警告误报，A1保持关闭。仅编译四个小kernel，不运行性能测试，不改安装。
 
 当前仅编译诊断改用[r2入口](diagnostics/topk-a1-sync-repro-r2/README.md)：首版因uint8x2代码生成失败，未完成同步对照。A1仍关闭，不重跑旧诊断。
+
+最新：[同步最小复现r2已复核](experiments/topk/20261102-a1-sync-repro-r2-204739/analysis.md)，四配置编译通过；uint8有额外屏障、uint32无，但未重现生产外提警告，A1仍关闭。下一步回到生产访问对排查，无需重跑此复现。

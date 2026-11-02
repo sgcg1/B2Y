@@ -84,6 +84,12 @@
       "title": "A1同步最小复现uint8x2代码生成失败",
       "status": "failed_codegen_uint8x2",
       "metadata": "20261102-a1-sync-repro-uint8x2/metadata.json"
+    },
+    {
+      "id": "20261102-a1-sync-repro-r2-204739",
+      "title": "同步最小复现编译通过但未重现生产警告",
+      "status": "compile_repro_completed_production_warning_unresolved",
+      "metadata": "20261102-a1-sync-repro-r2-204739/metadata.json"
     }
   ]
 }

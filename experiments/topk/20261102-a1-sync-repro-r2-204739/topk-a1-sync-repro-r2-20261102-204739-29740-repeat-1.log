@@ -1,0 +1,17 @@
+SYNC_COMPILE_BEGIN n4096-uint8
+2026-11-02 20:47:42  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 20:47:44  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+SYNC_COMPILE_END n4096-uint8
+SYNC_COMPILE_BEGIN n4096-uint32
+2026-11-02 20:47:44  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 20:47:46  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+SYNC_COMPILE_END n4096-uint32
+SYNC_COMPILE_BEGIN n16384-uint8
+2026-11-02 20:47:46  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 20:47:48  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+SYNC_COMPILE_END n16384-uint8
+SYNC_COMPILE_BEGIN n16384-uint32
+2026-11-02 20:47:48  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 20:47:50  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+SYNC_COMPILE_END n16384-uint32
+SYNC_OUTPUT /home/y00937463/topk-a1-sync-repro-r2-20261102-204739-29740/repeat-1
