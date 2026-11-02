@@ -1,0 +1,84 @@
+SYNC_COMPILE_BEGIN n4096-uint8
+[20:45:04] /home/y00937463/tilelang/src/ascend/transform/thread_storage_sync.cc:1081: Warning: [ThreadSync] Hoisting sync out of an if whose condition is not safe for an in-if sync. This is not a fix: both ends of the conflict are inside the branch, so the hoisted barrier no longer separates them and the race remains. Constraining the condition -- a T.assume on the parameters it reads -- keeps the barrier in place instead. Condition: 0 < digit
+[20:45:04] /home/y00937463/tilelang/src/ascend/codegen/codegen_ascend.cc:514: Fatal: SimtVF cannot convert vector type uint8x2 to an Ascend type
+2026-11-02 20:45:04  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+SYNC_OUTPUT /home/y00937463/topk-a1-sync-repro-20261102-204501-29625/repeat-1
+Traceback (most recent call last):
+  File "/home/y00937463/B2Y/diagnostics/topk-a1-sync-repro/run.py", line 84, in <module>
+    main()
+  File "/home/y00937463/B2Y/diagnostics/topk-a1-sync-repro/run.py", line 73, in main
+    execute(report, args.repo.resolve(), root)
+  File "/home/y00937463/B2Y/diagnostics/topk-a1-sync-repro/run.py", line 35, in execute
+    program = module.repro(n, byte)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/jit/__init__.py", line 566, in __call__
+    kernel = self.compile(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/jit/__init__.py", line 481, in compile
+    kernel_result = compile(
+                    ^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/jit/__init__.py", line 168, in compile
+    return cached(
+           ^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/cache/__init__.py", line 91, in cached
+    return cache.cached(
+           ^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/cache/kernel_cache.py", line 427, in cached
+    kernel = JITKernel(
+             ^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/jit/kernel.py", line 140, in __init__
+    adapter = self._compile_and_create_adapter(func, out_idx)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/jit/kernel.py", line 280, in _compile_and_create_adapter
+    self.artifact = self._compile_artifact(tilelang_func, pass_configs, compile_metadata)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/jit/kernel.py", line 321, in _compile_artifact
+    artifact = lower_with_context(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/engine/lower.py", line 165, in lower_with_context
+    return _lower_with_context_impl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/engine/lower.py", line 190, in _lower_with_context_impl
+    codegen_mod = device_codegen(device_mod, context) if enable_device_compile else device_codegen_without_compile(device_mod, context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/engine/lower.py", line 101, in device_codegen
+    return context.codegen_device(device_mod, compile_device=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/backend/module.py", line 221, in codegen_device
+    return self.module.codegen_device(mod, self.target, compile_device=compile_device)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/backend/module.py", line 126, in codegen_device
+    return self.get_device_codegen(target).lower(mod, target, compile_device=compile_device)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/backend/device_codegen.py", line 45, in lower
+    return build_func(mod, target)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/backend/device_codegen.py", line 21, in build
+    return run_codegen_with_instrumentation(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/instrumentation/session.py", line 264, in run_codegen_with_instrumentation
+    return session.run_codegen(CodegenEvent(name=name, mod=mod, target=target, role=role), call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/instrumentation/session.py", line 111, in run_codegen
+    return wrapped()
+           ^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/backend/device_codegen.py", line 25, in <lambda>
+    lambda: tvm.ffi.get_global_func(global_func_name)(mod, target),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "python/tvm_ffi/cython/function.pxi", line 968, in tvm_ffi.core.Function.__call__
+  File "<unknown>", line 0, in tvm::codegen::BuildTileLangAscend(tvm::IRModule, tvm::Target)
+  File "<unknown>", line 0, in tvm::codegen::CodeGenTileLangAscend::AddFunction(tvm::tirx::PrimFunc const&)
+  File "<unknown>", line 0, in tvm::codegen::CodeGenC::VisitStmt_(tvm::tirx::SeqStmtNode const*)
+  File "<unknown>", line 0, in tvm::codegen::CodeGenC::VisitStmt_(tvm::tirx::SeqStmtNode const*)
+  File "<unknown>", line 0, in tvm::codegen::CodeGenC::VisitStmt_(tvm::tirx::SeqStmtNode const*)
+  File "<unknown>", line 0, in tvm::codegen::CodeGenTileLangAscend::VisitStmt_(tvm::tirx::SBlockNode const*)
+  File "<unknown>", line 0, in tvm::codegen::CodeGenTileLangAscend::EmitVFFunction(tvm::tirx::SBlockNode const*, tvm::ffi::Array<tvm::tirx::Var, void> const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, tvm::codegen::CodeGenTileLangAscend::VFMode)
+  File "<unknown>", line 0, in tvm::codegen::CodeGenC::VisitStmt_(tvm::tirx::ForNode const*)
+  File "<unknown>", line 0, in tvm::codegen::CodeGenC::VisitStmt_(tvm::tirx::SeqStmtNode const*)
+  File "<unknown>", line 0, in tvm::codegen::CodeGenTileLangAscend::VisitStmt_(tvm::tirx::BufferStoreNode const*)
+  File "<unknown>", line 0, in tvm::codegen::CodeGenTileLangAscend::EmitScalarizedStore(tvm::tirx::BufferStoreNode const*)
+  File "<unknown>", line 0, in tvm::codegen::CodeGenTileLangAscend::ValidateGenericVectorType(char const*, tvm::runtime::DataType)
+  File "<unknown>", line 0, in tvm::codegen::CodeGenTileLangAscend::PrintType(tvm::runtime::DataType, std::ostream&)
+  File "<unknown>", line 0, in tvm::runtime::detail::LogFatal::~LogFatal()
+tvm.error.InternalError: SimtVF cannot convert vector type uint8x2 to an Ascend type
+[ERROR] 2026-11-02-20:45:04 (PID:29628, Device:-1, RankID:-1) ERR99999 UNKNOWN applicaiton exception

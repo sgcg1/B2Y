@@ -1,0 +1,7 @@
+# 同步复现首次失败：SimtVF不支持uint8x2
+
+原始上传a88efee，两文件按Git blob逐字节保存并记录SHA。首配置n4096-uint8在CodeGenTileLangAscend EmitScalarizedStore/ValidateGenericVectorType时报cannot convert vector type uint8x2；generated为空，没有成功保存C++。没有执行kernel或性能测量。
+
+这证明诊断小kernel触发了代码生成能力限制，不能据此确认或否定混合dtype别名假设，也不能认定A1有新正确性错误。旧工具只在全部编译之后采集现场源码，导致该证据同样缺失，r2已提前采集。
+
+新复现r2改用无缓存零值else写及分块消费循环，减少与已成功生产结构的差异；逐配置记录异常并继续其他配置，保留全部失败。Python/Bash语法检查通过，尚无现场新编译验证。具体向量化来源缺pass IR，不能断言修改一定消除uint8x2。A1仍默认关闭，不修改共享编译器，不放宽同步检查。

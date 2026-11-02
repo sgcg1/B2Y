@@ -78,6 +78,12 @@
       "title": "A1 r2约1%事件收益但同步风险未解",
       "status": "screening_gain_sync_warning_unresolved",
       "metadata": "20261102-a1-r2-203417/metadata.json"
+    },
+    {
+      "id": "20261102-a1-sync-repro-uint8x2",
+      "title": "A1同步最小复现uint8x2代码生成失败",
+      "status": "failed_codegen_uint8x2",
+      "metadata": "20261102-a1-sync-repro-uint8x2/metadata.json"
     }
   ]
 }

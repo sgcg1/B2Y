@@ -63,3 +63,5 @@ A1 r1两次前端嵌套失败已归档，当前使用r2修复指南；尚无A1�
 最新：[A1 r2结果复核](experiments/topk/20261102-a1-r2-203417/analysis.md)：600事件完整，耗时下降约0.91%–1.14%，但ThreadSync竞争警告未解，保持关闭；先查同步，不原样重跑或直接扩大测试。
 
 当前下一步：[A1同步最小编译复现](diagnostics/topk-a1-sync-repro/README.md)。已发现官方0176ba14原子指针别名检查疑似混合dtype单位问题；尚未证明全部警告误报，A1保持关闭。仅编译四个小kernel，不运行性能测试，不改安装。
+
+当前仅编译诊断改用[r2入口](diagnostics/topk-a1-sync-repro-r2/README.md)：首版因uint8x2代码生成失败，未完成同步对照。A1仍关闭，不重跑旧诊断。

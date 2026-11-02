@@ -1,0 +1,23 @@
+{
+  "id": "20261102-a1-sync-repro-uint8x2",
+  "source_commit": "a88efee",
+  "status": "failed_codegen_uint8x2",
+  "files": [
+    {
+      "source": "AAA_Results/topk-a1-sync-repro-20261102-204501-29625-repeat-1.log",
+      "bytes": 7350,
+      "sha256": "ae5e2037f62d2f94ed5922570a623361c67e675f1db7d64b64ae7739b7a0020c"
+    },
+    {
+      "source": "AAA_Results/topk-a1-sync-repro-20261102-204501-29625-repeat-1.txt",
+      "bytes": 7262,
+      "sha256": "607f72abb9a2191769ef7c457e0261642194838fa3081bf2493b4bd0fedf0dc8"
+    }
+  ],
+  "missing": [
+    "all four generated kernels",
+    "dtype warning comparison",
+    "installed sync source"
+  ],
+  "accepted": false
+}

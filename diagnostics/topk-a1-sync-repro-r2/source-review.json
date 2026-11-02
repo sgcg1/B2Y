@@ -1,0 +1,35 @@
+{
+  "source_url": "https://raw.githubusercontent.com/tile-ai/tilelang/0176ba14/src/ascend/transform/thread_storage_sync.cc",
+  "bytes": 79347,
+  "sha256": "3da37679bc87e3f2d6eb3c9ce133abfd5d44da7ba02f5528bf30f3f9836a7dda",
+  "reviewed_sections": {
+    "PointerAccessIsDisjoint": [
+      1586,
+      1655
+    ],
+    "FindConflict_pointer_branch": [
+      1757,
+      1790
+    ],
+    "FindConflict_regular_bytes": [
+      1884,
+      2001
+    ]
+  },
+  "installed_source_matches_official": null,
+  "r2_cpp_counterexample": {
+    "cache_byte_interval": [
+      0,
+      16383
+    ],
+    "hist_int32_element_interval": [
+      12288,
+      12543
+    ],
+    "hist_byte_interval": [
+      49152,
+      50175
+    ]
+  },
+  "conclusion": "mixed-unit alias analysis hypothesis, not all warnings proven false"
+}
