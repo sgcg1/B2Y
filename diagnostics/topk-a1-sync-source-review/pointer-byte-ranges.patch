@@ -1,0 +1,17 @@
+--- a/src/ascend/transform/thread_storage_sync.cc
++++ b/src/ascend/transform/thread_storage_sync.cc
+@@ -1616,6 +1616,14 @@
+         return false;
+       }
+     }
++    // touched bounds are element offsets; compare inclusive byte intervals.
++    // Use int64 before multiplying so mixed element widths share one unit.
++    lhs_min = analyzer.Simplify(Cast(DataType::Int(64), lhs_min) * lhs.dtype.bytes());
++    lhs_max = analyzer.Simplify(Cast(DataType::Int(64), lhs_max) * lhs.dtype.bytes() +
++                                (lhs.dtype.bytes() - 1));
++    rhs_min = analyzer.Simplify(Cast(DataType::Int(64), rhs_min) * rhs.dtype.bytes());
++    rhs_max = analyzer.Simplify(Cast(DataType::Int(64), rhs_max) * rhs.dtype.bytes() +
++                                (rhs.dtype.bytes() - 1));
+     Map<Var, PrimExpr> prev_sub, curr_sub;
+     for (unsigned idx = 0; idx != 3; ++idx) {
+       auto &info = thread_vars[idx];
