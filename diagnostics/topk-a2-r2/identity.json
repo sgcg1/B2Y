@@ -1,0 +1,7 @@
+{
+  "version": "20261102-a2-r2",
+  "baseline_commit": "7247ad4f355c62a8679dcdc8fdf182c0b219db5e",
+  "candidate_sha256": "d2bbdf10c75eba0c7b0cef2e8381df5e7161bcc578987f5e3e670d7e46cf2e7b",
+  "run_sha256": "8809e7978c64121315c4726a8ecf925d46550ec556c385be5771857af199d38b",
+  "candidate_commit": "34f3bf36"
+}

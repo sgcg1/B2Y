@@ -30,3 +30,5 @@
 - [同步复现uint8x2失败](20261102-a1-sync-repro-uint8x2/analysis.md)，原始记录保留。
 
 最新：[同步最小复现r2已复核](20261102-a1-sync-repro-r2-204739/analysis.md)，四配置编译通过；uint8有额外屏障、uint32无，但未重现生产外提警告，A1仍关闭。下一步回到生产访问对排查，无需重跑此复现。
+
+- [A2 r1工具身份错误](20261102-a2-r1-baseline-digest/analysis.md)，未开始设备编译。

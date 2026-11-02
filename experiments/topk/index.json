@@ -90,6 +90,12 @@
       "title": "同步最小复现编译通过但未重现生产警告",
       "status": "compile_repro_completed_production_warning_unresolved",
       "metadata": "20261102-a1-sync-repro-r2-204739/metadata.json"
+    },
+    {
+      "id": "20261102-a2-r1-baseline-digest",
+      "title": "A2 r1冻结基线哈希被工具替换破坏",
+      "status": "failed_tool_baseline_digest_corruption",
+      "metadata": "20261102-a2-r1-baseline-digest/metadata.json"
     }
   ]
 }

@@ -1,0 +1,23 @@
+{
+  "id": "20261102-a2-r1-baseline-digest",
+  "source_commit": "d2964cd",
+  "status": "failed_tool_baseline_digest_corruption",
+  "accepted": false,
+  "files": [
+    {
+      "source": "AAA_Results/topk-a2-r1-20261102-205718-30125-repeat-1.log",
+      "bytes": 488,
+      "sha256": "a9161ffe8e75f78f2bbad55367ee1625c68948bc96c9bf5ba5c1b87049a8b896"
+    },
+    {
+      "source": "AAA_Results/topk-a2-r1-20261102-205718-30125-repeat-1.txt",
+      "bytes": 776,
+      "sha256": "8345ec3437a6001756bfe06033e235f60258a51b6de62f839b9e0fd03411f83e"
+    }
+  ],
+  "missing": [
+    "A2 compilation",
+    "correctness samples",
+    "performance samples"
+  ]
+}
