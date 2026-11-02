@@ -1,0 +1,31 @@
+COMPILE_BEGIN hist-p1
+
+2026-11-02 21:19:23  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 21:19:25  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END hist-p1
+COMPILE_BEGIN merge-p1
+
+2026-11-02 21:19:25  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 21:19:27  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END merge-p1
+COMPILE_BEGIN hist-p2
+
+2026-11-02 21:19:27  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 21:19:30  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END hist-p2
+COMPILE_BEGIN merge-p2
+
+2026-11-02 21:19:30  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 21:19:32  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END merge-p2
+COMPILE_BEGIN hist-p4
+
+2026-11-02 21:19:32  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 21:19:35  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END hist-p4
+COMPILE_BEGIN merge-p4
+
+2026-11-02 21:19:35  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-02 21:19:37  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END merge-p4
+PILOT_OUTPUT /home/y00937463/topk-decode-pilot-r1-20261102-211917-31373/repeat-1
