@@ -30,7 +30,7 @@ git -C /home/y00937463/TileOPs pull --ff-only
 确认已有CANN环境已加载后运行：
 
 ```bash
-bash /home/y00937463/B2Y/diagnostics/topk-decode-pilot-r1/run.sh
+bash /home/y00937463/B2Y/diagnostics/topk-decode-pilot-r1/run-ascii.sh
 ```
 
 ## 测量与检查
@@ -46,3 +46,10 @@ bash /home/y00937463/B2Y/diagnostics/topk-decode-pilot-r1/run.sh
 ## 回传
 
 输出/home/y00937463/topk-decode-pilot-r1-时间-进程号，脚本将pilot-return.txt和日志复制到B2Y/AAA_Results并打印路径。按[现有上传指南](../../AAA_Results/README.md)直接上传打印的文件；失败也回传，首次失败不启动第二进程。若未产return文件则回传日志。无需建立额外上传目录或校验清单，不重跑A0/A1/A2及同步复现。
+
+
+## 终端乱码修正
+
+原run.sh的中文提示误以GBK保存，UTF-8终端会显示乱码。这是启动提示编码问题，不是测量成功或失败的判据。原脚本保留以追溯；后续使用新增纯ASCII的run-ascii.sh，Python测量程序、源码身份、输出目录规则和计时范围不变。已完成的运行不因乱码重跑，直接上传现有AAA_Results结果及日志。
+
+新提示：UPLOAD_RESULT为需上传结果路径，UPLOAD_LOG为日志路径，FAILED为失败并停止后续进程，COLLECTION_COMPLETE仅表示采集结束、待分析，RAW_OUTPUT为私人原始目录。无论成功失败都回传文件。

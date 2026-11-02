@@ -41,3 +41,5 @@ A1 r1两次前端嵌套失败已归档，当前使用r2修复指南；尚无A1�
 最新：[A2 r4复核](experiments/topk/20261102-a2-r4-211000/analysis.md)：四组事件耗时增加4.04%–4.36%，无编译同步警告，筛选正确性通过但性能回退；保持关闭，不扩大或重跑。下一步评估Decode首轮小P并行成本，尚无新指令。
 
 最新主线：Decode首轮分块成本探针72a84811已推送GitHub；执行入口diagnostics/topk-decode-pilot-r1/README.md。测P1/P2/P4私有直方图及hist+merge两kernel事件；尚未做compact和后续精确选择，不能当完整TopK结果。2项CPU AST/分块检查、离线身份与语法通过；尚无本探针NPU结果。旧A0/A1/A2保持关闭，不重跑。
+
+Decode pilot启动脚本run.sh原中文提示误以GBK保存，保留原件；当前指南使用新增run-ascii.sh。run.py和identity未变；用户已运行结果不因提示乱码重跑，照常上传。后续终端脚本提示一律ASCII，并检查原始字节可按ASCII解码。
