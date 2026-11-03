@@ -1,3 +1,5 @@
+最新执行入口：[溢出扩大验证r11](diagnostics/topk-formal-decode-r11/README.md)：内核仍ec986f88，不叠加优化；新增容量边界/量化/接近分数/窄窗和特殊值验证，窄窗不算CANN倍率，尚无本轮设备结果。
+
 最新复核：[溢出finish UB暂存约28.1%收益](experiments/topk/20261103-formal-decode-r10-201614/analysis.md)：同步诊断未再出现；全同分事件约417μs、0.060–0.063xAscend C，缓存路径小回退，保留候选待扩大溢出验证，默认不变，无需重跑。
 
 最新入口：[r9同步诊断后的有界访问重试r10](diagnostics/topk-formal-decode-r10/README.md)：ec986f88补充溢出UB读取范围，14项CPU检查通过；现场同步诊断仍需验证，守卫保留，无r9性能数据。

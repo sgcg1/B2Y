@@ -1,0 +1,37 @@
+{
+  "candidate_commit": "ec986f88",
+  "baseline_commit": "7247ad4f355c62a8679dcdc8fdf182c0b219db5e",
+  "baseline_sha256": "987da9f9d314f8744bef05a628e60a14b88e63db320374f36a3b6411ce5eb2e3",
+  "sources": {
+    "src/tileops/_kernels/attention/topk_select_decode_probe_ascend.py": "db7d295663b9c63a32e5d92c9dab97a8ad0119c8dd6d61288e0bb8a473e59c52",
+    "src/tileops/_kernels/attention/topk_select_decode_pipeline_ascend.py": "f749ab4a1d87f2c8d4a6990317b3474fb6daff030874096bde30a38e68a2e7be"
+  },
+  "version": "20261103-formal-decode-r11",
+  "run_sha256": "d2b755f2f4ae6d1bedb24129700ac47a8861a6c3401b8f842e63e5ae8497dc78",
+  "tool_files": {
+    "README.md": "4d74592dc8ee16349c4776601af5a88fdd2ac1d3bb6a256ee33127dd43549c14",
+    "run.sh": "b1faa3b562863b0a9c04e2513514a93e13d0b14ef65793c34204a5e05a8e6bc1",
+    "ge_model.py": "a9c05855a9fb869a07de644c8f5c04658611ba600476d12b8a4a9f15b760bdec",
+    "profile_records.py": "c3bcc9f74a21a0ae597e0092372237f57fa623ef68d0a02b131b993b23175141",
+    "test_profile_records.py": "e934e0c69c8269cb3f1ce1f22061c150e153130878d470efb1ef6ebed5598060",
+    "validate_identity.py": "4bc306144378b106959030885b1f9c07f7063706c6348f90528dd52511bc83cf",
+    "cann/build.cpp": "e751e8202fad7bb958008d35d5d90621c0d77b7f7d6e68960900bd62bba38401",
+    "cann/top_k_v2_proto.h": "a187576305386920b8ccd54068a57edabc3919f8c3dac65aa103617971fabfed",
+    "check_sources.py": "e1526629a2d70bda1f291a3eca61a74846c79886637352118f44c052dd61c399",
+    "cases.py": "f27a7a1e172d17c7dee856b382a2ac130a3a64164641950a8fb321752ea83b63",
+    "test_cases.py": "6b0941de93c3b81fda1fdd6e106c95c619d2f9d49f0c8ec0129c91b9e63f950d"
+  },
+  "unchanged_generated": {
+    "baseline": "751a82889d13811a199edf8358af0d3fc84e6a54d17f985b6a27c877a1c10626",
+    "prepare-p4": "2dc0804fbfe8815056d8bc23227f2db139a58b042a3ca3054a620d72c65afed8",
+    "prepare-r3": "2dc0804fbfe8815056d8bc23227f2db139a58b042a3ca3054a620d72c65afed8",
+    "finish-previous": "aacb3dc2c649d252e5d616af445c6d708313f7b1bb66a3f231208259bf43a8e3",
+    "compact-previous": "98445ae2aabe03273b7a77c136b85906310a663e108c002f0c4adff4026b2ce4",
+    "compact-p4": "98445ae2aabe03273b7a77c136b85906310a663e108c002f0c4adff4026b2ce4",
+    "hist-previous": "b4ef0ab8a5c4217e20188940721658c9ebb1fbf5bf3b8a609ca95c38ee5246d1",
+    "hist-p4": "b4ef0ab8a5c4217e20188940721658c9ebb1fbf5bf3b8a609ca95c38ee5246d1"
+  },
+  "r3_commit": "4fd6a00e",
+  "r3_pipeline_sha256": "49ccb480d390c38b9a7bafa7d4605123485a20cb3418578c4afa36d880257fb8",
+  "previous_hist_sha256": "db7d295663b9c63a32e5d92c9dab97a8ad0119c8dd6d61288e0bb8a473e59c52"
+}
