@@ -1,3 +1,58 @@
+root@1c26d9767e3f:/home/y00937463/B2Y# git branch --show-current
+git log -1 --oneline
+git status --short
+main
+c768891 (HEAD -> main) Upload experiment result3
+root@1c26d9767e3f:/home/y00937463/B2Y# git -c http.version=HTTP/1.1 fetch origin
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 7 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (7/7), 2.89 KiB | 1.45 MiB/s, done.
+From https://gitcode.com/JotaroSSR/B2Y
+   70d938a..b08d2ac  main       -> origin/main
+root@1c26d9767e3f:/home/y00937463/B2Y# git merge --no-edit origin/main
+Committer identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'root@1c26d9767e3f.(none)')
+root@1c26d9767e3f:/home/y00937463/B2Y# git -c http.version=HTTP/1.1 push origin main
+To https://gitcode.com/JotaroSSR/B2Y.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://gitcode.com/JotaroSSR/B2Y.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+root@1c26d9767e3f:/home/y00937463/B2Y# git push origin main
+To https://gitcode.com/JotaroSSR/B2Y.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://gitcode.com/JotaroSSR/B2Y.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+root@1c26d9767e3f:/home/y00937463/B2Y# 
+
+
+
+
+
+
+
+
+
+
+
 root@1c26d9767e3f:/home/y00937463/B2Y# git push origin main
 Enumerating objects: 9, done.
 Counting objects: 100% (9/9), done.
