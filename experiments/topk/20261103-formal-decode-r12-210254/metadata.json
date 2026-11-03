@@ -1,0 +1,123 @@
+{
+  "id": "20261103-formal-decode-r12-210254",
+  "status": "overflow_key_cache_broader_gain_small_cached_regression_retained_experimental",
+  "accepted": false,
+  "candidate_commit": "5eb130ef",
+  "previous_commit": "ec986f88",
+  "source_commit": "359609f",
+  "files": [
+    {
+      "file": "parts/parts-20261103T210914Z-topk-formal-decode-r12-20261103-210254-130441-repeat-1.txt-part-0001.txt",
+      "bytes": 65536,
+      "sha256": "b14d03909488bf81f77e9a8fc085abb8114780e3042d56263cd0c3f59350c2f9"
+    },
+    {
+      "file": "parts/parts-20261103T210914Z-topk-formal-decode-r12-20261103-210254-130441-repeat-1.txt-part-0002.txt",
+      "bytes": 65536,
+      "sha256": "ea585296bd33ade5418510e6098242e6f0b11498a50e64d39e8ced9b6bb6e145"
+    },
+    {
+      "file": "parts/parts-20261103T210914Z-topk-formal-decode-r12-20261103-210254-130441-repeat-1.txt-part-0003.txt",
+      "bytes": 65536,
+      "sha256": "8c0e4b830363d4d8b3b1edccb0daf05bedc63d70b739db7998f4c4250f894643"
+    },
+    {
+      "file": "parts/parts-20261103T210914Z-topk-formal-decode-r12-20261103-210254-130441-repeat-1.txt-part-0004.txt",
+      "bytes": 65536,
+      "sha256": "1878f4c2aee8be202766118885dd847222b1e8eeb141226184616900a181e942"
+    },
+    {
+      "file": "parts/parts-20261103T210914Z-topk-formal-decode-r12-20261103-210254-130441-repeat-1.txt-part-0005.txt",
+      "bytes": 65536,
+      "sha256": "635a2a5a64666ca89c910d31151bad9854848ec66775b1370e6b72a1b4e77ff5"
+    },
+    {
+      "file": "parts/parts-20261103T210914Z-topk-formal-decode-r12-20261103-210254-130441-repeat-1.txt-part-0006.txt",
+      "bytes": 65536,
+      "sha256": "c309f42f1972d3eaf523693d78247551ddb80f1bbc539dad6f33192f32fcd178"
+    },
+    {
+      "file": "parts/parts-20261103T210914Z-topk-formal-decode-r12-20261103-210254-130441-repeat-1.txt-part-0007.txt",
+      "bytes": 65536,
+      "sha256": "d7158380311041ac40ebabf752f753fb7d4aea5c57bf5a649ea351252b6bcd37"
+    },
+    {
+      "file": "parts/parts-20261103T210914Z-topk-formal-decode-r12-20261103-210254-130441-repeat-1.txt-part-0008.txt",
+      "bytes": 65536,
+      "sha256": "3bf3f216de83f070d32cdd9801aec38716f2bac72238a4a1b573460f772eb379"
+    },
+    {
+      "file": "parts/parts-20261103T210914Z-topk-formal-decode-r12-20261103-210254-130441-repeat-1.txt-part-0009.txt",
+      "bytes": 4204,
+      "sha256": "dbe83e6ba9a72659de43afe6fafdfd69e403d13a630305b77a2cf0219dc2cc53"
+    },
+    {
+      "file": "parts/parts-20261103T210914Z-topk-formal-decode-r12-20261103-210254-130441-repeat-2.txt-part-0001.txt",
+      "bytes": 65536,
+      "sha256": "9f699dbb5b524a6ad4c7c335219af6d1f19de5bbbc3984b08054ca1065736d74"
+    },
+    {
+      "file": "parts/parts-20261103T210914Z-topk-formal-decode-r12-20261103-210254-130441-repeat-2.txt-part-0002.txt",
+      "bytes": 65536,
+      "sha256": "4ac19a08ff7849e33045db68439668ff5fe00a301d9e3120a0155da990f805b3"
+    },
+    {
+      "file": "parts/parts-20261103T210914Z-topk-formal-decode-r12-20261103-210254-130441-repeat-2.txt-part-0003.txt",
+      "bytes": 65536,
+      "sha256": "10506007b7015b4a1d2462f59e0a1f443053359ff7454e64753550e9aa1f8bc7"
+    },
+    {
+      "file": "parts/parts-20261103T210914Z-topk-formal-decode-r12-20261103-210254-130441-repeat-2.txt-part-0004.txt",
+      "bytes": 65536,
+      "sha256": "21f210d53cdd9443705f4e010caac000fe3d3219892323e245c54459beabfed4"
+    },
+    {
+      "file": "parts/parts-20261103T210914Z-topk-formal-decode-r12-20261103-210254-130441-repeat-2.txt-part-0005.txt",
+      "bytes": 65536,
+      "sha256": "90f8b16dac36cec53bf0dfac1b64b7c9dc709d4a7b46f4ecd0ca3cf97ac5a695"
+    },
+    {
+      "file": "parts/parts-20261103T210914Z-topk-formal-decode-r12-20261103-210254-130441-repeat-2.txt-part-0006.txt",
+      "bytes": 65536,
+      "sha256": "2406eed8e6bfd319fb358ebf7879b3ba2fd64860e7888fe743e8489ca8bab5d6"
+    },
+    {
+      "file": "parts/parts-20261103T210914Z-topk-formal-decode-r12-20261103-210254-130441-repeat-2.txt-part-0007.txt",
+      "bytes": 65536,
+      "sha256": "24f1ba5364d8b55edf9762d4acb63df3b23d5aad19f9313697ac34d5bf8ee53e"
+    },
+    {
+      "file": "parts/parts-20261103T210914Z-topk-formal-decode-r12-20261103-210254-130441-repeat-2.txt-part-0008.txt",
+      "bytes": 65536,
+      "sha256": "6480120032b0a2fba4c82c532632c5c0a64d8be985f7727991faa94a333c2306"
+    },
+    {
+      "file": "parts/parts-20261103T210914Z-topk-formal-decode-r12-20261103-210254-130441-repeat-2.txt-part-0009.txt",
+      "bytes": 3028,
+      "sha256": "195e28e68096b2cca01c7217d190840ecdd0795fa27c8eda79acac55cd6c98d5"
+    }
+  ],
+  "restored": [
+    {
+      "file": "restored/topk-formal-decode-r12-20261103-210254-130441-repeat-1.txt",
+      "bytes": 6396596,
+      "sha256": "e111a5cdcfc174358981748093d2b088938cb8127dda9e69964e8fdff6c321c3",
+      "source_manifest_sha_crosscheck": false,
+      "gzip_crc_and_size_verified": true
+    },
+    {
+      "file": "restored/topk-formal-decode-r12-20261103-210254-130441-repeat-2.txt",
+      "bytes": 6396213,
+      "sha256": "67f3a61018d1d3413092f15db720e5d480db5f00e38018bff0d12d9b53326bd8",
+      "source_manifest_sha_crosscheck": false,
+      "gzip_crc_and_size_verified": true
+    }
+  ],
+  "source_manifest_received": false,
+  "limitations": [
+    "source-side SHA manifest not received",
+    "original terminal logs not received",
+    "both runs completed_with_profile_review",
+    "fixed shape not full acceptance"
+  ]
+}

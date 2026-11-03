@@ -210,6 +210,12 @@
       "title": "溢出暂存四类全窗事件降29%–32.5%，窄窗/随机计时波动保留",
       "status": "overflow_staging_broader_gain_validated_screening_timing_review_pending",
       "metadata": "20261103-formal-decode-r11-204010/metadata.json"
+    },
+    {
+      "id": "20261103-formal-decode-r12-210254",
+      "title": "溢出键缓存再降3.7%–5.8%，保留组合并记录缓存路径小回退",
+      "status": "overflow_key_cache_broader_gain_small_cached_regression_retained_experimental",
+      "metadata": "20261103-formal-decode-r12-210254/metadata.json"
     }
   ]
 }

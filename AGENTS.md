@@ -1,3 +1,5 @@
+最新复核：[溢出键缓存r12收益](experiments/topk/20261103-formal-decode-r12-210254/analysis.md)：全窗溢出进一步减少3.69%–5.79%，缓存路径小回退，按已确认取舍保留实验组合，默认不变，无需重跑。
+
 最新入口：[溢出分数键缓存r12](diagnostics/topk-formal-decode-r12/README.md)：5eb130ef默认关闭，保留溢出暂存；GitHub认证失败，候选用B2Y校验bundle快进同步，尚无设备结果。
 
 最新复核：[溢出暂存扩大验证r11](experiments/topk/20261103-formal-decode-r11-204010/analysis.md)：四类全窗溢出事件减少29.15%–32.49%，额外窗口/特殊值通过；随机CANN及窄窗整体计时波动保留，默认不变，无需重跑。
