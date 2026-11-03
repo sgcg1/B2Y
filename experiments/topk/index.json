@@ -198,6 +198,12 @@
       "title": "溢出UB暂存触发ThreadSync，未运行计时；有界访问重试",
       "status": "rejected_unresolved_threadsync_before_validation",
       "metadata": "20261103-formal-decode-r9-200743/metadata.json"
+    },
+    {
+      "id": "20261103-formal-decode-r10-201614",
+      "title": "溢出UB暂存事件降28.1%，缓存路径小回退，保留专门候选",
+      "status": "overflow_staging_large_gain_small_cached_path_regression_pending",
+      "metadata": "20261103-formal-decode-r10-201614/metadata.json"
     }
   ]
 }

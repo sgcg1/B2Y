@@ -1,3 +1,5 @@
+最新复核：[溢出finish UB暂存约28.1%收益](experiments/topk/20261103-formal-decode-r10-201614/analysis.md)：同步诊断未再出现；全同分事件约417μs、0.060–0.063xAscend C，缓存路径小回退，保留候选待扩大溢出验证，默认不变，无需重跑。
+
 最新入口：[r9同步诊断后的有界访问重试r10](diagnostics/topk-formal-decode-r10/README.md)：ec986f88补充溢出UB读取范围，14项CPU检查通过；现场同步诊断仍需验证，守卫保留，无r9性能数据。
 
 最新执行入口：[finish溢出输入暂存r9](diagnostics/topk-formal-decode-r9/README.md)：39bb2f6f默认关闭，溢出时增加64KiB输入UB缓存，双方均保留hist/compact暂存及quota guard，尚无设备结果。
