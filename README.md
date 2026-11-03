@@ -1,5 +1,7 @@
 # B2Y执行材料入口
 
+**当前执行入口：[prepare分组并行归约正式对照](diagnostics/topk-formal-decode-r2/README.md)。** cd94fb34已推送、默认关闭；同轮对照CANN/旧默认/冻结r3/新prepare，仅改offset归约，保留原始CSV与残缺采集标记。
+
 **当前执行入口：[正式Decode基线与设备拆解](diagnostics/topk-formal-decode-r1/README.md)。** 冻结r3实现不改算法，同输入同轮比较官方CANN/旧TileLang/r3；独立记录事件倍率、四kernel设备耗时和间隙，原始CSV回传。此前full-r3无需重跑。
 
 **当前下一步：[Decode full-r2稳定tie对照](diagnostics/topk-decode-full-r2/README.md)。** 候选0d4063e6只改精确尾段，默认关闭；比较默认基线、冻结P4-r1及新P4-r2，尚无r2设备结果。

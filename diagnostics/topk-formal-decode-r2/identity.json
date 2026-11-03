@@ -1,0 +1,30 @@
+{
+  "candidate_commit": "cd94fb34",
+  "baseline_commit": "7247ad4f355c62a8679dcdc8fdf182c0b219db5e",
+  "baseline_sha256": "987da9f9d314f8744bef05a628e60a14b88e63db320374f36a3b6411ce5eb2e3",
+  "sources": {
+    "src/tileops/_kernels/attention/topk_select_decode_probe_ascend.py": "7fb0145bfad549b223201ef930979d8c6f89de0f0e8275df502d47034ccb5de5",
+    "src/tileops/_kernels/attention/topk_select_decode_pipeline_ascend.py": "561c29ae74379bec974e5f1fc8759f6355f0a24a042b951fe7c202b8ddab7499"
+  },
+  "version": "20261103-formal-decode-r2",
+  "run_sha256": "b598a98daa3d5ddac66411e1a193c1940caea9ca262cd0cf6fd2195536997f36",
+  "tool_files": {
+    "ge_model.py": "a9c05855a9fb869a07de644c8f5c04658611ba600476d12b8a4a9f15b760bdec",
+    "profile_records.py": "c3bcc9f74a21a0ae597e0092372237f57fa623ef68d0a02b131b993b23175141",
+    "README.md": "5afa7f0316206fe18ea96e5e198ada62518f229c3df1b949a052c589a4c2f657",
+    "run.sh": "b3ba88284f605c1bd58d1a6b9d222a370037a815b27483f53d4c0183a2d4fca1",
+    "test_profile_records.py": "e934e0c69c8269cb3f1ce1f22061c150e153130878d470efb1ef6ebed5598060",
+    "validate_identity.py": "91a79bd245d10447339e7caeaedd7bd651c432457bd2260a6c43316682128266",
+    "cann/build.cpp": "e751e8202fad7bb958008d35d5d90621c0d77b7f7d6e68960900bd62bba38401",
+    "cann/top_k_v2_proto.h": "a187576305386920b8ccd54068a57edabc3919f8c3dac65aa103617971fabfed"
+  },
+  "unchanged_generated": {
+    "baseline": "751a82889d13811a199edf8358af0d3fc84e6a54d17f985b6a27c877a1c10626",
+    "hist-p4": "05b55889990def7ec6ed53b158a73f6dcf4fa559dd6bf2fa0e7749296bd106cf",
+    "compact-p4": "066091237843ff88a0b7a27f2dc0783af8443cdeb1f5fd72497df3e7fb6bcdb4",
+    "finish": "5dc61aea064744985cff8c11726fb15ca9d077b34afe58947949c1921bcfc4b6",
+    "prepare-r3": "ffccee31f02741dd3467b88ba800e355dfcd13cd0ba406d57b3593118a2fb095"
+  },
+  "r3_commit": "c022114c5cece83e54ca027ad8be3d2b6f59b14e",
+  "r3_pipeline_sha256": "0b76dc5ad88641781a41fcd8164f4728d7e51bd1f02769533d412d891dc878a2"
+}
