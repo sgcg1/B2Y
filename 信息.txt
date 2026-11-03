@@ -1,3 +1,57 @@
+root@1c26d9767e3f:/home/y00937463/B2Y# git config --local user.name "JotaroSSR"
+git config --local user.email "1224862686@qq.com"
+git var GIT_COMMITTER_IDENT
+JotaroSSR <1224862686@qq.com> 1793703545 +0000
+root@1c26d9767e3f:/home/y00937463/B2Y# git status
+git rev-parse -q --verify MERGE_HEAD
+git diff --name-only --diff-filter=U
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 1 and 2 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+nothing to commit, working tree clean
+root@1c26d9767e3f:/home/y00937463/B2Y# git -c core.editor=true merge --continue
+fatal: There is no merge in progress (MERGE_HEAD missing).
+root@1c26d9767e3f:/home/y00937463/B2Y# git merge --no-edit origin/main
+Merge made by the 'ort' strategy.
+ deliveries/gitcode-push-recovery-20261103.md | 49 +++++++++++++++++++++++++++++++++++++++++++++++++
+ "\344\277\241\346\201\257.txt"               | 21 +++++++++++++++++++++
+ 2 files changed, 70 insertions(+)
+ create mode 100644 deliveries/gitcode-push-recovery-20261103.md
+root@1c26d9767e3f:/home/y00937463/B2Y# git -c http.version=HTTP/1.1 push origin main
+To https://gitcode.com/JotaroSSR/B2Y.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://gitcode.com/JotaroSSR/B2Y.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+root@1c26d9767e3f:/home/y00937463/B2Y# 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 root@1c26d9767e3f:/home/y00937463/B2Y# git branch --show-current
 git log -1 --oneline
 git status --short
