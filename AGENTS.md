@@ -1,3 +1,5 @@
+最新执行入口：[histogram UB输入暂存r8](diagnostics/topk-formal-decode-r8/README.md)：4fd6a00e默认关闭，仅改变histogram访存，两侧保留compact暂存及quota guard，关闭r6/r7开关，尚无设备结果。
+
 最新复核：[跳过恒定索引轮的分布权衡](experiments/topk/20261103-formal-decode-r7-192613/analysis.md)：小边界finish减少约24.8%，随机近持平，溢出回退约0.71%；不提升通用默认，下轮以9a5087dd组合为起点，无需重跑。
 
 最新执行入口：[finish跳过恒定索引高字节r7](diagnostics/topk-formal-decode-r7/README.md)：候选23ff5c63默认关闭；跳过两轮无效索引radix，保留UB暂存/quota guard，FUSE_QUOTA关闭，尚无设备结果。
