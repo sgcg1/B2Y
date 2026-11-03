@@ -1,3 +1,5 @@
+最新复核：[粗桶缓存r13窗口权衡](experiments/topk/20261103-formal-decode-r13-213748/analysis.md)：全窗溢出再降3.59%–5.51%，窄窗回退6.12%–6.22%，不全局启用；通用起点仍保留5eb130ef输入+完整键缓存，无需重跑。
+
 最新入口：[溢出粗桶复用r13](diagnostics/topk-formal-decode-r13/README.md)：5e01bbeb已推送个人fork，保留溢出暂存/完整键缓存，复用原输入UB缓存粗桶，不增缓冲或VF，尚无设备结果。
 
 最新复核：[溢出键缓存r12收益](experiments/topk/20261103-formal-decode-r12-210254/analysis.md)：全窗溢出进一步减少3.69%–5.79%，缓存路径小回退，按已确认取舍保留实验组合，默认不变，无需重跑。

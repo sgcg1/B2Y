@@ -216,6 +216,12 @@
       "title": "溢出键缓存再降3.7%–5.8%，保留组合并记录缓存路径小回退",
       "status": "overflow_key_cache_broader_gain_small_cached_regression_retained_experimental",
       "metadata": "20261103-formal-decode-r12-210254/metadata.json"
+    },
+    {
+      "id": "20261103-formal-decode-r13-213748",
+      "title": "粗桶缓存全窗再降3.6%–5.5%，窄窗回退6.1%，保留专门候选",
+      "status": "coarse_cache_full_window_gain_narrow_regression_not_globally_enabled",
+      "metadata": "20261103-formal-decode-r13-213748/metadata.json"
     }
   ]
 }
