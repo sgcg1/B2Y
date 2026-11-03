@@ -1,3 +1,5 @@
+最新执行入口：[finish quota更新合并VF r6](diagnostics/topk-formal-decode-r6/README.md)：93af88eb默认关闭，每个执行轮次少一次VF；两侧保留UB暂存、128扫描、quota guard，尚无设备结果。
+
 最新复核：[UB输入暂存筛选收益](experiments/topk/20261103-formal-decode-r5-173420/analysis.md)：随机事件减少2.6%–3.6%，0.343–0.360xAscend C；保留实验候选，profile待复核，默认不变，无需重跑。
 
 最新执行入口：[compact UB输入暂存r5](diagnostics/topk-formal-decode-r5/README.md)：候选9a5087dd默认关闭，仅增加每核16KiB输入暂存；两侧均128扫描并保留quota guard，尚无设备结果。
