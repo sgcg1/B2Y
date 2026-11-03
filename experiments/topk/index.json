@@ -186,6 +186,12 @@
       "title": "跳过索引高字节小边界finish降24.8%，随机近持平、溢出回退",
       "status": "index_prefix_skip_small_tie_gain_overflow_regression_not_promoted",
       "metadata": "20261103-formal-decode-r7-192613/metadata.json"
+    },
+    {
+      "id": "20261103-formal-decode-r8-194515",
+      "title": "hist UB暂存随机hist降14.8%，事件0.362–0.373x，无观察回退",
+      "status": "histogram_ub_staging_screening_gain_profile_review_pending",
+      "metadata": "20261103-formal-decode-r8-194515/metadata.json"
     }
   ]
 }

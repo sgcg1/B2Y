@@ -1,3 +1,5 @@
+最新复核：[histogram UB暂存稳定收益](experiments/topk/20261103-formal-decode-r8-194515/analysis.md)：随机事件减少1.62%–3.50%，0.362–0.373xAscend C；8组均改善，保留为后续实验起点，默认不变，profile待复核，无需重跑。
+
 最新执行入口：[histogram UB输入暂存r8](diagnostics/topk-formal-decode-r8/README.md)：4fd6a00e默认关闭，仅改变histogram访存，两侧保留compact暂存及quota guard，关闭r6/r7开关，尚无设备结果。
 
 最新复核：[跳过恒定索引轮的分布权衡](experiments/topk/20261103-formal-decode-r7-192613/analysis.md)：小边界finish减少约24.8%，随机近持平，溢出回退约0.71%；不提升通用默认，下轮以9a5087dd组合为起点，无需重跑。
