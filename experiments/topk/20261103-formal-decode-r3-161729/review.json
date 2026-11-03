@@ -1,0 +1,159 @@
+{
+  "rows": [
+    {
+      "repeat": 1,
+      "label": "random-20261030",
+      "event_median_us": {
+        "baseline": 164.99099880456924,
+        "previous": 70.64399868249893,
+        "new": 59.126000851392746,
+        "cann": 20.09649947285652
+      },
+      "event_x_ascend_c": 0.33989275755969106,
+      "event_change_percent": -16.30428351440363,
+      "old_finish_median_us": 31.869,
+      "new_finish_median_us": 20.4105,
+      "new_sum_kernel_median_us": 52.8005,
+      "new_gap_median_us": 3.1305,
+      "new_envelope_median_us": 56.031,
+      "device_ratio_status": "review_required_partial_capture",
+      "device_x_ascend_c": 0.16534596919562386
+    },
+    {
+      "repeat": 1,
+      "label": "random-20261102",
+      "event_median_us": {
+        "baseline": 164.16100412607193,
+        "previous": 69.84550133347511,
+        "new": 58.46800096333027,
+        "cann": 19.54049989581108
+      },
+      "event_x_ascend_c": 0.3342084486190389,
+      "event_change_percent": -16.289524955692325,
+      "old_finish_median_us": 31.8935,
+      "new_finish_median_us": 20.5095,
+      "new_sum_kernel_median_us": 52.812,
+      "new_gap_median_us": 2.888,
+      "new_envelope_median_us": 55.6975,
+      "device_ratio_status": "review_required_partial_capture",
+      "device_x_ascend_c": 0.16928048835225998
+    },
+    {
+      "repeat": 1,
+      "label": "all-equal-overflow",
+      "event_median_us": {
+        "baseline": 704.8130035400391,
+        "previous": 566.6075050830841,
+        "new": 573.3225047588348,
+        "cann": 19.698000513017178
+      },
+      "event_x_ascend_c": 0.03435762655314401,
+      "event_change_percent": 1.185123673002897,
+      "old_finish_median_us": 529.577,
+      "new_finish_median_us": 536.4014999999999,
+      "new_sum_kernel_median_us": 567.7815,
+      "new_gap_median_us": 0.066,
+      "new_envelope_median_us": 569.0855,
+      "device_ratio_status": "review_required_partial_capture",
+      "device_x_ascend_c": 0.01870984236990751
+    },
+    {
+      "repeat": 1,
+      "label": "small-boundary-tie",
+      "event_median_us": {
+        "baseline": 194.09050047397614,
+        "previous": 52.72799916565418,
+        "new": 51.582999527454376,
+        "cann": 19.842499867081642
+      },
+      "event_x_ascend_c": 0.3846713073853088,
+      "event_change_percent": -2.171521120311415,
+      "old_finish_median_us": 18.462,
+      "new_finish_median_us": 16.8335,
+      "new_sum_kernel_median_us": 45.870999999999995,
+      "new_gap_median_us": 3.5854999999999997,
+      "new_envelope_median_us": 49.2575,
+      "device_ratio_status": "review_required_partial_capture",
+      "device_x_ascend_c": 0.1845201238390093
+    },
+    {
+      "repeat": 2,
+      "label": "random-20261030",
+      "event_median_us": {
+        "baseline": 168.13649982213974,
+        "previous": 72.93049991130829,
+        "new": 61.67300045490265,
+        "cann": 21.59749995917082
+      },
+      "event_x_ascend_c": 0.35019376063863844,
+      "event_change_percent": -15.435928000076826,
+      "old_finish_median_us": 31.869,
+      "new_finish_median_us": 20.41,
+      "new_sum_kernel_median_us": 52.8725,
+      "new_gap_median_us": 3.8085,
+      "new_envelope_median_us": 56.7175,
+      "device_ratio_status": "review_required_partial_capture",
+      "device_x_ascend_c": 0.16355622162471897
+    },
+    {
+      "repeat": 2,
+      "label": "random-20261102",
+      "event_median_us": {
+        "baseline": 164.33949768543243,
+        "previous": 70.6849992275238,
+        "new": 58.96950140595436,
+        "cann": 19.424499943852425
+      },
+      "event_x_ascend_c": 0.3293990873372225,
+      "event_change_percent": -16.574234914906217,
+      "old_finish_median_us": 31.896,
+      "new_finish_median_us": 20.508000000000003,
+      "new_sum_kernel_median_us": 52.837,
+      "new_gap_median_us": 12.5765,
+      "new_envelope_median_us": 65.5755,
+      "device_ratio_status": "review_required_partial_capture",
+      "device_x_ascend_c": 0.14392570395955803
+    },
+    {
+      "repeat": 2,
+      "label": "all-equal-overflow",
+      "event_median_us": {
+        "baseline": 704.9489915370941,
+        "previous": 566.8980181217194,
+        "new": 573.6075043678284,
+        "cann": 20.258499309420586
+      },
+      "event_x_ascend_c": 0.03531770270639579,
+      "event_change_percent": 1.1835437824142092,
+      "old_finish_median_us": 529.511,
+      "new_finish_median_us": 536.324,
+      "new_sum_kernel_median_us": 567.7665,
+      "new_gap_median_us": 0.066,
+      "new_envelope_median_us": 568.2755,
+      "device_ratio_status": "complete_selected_calls",
+      "device_x_ascend_c": 0.01871099493115575
+    },
+    {
+      "repeat": 2,
+      "label": "small-boundary-tie",
+      "event_median_us": {
+        "baseline": 193.80950182676315,
+        "previous": 53.18400077521801,
+        "new": 51.79700069129467,
+        "cann": 19.726499915122986
+      },
+      "event_x_ascend_c": 0.3808425131155972,
+      "event_change_percent": -2.607927315933778,
+      "old_finish_median_us": 18.436,
+      "new_finish_median_us": 16.837,
+      "new_sum_kernel_median_us": 45.922,
+      "new_gap_median_us": 6.9190000000000005,
+      "new_envelope_median_us": 52.9075,
+      "device_ratio_status": "review_required_partial_capture",
+      "device_x_ascend_c": 0.17163918159051172
+    }
+  ],
+  "profile_calls_recomputed": 1600,
+  "strict_index_set_checks": 48,
+  "CANN_score_multiset_checks": 16
+}

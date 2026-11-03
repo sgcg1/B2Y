@@ -1,0 +1,94 @@
+{
+  "id": "20261103-formal-decode-r3-161729",
+  "status": "quota_guard_random_gain_overflow_regression_pending",
+  "accepted": false,
+  "files": [
+    {
+      "source_commit": "b91ca7b",
+      "source": "AAA_Results/parts-20261103T162212Z-topk-formal-decode-r3-20261103-161729-51557-repeat-1.txt-part-0001.txt",
+      "bytes": 65536,
+      "sha256": "333137f552fd672b6db4a4cd23c9d9bc6c18268ebf0846a2c3fb268c633c2c96"
+    },
+    {
+      "source_commit": "b91ca7b",
+      "source": "AAA_Results/parts-20261103T162212Z-topk-formal-decode-r3-20261103-161729-51557-repeat-1.txt-part-0002.txt",
+      "bytes": 65536,
+      "sha256": "4d1b7dcf1ad79bd2c0f6540332da4b7998b5f4c878bd8762cba0ef0e22568709"
+    },
+    {
+      "source_commit": "b91ca7b",
+      "source": "AAA_Results/parts-20261103T162212Z-topk-formal-decode-r3-20261103-161729-51557-repeat-1.txt-part-0003.txt",
+      "bytes": 65536,
+      "sha256": "d437e3326fa742e5a31e38e98bca248c777a0bcd1e4ae63273bea40b8dc184d5"
+    },
+    {
+      "source_commit": "b91ca7b",
+      "source": "AAA_Results/parts-20261103T162212Z-topk-formal-decode-r3-20261103-161729-51557-repeat-1.txt-part-0004.txt",
+      "bytes": 65536,
+      "sha256": "c505956cc2fa10fec50ee63de9d622cd3d159149c68de28b980acebecf97c4f2"
+    },
+    {
+      "source_commit": "b91ca7b",
+      "source": "AAA_Results/parts-20261103T162212Z-topk-formal-decode-r3-20261103-161729-51557-repeat-1.txt-part-0005.txt",
+      "bytes": 55812,
+      "sha256": "6e7a6b5ec73298afb287d94f22fdf3209982b91937b2194e81a928509cb385f6"
+    },
+    {
+      "source_commit": "b91ca7b",
+      "source": "AAA_Results/parts-20261103T162212Z-topk-formal-decode-r3-20261103-161729-51557-repeat-2.txt-part-0001.txt",
+      "bytes": 65536,
+      "sha256": "70ff1300c201a1c34604216f20c0d72d86c4671ecd3d1a7c68fe6c42d8f593a9"
+    },
+    {
+      "source_commit": "b91ca7b",
+      "source": "AAA_Results/parts-20261103T162212Z-topk-formal-decode-r3-20261103-161729-51557-repeat-2.txt-part-0002.txt",
+      "bytes": 65536,
+      "sha256": "86710a593aed8fc72d8bc15c15c67e77d8a7095ab54b77acbf5b59c1b3a13f5a"
+    },
+    {
+      "source_commit": "b91ca7b",
+      "source": "AAA_Results/parts-20261103T162212Z-topk-formal-decode-r3-20261103-161729-51557-repeat-2.txt-part-0003.txt",
+      "bytes": 65536,
+      "sha256": "7b5b49b010c623b94dc7604357b696d2dcbfc764b2b749c1808b5728f8a02912"
+    },
+    {
+      "source_commit": "b91ca7b",
+      "source": "AAA_Results/parts-20261103T162212Z-topk-formal-decode-r3-20261103-161729-51557-repeat-2.txt-part-0004.txt",
+      "bytes": 65536,
+      "sha256": "44e1b4e0a18918257a31b2e9f772ceae52831614129efd2485b836acdfcf7113"
+    },
+    {
+      "source_commit": "b91ca7b",
+      "source": "AAA_Results/parts-20261103T162212Z-topk-formal-decode-r3-20261103-161729-51557-repeat-2.txt-part-0005.txt",
+      "bytes": 57036,
+      "sha256": "ae88baec02780985f71077b8486427bde41e435fb15a597dc84d8376b820e537"
+    }
+  ],
+  "restored": [
+    {
+      "file": "restored/topk-formal-decode-r3-20261103-161729-51557-repeat-1.txt",
+      "bytes": 3909303,
+      "sha256": "9903939c04b7d01916df17fde1c406f3a8f67d0214644edebe29c1c476c7fc1d",
+      "gzip_crc_and_size_verified": true,
+      "source_manifest_sha_crosscheck": false
+    },
+    {
+      "file": "restored/topk-formal-decode-r3-20261103-161729-51557-repeat-2.txt",
+      "bytes": 3906457,
+      "sha256": "8186fb5fd1d200ce4accc261b4d3b2d1a43494941bf3f62e6b648aa188de3846",
+      "gzip_crc_and_size_verified": true,
+      "source_manifest_sha_crosscheck": false
+    }
+  ],
+  "source_manifest_received": false,
+  "event_samples": 1600,
+  "embedded_csv_hashes_verified": 64,
+  "candidate_commit": "949d73c4581724d6c66ec9a34396e6aabe5ad148",
+  "missing": [
+    "source-side SHA manifest crosscheck",
+    "original terminal logs",
+    "profile boundary/flow validation",
+    "overflow regression resolution",
+    "full-contract acceptance"
+  ]
+}

@@ -1,3 +1,5 @@
+最新复核：[20261103-formal-decode-r3-161729](experiments/topk/20261103-formal-decode-r3-161729/analysis.md)：两份分片报告已还原；随机事件0.329–0.350xAscend C，较上版快15.4%–16.6%；全同分溢出回退约1.18%。保持实验候选，默认不变；profile待复核，无需重跑。
+
 # B2Y执行材料入口
 
 **当前回传辅助：[两份正式结果小文本拆分](tools/b2y-result-parts/README.md)。** formal-decode-r2两份log已收到，txt尚缺；脚本只读原始结果，gzip+base64拆片并自动生成无损恢复清单，不重跑NPU。先小批次测试上传，不假设拆分能解决TLS。

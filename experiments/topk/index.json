@@ -150,6 +150,12 @@
       "title": "prepare降约83.5%，随机事件约0.28x Ascend C；分片清单/部分profile待复核",
       "status": "prepare_grouping_gain_profile_review_and_source_manifest_pending",
       "metadata": "20261103-formal-decode-r2-101431/metadata.json"
+    },
+    {
+      "id": "20261103-formal-decode-r3-161729",
+      "title": "quota guard随机0.329–0.350x，溢出回退1.18%",
+      "status": "quota_guard_random_gain_overflow_regression_pending",
+      "metadata": "20261103-formal-decode-r3-161729/metadata.json"
     }
   ]
 }
