@@ -1,3 +1,5 @@
+最新入口：[窗口内预计算r14](diagnostics/topk-formal-decode-r14/README.md)：928b34fd已推送个人fork，仅限制粗桶/完整键预计算范围，保留整行DMA；新增窗口长度覆盖，尚无设备结果。
+
 最新复核：[粗桶缓存r13窗口权衡](experiments/topk/20261103-formal-decode-r13-213748/analysis.md)：全窗溢出再降3.59%–5.51%，窄窗回退6.12%–6.22%，不全局启用；通用起点仍保留5eb130ef输入+完整键缓存，无需重跑。
 
 最新入口：[溢出粗桶复用r13](diagnostics/topk-formal-decode-r13/README.md)：5e01bbeb已推送个人fork，保留溢出暂存/完整键缓存，复用原输入UB缓存粗桶，不增缓冲或VF，尚无设备结果。
