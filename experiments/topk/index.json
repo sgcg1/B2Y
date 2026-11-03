@@ -162,6 +162,12 @@
       "title": "Compact 512扫描全面小幅回退，拒绝扩大；保留quota guard进展",
       "status": "compact_width512_screening_regression_rejected",
       "metadata": "20261103-formal-decode-r4-170633/metadata.json"
+    },
+    {
+      "id": "20261103-formal-decode-r5-172510",
+      "title": "r5编译前源码身份失败，等待服务器HEAD/SHA诊断",
+      "status": "failed_source_identity_before_compile",
+      "metadata": "20261103-formal-decode-r5-172510/metadata.json"
     }
   ]
 }

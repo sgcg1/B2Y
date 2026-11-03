@@ -1,3 +1,5 @@
+**172510失败处理：先按[源码身份恢复指南](SOURCE_RECOVERY.md)诊断。失败在编译前，不代表UB暂存方案失败。**
+
 # Compact UB输入暂存正式对照r5
 
 候选9a5087dd，STAGE_INPUT默认false。冻结949d73c4（previous）与新暂存版本（new）都使用128扫描、分组prepare、adaptive finish和quota guard。仅new将每核连续4096个FP32输入通过T.copy搬到UB后读取，每核增加16KiB声明暂存；保持4核、128线程、相同原子分配/候选计数/精确选择和四kernel数量。P2支持增加32KiB，但本轮仅P4。

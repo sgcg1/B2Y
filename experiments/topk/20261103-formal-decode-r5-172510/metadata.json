@@ -1,0 +1,16 @@
+{
+  "id": "20261103-formal-decode-r5-172510",
+  "status": "failed_source_identity_before_compile",
+  "accepted": false,
+  "source_commit": "fd242cc",
+  "files": [
+    {
+      "file": "topk-formal-decode-r5-20261103-172510-69907-repeat-1.log",
+      "sha256": "f0f43a2ae5f8c0f12af398e9f4c8ef8e8506fb3b9d436d294a51da46154b4ed0"
+    },
+    {
+      "file": "topk-formal-decode-r5-20261103-172510-69907-repeat-1.txt",
+      "sha256": "b4d583f94aca9fc713e11bd8f18960ec72b2b2af26ca890f168950e17368d29e"
+    }
+  ]
+}

@@ -41,8 +41,16 @@ def execute(report, repo, root):
     identity = json.loads((Path(__file__).parent / "identity.json").read_text())
     for path, expected in identity["tool_files"].items():
         assert digest((Path(__file__).parent / path).read_bytes()) == expected, path
+    report["commit"] = subprocess.check_output(["git", "-C", str(repo), "rev-parse", "HEAD"], text=True).strip()
+    report["source_checks"] = {}
     for path, expected in identity["sources"].items():
-        assert digest((repo / path).read_bytes()) == expected, path
+        actual = (repo / path).read_bytes()
+        head = subprocess.check_output(["git", "-C", str(repo), "show", "HEAD:" + path])
+        report["source_checks"][path] = {"expected_sha256": expected,
+            "working_sha256": digest(actual), "head_blob_sha256": digest(head),
+            "working_lf_sha256": digest(actual.replace(b"\r\n", b"\n")),
+            "matches": digest(actual) == expected}
+    assert all(v["matches"] for v in report["source_checks"].values()), "Source identity mismatch; see source_checks and commit in formal-return.txt. Follow SOURCE_RECOVERY.md; do not bypass identity checks."
     assert digest(Path(__file__).read_bytes()) == identity["run_sha256"]
     assert not subprocess.check_output(["git", "-C", str(repo), "status", "--porcelain", "--untracked-files=no"]).strip()
     report["commit"] = subprocess.check_output(["git", "-C", str(repo), "rev-parse", "HEAD"], text=True).strip()

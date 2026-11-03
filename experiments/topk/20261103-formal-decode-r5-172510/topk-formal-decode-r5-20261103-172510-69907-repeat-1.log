@@ -1,0 +1,11 @@
+FORMAL_OUTPUT /home/y00937463/topk-formal-decode-r5-20261103-172510-69907/repeat-1
+Traceback (most recent call last):
+  File "/home/y00937463/B2Y/diagnostics/topk-formal-decode-r5/run.py", line 311, in <module>
+    main()
+  File "/home/y00937463/B2Y/diagnostics/topk-formal-decode-r5/run.py", line 295, in main
+    execute(report, args.repo.resolve(), root)
+  File "/home/y00937463/B2Y/diagnostics/topk-formal-decode-r5/run.py", line 45, in execute
+    assert digest((repo / path).read_bytes()) == expected, path
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: src/tileops/_kernels/attention/topk_select_decode_pipeline_ascend.py
+[ERROR] 2026-11-03-17:25:13 (PID:69910, Device:-1, RankID:-1) ERR99999 UNKNOWN applicaiton exception

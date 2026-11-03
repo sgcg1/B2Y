@@ -7,16 +7,18 @@
     "src/tileops/_kernels/attention/topk_select_decode_pipeline_ascend.py": "f4b88fac018ee0bbbe3d84fe479ed647f9494f44515d6a87c74f72fffd9b38c0"
   },
   "version": "20261103-formal-decode-r5",
-  "run_sha256": "7e48dac4a8f8db3041a08b94f65eae6c7063f4bfd92d57c45baca2730a572074",
+  "run_sha256": "6eed8f62bc3e1459c1877d364055d345d29fdd0b2309864825fb60731917bc36",
   "tool_files": {
-    "README.md": "7653497bc1f4152333ab6414149bd8b55e287e6d37925c73dd87ee5cb095c6b4",
+    "README.md": "fe377e6011cd99e482d2d8ebf78842db7ed95252797881f02d3af379860cae2d",
     "run.sh": "cbf08ef2b5f919f7fdccb84aa7f36625c19d36f7d5aa4701943e2b258543ac73",
     "ge_model.py": "a9c05855a9fb869a07de644c8f5c04658611ba600476d12b8a4a9f15b760bdec",
     "profile_records.py": "c3bcc9f74a21a0ae597e0092372237f57fa623ef68d0a02b131b993b23175141",
     "test_profile_records.py": "e934e0c69c8269cb3f1ce1f22061c150e153130878d470efb1ef6ebed5598060",
     "validate_identity.py": "91a79bd245d10447339e7caeaedd7bd651c432457bd2260a6c43316682128266",
     "cann/build.cpp": "e751e8202fad7bb958008d35d5d90621c0d77b7f7d6e68960900bd62bba38401",
-    "cann/top_k_v2_proto.h": "a187576305386920b8ccd54068a57edabc3919f8c3dac65aa103617971fabfed"
+    "cann/top_k_v2_proto.h": "a187576305386920b8ccd54068a57edabc3919f8c3dac65aa103617971fabfed",
+    "SOURCE_RECOVERY.md": "d9f47f612686038a1f6a775ef8e7f6c5eb174aed8cfcaece4fde30b0eab724ec",
+    "check_sources.py": "e1526629a2d70bda1f291a3eca61a74846c79886637352118f44c052dd61c399"
   },
   "unchanged_generated": {
     "baseline": "751a82889d13811a199edf8358af0d3fc84e6a54d17f985b6a27c877a1c10626",
