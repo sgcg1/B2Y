@@ -156,6 +156,12 @@
       "title": "quota guard随机0.329–0.350x，溢出回退1.18%",
       "status": "quota_guard_random_gain_overflow_regression_pending",
       "metadata": "20261103-formal-decode-r3-161729/metadata.json"
+    },
+    {
+      "id": "20261103-formal-decode-r4-170633",
+      "title": "Compact 512扫描全面小幅回退，拒绝扩大；保留quota guard进展",
+      "status": "compact_width512_screening_regression_rejected",
+      "metadata": "20261103-formal-decode-r4-170633/metadata.json"
     }
   ]
 }

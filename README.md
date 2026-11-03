@@ -1,3 +1,5 @@
+最新复核：[compact 512扫描否定结果](experiments/topk/20261103-formal-decode-r4-170633/analysis.md)：两份报告及源端SHA已核验；全部事件回退，保持128，不扩大512测试。quota guard收益独立保留，无需重跑。
+
 最新执行入口：[compact 512扫描正式对照r4](diagnostics/topk-formal-decode-r4/README.md)：只改compact执行粒度，沿用quota guard；候选364fed4c默认关闭，尚无设备结果。
 
 最新复核：[20261103-formal-decode-r3-161729](experiments/topk/20261103-formal-decode-r3-161729/analysis.md)：两份分片报告已还原；随机事件0.329–0.350xAscend C，较上版快15.4%–16.6%；全同分溢出回退约1.18%。保持实验候选，默认不变；profile待复核，无需重跑。

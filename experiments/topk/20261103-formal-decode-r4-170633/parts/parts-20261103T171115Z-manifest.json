@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "encoding": "gzip+base64",
+  "part_max_bytes": 65536,
+  "files": [
+    {
+      "original_name": "topk-formal-decode-r4-20261103-170633-60772-repeat-1.txt",
+      "source_path": "/home/y00937463/B2Y/AAA_Results/topk-formal-decode-r4-20261103-170633-60772-repeat-1.txt",
+      "original_bytes": 3898542,
+      "original_sha256": "235863179140adb1b93eba06b1e617ff546e0e6928dd30a695fd4fab4c7acf3b",
+      "gzip_bytes": 244063,
+      "gzip_sha256": "acf34cb0eed708584e635bb0882213c2ce895b06062231a0f93d581ab53c5870",
+      "parts": [
+        {
+          "name": "parts-20261103T171115Z-topk-formal-decode-r4-20261103-170633-60772-repeat-1.txt-part-0001.txt",
+          "bytes": 65536,
+          "sha256": "5eea5205c420a5396d2a67dd8c9029d9e51a64cf9d00fcfc9528386fbfe4a5d0"
+        },
+        {
+          "name": "parts-20261103T171115Z-topk-formal-decode-r4-20261103-170633-60772-repeat-1.txt-part-0002.txt",
+          "bytes": 65536,
+          "sha256": "cef46db6b224588ddebb662dd5d9c27bf199e03a92944e930e8629478d479848"
+        },
+        {
+          "name": "parts-20261103T171115Z-topk-formal-decode-r4-20261103-170633-60772-repeat-1.txt-part-0003.txt",
+          "bytes": 65536,
+          "sha256": "73d6a5273676dc271dd55fbc7a79437b9a909d51ccd2e9d72e0e1b5d2e1cabe3"
+        },
+        {
+          "name": "parts-20261103T171115Z-topk-formal-decode-r4-20261103-170633-60772-repeat-1.txt-part-0004.txt",
+          "bytes": 65536,
+          "sha256": "a4fcd527dc1e56820730dd5e10b7e92b18d39b09ca892733f8822c1fa0f54c28"
+        },
+        {
+          "name": "parts-20261103T171115Z-topk-formal-decode-r4-20261103-170633-60772-repeat-1.txt-part-0005.txt",
+          "bytes": 63276,
+          "sha256": "567778189d1a31c6ad60de9cd12f7bba8f5641d86a89829f7a106e915c62845e"
+        }
+      ]
+    },
+    {
+      "original_name": "topk-formal-decode-r4-20261103-170633-60772-repeat-2.txt",
+      "source_path": "/home/y00937463/B2Y/AAA_Results/topk-formal-decode-r4-20261103-170633-60772-repeat-2.txt",
+      "original_bytes": 3888308,
+      "original_sha256": "2a5db857343af230d9d5fab90c6e083e32170198cf67fd8dd808978e7b19847b",
+      "gzip_bytes": 241611,
+      "gzip_sha256": "da32106d1085200b4f7676cc9eb0557b4f915dff7d1fd7295d259277be883ad0",
+      "parts": [
+        {
+          "name": "parts-20261103T171115Z-topk-formal-decode-r4-20261103-170633-60772-repeat-2.txt-part-0001.txt",
+          "bytes": 65536,
+          "sha256": "c92ba64807dcb9c85e879472a130bb33c47927a9969308ee64ec4d8e1d061ed7"
+        },
+        {
+          "name": "parts-20261103T171115Z-topk-formal-decode-r4-20261103-170633-60772-repeat-2.txt-part-0002.txt",
+          "bytes": 65536,
+          "sha256": "a9f2d1fca87f4e10a646eb2ab8e7cfc7fdbbe7f24509be58ec21ba76899e78e1"
+        },
+        {
+          "name": "parts-20261103T171115Z-topk-formal-decode-r4-20261103-170633-60772-repeat-2.txt-part-0003.txt",
+          "bytes": 65536,
+          "sha256": "fd48f0493ccea3696d9d7129f7d20ae76953471e299319f9ad4672a9eb3500cd"
+        },
+        {
+          "name": "parts-20261103T171115Z-topk-formal-decode-r4-20261103-170633-60772-repeat-2.txt-part-0004.txt",
+          "bytes": 65536,
+          "sha256": "3284322b44a7af7b09b4d69d98bd34c7d24308a092de46d25a27a7d9b46e4c93"
+        },
+        {
+          "name": "parts-20261103T171115Z-topk-formal-decode-r4-20261103-170633-60772-repeat-2.txt-part-0005.txt",
+          "bytes": 60004,
+          "sha256": "f40a49d4c0e4dec8a85147448716a72db753c2cca2edc65bdfc0f3d9502d1e17"
+        }
+      ]
+    }
+  ]
+}
