@@ -192,6 +192,12 @@
       "title": "hist UB暂存随机hist降14.8%，事件0.362–0.373x，无观察回退",
       "status": "histogram_ub_staging_screening_gain_profile_review_pending",
       "metadata": "20261103-formal-decode-r8-194515/metadata.json"
+    },
+    {
+      "id": "20261103-formal-decode-r9-200743",
+      "title": "溢出UB暂存触发ThreadSync，未运行计时；有界访问重试",
+      "status": "rejected_unresolved_threadsync_before_validation",
+      "metadata": "20261103-formal-decode-r9-200743/metadata.json"
     }
   ]
 }

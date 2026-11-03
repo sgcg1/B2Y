@@ -1,0 +1,20 @@
+{
+  "id": "20261103-formal-decode-r9-200743",
+  "status": "rejected_unresolved_threadsync_before_validation",
+  "accepted": false,
+  "source_commit": "1ae2de5",
+  "candidate_commit": "39bb2f6f",
+  "files": [
+    {
+      "file": "topk-formal-decode-r9-20261103-200743-106728-repeat-1.log",
+      "sha256": "ff23487ef36702ea06519bba3837b529a1c5931db1660f7ad190b1fdd90046f6",
+      "bytes": 3542
+    },
+    {
+      "file": "topk-formal-decode-r9-20261103-200743-106728-repeat-1.txt",
+      "sha256": "f84b12cefdd34c23deffad8b2c73abd21df3fa2f96497a4d564852847a54ef81",
+      "bytes": 219856
+    }
+  ],
+  "performance_samples": 0
+}
