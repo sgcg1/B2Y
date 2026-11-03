@@ -1,3 +1,25 @@
+POST https://gitcode.com/JotaroSSR/B2Y/uploads/files net::ERR_SSL_PROTOCOL_ERROR
+
+
+{
+    "result": {
+        "destroy": "rtti,jsTrack,resource,longtask,fps,api,whiteScreen,perf,crash"
+    },
+    "status": "success"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 root@1c26d9767e3f:/home/y00937463/B2Y# timeout 25s git -c http.version=HTTP/1.1 ls-remote origin refs/heads/main
 0360acada8c24d88001a88f158a6ab098b8040ce	refs/heads/main
 root@1c26d9767e3f:/home/y00937463/B2Y# git_direct() {
