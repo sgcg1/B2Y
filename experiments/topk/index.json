@@ -204,6 +204,12 @@
       "title": "溢出UB暂存事件降28.1%，缓存路径小回退，保留专门候选",
       "status": "overflow_staging_large_gain_small_cached_path_regression_pending",
       "metadata": "20261103-formal-decode-r10-201614/metadata.json"
+    },
+    {
+      "id": "20261103-formal-decode-r11-204010",
+      "title": "溢出暂存四类全窗事件降29%–32.5%，窄窗/随机计时波动保留",
+      "status": "overflow_staging_broader_gain_validated_screening_timing_review_pending",
+      "metadata": "20261103-formal-decode-r11-204010/metadata.json"
     }
   ]
 }

@@ -1,3 +1,5 @@
+最新复核：[溢出暂存扩大验证r11](experiments/topk/20261103-formal-decode-r11-204010/analysis.md)：四类全窗溢出事件减少29.15%–32.49%，额外窗口/特殊值通过；随机CANN及窄窗整体计时波动保留，默认不变，无需重跑。
+
 最新执行入口：[溢出扩大验证r11](diagnostics/topk-formal-decode-r11/README.md)：内核仍ec986f88，不叠加优化；新增容量边界/量化/接近分数/窄窗和特殊值验证，窄窗不算CANN倍率，尚无本轮设备结果。
 
 最新复核：[溢出finish UB暂存约28.1%收益](experiments/topk/20261103-formal-decode-r10-201614/analysis.md)：同步诊断未再出现；全同分事件约417μs、0.060–0.063xAscend C，缓存路径小回退，保留候选待扩大溢出验证，默认不变，无需重跑。
