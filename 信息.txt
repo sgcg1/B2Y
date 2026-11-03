@@ -1,3 +1,23 @@
+root@1c26d9767e3f:/home/y00937463/B2Y# timeout 25s git -c http.version=HTTP/1.1 ls-remote origin refs/heads/main
+0360acada8c24d88001a88f158a6ab098b8040ce	refs/heads/main
+root@1c26d9767e3f:/home/y00937463/B2Y# git_direct() {
+  env -u http_proxy -u https_proxy -u HTTP_PROXY -u HTTPS_PROXY       -u all_proxy -u ALL_PROXY -u GIT_SSL_NO_VERIFY     git -c http.proxy= -c remote.origin.proxy=         -c http.https://gitcode.com.proxy=         -c http.version=HTTP/1.1 -c http.sslVerify=true "$@"
+}
+root@1c26d9767e3f:/home/y00937463/B2Y# git_direct -c http.lowSpeedLimit=1 -c http.lowSpeedTime=20 ls-remote origin refs/heads/main
+fatal: unable to access 'https://gitcode.com/JotaroSSR/B2Y.git/': Could not resolve host: gitcode.com
+
+
+
+
+
+
+
+
+
+
+
+
+
 root@1c26d9767e3f:/home/y00937463/B2Y# git config --local user.name "JotaroSSR"
 git config --local user.email "1224862686@qq.com"
 git var GIT_COMMITTER_IDENT
