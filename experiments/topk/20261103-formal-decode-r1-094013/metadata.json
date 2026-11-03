@@ -1,0 +1,36 @@
+{
+  "id": "20261103-formal-decode-r1-094013",
+  "source_commit": "6e57204",
+  "status": "one_complete_formal_run_second_partial_capture_archived",
+  "accepted": false,
+  "files": [
+    {
+      "source": "AAA_Results/topk-formal-decode-r1-20261103-094013-36705-repeat-1.log",
+      "bytes": 48535,
+      "sha256": "4406c75fc686c8c0beee4a2df5757b196d8feebcecf8e1884f85397570968ee9"
+    },
+    {
+      "source": "AAA_Results/topk-formal-decode-r1-20261103-094013-36705-repeat-1.txt",
+      "bytes": 2626765,
+      "sha256": "89c039c5ff03ccc4c02753155d03538e49b93664b3def88a14d11eefc0d4b622"
+    },
+    {
+      "source": "AAA_Results/topk-formal-decode-r1-20261103-094013-36705-repeat-2.log",
+      "bytes": 40390,
+      "sha256": "259e20499669d338f2b6552478d4966d4f26904b97d701123ae86a1ba4db6634"
+    },
+    {
+      "source": "AAA_Results/topk-formal-decode-r1-20261103-094013-36705-repeat-2.txt",
+      "bytes": 313679,
+      "sha256": "43c597c8b15141d7a3d3cf9753834f673925f926c17834aebe15532df866ff85"
+    }
+  ],
+  "repeat1": "completed",
+  "repeat2": "failed_partial_pipeline_capture_239_records",
+  "event_samples": 750,
+  "missing": [
+    "complete second-process CANN device repetition",
+    "formal full-contract acceptance",
+    "final assembly or per-instruction bottleneck evidence"
+  ]
+}

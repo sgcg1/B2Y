@@ -138,6 +138,12 @@
       "title": "Decode r3容量路由收益稳定，待扩展验证",
       "status": "adaptive_decode_screening_promising_broader_validation_pending",
       "metadata": "20261103-decode-full-r3-090700/metadata.json"
+    },
+    {
+      "id": "20261103-formal-decode-r1-094013",
+      "title": "正式基线随机约0.105x设备性能，prepare与finish主导",
+      "status": "one_complete_formal_run_second_partial_capture_archived",
+      "metadata": "20261103-formal-decode-r1-094013/metadata.json"
     }
   ]
 }

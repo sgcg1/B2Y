@@ -59,3 +59,5 @@ Decode pilot启动脚本run.sh原中文提示误以GBK保存，保留原件；�
 最新：[Decode full-r3复核](experiments/topk/20261103-decode-full-r3-090700/analysis.md)：随机较默认下降43.2%–43.4%、溢出下降16.1%–16.2%、小边界下降61.8%；1600事件及容量边界校验通过，编译诊断为空，路由有额外成本。优先进入更广泛Decode验证及同轮CANN/设备流水记录，尚未默认接受，无需重跑。
 
 当前最高优先级：diagnostics/topk-formal-decode-r1/README.md，固定c022114c的r3，不改内核。官方GE TopKV2同进程同输入/同流事件，对照旧TileLang；独立profile CANN单kernel与r3四kernel包络/各段/gap，保留全部kernel_details.csv与task_time.csv。6项CPU解析回归、离线身份/GE属性和语法通过，尚无此工具设备结果。不再混用旧9.23μs与r3事件算倍率；下一优化依据最大设备成本选执行粒度/向量路径。
+
+最新：[正式基线设备拆解](experiments/topk/20261103-formal-decode-r1-094013/analysis.md)。随机r3约0.105–0.107x Ascend C设备包络、0.213–0.216x事件；prepare约28.7μs、finish约31.6μs，gap总计约0.066μs。第一进程完整，第二因239条部分流水失败，其最后50完整调用仅作补充，缺第二CANN设备复现。下一步优先prepare并行归约，随后finish执行粒度与向量统计；默认不接受，旧测量无需立即重跑。

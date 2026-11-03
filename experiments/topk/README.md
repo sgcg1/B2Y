@@ -46,3 +46,5 @@
 - [Decode full-r2尾段权衡](20261102-decode-full-r2-214318/analysis.md)，1200事件完整，默认未接受。
 
 - [Decode full-r3容量路由结果](20261103-decode-full-r3-090700/analysis.md)，1600事件完整，待扩展验证。
+
+- [正式Decode基线与设备拆解](20261103-formal-decode-r1-094013/analysis.md)：一完整进程、一部分采集失败；750事件及全部原始CSV保留。

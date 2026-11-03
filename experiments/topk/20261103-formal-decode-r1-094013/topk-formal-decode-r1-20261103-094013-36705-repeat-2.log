@@ -1,0 +1,323 @@
+COMPILE_BEGIN baseline
+
+2026-11-03 09:42:40  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-03 09:42:58  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END baseline
+COMPILE_BEGIN finish
+
+2026-11-03 09:42:58  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-03 09:43:14  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END finish
+COMPILE_BEGIN hist-p4
+
+2026-11-03 09:43:14  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-03 09:43:16  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END hist-p4
+COMPILE_BEGIN prepare-p4
+
+2026-11-03 09:43:16  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-03 09:43:19  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END prepare-p4
+COMPILE_BEGIN compact-p4
+
+2026-11-03 09:43:19  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-03 09:43:21  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE_END compact-p4
+ge-compiler 
+ge-build initialize_status=0
+start compile Ascend C operator TopKV2. kernel name is te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b
+[2026-11-03 09:43:30] [WARNING] [ascend950] aiv_te In file included from /home/y00937463/topk-formal-decode-r1-20261103-094013-36705/repeat-2/cache/work/kernel_meta/kernel_meta_1732427909610612177/kernel_meta/te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b_40824_kernel.cpp:6:
+In file included from /usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:30:
+In file included from /usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:55:
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:255:52: warning: expected type of ops in vector loop cond is uint16_t. unexpected types may cause errors [-Wcce-compat]
+            for (uint16_t axisBase = 0; axisBase < this->axisLen_;
+                                                   ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:255:13: warning: Loop bound should be divided by the step value with no remainder. Otherwise the tripcount would be inaccurate 
+
+            for (uint16_t axisBase = 0; axisBase < this->axisLen_;
+            ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:263:50: warning: expected type of ops in vector loop cond is uint16_t. unexpected types may cause errors [-Wcce-compat]
+                for (uint16_t inner = 0; inner < curInnerChunk; ++inner) {
+                                                 ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:255:58: warning: expected type of ops in vector loop cond is uint16_t. unexpected types may cause errors [-Wcce-compat]
+            for (uint16_t axisBase = 0; axisBase < this->axisLen_;
+                                                         ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:220:9: note: in instantiation of member function 'SmallAxisCommon::NonLastSmallAxisBase<topkV2::TopKNonLastSmallAxisNonTranspose<float, int, true, true, true, false>, float, float, int, unsigned int, float, true, true, false, false>::TransposeTileByGather' requested here
+        TransposeTileByGather(curInnerChunk);
+        ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:239:11: note: in instantiation of member function 'SmallAxisCommon::NonLastSmallAxisBase<topkV2::TopKNonLastSmallAxisNonTranspose<float, int, true, true, true, false>, float, float, int, unsigned int, float, true, true, false, false>::TransposeToSortMajor' requested here
+    Base::TransposeToSortMajor(curInnerChunk);
+          ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:325:9: note: in instantiation of member function 'topkV2::TopKNonLastSmallAxisNonTranspose<float, int, true, true, true, false>::TransposeToTopKMajor' requested here
+        TransposeToTopKMajor(curInnerChunk);
+        ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:171:16: note: in instantiation of member function 'topkV2::TopKNonLastSmallAxisNonTranspose<float, int, true, true, true, false>::Process' requested here
+            op.Process();
+               ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:346:17: note: in instantiation of function template specialization 'TopKNonLastSmallAxisOpObject<float, int, true, false>' requested here
+                TopKNonLastSmallAxisOpObject<T, T_INDEX_TO, true, IS_BITONIC_SORT>(x, values, indices, tiling);
+                ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:580:5: note: in instantiation of function template specialization 'generateOpObject<float, unsigned int, 4, int, false>' requested here
+    generateOpObject<float, uint32_t, topkV2::B32_BITE_SIZE, DTYPE_INDICES, false>(x, k, values, indices, globalWorkGm,
+    ^
+In file included from /home/y00937463/topk-formal-decode-r1-20261103-094013-36705/repeat-2/cache/work/kernel_meta/kernel_meta_1732427909610612177/kernel_meta/te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b_40824_kernel.cpp:6:
+In file included from /usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:30:
+In file included from /usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:55:
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:255:13: warning: Loop bound should be divided by the step value with no remainder. Otherwise the tripcount would be inaccurate 
+
+            for (uint16_t axisBase = 0; axisBase < this->axisLen_;
+            ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:263:50: warning: expected type of ops in vector loop cond is uint16_t. unexpected types may cause errors [-Wcce-compat]
+                for (uint16_t inner = 0; inner < curInnerChunk; ++inner) {
+                                                 ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:255:58: warning: expected type of ops in vector loop cond is uint16_t. unexpected types may cause errors [-Wcce-compat]
+            for (uint16_t axisBase = 0; axisBase < this->axisLen_;
+                                                         ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:220:9: note: in instantiation of member function 'SmallAxisCommon::NonLastSmallAxisBase<topkV2::TopKNonLastSmallAxisNonTranspose<float, int, true, false, true, false>, float, float, int, unsigned int, float, true, true, false, false>::TransposeTileByGather' requested here
+        TransposeTileByGather(curInnerChunk);
+        ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:239:11: note: in instantiation of member function 'SmallAxisCommon::NonLastSmallAxisBase<topkV2::TopKNonLastSmallAxisNonTranspose<float, int, true, false, true, false>, float, float, int, unsigned int, float, true, true, false, false>::TransposeToSortMajor' requested here
+    Base::TransposeToSortMajor(curInnerChunk);
+          ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:325:9: note: in instantiation of member function 'topkV2::TopKNonLastSmallAxisNonTranspose<float, int, true, false, true, false>::TransposeToTopKMajor' requested here
+        TransposeToTopKMajor(curInnerChunk);
+        ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:175:16: note: in instantiation of member function 'topkV2::TopKNonLastSmallAxisNonTranspose<float, int, true, false, true, false>::Process' requested here
+            op.Process();
+               ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:346:17: note: in instantiation of function template specialization 'TopKNonLastSmallAxisOpObject<float, int, true, false>' requested here
+                TopKNonLastSmallAxisOpObject<T, T_INDEX_TO, true, IS_BITONIC_SORT>(x, values, indices, tiling);
+                ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:580:5: note: in instantiation of function template specialization 'generateOpObject<float, unsigned int, 4, int, false>' requested here
+    generateOpObject<float, uint32_t, topkV2::B32_BITE_SIZE, DTYPE_INDICES, false>(x, k, values, indices, globalWorkGm,
+    ^
+In file included from /home/y00937463/topk-formal-decode-r1-20261103-094013-36705/repeat-2/cache/work/kernel_meta/kernel_meta_1732427909610612177/kernel_meta/te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b_40824_kernel.cpp:6:
+In file included from /usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:30:
+In file included from /usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:55:
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:255:13: warning: Loop bound should be divided by the step value with no remainder. Otherwise the tripcount would be inaccurate 
+
+            for (uint16_t axisBase = 0; axisBase < this->axisLen_;
+            ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:263:50: warning: expected type of ops in vector loop cond is uint16_t. unexpected types may cause errors [-Wcce-compat]
+                for (uint16_t inner = 0; inner < curInnerChunk; ++inner) {
+                                                 ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:255:58: warning: expected type of ops in vector loop cond is uint16_t. unexpected types may cause errors [-Wcce-compat]
+            for (uint16_t axisBase = 0; axisBase < this->axisLen_;
+                                                         ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:220:9: note: in instantiation of member function 'SmallAxisCommon::NonLastSmallAxisBase<topkV2::TopKNonLastSmallAxisNonTranspose<float, int, false, true, true, false>, float, float, int, unsigned int, float, false, true, false, false>::TransposeTileByGather' requested here
+        TransposeTileByGather(curInnerChunk);
+        ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:239:11: note: in instantiation of member function 'SmallAxisCommon::NonLastSmallAxisBase<topkV2::TopKNonLastSmallAxisNonTranspose<float, int, false, true, true, false>, float, float, int, unsigned int, float, false, true, false, false>::TransposeToSortMajor' requested here
+    Base::TransposeToSortMajor(curInnerChunk);
+          ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:325:9: note: in instantiation of member function 'topkV2::TopKNonLastSmallAxisNonTranspose<float, int, false, true, true, false>::TransposeToTopKMajor' requested here
+        TransposeToTopKMajor(curInnerChunk);
+        ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:181:16: note: in instantiation of member function 'topkV2::TopKNonLastSmallAxisNonTranspose<float, int, false, true, true, false>::Process' requested here
+            op.Process();
+               ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:346:17: note: in instantiation of function template specialization 'TopKNonLastSmallAxisOpObject<float, int, true, false>' requested here
+                TopKNonLastSmallAxisOpObject<T, T_INDEX_TO, true, IS_BITONIC_SORT>(x, values, indices, tiling);
+                ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:580:5: note: in instantiation of function template specialization 'generateOpObject<float, unsigned int, 4, int, false>' requested here
+    generateOpObject<float, uint32_t, topkV2::B32_BITE_SIZE, DTYPE_INDICES, false>(x, k, values, indices, globalWorkGm,
+    ^
+In file included from /home/y00937463/topk-formal-decode-r1-20261103-094013-36705/repeat-2/cache/work/kernel_meta/kernel_meta_1732427909610612177/kernel_meta/te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b_40824_kernel.cpp:6:
+In file included from /usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:30:
+In file included from /usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:55:
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:255:13: warning: Loop bound should be divided by the step value with no remainder. Otherwise the tripcount would be inaccurate 
+
+            for (uint16_t axisBase = 0; axisBase < this->axisLen_;
+            ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:263:50: warning: expected type of ops in vector loop cond is uint16_t. unexpected types may cause errors [-Wcce-compat]
+                for (uint16_t inner = 0; inner < curInnerChunk; ++inner) {
+                                                 ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:255:58: warning: expected type of ops in vector loop cond is uint16_t. unexpected types may cause errors [-Wcce-compat]
+            for (uint16_t axisBase = 0; axisBase < this->axisLen_;
+                                                         ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:220:9: note: in instantiation of member function 'SmallAxisCommon::NonLastSmallAxisBase<topkV2::TopKNonLastSmallAxisNonTranspose<float, int, false, false, true, false>, float, float, int, unsigned int, float, false, true, false, false>::TransposeTileByGather' requested here
+        TransposeTileByGather(curInnerChunk);
+        ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:239:11: note: in instantiation of member function 'SmallAxisCommon::NonLastSmallAxisBase<topkV2::TopKNonLastSmallAxisNonTranspose<float, int, false, false, true, false>, float, float, int, unsigned int, float, false, true, false, false>::TransposeToSortMajor' requested here
+    Base::TransposeToSortMajor(curInnerChunk);
+          ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:325:9: note: in instantiation of member function 'topkV2::TopKNonLastSmallAxisNonTranspose<float, int, false, false, true, false>::TransposeToTopKMajor' requested here
+        TransposeToTopKMajor(curInnerChunk);
+        ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:185:16: note: in instantiation of member function 'topkV2::TopKNonLastSmallAxisNonTranspose<float, int, false, false, true, false>::Process' requested here
+            op.Process();
+               ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:346:17: note: in instantiation of function template specialization 'TopKNonLastSmallAxisOpObject<float, int, true, false>' requested here
+                TopKNonLastSmallAxisOpObject<T, T_INDEX_TO, true, IS_BITONIC_SORT>(x, values, indices, tiling);
+                ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:580:5: note: in instantiation of function template specialization 'generateOpObject<float, unsigned int, 4, int, false>' requested here
+    generateOpObject<float, uint32_t, topkV2::B32_BITE_SIZE, DTYPE_INDICES, false>(x, k, values, indices, globalWorkGm,
+    ^
+In file included from /home/y00937463/topk-formal-decode-r1-20261103-094013-36705/repeat-2/cache/work/kernel_meta/kernel_meta_1732427909610612177/kernel_meta/te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b_40824_kernel.cpp:6:
+In file included from /usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:30:
+In file included from /usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:55:
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:255:13: warning: Loop bound should be divided by the step value with no remainder. Otherwise the tripcount would be inaccurate 
+
+            for (uint16_t axisBase = 0; axisBase < this->axisLen_;
+            ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:263:50: warning: expected type of ops in vector loop cond is uint16_t. unexpected types may cause errors [-Wcce-compat]
+                for (uint16_t inner = 0; inner < curInnerChunk; ++inner) {
+                                                 ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:255:58: warning: expected type of ops in vector loop cond is uint16_t. unexpected types may cause errors [-Wcce-compat]
+            for (uint16_t axisBase = 0; axisBase < this->axisLen_;
+                                                         ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:220:9: note: in instantiation of member function 'SmallAxisCommon::NonLastSmallAxisBase<topkV2::TopKNonLastSmallAxisNonTranspose<float, int, true, true, false, false>, float, float, int, unsigned int, float, true, false, false, false>::TransposeTileByGather' requested here
+        TransposeTileByGather(curInnerChunk);
+        ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:239:11: note: in instantiation of member function 'SmallAxisCommon::NonLastSmallAxisBase<topkV2::TopKNonLastSmallAxisNonTranspose<float, int, true, true, false, false>, float, float, int, unsigned int, float, true, false, false, false>::TransposeToSortMajor' requested here
+    Base::TransposeToSortMajor(curInnerChunk);
+          ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:325:9: note: in instantiation of member function 'topkV2::TopKNonLastSmallAxisNonTranspose<float, int, true, true, false, false>::TransposeToTopKMajor' requested here
+        TransposeToTopKMajor(curInnerChunk);
+        ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:171:16: note: in instantiation of member function 'topkV2::TopKNonLastSmallAxisNonTranspose<float, int, true, true, false, false>::Process' requested here
+            op.Process();
+               ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:351:13: note: in instantiation of function template specialization 'TopKNonLastSmallAxisOpObject<float, int, false, false>' requested here
+            TopKNonLastSmallAxisOpObject<T, T_INDEX_TO, false, IS_BITONIC_SORT>(x, values, indices, tiling);
+            ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:580:5: note: in instantiation of function template specialization 'generateOpObject<float, unsigned int, 4, int, false>' requested here
+    generateOpObject<float, uint32_t, topkV2::B32_BITE_SIZE, DTYPE_INDICES, false>(x, k, values, indices, globalWorkGm,
+    ^
+In file included from /home/y00937463/topk-formal-decode-r1-20261103-094013-36705/repeat-2/cache/work/kernel_meta/kernel_meta_1732427909610612177/kernel_meta/te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b_40824_kernel.cpp:6:
+In file included from /usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:30:
+In file included from /usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:55:
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:255:13: warning: Loop bound should be divided by the step value with no remainder. Otherwise the tripcount would be inaccurate 
+
+            for (uint16_t axisBase = 0; axisBase < this->axisLen_;
+            ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:263:50: warning: expected type of ops in vector loop cond is uint16_t. unexpected types may cause errors [-Wcce-compat]
+                for (uint16_t inner = 0; inner < curInnerChunk; ++inner) {
+                                                 ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:255:58: warning: expected type of ops in vector loop cond is uint16_t. unexpected types may cause errors [-Wcce-compat]
+            for (uint16_t axisBase = 0; axisBase < this->axisLen_;
+                                                         ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:220:9: note: in instantiation of member function 'SmallAxisCommon::NonLastSmallAxisBase<topkV2::TopKNonLastSmallAxisNonTranspose<float, int, true, false, false, false>, float, float, int, unsigned int, float, true, false, false, false>::TransposeTileByGather' requested here
+        TransposeTileByGather(curInnerChunk);
+        ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:239:11: note: in instantiation of member function 'SmallAxisCommon::NonLastSmallAxisBase<topkV2::TopKNonLastSmallAxisNonTranspose<float, int, true, false, false, false>, float, float, int, unsigned int, float, true, false, false, false>::TransposeToSortMajor' requested here
+    Base::TransposeToSortMajor(curInnerChunk);
+          ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:325:9: note: in instantiation of member function 'topkV2::TopKNonLastSmallAxisNonTranspose<float, int, true, false, false, false>::TransposeToTopKMajor' requested here
+        TransposeToTopKMajor(curInnerChunk);
+        ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:175:16: note: in instantiation of member function 'topkV2::TopKNonLastSmallAxisNonTranspose<float, int, true, false, false, false>::Process' requested here
+            op.Process();
+               ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:351:13: note: in instantiation of function template specialization 'TopKNonLastSmallAxisOpObject<float, int, false, false>' requested here
+            TopKNonLastSmallAxisOpObject<T, T_INDEX_TO, false, IS_BITONIC_SORT>(x, values, indices, tiling);
+            ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:580:5: note: in instantiation of function template specialization 'generateOpObject<float, unsigned int, 4, int, false>' requested here
+    generateOpObject<float, uint32_t, topkV2::B32_BITE_SIZE, DTYPE_INDICES, false>(x, k, values, indices, globalWorkGm,
+    ^
+In file included from /home/y00937463/topk-formal-decode-r1-20261103-094013-36705/repeat-2/cache/work/kernel_meta/kernel_meta_1732427909610612177/kernel_meta/te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b_40824_kernel.cpp:6:
+In file included from /usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:30:
+In file included from /usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:55:
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:255:13: warning: Loop bound should be divided by the step value with no remainder. Otherwise the tripcount would be inaccurate 
+
+            for (uint16_t axisBase = 0; axisBase < this->axisLen_;
+            ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:263:50: warning: expected type of ops in vector loop cond is uint16_t. unexpected types may cause errors [-Wcce-compat]
+                for (uint16_t inner = 0; inner < curInnerChunk; ++inner) {
+                                                 ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:255:58: warning: expected type of ops in vector loop cond is uint16_t. unexpected types may cause errors [-Wcce-compat]
+            for (uint16_t axisBase = 0; axisBase < this->axisLen_;
+                                                         ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:220:9: note: in instantiation of member function 'SmallAxisCommon::NonLastSmallAxisBase<topkV2::TopKNonLastSmallAxisNonTranspose<float, int, false, true, false, false>, float, float, int, unsigned int, float, false, false, false, false>::TransposeTileByGather' requested here
+        TransposeTileByGather(curInnerChunk);
+        ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:239:11: note: in instantiation of member function 'SmallAxisCommon::NonLastSmallAxisBase<topkV2::TopKNonLastSmallAxisNonTranspose<float, int, false, true, false, false>, float, float, int, unsigned int, float, false, false, false, false>::TransposeToSortMajor' requested here
+    Base::TransposeToSortMajor(curInnerChunk);
+          ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:325:9: note: in instantiation of member function 'topkV2::TopKNonLastSmallAxisNonTranspose<float, int, false, true, false, false>::TransposeToTopKMajor' requested here
+        TransposeToTopKMajor(curInnerChunk);
+        ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:181:16: note: in instantiation of member function 'topkV2::TopKNonLastSmallAxisNonTranspose<float, int, false, true, false, false>::Process' requested here
+            op.Process();
+               ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:351:13: note: in instantiation of function template specialization 'TopKNonLastSmallAxisOpObject<float, int, false, false>' requested here
+            TopKNonLastSmallAxisOpObject<T, T_INDEX_TO, false, IS_BITONIC_SORT>(x, values, indices, tiling);
+            ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:580:5: note: in instantiation of function template specialization 'generateOpObject<float, unsigned int, 4, int, false>' requested here
+    generateOpObject<float, uint32_t, topkV2::B32_BITE_SIZE, DTYPE_INDICES, false>(x, k, values, indices, globalWorkGm,
+    ^
+In file included from /home/y00937463/topk-formal-decode-r1-20261103-094013-36705/repeat-2/cache/work/kernel_meta/kernel_meta_1732427909610612177/kernel_meta/te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b_40824_kernel.cpp:6:
+In file included from /usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:30:
+In file included from /usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:55:
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:255:13: warning: Loop bound should be divided by the step value with no remainder. Otherwise the tripcount would be inaccurate 
+
+            for (uint16_t axisBase = 0; axisBase < this->axisLen_;
+            ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:263:50: warning: expected type of ops in vector loop cond is uint16_t. unexpected types may cause errors [-Wcce-compat]
+                for (uint16_t inner = 0; inner < curInnerChunk; ++inner) {
+                                                 ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:255:58: warning: expected type of ops in vector loop cond is uint16_t. unexpected types may cause errors [-Wcce-compat]
+            for (uint16_t axisBase = 0; axisBase < this->axisLen_;
+                                                         ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:220:9: note: in instantiation of member function 'SmallAxisCommon::NonLastSmallAxisBase<topkV2::TopKNonLastSmallAxisNonTranspose<float, int, false, false, false, false>, float, float, int, unsigned int, float, false, false, false, false>::TransposeTileByGather' requested here
+        TransposeTileByGather(curInnerChunk);
+        ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:239:11: note: in instantiation of member function 'SmallAxisCommon::NonLastSmallAxisBase<topkV2::TopKNonLastSmallAxisNonTranspose<float, int, false, false, false, false>, float, float, int, unsigned int, float, false, false, false, false>::TransposeToSortMajor' requested here
+    Base::TransposeToSortMajor(curInnerChunk);
+          ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:325:9: note: in instantiation of member function 'topkV2::TopKNonLastSmallAxisNonTranspose<float, int, false, false, false, false>::TransposeToTopKMajor' requested here
+        TransposeToTopKMajor(curInnerChunk);
+        ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:185:16: note: in instantiation of member function 'topkV2::TopKNonLastSmallAxisNonTranspose<float, int, false, false, false, false>::Process' requested here
+            op.Process();
+               ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:351:13: note: in instantiation of function template specialization 'TopKNonLastSmallAxisOpObject<float, int, false, false>' requested here
+            TopKNonLastSmallAxisOpObject<T, T_INDEX_TO, false, IS_BITONIC_SORT>(x, values, indices, tiling);
+            ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:580:5: note: in instantiation of function template specialization 'generateOpObject<float, unsigned int, 4, int, false>' requested here
+    generateOpObject<float, uint32_t, topkV2::B32_BITE_SIZE, DTYPE_INDICES, false>(x, k, values, indices, globalWorkGm,
+    ^
+In file included from /home/y00937463/topk-formal-decode-r1-20261103-094013-36705/repeat-2/cache/work/kernel_meta/kernel_meta_1732427909610612177/kernel_meta/te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b_40824_kernel.cpp:6:
+In file included from /usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp:30:
+In file included from /usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/top_k_non_last_small_non_transpose.h:55:
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:255:13: warning: Loop bound should be divided by the step value with no remainder. Otherwise the tripcount would be inaccurate 
+
+            for (uint16_t axisBase = 0; axisBase < this->axisLen_;
+            ^
+/usr/local/Ascend/cann-9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/arch35/../../sort/arch35/common/non_last_small_axis_base.h:263:50: warning: expected type of ops in vector loop cond is uint16_t. unexpected types may cause errors [-Wcce-compat]
+                for (uint16_t inner = 0; inner < curInnerChunk; ++inner) {
+                                                 ^
+27 warnings generated.
+
+build_status=0
+save_status=0
+
+[2026-11-03 09:43:34] [WARNING] [40308] profiler.py: Please use level1 or level2 if you want to collect aic metrics, reset aic metrics to None!
+[2026-11-03 09:43:34] [WARNING] [40308] profiler.py: Please use level1 or level2 if you want to collect aic metrics, reset aic metrics to None!
+[2026-11-03 09:43:35] [INFO] [41205] profiler.py: Start parsing profiling data in sync mode at: /home/y00937463/topk-formal-decode-r1-20261103-094013-36705/repeat-2/profile-random-20261030-baseline/1c26d9767e3f_40308_20261103094334814_ascend_pt
+|/[2026-11-03 09:43:36] [ERROR] [41205] profiler.py: Failed to get acl to npu flow events. For details, please check the logs at: /home/y00937463/topk-formal-decode-r1-20261103-094013-36705/repeat-2/profile-random-20261030-baseline/1c26d9767e3f_40308_20261103094334814_ascend_pt/logs
+-[2026-11-03 09:43:37] [INFO] [41214] profiler.py: CANN profiling data parsed in a total time of 0:00:02.015868
+[2026-11-03 09:43:38] [INFO] [41205] profiler.py: All profiling data parsed in a total time of 0:00:02.987284
+[2026-11-03 09:43:38] [WARNING] [40308] profiler.py: Please use level1 or level2 if you want to collect aic metrics, reset aic metrics to None!
+[2026-11-03 09:43:38] [WARNING] [40308] profiler.py: Please use level1 or level2 if you want to collect aic metrics, reset aic metrics to None!
+[2026-11-03 09:43:38] [INFO] [41429] profiler.py: Start parsing profiling data in sync mode at: /home/y00937463/topk-formal-decode-r1-20261103-094013-36705/repeat-2/profile-random-20261030-r3/1c26d9767e3f_40308_20261103094338423_ascend_pt
+|/[2026-11-03 09:43:40] [ERROR] [41429] profiler.py: Failed to get acl to npu flow events. For details, please check the logs at: /home/y00937463/topk-formal-decode-r1-20261103-094013-36705/repeat-2/profile-random-20261030-r3/1c26d9767e3f_40308_20261103094338423_ascend_pt/logs
+-[2026-11-03 09:43:41] [INFO] [41438] profiler.py: CANN profiling data parsed in a total time of 0:00:02.014068
+[2026-11-03 09:43:41] [INFO] [41429] profiler.py: All profiling data parsed in a total time of 0:00:03.002699
+FORMAL_OUTPUT /home/y00937463/topk-formal-decode-r1-20261103-094013-36705/repeat-2
+Traceback (most recent call last):
+  File "/home/y00937463/B2Y/diagnostics/topk-formal-decode-r1/run.py", line 291, in <module>
+    main()
+  File "/home/y00937463/B2Y/diagnostics/topk-formal-decode-r1/run.py", line 275, in main
+    execute(report, args.repo.resolve(), root)
+  File "/home/y00937463/B2Y/diagnostics/topk-formal-decode-r1/run.py", line 243, in execute
+    case["profile"][name] = summarize_profile(profile_root, 4 if name == "r3" else 1)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/y00937463/B2Y/diagnostics/topk-formal-decode-r1/profile_records.py", line 64, in summarize_profile
+    result = summarize_rows(rows, kernels_per_call)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/y00937463/B2Y/diagnostics/topk-formal-decode-r1/profile_records.py", line 10, in summarize_rows
+    assert len(rows) % kernels_per_call == 0, "Partial pipeline capture"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Partial pipeline capture
+[ERROR] 2026-11-03-09:43:47 (PID:40308, Device:0, RankID:-1) ERR99999 UNKNOWN applicaiton exception

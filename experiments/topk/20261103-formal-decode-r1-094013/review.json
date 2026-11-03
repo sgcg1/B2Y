@@ -1,0 +1,143 @@
+{
+  "event_rows": [
+    {
+      "repeat": 1,
+      "label": "random-20261030",
+      "median_us": {
+        "baseline": 163.6189967393875,
+        "r3": 93.32749992609024,
+        "cann": 19.87750083208084
+      },
+      "event_x_ascend_c": 0.21298653502796738
+    },
+    {
+      "repeat": 1,
+      "label": "random-20261102",
+      "median_us": {
+        "baseline": 165.45599699020386,
+        "r3": 94.55700218677521,
+        "cann": 20.38600016385317
+      },
+      "event_x_ascend_c": 0.2155948231478976
+    },
+    {
+      "repeat": 1,
+      "label": "all-equal-overflow",
+      "median_us": {
+        "baseline": 704.417496919632,
+        "r3": 590.4110074043274,
+        "cann": 19.909000024199486
+      },
+      "event_x_ascend_c": 0.033720577317362464
+    },
+    {
+      "repeat": 1,
+      "label": "small-boundary-tie",
+      "median_us": {
+        "baseline": 193.5659945011139,
+        "r3": 73.80099967122078,
+        "cann": 20.012499764561653
+      },
+      "event_x_ascend_c": 0.27116841036999756
+    },
+    {
+      "repeat": 2,
+      "label": "random-20261030",
+      "median_us": {
+        "baseline": 165.02900421619415,
+        "r3": 95.17399966716766,
+        "cann": 19.904999993741512
+      },
+      "event_x_ascend_c": 0.20914325407517967
+    }
+  ],
+  "device_rows": [
+    {
+      "label": "random-20261030",
+      "cann_kernel_us": 9.222999999999999,
+      "r3_envelope_us": 88.0995,
+      "device_x_ascend_c": 0.10468844885612288,
+      "stage_median_us": {
+        "hist": 11.702,
+        "prepare": 28.7685,
+        "compact": 15.978,
+        "finish": 31.6065
+      },
+      "gap_sum_median_us": 0.066,
+      "stage_fraction_percent_median": {
+        "hist": 13.28180732358126,
+        "prepare": 32.58715311645966,
+        "compact": 18.13293214604014,
+        "finish": 35.885711076110155
+      },
+      "hypothetical_without_prepare_finish_median_us": 27.7345,
+      "hypothetical_x_without_prepare_finish": 0.332546106834448
+    },
+    {
+      "label": "random-20261102",
+      "cann_kernel_us": 9.407,
+      "r3_envelope_us": 88.1105,
+      "device_x_ascend_c": 0.1067636660783902,
+      "stage_median_us": {
+        "hist": 11.711500000000001,
+        "prepare": 28.7195,
+        "compact": 15.8605,
+        "finish": 31.7145
+      },
+      "gap_sum_median_us": 0.066,
+      "stage_fraction_percent_median": {
+        "hist": 13.29193808496301,
+        "prepare": 32.61835545542331,
+        "compact": 18.00509373426476,
+        "finish": 36.0130314628952
+      },
+      "hypothetical_without_prepare_finish_median_us": 27.647000000000002,
+      "hypothetical_x_without_prepare_finish": 0.3402539154338626
+    },
+    {
+      "label": "all-equal-overflow",
+      "cann_kernel_us": 10.649000000000001,
+      "r3_envelope_us": 584.975,
+      "device_x_ascend_c": 0.018204196760545324,
+      "stage_median_us": {
+        "hist": 11.5805,
+        "prepare": 28.7605,
+        "compact": 15.041,
+        "finish": 529.341
+      },
+      "gap_sum_median_us": 0.066,
+      "stage_fraction_percent_median": {
+        "hist": 1.9793326190375438,
+        "prepare": 4.9125676573457655,
+        "compact": 2.5689055894232355,
+        "finish": 90.5256468299227
+      },
+      "hypothetical_without_prepare_finish_median_us": 26.68399999999997,
+      "hypothetical_x_without_prepare_finish": 0.3990780992354974
+    },
+    {
+      "label": "small-boundary-tie",
+      "cann_kernel_us": 9.047,
+      "r3_envelope_us": 68.6375,
+      "device_x_ascend_c": 0.13180841376798397,
+      "stage_median_us": {
+        "hist": 11.2615,
+        "prepare": 25.811,
+        "compact": 13.089,
+        "finish": 18.2925
+      },
+      "gap_sum_median_us": 0.066,
+      "stage_fraction_percent_median": {
+        "hist": 16.391798878967382,
+        "prepare": 37.661383962854565,
+        "compact": 19.097360648365814,
+        "finish": 26.681796901681132
+      },
+      "hypothetical_without_prepare_finish_median_us": 24.454499999999996,
+      "hypothetical_x_without_prepare_finish": 0.36995236050624636
+    }
+  ],
+  "csv_hashes_verified": 28,
+  "repeat1_profile_calls_verified": 600,
+  "repeat2_supplemental_tail": "see repeat2-tail-review.json; no second-process CANN device ratio"
+}
