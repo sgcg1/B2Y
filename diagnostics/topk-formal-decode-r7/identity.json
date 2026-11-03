@@ -1,0 +1,33 @@
+{
+  "candidate_commit": "23ff5c63",
+  "baseline_commit": "7247ad4f355c62a8679dcdc8fdf182c0b219db5e",
+  "baseline_sha256": "987da9f9d314f8744bef05a628e60a14b88e63db320374f36a3b6411ce5eb2e3",
+  "sources": {
+    "src/tileops/_kernels/attention/topk_select_decode_probe_ascend.py": "7fb0145bfad549b223201ef930979d8c6f89de0f0e8275df502d47034ccb5de5",
+    "src/tileops/_kernels/attention/topk_select_decode_pipeline_ascend.py": "49ccb480d390c38b9a7bafa7d4605123485a20cb3418578c4afa36d880257fb8"
+  },
+  "version": "20261103-formal-decode-r7",
+  "run_sha256": "37893b59587ac0a220ae481cec0aec8ae973dc8cb75264513ffbe8f8265c85b9",
+  "tool_files": {
+    "README.md": "0f5c785720e7383df6a942ac839b09cbde18ee2d402464d8b4b5ce28dd627c2b",
+    "run.sh": "25a5e1c104db32b05fa73dacfc94fb95485b118c02ca73e2378e4479b9bf5b80",
+    "ge_model.py": "a9c05855a9fb869a07de644c8f5c04658611ba600476d12b8a4a9f15b760bdec",
+    "profile_records.py": "c3bcc9f74a21a0ae597e0092372237f57fa623ef68d0a02b131b993b23175141",
+    "test_profile_records.py": "e934e0c69c8269cb3f1ce1f22061c150e153130878d470efb1ef6ebed5598060",
+    "validate_identity.py": "91a79bd245d10447339e7caeaedd7bd651c432457bd2260a6c43316682128266",
+    "cann/build.cpp": "e751e8202fad7bb958008d35d5d90621c0d77b7f7d6e68960900bd62bba38401",
+    "cann/top_k_v2_proto.h": "a187576305386920b8ccd54068a57edabc3919f8c3dac65aa103617971fabfed",
+    "check_sources.py": "e1526629a2d70bda1f291a3eca61a74846c79886637352118f44c052dd61c399"
+  },
+  "unchanged_generated": {
+    "baseline": "751a82889d13811a199edf8358af0d3fc84e6a54d17f985b6a27c877a1c10626",
+    "hist-p4": "05b55889990def7ec6ed53b158a73f6dcf4fa559dd6bf2fa0e7749296bd106cf",
+    "prepare-p4": "2dc0804fbfe8815056d8bc23227f2db139a58b042a3ca3054a620d72c65afed8",
+    "prepare-r3": "2dc0804fbfe8815056d8bc23227f2db139a58b042a3ca3054a620d72c65afed8",
+    "finish-previous": "aacb3dc2c649d252e5d616af445c6d708313f7b1bb66a3f231208259bf43a8e3",
+    "compact-previous": "98445ae2aabe03273b7a77c136b85906310a663e108c002f0c4adff4026b2ce4",
+    "compact-p4": "98445ae2aabe03273b7a77c136b85906310a663e108c002f0c4adff4026b2ce4"
+  },
+  "r3_commit": "9a5087dd",
+  "r3_pipeline_sha256": "f4b88fac018ee0bbbe3d84fe479ed647f9494f44515d6a87c74f72fffd9b38c0"
+}
