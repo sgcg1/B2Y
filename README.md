@@ -1,5 +1,7 @@
 # B2Y执行材料入口
 
+**当前回传辅助：[两份正式结果小文本拆分](tools/b2y-result-parts/README.md)。** formal-decode-r2两份log已收到，txt尚缺；脚本只读原始结果，gzip+base64拆片并自动生成无损恢复清单，不重跑NPU。先小批次测试上传，不假设拆分能解决TLS。
+
 **当前执行入口：[prepare分组并行归约正式对照](diagnostics/topk-formal-decode-r2/README.md)。** cd94fb34已推送、默认关闭；同轮对照CANN/旧默认/冻结r3/新prepare，仅改offset归约，保留原始CSV与残缺采集标记。
 
 **当前执行入口：[正式Decode基线与设备拆解](diagnostics/topk-formal-decode-r1/README.md)。** 冻结r3实现不改算法，同输入同轮比较官方CANN/旧TileLang/r3；独立记录事件倍率、四kernel设备耗时和间隙，原始CSV回传。此前full-r3无需重跑。

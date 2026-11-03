@@ -63,3 +63,5 @@ Decode pilot启动脚本run.sh原中文提示误以GBK保存，保留原件；�
 最新：[正式基线设备拆解](experiments/topk/20261103-formal-decode-r1-094013/analysis.md)。随机r3约0.105–0.107x Ascend C设备包络、0.213–0.216x事件；prepare约28.7μs、finish约31.6μs，gap总计约0.066μs。第一进程完整，第二因239条部分流水失败，其最后50完整调用仅作补充，缺第二CANN设备复现。下一步优先prepare并行归约，随后finish执行粒度与向量统计；默认不接受，旧测量无需立即重跑。
 
 当前：prepare分组并行归约cd94fb34，GROUPED_OFFSETS默认false，6项CPU内核测试、8项解析回归及身份/语法通过；入口diagnostics/topk-formal-decode-r2/README.md。同轮CANN、旧默认、冻结r3及新prepare，尚无新候选设备结果。首部残段只在明确block后缀/尾部完整时诊断性保留，相关设备倍率provisional、整体completed_with_profile_review，不冒称完整采集；不因头部缺一条而丢失后续CANN测量。
+
+回传约束：用户当前两设备网络隔离，仅能通过B2Y，不能再建议聊天附件或其他外部渠道。formal-decode-r2-20261103-101431-41662两份log已收到，两份txt待传。用户要求拆分，入口tools/b2y-result-parts/README.md：只读原文件或私人run副本，gzip/base64 ASCII片≤64KiB及自动manifest，无损SHA恢复；原文保留、不自动commit/push，Git分片应分批且未推送旧大对象仍会被发送。收到后先恢复校验再分析，不能据日志冒称完整结果。
