@@ -168,6 +168,12 @@
       "title": "r5编译前源码身份失败，等待服务器HEAD/SHA诊断",
       "status": "failed_source_identity_before_compile",
       "metadata": "20261103-formal-decode-r5-172510/metadata.json"
+    },
+    {
+      "id": "20261103-formal-decode-r5-173420",
+      "title": "UB暂存随机事件改善2.6%–3.6%，约0.343–0.360xAscend C",
+      "status": "compact_ub_staging_screening_gain_profile_review_pending",
+      "metadata": "20261103-formal-decode-r5-173420/metadata.json"
     }
   ]
 }

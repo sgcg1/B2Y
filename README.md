@@ -1,3 +1,5 @@
+最新复核：[UB输入暂存筛选收益](experiments/topk/20261103-formal-decode-r5-173420/analysis.md)：随机事件减少2.6%–3.6%，0.343–0.360xAscend C；保留实验候选，profile待复核，默认不变，无需重跑。
+
 最新执行入口：[compact UB输入暂存r5](diagnostics/topk-formal-decode-r5/README.md)：候选9a5087dd默认关闭，仅增加每核16KiB输入暂存；两侧均128扫描并保留quota guard，尚无设备结果。
 
 最新复核：[compact 512扫描否定结果](experiments/topk/20261103-formal-decode-r4-170633/analysis.md)：两份报告及源端SHA已核验；全部事件回退，保持128，不扩大512测试。quota guard收益独立保留，无需重跑。
