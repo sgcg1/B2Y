@@ -1,6 +1,6 @@
 # 已加载代理时的GitCode TLS排查
 
-适用现场：服务器B2Y本地结果已提交，user.name/email已配置，merge至少成功一次，但push反复curl 56 / GnuTLS TLS断连。已确认终端加载代理，尚未证明代理是根因。本指南通过独立文档分支发布，不更新main，避免制造新的main并发提交。
+适用现场：服务器B2Y本地结果已提交，user.name/email已配置，merge至少成功一次，但push反复curl 56 / GnuTLS TLS断连。已确认终端加载代理，尚未证明代理是根因。按用户要求，本指南现直接发布于B2Y的main分支，路径deliveries/gitcode-proxy-recovery-20261103.md。获取远端更新并合并成功后再推送结果；发布完本指南后agent停止更新main，避免继续并发。
 
 所有命令在现有容器/home/y00937463/B2Y执行，不重新运行实验、不修改全局Git/共享代理环境。
 
