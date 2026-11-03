@@ -174,6 +174,12 @@
       "title": "UB暂存随机事件改善2.6%–3.6%，约0.343–0.360xAscend C",
       "status": "compact_ub_staging_screening_gain_profile_review_pending",
       "metadata": "20261103-formal-decode-r5-173420/metadata.json"
+    },
+    {
+      "id": "20261103-formal-decode-r6-191334",
+      "title": "quota VF合并随机收益微小，同分及溢出回退，不提升",
+      "status": "finish_quota_fusion_tiny_random_gain_tie_overflow_regression_not_promoted",
+      "metadata": "20261103-formal-decode-r6-191334/metadata.json"
     }
   ]
 }
