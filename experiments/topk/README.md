@@ -44,3 +44,5 @@
 - [完整Decode full-r1结果](20261102-decode-full-r1-213318/analysis.md)：1200事件完整，默认拒绝因溢出回退。
 
 - [Decode full-r2尾段权衡](20261102-decode-full-r2-214318/analysis.md)，1200事件完整，默认未接受。
+
+- [Decode full-r3容量路由结果](20261103-decode-full-r3-090700/analysis.md)，1600事件完整，待扩展验证。

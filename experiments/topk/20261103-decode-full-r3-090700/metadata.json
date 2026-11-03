@@ -1,0 +1,36 @@
+{
+  "id": "20261103-decode-full-r3-090700",
+  "source_commit": "2ed43bd",
+  "status": "adaptive_decode_screening_promising_broader_validation_pending",
+  "accepted": false,
+  "files": [
+    {
+      "source": "AAA_Results/topk-decode-full-r3-20261103-090700-35412-repeat-1.log",
+      "bytes": 2727,
+      "sha256": "c6284d6c1d360086cbb7127a87751b1167baa9387564f2dbabe2614c11517514"
+    },
+    {
+      "source": "AAA_Results/topk-decode-full-r3-20261103-090700-35412-repeat-1.txt",
+      "bytes": 324791,
+      "sha256": "9014cdb774c27765f0f9607cbe6755fe8945ce25ef7038de8510d0fed22303bb"
+    },
+    {
+      "source": "AAA_Results/topk-decode-full-r3-20261103-090700-35412-repeat-2.log",
+      "bytes": 2727,
+      "sha256": "6b7734cb18ec140a60e1fb1604b79d305cbd234701e22db757f4364956158127"
+    },
+    {
+      "source": "AAA_Results/topk-decode-full-r3-20261103-090700-35412-repeat-2.txt",
+      "bytes": 324782,
+      "sha256": "62eb923d148f55c92cd412ded81b896ff2e4e879aeda5e7fb862edc497046a7c"
+    }
+  ],
+  "candidate_commit": "c022114c5cece83e54ca027ad8be3d2b6f59b14e",
+  "missing": [
+    "broader Decode contract coverage",
+    "profiler full device task envelope",
+    "same-round CANN",
+    "noncontiguous and grouped host routing validation",
+    "formal acceptance"
+  ]
+}

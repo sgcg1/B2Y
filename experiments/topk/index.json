@@ -132,6 +132,12 @@
       "title": "Decode r2消除溢出回退但小边界较r1变慢",
       "status": "full_pipeline_overflow_improved_small_boundary_tradeoff_pending",
       "metadata": "20261102-decode-full-r2-214318/metadata.json"
+    },
+    {
+      "id": "20261103-decode-full-r3-090700",
+      "title": "Decode r3容量路由收益稳定，待扩展验证",
+      "status": "adaptive_decode_screening_promising_broader_validation_pending",
+      "metadata": "20261103-decode-full-r3-090700/metadata.json"
     }
   ]
 }
