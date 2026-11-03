@@ -59,11 +59,11 @@ echo $?
 git show -s --format=fuller c768891
 ```
 
-以下沿用该私人仓库已有结果提交的作者作为本次合并的提交者，只设置本仓local配置。如果上面显示的作者并非你希望使用的身份，停下告知实际署名，不借用其他人的身份。
+用户已明确指定本次提交者署名为JotaroSSR、邮箱1224862686@qq.com。以下只设置当前B2Y仓库的local配置；这是Git提交署名，不是GitCode登录凭据。
 
 ```bash
-git config --local user.name "$(git show -s --format=%an c768891)"
-git config --local user.email "$(git show -s --format=%ae c768891)"
+git config --local user.name "JotaroSSR"
+git config --local user.email "1224862686@qq.com"
 git var GIT_COMMITTER_IDENT
 ```
 
