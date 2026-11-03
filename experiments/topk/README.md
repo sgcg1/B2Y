@@ -48,3 +48,5 @@
 - [Decode full-r3容量路由结果](20261103-decode-full-r3-090700/analysis.md)，1600事件完整，待扩展验证。
 
 - [正式Decode基线与设备拆解](20261103-formal-decode-r1-094013/analysis.md)：一完整进程、一部分采集失败；750事件及全部原始CSV保留。
+
+- [prepare并行归约结果与分片恢复](20261103-formal-decode-r2-101431/analysis.md)：1600事件内部复核，源端manifest未到，保留profile待复核状态。

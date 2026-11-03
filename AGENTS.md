@@ -65,3 +65,5 @@ Decode pilot启动脚本run.sh原中文提示误以GBK保存，保留原件；�
 当前：prepare分组并行归约cd94fb34，GROUPED_OFFSETS默认false，6项CPU内核测试、8项解析回归及身份/语法通过；入口diagnostics/topk-formal-decode-r2/README.md。同轮CANN、旧默认、冻结r3及新prepare，尚无新候选设备结果。首部残段只在明确block后缀/尾部完整时诊断性保留，相关设备倍率provisional、整体completed_with_profile_review，不冒称完整采集；不因头部缺一条而丢失后续CANN测量。
 
 回传约束：用户当前两设备网络隔离，仅能通过B2Y，不能再建议聊天附件或其他外部渠道。formal-decode-r2-20261103-101431-41662两份log已收到，两份txt待传。用户要求拆分，入口tools/b2y-result-parts/README.md：只读原文件或私人run副本，gzip/base64 ASCII片≤64KiB及自动manifest，无损SHA恢复；原文保留、不自动commit/push，Git分片应分批且未推送旧大对象仍会被发送。收到后先恢复校验再分析，不能据日志冒称完整结果。
+
+最新：[prepare并行归约复核](experiments/topk/20261103-formal-decode-r2-101431/analysis.md)。10片gzip/CRC恢复两报告，1600事件和64 CSV内部核对通过；原文SHA未与源端manifest比对但不阻断分析。prepare约28.7→4.75μs，随机事件0.277–0.284x Ascend C，较冻结r3少25.1%–25.9%；profile gap波动和残段仍待复核。下一项finish的设备quota终止/执行粒度，默认不启用，无需重跑或重拆。
