@@ -57,3 +57,5 @@ Decode pilot启动脚本run.sh原中文提示误以GBK保存，保留原件；�
 当前入口：[Decode full-r3设备容量路由](diagnostics/topk-decode-full-r3/README.md)，c022114c已推送、默认关闭。≤2048用r1、溢出用r2，无D2H；5项CPU测试及身份/语法通过，尚无r3设备结果。一次对照默认/r1/r2/r3，完整调用事件，新增2048/2049边界校验。
 
 最新：[Decode full-r3复核](experiments/topk/20261103-decode-full-r3-090700/analysis.md)：随机较默认下降43.2%–43.4%、溢出下降16.1%–16.2%、小边界下降61.8%；1600事件及容量边界校验通过，编译诊断为空，路由有额外成本。优先进入更广泛Decode验证及同轮CANN/设备流水记录，尚未默认接受，无需重跑。
+
+当前最高优先级：diagnostics/topk-formal-decode-r1/README.md，固定c022114c的r3，不改内核。官方GE TopKV2同进程同输入/同流事件，对照旧TileLang；独立profile CANN单kernel与r3四kernel包络/各段/gap，保留全部kernel_details.csv与task_time.csv。6项CPU解析回归、离线身份/GE属性和语法通过，尚无此工具设备结果。不再混用旧9.23μs与r3事件算倍率；下一优化依据最大设备成本选执行粒度/向量路径。

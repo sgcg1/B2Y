@@ -1,5 +1,7 @@
 # B2Y执行材料入口
 
+**当前执行入口：[正式Decode基线与设备拆解](diagnostics/topk-formal-decode-r1/README.md)。** 冻结r3实现不改算法，同输入同轮比较官方CANN/旧TileLang/r3；独立记录事件倍率、四kernel设备耗时和间隙，原始CSV回传。此前full-r3无需重跑。
+
 **当前下一步：[Decode full-r2稳定tie对照](diagnostics/topk-decode-full-r2/README.md)。** 候选0d4063e6只改精确尾段，默认关闭；比较默认基线、冻结P4-r1及新P4-r2，尚无r2设备结果。
 
 **当前执行入口：[完整Decode四kernel实验候选](diagnostics/topk-decode-full-r1/README.md)。** 提交03c8f916已推送，P2/P4完成选择并与冻结基线对照；默认路由不变，尚无本候选NPU结果。成本探针已完成，无需重跑。
