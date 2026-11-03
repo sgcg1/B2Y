@@ -1,0 +1,83 @@
+{
+  "id": "20261103-formal-decode-r7-192613",
+  "status": "index_prefix_skip_small_tie_gain_overflow_regression_not_promoted",
+  "accepted": false,
+  "candidate_commit": "23ff5c63",
+  "previous_commit": "9a5087dd",
+  "source_commit": "0917146",
+  "files": [
+    {
+      "file": "parts/parts-20261103T193057Z-topk-formal-decode-r7-20261103-192613-88393-repeat-1.txt-part-0001.txt",
+      "bytes": 65536,
+      "sha256": "8fb3d0ac7007c1651e9694f81555a4b84263d493dcc388e385077f79a80d280b"
+    },
+    {
+      "file": "parts/parts-20261103T193057Z-topk-formal-decode-r7-20261103-192613-88393-repeat-1.txt-part-0002.txt",
+      "bytes": 65536,
+      "sha256": "1326f72661ae97fda3a1a01ab5cb4523c865a879b13d8ace701cff8708b54d90"
+    },
+    {
+      "file": "parts/parts-20261103T193057Z-topk-formal-decode-r7-20261103-192613-88393-repeat-1.txt-part-0003.txt",
+      "bytes": 65536,
+      "sha256": "4050d44888d59d403cc109af903798c6556094126f3ead259dfe647b515d46fd"
+    },
+    {
+      "file": "parts/parts-20261103T193057Z-topk-formal-decode-r7-20261103-192613-88393-repeat-1.txt-part-0004.txt",
+      "bytes": 65536,
+      "sha256": "a3da0fa7fd83f1fbee63708ad92f58edad3c4fdff461a0f10f1baa8c3ca8c048"
+    },
+    {
+      "file": "parts/parts-20261103T193057Z-topk-formal-decode-r7-20261103-192613-88393-repeat-1.txt-part-0005.txt",
+      "bytes": 64816,
+      "sha256": "251adbaad6bb2f33ebaa09dd74c1505251828b504614d639adbf083a52f2fe69"
+    },
+    {
+      "file": "parts/parts-20261103T193057Z-topk-formal-decode-r7-20261103-192613-88393-repeat-2.txt-part-0001.txt",
+      "bytes": 65536,
+      "sha256": "198c4534fd87cc2f82a43d1265705e95ac2456abbb56e74b31821a26810eed13"
+    },
+    {
+      "file": "parts/parts-20261103T193057Z-topk-formal-decode-r7-20261103-192613-88393-repeat-2.txt-part-0002.txt",
+      "bytes": 65536,
+      "sha256": "84f32d178ee7a2a97ae2556e2cf5e589bebbfac83023888a85aeb268abe01809"
+    },
+    {
+      "file": "parts/parts-20261103T193057Z-topk-formal-decode-r7-20261103-192613-88393-repeat-2.txt-part-0003.txt",
+      "bytes": 65536,
+      "sha256": "d8f665162de4e9795bf30f5c88a6cefafe1359025dc9e1f6a11c6a971c6251ca"
+    },
+    {
+      "file": "parts/parts-20261103T193057Z-topk-formal-decode-r7-20261103-192613-88393-repeat-2.txt-part-0004.txt",
+      "bytes": 65536,
+      "sha256": "f98c3a1ee3c32cac11aaebc70f5a551acc83664b306065609e260bce86c66a80"
+    },
+    {
+      "file": "parts/parts-20261103T193057Z-topk-formal-decode-r7-20261103-192613-88393-repeat-2.txt-part-0005.txt",
+      "bytes": 62996,
+      "sha256": "47e77186c40fab0350d4315c6fef3e862cac58673b0cbf6e49a349ce9eb60a3b"
+    }
+  ],
+  "restored": [
+    {
+      "file": "restored/topk-formal-decode-r7-20261103-192613-88393-repeat-1.txt",
+      "bytes": 3923461,
+      "sha256": "a43897735e3474b2782646fc0bdeb73ed19e65d8442dfc5c5468f17303eee683",
+      "source_manifest_sha_crosscheck": false,
+      "gzip_crc_and_size_verified": true
+    },
+    {
+      "file": "restored/topk-formal-decode-r7-20261103-192613-88393-repeat-2.txt",
+      "bytes": 3914030,
+      "sha256": "5b95b57aeb90fc2ebb0be0e8bb8f466b6730ac2e391950c5a8894e4b1a5c81e2",
+      "source_manifest_sha_crosscheck": false,
+      "gzip_crc_and_size_verified": true
+    }
+  ],
+  "source_manifest_received": false,
+  "limitations": [
+    "source-side SHA manifest not received",
+    "original terminal logs not received",
+    "both runs completed_with_profile_review",
+    "fixed shape screening, not full contract acceptance"
+  ]
+}

@@ -180,6 +180,12 @@
       "title": "quota VF合并随机收益微小，同分及溢出回退，不提升",
       "status": "finish_quota_fusion_tiny_random_gain_tie_overflow_regression_not_promoted",
       "metadata": "20261103-formal-decode-r6-191334/metadata.json"
+    },
+    {
+      "id": "20261103-formal-decode-r7-192613",
+      "title": "跳过索引高字节小边界finish降24.8%，随机近持平、溢出回退",
+      "status": "index_prefix_skip_small_tie_gain_overflow_regression_not_promoted",
+      "metadata": "20261103-formal-decode-r7-192613/metadata.json"
     }
   ]
 }
