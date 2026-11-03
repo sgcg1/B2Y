@@ -85,7 +85,7 @@ def main():
         for path in restore(args.manifest, args.output):
             print("RESTORED", path)
         return
-    assert Path(args.run).name == args.run and args.run.startswith("topk-formal-decode-r2-")
+    assert Path(args.run).name == args.run and args.run.startswith("topk-formal-decode-r")
     assert 1 <= args.part_kib <= 64
     output = args.root / "B2Y/AAA_Results"
     sources = []

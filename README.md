@@ -105,3 +105,5 @@ A1 r1两次前端嵌套失败已归档，当前使用r2修复指南；尚无A1�
 最新：[正式基线设备拆解](experiments/topk/20261103-formal-decode-r1-094013/analysis.md)。随机r3约0.105–0.107x Ascend C设备包络、0.213–0.216x事件；prepare约28.7μs、finish约31.6μs，gap总计约0.066μs。第一进程完整，第二因239条部分流水失败，其最后50完整调用仅作补充，缺第二CANN设备复现。下一步优先prepare并行归约，随后finish执行粒度与向量统计；默认不接受，旧测量无需立即重跑。
 
 最新：[prepare并行归约复核](experiments/topk/20261103-formal-decode-r2-101431/analysis.md)。10片gzip/CRC恢复两报告，1600事件和64 CSV内部核对通过；原文SHA未与源端manifest比对但不阻断分析。prepare约28.7→4.75μs，随机事件0.277–0.284x Ascend C，较冻结r3少25.1%–25.9%；profile gap波动和残段仍待复核。下一项finish的设备quota终止/执行粒度，默认不启用，无需重跑或重拆。
+
+当前入口：[finish设备quota守卫](diagnostics/topk-formal-decode-r3/README.md)，949d73c4已推送，EARLY_EXIT默认false。保留已测分组prepare/容量路由，仅跳过quota归零后的VF工作；7项内核测试、8项解析及身份/语法通过，尚无新设备结果。对照CANN/旧默认/冻结cd94fb34/新守卫，两进程结果后自动拆为小片回传。
