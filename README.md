@@ -1,3 +1,5 @@
+最新入口：[溢出粗桶复用r13](diagnostics/topk-formal-decode-r13/README.md)：5e01bbeb已推送个人fork，保留溢出暂存/完整键缓存，复用原输入UB缓存粗桶，不增缓冲或VF，尚无设备结果。
+
 最新复核：[溢出键缓存r12收益](experiments/topk/20261103-formal-decode-r12-210254/analysis.md)：全窗溢出进一步减少3.69%–5.79%，缓存路径小回退，按已确认取舍保留实验组合，默认不变，无需重跑。
 
 最新入口：[溢出分数键缓存r12](diagnostics/topk-formal-decode-r12/README.md)：5eb130ef默认关闭，保留溢出暂存；GitHub认证失败，候选用B2Y校验bundle快进同步，尚无设备结果。

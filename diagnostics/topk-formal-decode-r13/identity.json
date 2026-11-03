@@ -1,0 +1,37 @@
+{
+  "candidate_commit": "5e01bbeb",
+  "baseline_commit": "7247ad4f355c62a8679dcdc8fdf182c0b219db5e",
+  "baseline_sha256": "987da9f9d314f8744bef05a628e60a14b88e63db320374f36a3b6411ce5eb2e3",
+  "sources": {
+    "src/tileops/_kernels/attention/topk_select_decode_probe_ascend.py": "db7d295663b9c63a32e5d92c9dab97a8ad0119c8dd6d61288e0bb8a473e59c52",
+    "src/tileops/_kernels/attention/topk_select_decode_pipeline_ascend.py": "0002de0188c50e75162a43c84629a049d02225859317ef55fa5801c3dd88fab4"
+  },
+  "version": "20261103-formal-decode-r13",
+  "run_sha256": "e206f90d7a573d022ddd58f0ea152217ab835ac3e5bc91c33d2d0f57c8848c1b",
+  "tool_files": {
+    "README.md": "e8f75821ac6a9bd94453859665092fb63cb34fc437ebae8ae7ca53b9eb9936da",
+    "run.sh": "c4c9f4ba8f0a385fcfd19b8700dca75f74f3f09624460a9983d0e5e7d2ed28af",
+    "ge_model.py": "a9c05855a9fb869a07de644c8f5c04658611ba600476d12b8a4a9f15b760bdec",
+    "profile_records.py": "c3bcc9f74a21a0ae597e0092372237f57fa623ef68d0a02b131b993b23175141",
+    "test_profile_records.py": "e934e0c69c8269cb3f1ce1f22061c150e153130878d470efb1ef6ebed5598060",
+    "validate_identity.py": "4bc306144378b106959030885b1f9c07f7063706c6348f90528dd52511bc83cf",
+    "cann/build.cpp": "e751e8202fad7bb958008d35d5d90621c0d77b7f7d6e68960900bd62bba38401",
+    "cann/top_k_v2_proto.h": "a187576305386920b8ccd54068a57edabc3919f8c3dac65aa103617971fabfed",
+    "check_sources.py": "e1526629a2d70bda1f291a3eca61a74846c79886637352118f44c052dd61c399",
+    "cases.py": "f27a7a1e172d17c7dee856b382a2ac130a3a64164641950a8fb321752ea83b63",
+    "test_cases.py": "6b0941de93c3b81fda1fdd6e106c95c619d2f9d49f0c8ec0129c91b9e63f950d"
+  },
+  "unchanged_generated": {
+    "baseline": "751a82889d13811a199edf8358af0d3fc84e6a54d17f985b6a27c877a1c10626",
+    "prepare-p4": "2dc0804fbfe8815056d8bc23227f2db139a58b042a3ca3054a620d72c65afed8",
+    "prepare-r3": "2dc0804fbfe8815056d8bc23227f2db139a58b042a3ca3054a620d72c65afed8",
+    "finish-previous": "4d20923a1c521937ce6d850f8f54432338323e118bba392ca33d906315eaec03",
+    "compact-previous": "98445ae2aabe03273b7a77c136b85906310a663e108c002f0c4adff4026b2ce4",
+    "compact-p4": "98445ae2aabe03273b7a77c136b85906310a663e108c002f0c4adff4026b2ce4",
+    "hist-previous": "b4ef0ab8a5c4217e20188940721658c9ebb1fbf5bf3b8a609ca95c38ee5246d1",
+    "hist-p4": "b4ef0ab8a5c4217e20188940721658c9ebb1fbf5bf3b8a609ca95c38ee5246d1"
+  },
+  "r3_commit": "5eb130ef",
+  "r3_pipeline_sha256": "e41991586ca33997d861dc9fe2d2e3acd0856bdf12a3c0845c1f3c54d2ebd64a",
+  "previous_hist_sha256": "db7d295663b9c63a32e5d92c9dab97a8ad0119c8dd6d61288e0bb8a473e59c52"
+}
