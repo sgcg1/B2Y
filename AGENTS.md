@@ -1,3 +1,5 @@
+方案对比审查：[A与截断归并](deliveries/topk-solution-a-vs-truncated-merge-review-20261104.md)。A缺跨核数据流、完整分数驻留与最坏精化算法，当前探针为O(256N)逐桶归约，无atomic不等于高效hist；B算法闭合但无设备性能胜出证据。未改A或运行探针。
+
 最新算法方向：[分块精确排序＋截断归并](deliveries/topk-new-algorithm-truncated-merge-20261104.md)。用户要求独立新算法；现明确P4×4096局部Top2048，再两层截断归并。已完成证明和30项CPU原型验证，尚未实现NPU内核或取得新设备耗时，不继续旧radix开关微调。
 
 最新审查：[整体算法与执行结构](deliveries/topk-overall-algorithm-execution-audit-20261104.md)。确认普通路径的逐元素原子压缩、固定候选域重扫、冗余前缀轮及提前退出控制骨架；建议重设计向量阈值选择/统一收集，并对照批排序归并。尚未实现新内核或启动NPU实验。

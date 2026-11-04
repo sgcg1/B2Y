@@ -1,0 +1,111 @@
+{
+  "review_scope": "Read-only static review; no proposed probe execution and no modification to proposal A",
+  "reviewed_files": [
+    {
+      "path": "deliveries/topk-solution-a-design-20261104.md",
+      "sha256": "2edbad7e335f0e2d2cdbbb292e80961a4dccd90f2947492ba28bf6d1f428f6c3",
+      "lf_sha256": "2edbad7e335f0e2d2cdbbb292e80961a4dccd90f2947492ba28bf6d1f428f6c3",
+      "last_commit": "8f2ba21f7d68fcb49a09ab5f4ba8328c91f5f2ac",
+      "anchors": [
+        {
+          "line": 31,
+          "text": "│     写 uint8 coarse_cache[slice] 到 UB ◄┘（UB, 不落 GM）"
+        },
+        {
+          "line": 33,
+          "text": "│   归并 P 个 hist_w → 全局 hist[256]   ← 寄存器/UB 归并, 非 GM"
+        },
+        {
+          "line": 40,
+          "text": "│   每核扫 coarse_cache[slice]（UB, 不读 GM x, 不重算键）:"
+        },
+        {
+          "line": 45,
+          "text": "▼ S4 refine boundary（并行, 小候选）"
+        },
+        {
+          "line": 59,
+          "text": "| 3 | score_key 计算 | finish 反复 ≈ 7152 + tie 32768 | 仅候选 b 次（≈894） | ≈−90% |"
+        },
+        {
+          "line": 77,
+          "text": "| S4 refine 候选 | 2–4 μs | b≈894 小工作集 |"
+        },
+        {
+          "line": 78,
+          "text": "| 合计 | 8–14 μs | 落进 r≈0.8–1.3 区间 |"
+        }
+      ]
+    },
+    {
+      "path": "diagnostics/topk-vhist-capability-r1/kernels.py",
+      "sha256": "b8b8f466d31016909dee0915c91972c5dd55182ea445e8b557ae0a96ee7c1c09",
+      "lf_sha256": "1a6a5612e172f955626da59012a01a83cff40415f2ae98b7398fdf2f447ae5f0",
+      "last_commit": "d6e18c4257aec182a5cb9a70da8fd583584eb774",
+      "anchors": [
+        {
+          "line": 60,
+          "text": "For each of 256 buckets, count the digits equal to that bucket. This is O(256*N)"
+        },
+        {
+          "line": 76,
+          "text": "for j in T.serial(N):"
+        }
+      ]
+    },
+    {
+      "path": "diagnostics/topk-vhist-capability-r1/probe.py",
+      "sha256": "cf04dce4832db903f413c472355ea4fc82ec7af9c2ac8d628685be71215799ba",
+      "lf_sha256": "cf04dce4832db903f413c472355ea4fc82ec7af9c2ac8d628685be71215799ba",
+      "last_commit": "8f2ba21f7d68fcb49a09ab5f4ba8328c91f5f2ac",
+      "anchors": [
+        {
+          "line": 114,
+          "text": "has_atomic_marker=(\"atomic\" in source.lower()),"
+        }
+      ]
+    },
+    {
+      "path": "diagnostics/topk-vhist-capability-r1/README.md",
+      "sha256": "76b2182b6b46432b33ff133c799bd29d21ac8578e08b7c2f0cb887502654446c",
+      "lf_sha256": "76b2182b6b46432b33ff133c799bd29d21ac8578e08b7c2f0cb887502654446c",
+      "last_commit": "8f2ba21f7d68fcb49a09ab5f4ba8328c91f5f2ac",
+      "anchors": [
+        {
+          "line": 44,
+          "text": "- `cases.hist_bucket_reduce.source_markers` / `has_atomic_marker`：**关键判据**——若 bucket_reduce 生成源码里没有 `atomic`，说明存在原子无关的 SIMD 直方图降型路径，方案 A 可推进；若仍出现 `atomic`，则归约被回退成散布原子，方案 A 的直方图环节受阻，需转分片私有直方图或方案 B。"
+        }
+      ]
+    },
+    {
+      "path": "deliveries/topk-new-algorithm-truncated-merge-20261104.md",
+      "sha256": "5fcf18dbe82516934bc390fb15cc12b61c4c78f88281413d28f3e8225a515f14",
+      "lf_sha256": "5fcf18dbe82516934bc390fb15cc12b61c4c78f88281413d28f3e8225a515f14",
+      "last_commit": "0ac2d04c249f510f26e043f986cd8d1a790de411",
+      "anchors": []
+    }
+  ],
+  "arithmetic": {
+    "bucket_reduce_predicate_evaluations": 4194304,
+    "budget_sum_min_us": 7.5,
+    "budget_sum_max_us": 14,
+    "ratio_at_14us": 0.7599285714285714,
+    "ratio_at_8us": 1.329875,
+    "latency_limit_for_0_8_us": 13.298749999999998
+  },
+  "source_facts": {
+    "fixed_kernel_commit": "5eb130eff798e06341d67fd6899f67a9f66ffb20",
+    "real_input_meta": [
+      188,
+      1744,
+      894,
+      16384
+    ],
+    "normal_path_score_key_builds": 894,
+    "normal_path_full_window_tie_scans": 0
+  },
+  "primary_sources": [
+    "https://asc.gitcode.com/guide/programming_guide/advanced_programming/advanced_ai_core_programming_model/simd_simt_hybrid_programming/memory_hierarchy.html",
+    "https://asc.gitcode.com/api/SIMD-API/basic_api/sync_control/inter_core_sync/CrossCoreSetFlag_ISASI.html"
+  ]
+}
