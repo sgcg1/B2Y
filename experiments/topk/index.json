@@ -240,6 +240,12 @@
       "title": "950PR计时解析误将GE静态注册视为执行任务",
       "status": "failed_profile_static_registration",
       "metadata": "20261104-950pr-device-compare-r1-112402/metadata.json"
+    },
+    {
+      "id": "20261104-950pr-device-compare-r1-113714",
+      "title": "950PR同规格完整设备对照：0.185x TopKV2",
+      "status": "complete_measured_below_target",
+      "metadata": "20261104-950pr-device-compare-r1-113714/metadata.json"
     }
   ]
 }

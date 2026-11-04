@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "encoding": "gzip+base64",
+  "part_max_bytes": 65536,
+  "files": [
+    {
+      "original_name": "topk-950pr-device-compare-r1-20261104-113714-178290-repeat-1.json",
+      "source_path": "/home/y00937463/topk-950pr-device-compare-r1-20261104-113714-178290/repeat-1/device-return.json",
+      "original_bytes": 2044246,
+      "original_sha256": "18b638bac9841d1660314933dd4558f7d952755cdf7b8163e1d3b271bb9ae520",
+      "gzip_bytes": 190400,
+      "gzip_sha256": "2aa26fca7b14c5b381dbb6813f66f4f7b086d6131fbc421b48394d16b3abae63",
+      "parts": [
+        {
+          "name": "topk-950pr-device-compare-r1-20261104-113714-178290-parts-topk-950pr-device-compare-r1-20261104-113714-178290-repeat-1.json-part-0001.txt",
+          "bytes": 65536,
+          "sha256": "ed1d1d8e2c140ff1785ffae06b92d2896810b74ee3cfe07b1795d6c0425f0402"
+        },
+        {
+          "name": "topk-950pr-device-compare-r1-20261104-113714-178290-parts-topk-950pr-device-compare-r1-20261104-113714-178290-repeat-1.json-part-0002.txt",
+          "bytes": 65536,
+          "sha256": "264123baa9b55d92f66faf90078eca143be13bdd3fbc92e603c01e5c0bd5c1d1"
+        },
+        {
+          "name": "topk-950pr-device-compare-r1-20261104-113714-178290-parts-topk-950pr-device-compare-r1-20261104-113714-178290-repeat-1.json-part-0003.txt",
+          "bytes": 65536,
+          "sha256": "2c35dd493d9bb38037d9d2fd7916015d6b0e2215db753444d94b24a1d86b1eef"
+        },
+        {
+          "name": "topk-950pr-device-compare-r1-20261104-113714-178290-parts-topk-950pr-device-compare-r1-20261104-113714-178290-repeat-1.json-part-0004.txt",
+          "bytes": 57260,
+          "sha256": "b84279925c9c1e394e99cbe10bba187aca12aacc980f8f60332f891610bc3471"
+        }
+      ]
+    },
+    {
+      "original_name": "topk-950pr-device-compare-r1-20261104-113714-178290-repeat-2.json",
+      "source_path": "/home/y00937463/topk-950pr-device-compare-r1-20261104-113714-178290/repeat-2/device-return.json",
+      "original_bytes": 2044734,
+      "original_sha256": "28af3c5a5daa5fbdd9411c68ac9665f70562a22362b600f2d3315a557f8ec34b",
+      "gzip_bytes": 189620,
+      "gzip_sha256": "5cf6ca5889507f3bc5b6908ba7f05d493f025baf0122f06c64e91fa43601b54a",
+      "parts": [
+        {
+          "name": "topk-950pr-device-compare-r1-20261104-113714-178290-parts-topk-950pr-device-compare-r1-20261104-113714-178290-repeat-2.json-part-0001.txt",
+          "bytes": 65536,
+          "sha256": "ef51ac494ad698c7b487d279bc2019e723af1168cb6a412212c425441f28fe51"
+        },
+        {
+          "name": "topk-950pr-device-compare-r1-20261104-113714-178290-parts-topk-950pr-device-compare-r1-20261104-113714-178290-repeat-2.json-part-0002.txt",
+          "bytes": 65536,
+          "sha256": "940b26cd2c616b19c63ed70193064e724e830333848f9027512b2536a7d13962"
+        },
+        {
+          "name": "topk-950pr-device-compare-r1-20261104-113714-178290-parts-topk-950pr-device-compare-r1-20261104-113714-178290-repeat-2.json-part-0003.txt",
+          "bytes": 65536,
+          "sha256": "f7b449b89e9bf0ca99829db711c86ca9a67f589fcaa68ca99db88ccd20c83d04"
+        },
+        {
+          "name": "topk-950pr-device-compare-r1-20261104-113714-178290-parts-topk-950pr-device-compare-r1-20261104-113714-178290-repeat-2.json-part-0004.txt",
+          "bytes": 56220,
+          "sha256": "fc90174d10e0b03159f576a352ef48bf837b949366e61080ffefc22447165fb4"
+        }
+      ]
+    },
+    {
+      "original_name": "topk-950pr-device-compare-r1-20261104-113714-178290-repeat-3.json",
+      "source_path": "/home/y00937463/topk-950pr-device-compare-r1-20261104-113714-178290/repeat-3/device-return.json",
+      "original_bytes": 2044333,
+      "original_sha256": "d96a116a51560a9252520b6a068f3b6a54c4f375f00b066e35c046644f0838ae",
+      "gzip_bytes": 191146,
+      "gzip_sha256": "3e83b3501f8b436e627dda35b35ad3dff6e10b696b1fe08395ec9f60e681e583",
+      "parts": [
+        {
+          "name": "topk-950pr-device-compare-r1-20261104-113714-178290-parts-topk-950pr-device-compare-r1-20261104-113714-178290-repeat-3.json-part-0001.txt",
+          "bytes": 65536,
+          "sha256": "7fecf088c811d743f718de27db4dda383b8a275d79bf247dc9ac36b0f497c6ca"
+        },
+        {
+          "name": "topk-950pr-device-compare-r1-20261104-113714-178290-parts-topk-950pr-device-compare-r1-20261104-113714-178290-repeat-3.json-part-0002.txt",
+          "bytes": 65536,
+          "sha256": "7b3bec9c024eca9ca8c10ad83429d332182b9fd40fc4f215506974836374e077"
+        },
+        {
+          "name": "topk-950pr-device-compare-r1-20261104-113714-178290-parts-topk-950pr-device-compare-r1-20261104-113714-178290-repeat-3.json-part-0003.txt",
+          "bytes": 65536,
+          "sha256": "08c5740d45b3ad38c5280f8fff9bab75c3f1c922306df82022b3c3699db824d1"
+        },
+        {
+          "name": "topk-950pr-device-compare-r1-20261104-113714-178290-parts-topk-950pr-device-compare-r1-20261104-113714-178290-repeat-3.json-part-0004.txt",
+          "bytes": 58256,
+          "sha256": "48e12ad6ad5c097c521ddfebf0d66482e110e5efc8973ef3147cab5c17669cbe"
+        }
+      ]
+    }
+  ]
+}

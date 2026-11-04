@@ -1,0 +1,4164 @@
+{
+  "protocol": "950PR-development-isolated-device-task-sum-v1",
+  "rounds": [
+    {
+      "repeat": 1,
+      "implementations": {
+        "ours": {
+          "mean_us": 57.7244,
+          "stdev_us": 0.5911501863800288,
+          "min_us": 56.993,
+          "max_us": 58.726
+        },
+        "topkv2": {
+          "mean_us": 10.5376,
+          "stdev_us": 0.22175849154300434,
+          "min_us": 10.005999999999998,
+          "max_us": 10.936
+        }
+      },
+      "samples": [
+        {
+          "implementation": "ours",
+          "sample": 0,
+          "latency_us": 58.528,
+          "tasks": [
+            {
+              "task_id": 48,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695918122323466,
+              "end_ns": 695918122335489,
+              "duration_us": 12.023
+            },
+            {
+              "task_id": 49,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695918122349886,
+              "end_ns": 695918122354996,
+              "duration_us": 5.11
+            },
+            {
+              "task_id": 50,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695918122369445,
+              "end_ns": 695918122384115,
+              "duration_us": 14.67
+            },
+            {
+              "task_id": 51,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695918122386214,
+              "end_ns": 695918122412939,
+              "duration_us": 26.725
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 0,
+          "latency_us": 10.005999999999998,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695920148410068,
+              "end_ns": 695920148420074,
+              "duration_us": 10.006
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 1,
+          "latency_us": 10.936,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695922175679707,
+              "end_ns": 695922175690643,
+              "duration_us": 10.936
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 1,
+          "latency_us": 58.726,
+          "tasks": [
+            {
+              "task_id": 69,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695924187071794,
+              "end_ns": 695924187083651,
+              "duration_us": 11.857
+            },
+            {
+              "task_id": 70,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695924187114309,
+              "end_ns": 695924187119486,
+              "duration_us": 5.177
+            },
+            {
+              "task_id": 71,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695924187145077,
+              "end_ns": 695924187159784,
+              "duration_us": 14.707
+            },
+            {
+              "task_id": 72,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695924187171562,
+              "end_ns": 695924187198547,
+              "duration_us": 26.985
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 2,
+          "latency_us": 57.965,
+          "tasks": [
+            {
+              "task_id": 76,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695926229583098,
+              "end_ns": 695926229594833,
+              "duration_us": 11.735
+            },
+            {
+              "task_id": 77,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695926229616831,
+              "end_ns": 695926229622038,
+              "duration_us": 5.207
+            },
+            {
+              "task_id": 78,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695926229638333,
+              "end_ns": 695926229652525,
+              "duration_us": 14.192
+            },
+            {
+              "task_id": 79,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695926229657842,
+              "end_ns": 695926229684673,
+              "duration_us": 26.831
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 2,
+          "latency_us": 10.281,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695928256830114,
+              "end_ns": 695928256840395,
+              "duration_us": 10.281
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 3,
+          "latency_us": 10.64,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695930276970903,
+              "end_ns": 695930276981543,
+              "duration_us": 10.64
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 3,
+          "latency_us": 57.922000000000004,
+          "tasks": [
+            {
+              "task_id": 97,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695932309935072,
+              "end_ns": 695932309946226,
+              "duration_us": 11.154
+            },
+            {
+              "task_id": 98,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695932309967703,
+              "end_ns": 695932309972906,
+              "duration_us": 5.203
+            },
+            {
+              "task_id": 99,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695932309991147,
+              "end_ns": 695932310005839,
+              "duration_us": 14.692
+            },
+            {
+              "task_id": 100,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695932310012366,
+              "end_ns": 695932310039239,
+              "duration_us": 26.873
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 4,
+          "latency_us": 57.190999999999995,
+          "tasks": [
+            {
+              "task_id": 104,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695934332753773,
+              "end_ns": 695934332764785,
+              "duration_us": 11.012
+            },
+            {
+              "task_id": 105,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695934332781695,
+              "end_ns": 695934332786763,
+              "duration_us": 5.068
+            },
+            {
+              "task_id": 106,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695934332801559,
+              "end_ns": 695934332815836,
+              "duration_us": 14.277
+            },
+            {
+              "task_id": 107,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695934332819127,
+              "end_ns": 695934332845961,
+              "duration_us": 26.834
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 4,
+          "latency_us": 10.697,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695936367577961,
+              "end_ns": 695936367588658,
+              "duration_us": 10.697
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 5,
+          "latency_us": 10.607,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695938393001907,
+              "end_ns": 695938393012514,
+              "duration_us": 10.607
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 5,
+          "latency_us": 58.545,
+          "tasks": [
+            {
+              "task_id": 125,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695940423550628,
+              "end_ns": 695940423562583,
+              "duration_us": 11.955
+            },
+            {
+              "task_id": 126,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695940423580438,
+              "end_ns": 695940423585509,
+              "duration_us": 5.071
+            },
+            {
+              "task_id": 127,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695940423603414,
+              "end_ns": 695940423617948,
+              "duration_us": 14.534
+            },
+            {
+              "task_id": 128,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695940423622711,
+              "end_ns": 695940423649696,
+              "duration_us": 26.985
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 6,
+          "latency_us": 57.053,
+          "tasks": [
+            {
+              "task_id": 132,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695942453768639,
+              "end_ns": 695942453779601,
+              "duration_us": 10.962
+            },
+            {
+              "task_id": 133,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695942453800238,
+              "end_ns": 695942453805310,
+              "duration_us": 5.072
+            },
+            {
+              "task_id": 134,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695942453822160,
+              "end_ns": 695942453836283,
+              "duration_us": 14.123
+            },
+            {
+              "task_id": 135,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695942453843174,
+              "end_ns": 695942453870070,
+              "duration_us": 26.896
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 6,
+          "latency_us": 10.612,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695944499832837,
+              "end_ns": 695944499843449,
+              "duration_us": 10.612
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 7,
+          "latency_us": 10.633000000000001,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695946547771016,
+              "end_ns": 695946547781649,
+              "duration_us": 10.633
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 7,
+          "latency_us": 58.059,
+          "tasks": [
+            {
+              "task_id": 153,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695948577024459,
+              "end_ns": 695948577035717,
+              "duration_us": 11.258
+            },
+            {
+              "task_id": 154,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695948577067512,
+              "end_ns": 695948577072701,
+              "duration_us": 5.189
+            },
+            {
+              "task_id": 155,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695948577096562,
+              "end_ns": 695948577111233,
+              "duration_us": 14.671
+            },
+            {
+              "task_id": 156,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695948577122617,
+              "end_ns": 695948577149558,
+              "duration_us": 26.941
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 8,
+          "latency_us": 57.039,
+          "tasks": [
+            {
+              "task_id": 160,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695950569718880,
+              "end_ns": 695950569729830,
+              "duration_us": 10.95
+            },
+            {
+              "task_id": 161,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695950569760148,
+              "end_ns": 695950569765129,
+              "duration_us": 4.981
+            },
+            {
+              "task_id": 162,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695950569790396,
+              "end_ns": 695950569804778,
+              "duration_us": 14.382
+            },
+            {
+              "task_id": 163,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695950569817263,
+              "end_ns": 695950569843989,
+              "duration_us": 26.726
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 8,
+          "latency_us": 10.691,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695952592575903,
+              "end_ns": 695952592586594,
+              "duration_us": 10.691
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 9,
+          "latency_us": 10.578000000000001,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695954617800558,
+              "end_ns": 695954617811136,
+              "duration_us": 10.578
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 9,
+          "latency_us": 57.624,
+          "tasks": [
+            {
+              "task_id": 181,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695956645302564,
+              "end_ns": 695956645313691,
+              "duration_us": 11.127
+            },
+            {
+              "task_id": 182,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695956645327261,
+              "end_ns": 695956645332212,
+              "duration_us": 4.951
+            },
+            {
+              "task_id": 183,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695956645345427,
+              "end_ns": 695956645360089,
+              "duration_us": 14.662
+            },
+            {
+              "task_id": 184,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695956645361821,
+              "end_ns": 695956645388705,
+              "duration_us": 26.884
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 10,
+          "latency_us": 57.442,
+          "tasks": [
+            {
+              "task_id": 188,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695958640595475,
+              "end_ns": 695958640606444,
+              "duration_us": 10.969
+            },
+            {
+              "task_id": 189,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695958640625350,
+              "end_ns": 695958640630548,
+              "duration_us": 5.198
+            },
+            {
+              "task_id": 190,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695958640646509,
+              "end_ns": 695958640660966,
+              "duration_us": 14.457
+            },
+            {
+              "task_id": 191,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695958640664794,
+              "end_ns": 695958640691612,
+              "duration_us": 26.818
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 10,
+          "latency_us": 10.427999999999999,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695960666628324,
+              "end_ns": 695960666638752,
+              "duration_us": 10.428
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 11,
+          "latency_us": 10.68,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695962679674536,
+              "end_ns": 695962679685216,
+              "duration_us": 10.68
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 11,
+          "latency_us": 57.951,
+          "tasks": [
+            {
+              "task_id": 209,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695964675403097,
+              "end_ns": 695964675414380,
+              "duration_us": 11.283
+            },
+            {
+              "task_id": 210,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695964675432586,
+              "end_ns": 695964675437641,
+              "duration_us": 5.055
+            },
+            {
+              "task_id": 211,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695964675452467,
+              "end_ns": 695964675467084,
+              "duration_us": 14.617
+            },
+            {
+              "task_id": 212,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695964675469156,
+              "end_ns": 695964675496152,
+              "duration_us": 26.996
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 12,
+          "latency_us": 56.993,
+          "tasks": [
+            {
+              "task_id": 216,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695966704730169,
+              "end_ns": 695966704741117,
+              "duration_us": 10.948
+            },
+            {
+              "task_id": 217,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695966704756623,
+              "end_ns": 695966704761811,
+              "duration_us": 5.188
+            },
+            {
+              "task_id": 218,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695966704776101,
+              "end_ns": 695966704790118,
+              "duration_us": 14.017
+            },
+            {
+              "task_id": 219,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695966704794313,
+              "end_ns": 695966704821153,
+              "duration_us": 26.84
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 12,
+          "latency_us": 10.296,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695968753867676,
+              "end_ns": 695968753877972,
+              "duration_us": 10.296
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 13,
+          "latency_us": 10.542,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695970783249747,
+              "end_ns": 695970783260289,
+              "duration_us": 10.542
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 13,
+          "latency_us": 57.793,
+          "tasks": [
+            {
+              "task_id": 237,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695972806921774,
+              "end_ns": 695972806932865,
+              "duration_us": 11.091
+            },
+            {
+              "task_id": 238,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695972806958564,
+              "end_ns": 695972806963679,
+              "duration_us": 5.115
+            },
+            {
+              "task_id": 239,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695972806984570,
+              "end_ns": 695972806999212,
+              "duration_us": 14.642
+            },
+            {
+              "task_id": 240,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695972807008406,
+              "end_ns": 695972807035351,
+              "duration_us": 26.945
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 14,
+          "latency_us": 57.035000000000004,
+          "tasks": [
+            {
+              "task_id": 244,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695974823841934,
+              "end_ns": 695974823852915,
+              "duration_us": 10.981
+            },
+            {
+              "task_id": 245,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695974823886734,
+              "end_ns": 695974823891770,
+              "duration_us": 5.036
+            },
+            {
+              "task_id": 246,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695974823916364,
+              "end_ns": 695974823930648,
+              "duration_us": 14.284
+            },
+            {
+              "task_id": 247,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695974823942993,
+              "end_ns": 695974823969727,
+              "duration_us": 26.734
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 14,
+          "latency_us": 10.437,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 695976836874733,
+              "end_ns": 695976836885170,
+              "duration_us": 10.437
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        }
+      ],
+      "x_topkv2": 0.1825501867494508
+    },
+    {
+      "repeat": 2,
+      "implementations": {
+        "ours": {
+          "mean_us": 57.4222,
+          "stdev_us": 0.6465515336879857,
+          "min_us": 56.527,
+          "max_us": 58.634
+        },
+        "topkv2": {
+          "mean_us": 10.767466666666666,
+          "stdev_us": 0.3157014563219647,
+          "min_us": 10.073,
+          "max_us": 11.309
+        }
+      },
+      "samples": [
+        {
+          "implementation": "topkv2",
+          "sample": 0,
+          "latency_us": 11.309,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696026574622023,
+              "end_ns": 696026574633332,
+              "duration_us": 11.309
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 0,
+          "latency_us": 58.082,
+          "tasks": [
+            {
+              "task_id": 55,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696028596654742,
+              "end_ns": 696028596666215,
+              "duration_us": 11.473
+            },
+            {
+              "task_id": 56,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696028596679304,
+              "end_ns": 696028596684523,
+              "duration_us": 5.219
+            },
+            {
+              "task_id": 57,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696028596697014,
+              "end_ns": 696028596711648,
+              "duration_us": 14.634
+            },
+            {
+              "task_id": 58,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696028596712877,
+              "end_ns": 696028596739633,
+              "duration_us": 26.756
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 1,
+          "latency_us": 56.527,
+          "tasks": [
+            {
+              "task_id": 62,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696030622198871,
+              "end_ns": 696030622209797,
+              "duration_us": 10.926
+            },
+            {
+              "task_id": 63,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696030622223059,
+              "end_ns": 696030622228140,
+              "duration_us": 5.081
+            },
+            {
+              "task_id": 64,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696030622240502,
+              "end_ns": 696030622254755,
+              "duration_us": 14.253
+            },
+            {
+              "task_id": 65,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696030622255835,
+              "end_ns": 696030622282102,
+              "duration_us": 26.267
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 1,
+          "latency_us": 10.811,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696032611934085,
+              "end_ns": 696032611944896,
+              "duration_us": 10.811
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 2,
+          "latency_us": 10.845,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696034597505482,
+              "end_ns": 696034597516327,
+              "duration_us": 10.845
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 2,
+          "latency_us": 57.492000000000004,
+          "tasks": [
+            {
+              "task_id": 83,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696036614489573,
+              "end_ns": 696036614500495,
+              "duration_us": 10.922
+            },
+            {
+              "task_id": 84,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696036614519757,
+              "end_ns": 696036614524967,
+              "duration_us": 5.21
+            },
+            {
+              "task_id": 85,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696036614541547,
+              "end_ns": 696036614556243,
+              "duration_us": 14.696
+            },
+            {
+              "task_id": 86,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696036614561139,
+              "end_ns": 696036614587803,
+              "duration_us": 26.664
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 3,
+          "latency_us": 56.644,
+          "tasks": [
+            {
+              "task_id": 90,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696038639067709,
+              "end_ns": 696038639078337,
+              "duration_us": 10.628
+            },
+            {
+              "task_id": 91,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696038639101475,
+              "end_ns": 696038639106691,
+              "duration_us": 5.216
+            },
+            {
+              "task_id": 92,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696038639126300,
+              "end_ns": 696038639140616,
+              "duration_us": 14.316
+            },
+            {
+              "task_id": 93,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696038639147538,
+              "end_ns": 696038639174022,
+              "duration_us": 26.484
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 3,
+          "latency_us": 10.853,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696040643957469,
+              "end_ns": 696040643968322,
+              "duration_us": 10.853
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 4,
+          "latency_us": 10.962,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696042655463183,
+              "end_ns": 696042655474145,
+              "duration_us": 10.962
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 4,
+          "latency_us": 57.72,
+          "tasks": [
+            {
+              "task_id": 111,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696044687708491,
+              "end_ns": 696044687719658,
+              "duration_us": 11.167
+            },
+            {
+              "task_id": 112,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696044687749514,
+              "end_ns": 696044687754853,
+              "duration_us": 5.339
+            },
+            {
+              "task_id": 113,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696044687779333,
+              "end_ns": 696044687793929,
+              "duration_us": 14.596
+            },
+            {
+              "task_id": 114,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696044687806305,
+              "end_ns": 696044687832923,
+              "duration_us": 26.618
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 5,
+          "latency_us": 56.861000000000004,
+          "tasks": [
+            {
+              "task_id": 118,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696046715052725,
+              "end_ns": 696046715063523,
+              "duration_us": 10.798
+            },
+            {
+              "task_id": 119,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696046715084923,
+              "end_ns": 696046715090270,
+              "duration_us": 5.347
+            },
+            {
+              "task_id": 120,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696046715107371,
+              "end_ns": 696046715121689,
+              "duration_us": 14.318
+            },
+            {
+              "task_id": 121,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696046715128847,
+              "end_ns": 696046715155245,
+              "duration_us": 26.398
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 5,
+          "latency_us": 10.796,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696048723958626,
+              "end_ns": 696048723969422,
+              "duration_us": 10.796
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 6,
+          "latency_us": 10.924,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696050759240956,
+              "end_ns": 696050759251880,
+              "duration_us": 10.924
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 6,
+          "latency_us": 57.632000000000005,
+          "tasks": [
+            {
+              "task_id": 139,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696052784845517,
+              "end_ns": 696052784856764,
+              "duration_us": 11.247
+            },
+            {
+              "task_id": 140,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696052784876979,
+              "end_ns": 696052784882053,
+              "duration_us": 5.074
+            },
+            {
+              "task_id": 141,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696052784900768,
+              "end_ns": 696052784915447,
+              "duration_us": 14.679
+            },
+            {
+              "task_id": 142,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696052784920833,
+              "end_ns": 696052784947465,
+              "duration_us": 26.632
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 7,
+          "latency_us": 56.586,
+          "tasks": [
+            {
+              "task_id": 146,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696054832439268,
+              "end_ns": 696054832450351,
+              "duration_us": 11.083
+            },
+            {
+              "task_id": 147,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696054832466865,
+              "end_ns": 696054832471932,
+              "duration_us": 5.067
+            },
+            {
+              "task_id": 148,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696054832486371,
+              "end_ns": 696054832500557,
+              "duration_us": 14.186
+            },
+            {
+              "task_id": 149,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696054832502761,
+              "end_ns": 696054832529011,
+              "duration_us": 26.25
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 7,
+          "latency_us": 10.265,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696056840629637,
+              "end_ns": 696056840639902,
+              "duration_us": 10.265
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 8,
+          "latency_us": 10.527999999999999,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696058866663343,
+              "end_ns": 696058866673871,
+              "duration_us": 10.528
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 8,
+          "latency_us": 57.55,
+          "tasks": [
+            {
+              "task_id": 167,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696060912530777,
+              "end_ns": 696060912541763,
+              "duration_us": 10.986
+            },
+            {
+              "task_id": 168,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696060912564393,
+              "end_ns": 696060912569722,
+              "duration_us": 5.329
+            },
+            {
+              "task_id": 169,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696060912587277,
+              "end_ns": 696060912601888,
+              "duration_us": 14.611
+            },
+            {
+              "task_id": 170,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696060912607771,
+              "end_ns": 696060912634395,
+              "duration_us": 26.624
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 9,
+          "latency_us": 56.855999999999995,
+          "tasks": [
+            {
+              "task_id": 174,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696062934869288,
+              "end_ns": 696062934880205,
+              "duration_us": 10.917
+            },
+            {
+              "task_id": 175,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696062934893986,
+              "end_ns": 696062934899227,
+              "duration_us": 5.241
+            },
+            {
+              "task_id": 176,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696062934914023,
+              "end_ns": 696062934928352,
+              "duration_us": 14.329
+            },
+            {
+              "task_id": 177,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696062934931018,
+              "end_ns": 696062934957387,
+              "duration_us": 26.369
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 9,
+          "latency_us": 10.073,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696064966182272,
+              "end_ns": 696064966192345,
+              "duration_us": 10.073
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 10,
+          "latency_us": 10.446,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696066990149106,
+              "end_ns": 696066990159552,
+              "duration_us": 10.446
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 10,
+          "latency_us": 58.634,
+          "tasks": [
+            {
+              "task_id": 195,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696069038187471,
+              "end_ns": 696069038199664,
+              "duration_us": 12.193
+            },
+            {
+              "task_id": 196,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696069038218807,
+              "end_ns": 696069038224137,
+              "duration_us": 5.33
+            },
+            {
+              "task_id": 197,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696069038242070,
+              "end_ns": 696069038256625,
+              "duration_us": 14.555
+            },
+            {
+              "task_id": 198,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696069038263590,
+              "end_ns": 696069038290146,
+              "duration_us": 26.556
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 11,
+          "latency_us": 57.010999999999996,
+          "tasks": [
+            {
+              "task_id": 202,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696071058509896,
+              "end_ns": 696071058521348,
+              "duration_us": 11.452
+            },
+            {
+              "task_id": 203,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696071058543842,
+              "end_ns": 696071058548924,
+              "duration_us": 5.082
+            },
+            {
+              "task_id": 204,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696071058569256,
+              "end_ns": 696071058583446,
+              "duration_us": 14.19
+            },
+            {
+              "task_id": 205,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696071058590219,
+              "end_ns": 696071058616506,
+              "duration_us": 26.287
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 11,
+          "latency_us": 11.051,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696073124400579,
+              "end_ns": 696073124411630,
+              "duration_us": 11.051
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 12,
+          "latency_us": 10.811,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696075134059277,
+              "end_ns": 696075134070088,
+              "duration_us": 10.811
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 12,
+          "latency_us": 58.232,
+          "tasks": [
+            {
+              "task_id": 223,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696077165577973,
+              "end_ns": 696077165589929,
+              "duration_us": 11.956
+            },
+            {
+              "task_id": 224,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696077165603994,
+              "end_ns": 696077165609113,
+              "duration_us": 5.119
+            },
+            {
+              "task_id": 225,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696077165622423,
+              "end_ns": 696077165637081,
+              "duration_us": 14.658
+            },
+            {
+              "task_id": 226,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696077165639335,
+              "end_ns": 696077165665834,
+              "duration_us": 26.499
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 13,
+          "latency_us": 57.821,
+          "tasks": [
+            {
+              "task_id": 230,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696079146172420,
+              "end_ns": 696079146184157,
+              "duration_us": 11.737
+            },
+            {
+              "task_id": 231,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696079146195018,
+              "end_ns": 696079146200388,
+              "duration_us": 5.37
+            },
+            {
+              "task_id": 232,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696079146210686,
+              "end_ns": 696079146225036,
+              "duration_us": 14.35
+            },
+            {
+              "task_id": 233,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696079146225289,
+              "end_ns": 696079146251653,
+              "duration_us": 26.364
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 13,
+          "latency_us": 10.914,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696081172840618,
+              "end_ns": 696081172851532,
+              "duration_us": 10.914
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 14,
+          "latency_us": 10.924,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696083216403405,
+              "end_ns": 696083216414329,
+              "duration_us": 10.924
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 14,
+          "latency_us": 57.685,
+          "tasks": [
+            {
+              "task_id": 251,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696085243203281,
+              "end_ns": 696085243214414,
+              "duration_us": 11.133
+            },
+            {
+              "task_id": 252,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696085243229272,
+              "end_ns": 696085243234476,
+              "duration_us": 5.204
+            },
+            {
+              "task_id": 253,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696085243251903,
+              "end_ns": 696085243266506,
+              "duration_us": 14.603
+            },
+            {
+              "task_id": 254,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696085243268767,
+              "end_ns": 696085243295512,
+              "duration_us": 26.745
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        }
+      ],
+      "x_topkv2": 0.18751400445588406
+    },
+    {
+      "repeat": 3,
+      "implementations": {
+        "ours": {
+          "mean_us": 57.7704,
+          "stdev_us": 0.6522076575535042,
+          "min_us": 57.056999999999995,
+          "max_us": 59.2
+        },
+        "topkv2": {
+          "mean_us": 10.612666666666666,
+          "stdev_us": 0.21426807863937503,
+          "min_us": 10.236,
+          "max_us": 10.94
+        }
+      },
+      "samples": [
+        {
+          "implementation": "ours",
+          "sample": 0,
+          "latency_us": 59.2,
+          "tasks": [
+            {
+              "task_id": 48,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696135045372892,
+              "end_ns": 696135045384924,
+              "duration_us": 12.032
+            },
+            {
+              "task_id": 49,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696135045398418,
+              "end_ns": 696135045403662,
+              "duration_us": 5.244
+            },
+            {
+              "task_id": 50,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696135045417117,
+              "end_ns": 696135045431971,
+              "duration_us": 14.854
+            },
+            {
+              "task_id": 51,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696135045433433,
+              "end_ns": 696135045460503,
+              "duration_us": 27.07
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 0,
+          "latency_us": 10.273,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696137078974820,
+              "end_ns": 696137078985093,
+              "duration_us": 10.273
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 1,
+          "latency_us": 10.545,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696139099259576,
+              "end_ns": 696139099270121,
+              "duration_us": 10.545
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 1,
+          "latency_us": 58.104000000000006,
+          "tasks": [
+            {
+              "task_id": 69,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696141133663897,
+              "end_ns": 696141133675173,
+              "duration_us": 11.276
+            },
+            {
+              "task_id": 70,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696141133693546,
+              "end_ns": 696141133698666,
+              "duration_us": 5.12
+            },
+            {
+              "task_id": 71,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696141133713889,
+              "end_ns": 696141133728628,
+              "duration_us": 14.739
+            },
+            {
+              "task_id": 72,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696141133732151,
+              "end_ns": 696141133759120,
+              "duration_us": 26.969
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 2,
+          "latency_us": 57.249,
+          "tasks": [
+            {
+              "task_id": 76,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696143154451997,
+              "end_ns": 696143154462758,
+              "duration_us": 10.761
+            },
+            {
+              "task_id": 77,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696143154480067,
+              "end_ns": 696143154485195,
+              "duration_us": 5.128
+            },
+            {
+              "task_id": 78,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696143154500015,
+              "end_ns": 696143154514388,
+              "duration_us": 14.373
+            },
+            {
+              "task_id": 79,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696143154517429,
+              "end_ns": 696143154544416,
+              "duration_us": 26.987
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 2,
+          "latency_us": 10.546,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696145143445158,
+              "end_ns": 696145143455704,
+              "duration_us": 10.546
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 3,
+          "latency_us": 10.94,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696147178027197,
+              "end_ns": 696147178038137,
+              "duration_us": 10.94
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 3,
+          "latency_us": 58.181999999999995,
+          "tasks": [
+            {
+              "task_id": 97,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696149216784147,
+              "end_ns": 696149216795338,
+              "duration_us": 11.191
+            },
+            {
+              "task_id": 98,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696149216814389,
+              "end_ns": 696149216819490,
+              "duration_us": 5.101
+            },
+            {
+              "task_id": 99,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696149216834956,
+              "end_ns": 696149216849793,
+              "duration_us": 14.837
+            },
+            {
+              "task_id": 100,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696149216855343,
+              "end_ns": 696149216882396,
+              "duration_us": 27.053
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 4,
+          "latency_us": 57.096000000000004,
+          "tasks": [
+            {
+              "task_id": 104,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696151218342444,
+              "end_ns": 696151218353161,
+              "duration_us": 10.717
+            },
+            {
+              "task_id": 105,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696151218368387,
+              "end_ns": 696151218373664,
+              "duration_us": 5.277
+            },
+            {
+              "task_id": 106,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696151218387374,
+              "end_ns": 696151218401583,
+              "duration_us": 14.209
+            },
+            {
+              "task_id": 107,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696151218403451,
+              "end_ns": 696151218430344,
+              "duration_us": 26.893
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 4,
+          "latency_us": 10.702,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696153273906031,
+              "end_ns": 696153273916733,
+              "duration_us": 10.702
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 5,
+          "latency_us": 10.758000000000001,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696155328213167,
+              "end_ns": 696155328223925,
+              "duration_us": 10.758
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 5,
+          "latency_us": 57.952999999999996,
+          "tasks": [
+            {
+              "task_id": 125,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696157375081866,
+              "end_ns": 696157375092790,
+              "duration_us": 10.924
+            },
+            {
+              "task_id": 126,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696157375129255,
+              "end_ns": 696157375134379,
+              "duration_us": 5.124
+            },
+            {
+              "task_id": 127,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696157375153730,
+              "end_ns": 696157375168656,
+              "duration_us": 14.926
+            },
+            {
+              "task_id": 128,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696157375173373,
+              "end_ns": 696157375200352,
+              "duration_us": 26.979
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 6,
+          "latency_us": 57.602000000000004,
+          "tasks": [
+            {
+              "task_id": 132,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696159396481110,
+              "end_ns": 696159396492304,
+              "duration_us": 11.194
+            },
+            {
+              "task_id": 133,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696159396508955,
+              "end_ns": 696159396513953,
+              "duration_us": 4.998
+            },
+            {
+              "task_id": 134,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696159396527098,
+              "end_ns": 696159396541574,
+              "duration_us": 14.476
+            },
+            {
+              "task_id": 135,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696159396543863,
+              "end_ns": 696159396570797,
+              "duration_us": 26.934
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 6,
+          "latency_us": 10.74,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696161414713816,
+              "end_ns": 696161414724556,
+              "duration_us": 10.74
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 7,
+          "latency_us": 10.705,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696163447525601,
+              "end_ns": 696163447536306,
+              "duration_us": 10.705
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 7,
+          "latency_us": 57.317,
+          "tasks": [
+            {
+              "task_id": 153,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696165468309865,
+              "end_ns": 696165468320663,
+              "duration_us": 10.798
+            },
+            {
+              "task_id": 154,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696165468338739,
+              "end_ns": 696165468343726,
+              "duration_us": 4.987
+            },
+            {
+              "task_id": 155,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696165468360614,
+              "end_ns": 696165468375390,
+              "duration_us": 14.776
+            },
+            {
+              "task_id": 156,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696165468382238,
+              "end_ns": 696165468408994,
+              "duration_us": 26.756
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 8,
+          "latency_us": 57.131,
+          "tasks": [
+            {
+              "task_id": 160,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696167473547827,
+              "end_ns": 696167473558485,
+              "duration_us": 10.658
+            },
+            {
+              "task_id": 161,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696167473574183,
+              "end_ns": 696167473579422,
+              "duration_us": 5.239
+            },
+            {
+              "task_id": 162,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696167473592873,
+              "end_ns": 696167473607120,
+              "duration_us": 14.247
+            },
+            {
+              "task_id": 163,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696167473609664,
+              "end_ns": 696167473636651,
+              "duration_us": 26.987
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 8,
+          "latency_us": 10.757,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696169507237455,
+              "end_ns": 696169507248212,
+              "duration_us": 10.757
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 9,
+          "latency_us": 10.893999999999998,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696171535507408,
+              "end_ns": 696171535518302,
+              "duration_us": 10.894
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 9,
+          "latency_us": 58.251999999999995,
+          "tasks": [
+            {
+              "task_id": 181,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696173547943037,
+              "end_ns": 696173547954214,
+              "duration_us": 11.177
+            },
+            {
+              "task_id": 182,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696173547977199,
+              "end_ns": 696173547982303,
+              "duration_us": 5.104
+            },
+            {
+              "task_id": 183,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696173547999373,
+              "end_ns": 696173548014121,
+              "duration_us": 14.748
+            },
+            {
+              "task_id": 184,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696173548019645,
+              "end_ns": 696173548046868,
+              "duration_us": 27.223
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 10,
+          "latency_us": 57.056999999999995,
+          "tasks": [
+            {
+              "task_id": 188,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696175582699096,
+              "end_ns": 696175582709823,
+              "duration_us": 10.727
+            },
+            {
+              "task_id": 189,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696175582729526,
+              "end_ns": 696175582734756,
+              "duration_us": 5.23
+            },
+            {
+              "task_id": 190,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696175582751340,
+              "end_ns": 696175582765535,
+              "duration_us": 14.195
+            },
+            {
+              "task_id": 191,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696175582771878,
+              "end_ns": 696175582798783,
+              "duration_us": 26.905
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 10,
+          "latency_us": 10.538,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696177628339391,
+              "end_ns": 696177628349929,
+              "duration_us": 10.538
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 11,
+          "latency_us": 10.236,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696179665106259,
+              "end_ns": 696179665116495,
+              "duration_us": 10.236
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 11,
+          "latency_us": 58.25,
+          "tasks": [
+            {
+              "task_id": 209,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696181687706687,
+              "end_ns": 696181687718189,
+              "duration_us": 11.502
+            },
+            {
+              "task_id": 210,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696181687737051,
+              "end_ns": 696181687742165,
+              "duration_us": 5.114
+            },
+            {
+              "task_id": 211,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696181687759465,
+              "end_ns": 696181687774133,
+              "duration_us": 14.668
+            },
+            {
+              "task_id": 212,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696181687779583,
+              "end_ns": 696181687806549,
+              "duration_us": 26.966
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 12,
+          "latency_us": 57.459999999999994,
+          "tasks": [
+            {
+              "task_id": 216,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696183726058241,
+              "end_ns": 696183726069374,
+              "duration_us": 11.133
+            },
+            {
+              "task_id": 217,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696183726089571,
+              "end_ns": 696183726094560,
+              "duration_us": 4.989
+            },
+            {
+              "task_id": 218,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696183726112536,
+              "end_ns": 696183726127126,
+              "duration_us": 14.59
+            },
+            {
+              "task_id": 219,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696183726133891,
+              "end_ns": 696183726160639,
+              "duration_us": 26.748
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 12,
+          "latency_us": 10.53,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696185747512040,
+              "end_ns": 696185747522570,
+              "duration_us": 10.53
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 13,
+          "latency_us": 10.309000000000001,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696187762351987,
+              "end_ns": 696187762362296,
+              "duration_us": 10.309
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        },
+        {
+          "implementation": "ours",
+          "sample": 13,
+          "latency_us": 58.609,
+          "tasks": [
+            {
+              "task_id": 237,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696189807721064,
+              "end_ns": 696189807732752,
+              "duration_us": 11.688
+            },
+            {
+              "task_id": 238,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696189807761606,
+              "end_ns": 696189807766856,
+              "duration_us": 5.25
+            },
+            {
+              "task_id": 239,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696189807790679,
+              "end_ns": 696189807805505,
+              "duration_us": 14.826
+            },
+            {
+              "task_id": 240,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696189807816557,
+              "end_ns": 696189807843402,
+              "duration_us": 26.845
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "ours",
+          "sample": 14,
+          "latency_us": 57.094,
+          "tasks": [
+            {
+              "task_id": 244,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696191835972987,
+              "end_ns": 696191835983750,
+              "duration_us": 10.763
+            },
+            {
+              "task_id": 245,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696191836004227,
+              "end_ns": 696191836009330,
+              "duration_us": 5.103
+            },
+            {
+              "task_id": 246,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696191836026906,
+              "end_ns": 696191836041147,
+              "duration_us": 14.241
+            },
+            {
+              "task_id": 247,
+              "context_id": 0,
+              "stream_ids": [
+                63
+              ],
+              "name": "main_kernel",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696191836047071,
+              "end_ns": 696191836074058,
+              "duration_us": 26.987
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {
+            "8": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+          }
+        },
+        {
+          "implementation": "topkv2",
+          "sample": 14,
+          "latency_us": 10.717,
+          "tasks": [
+            {
+              "task_id": 8,
+              "context_id": 0,
+              "stream_ids": [
+                125
+              ],
+              "name": "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b",
+              "core_roles": [
+                "AIV"
+              ],
+              "start_ns": 696193863388597,
+              "end_ns": 696193863399314,
+              "duration_us": 10.717
+            }
+          ],
+          "added_aicpu_us": 0,
+          "inactive_registered_tasks": {}
+        }
+      ],
+      "x_topkv2": 0.18370422684742818
+    }
+  ],
+  "evidence_files_verified": 1107,
+  "windows_replayed": 90,
+  "input_sha256": "23d29e94a909789eac603a61bd3f8b4c1fa5a9d701de237471ae9ad4792eb5ce",
+  "pooled": {
+    "ours": {
+      "count": 45,
+      "mean_us": 57.639,
+      "stdev_us": 0.6355651028808932,
+      "min_us": 56.527,
+      "max_us": 59.2
+    },
+    "topkv2": {
+      "count": 45,
+      "mean_us": 10.639244444444444,
+      "stdev_us": 0.2670867373205289,
+      "min_us": 10.005999999999998,
+      "max_us": 11.309
+    }
+  },
+  "x_topkv2": 0.1845841261028894,
+  "slowdown": 5.417583955418723,
+  "gap_us": 46.99975555555556,
+  "required_latency_reduction_pct": 81.54158738971105,
+  "ours_stages": [
+    {
+      "stage": "hist",
+      "mean_us": 11.21031111111111,
+      "share_pct": 19.44917696544199
+    },
+    {
+      "stage": "prepare",
+      "mean_us": 5.152377777777778,
+      "share_pct": 8.939047828341534
+    },
+    {
+      "stage": "compact",
+      "mean_us": 14.502355555555555,
+      "share_pct": 25.16066475052578
+    },
+    {
+      "stage": "finish",
+      "mean_us": 26.773955555555556,
+      "share_pct": 46.45111045569069
+    }
+  ],
+  "native_kernel_names": [
+    "te_topkv2_a733e92c9fd4a72930fa941b623119f84de311d979e3e4e9e37e31c1af600b4b"
+  ],
+  "max_added_aicpu_us": 0
+}
