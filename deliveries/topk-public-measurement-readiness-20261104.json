@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-11-04",
+  "target_repository": "https://github.com/yyttt6/TileOPs",
+  "target_branch": "ascend950",
+  "target_commit": "f0072a85a3ce1a4bcc520ba12cd09a0337871131",
+  "case": "TopKSelectFwdOp/ds-v32-topk-decode-b1",
+  "requested_result": "canonical formal device latency",
+  "status": "blocked_by_environment_and_missing_target_backend_integration",
+  "user_confirmed_environment": "only existing yjl Ascend950PR / CANN9.3 container",
+  "formal_latency_ms": null,
+  "new_npu_runs": 0,
+  "evidence_files": {
+    "scripts/benchmark_ascend.py": "f8009f8e11e96ae03199ffee7df793e9f701af3d7bf01cba3fc21e05e955b885",
+    "benchmarks/ascend/runner.py": "ea61ad1bcb968a97375dcdbb28a6af03d4ceb4e0bae557fcc5ae2bf276e72c54",
+    "config/ascend950-toolchain.json": "de40cb62d886868a3ec7508101ebf16ba8095da0b3c125418392c0618268800b",
+    "docs/ascend950/development.md": "1da3bb2368e77777a855c0e732aa7795e10cad05ec72d302cede492c3b0d45ca",
+    "docs/ascend950/toolchain.md": "3392384a47188f691818946c76d2b68096b5aa24180595b9af3ca7764dec6754",
+    ".github/workflows/ascend950.yml": "9321afb2d824225457cd864799a0e55ba79cbb3e764a08fd3c87322b507ef03a"
+  }
+}

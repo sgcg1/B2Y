@@ -1,3 +1,5 @@
+正式测量状态：[公共协议就绪检查](deliveries/topk-public-measurement-readiness-20261104.md)。用户仅能用旧yjl 950PR环境，目标canonical环境不匹配且TopKSelect尚未接入目标分支；正式耗时未知，不伪造或降级验收，无新NPU运行。
+
 交付目标校正：[TopKSelect单case规格与PR规范](deliveries/topk-delivery-contract-20261104.md)。最终PR目标yyttt6/TileOPs:ascend950，当前范围ds-v32-topk-decode-b1；截图ops-math=0.0437ms，历史开发倍率不能作正式验收。算法审计暂停状态保持。
 
 当前状态：按用户要求暂停新增优化/设备试跑，转入[TopK溢出算法审计](deliveries/topk-overflow-algorithm-audit-20261104.md)。确认缓存阈值断崖、单核全行多轮扫描及热点计数等结构问题；先审查完整算法方案，历史结果全部保留。
