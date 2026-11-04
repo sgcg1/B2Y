@@ -1,3 +1,5 @@
+当前执行入口：[950PR指定规格设备耗时对照](diagnostics/topk-950pr-device-compare-r1/README.md)。同输入、同设备计时比较当前保留r12组合与原生GE TopKV2；三个独立进程，各侧15次单调用采样。仅测量、不新增优化；尚无本轮NPU结果，不使用截图历史耗时作为固定目标。
+
 直接源码核对：[ops-math Top-K同类算子](deliveries/topk-ops-math-alternatives-20261104.md)。存在TopK/TopKV2D等，不能凭排除法认定唯一；950PR普通FP32 AiCore调度指向TopKV2，可据此建立新原生基线，网页历史adapter仍未还原。
 
 调用归属核对：[ops-math与GE TopKV2关系](deliveries/topk-ops-math-call-confirmation-20261104.md)。ops-math是库，TopKV2是其中算子；旧GE日志确认加载ops_math实现，但网页历史adapter仍未公开核实。后续950PR同环境对照需固定官方原生入口与完整适配边界。

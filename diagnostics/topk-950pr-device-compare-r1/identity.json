@@ -1,0 +1,17 @@
+{
+  "target_protocol_commit": "f0072a85a3ce1a4bcc520ba12cd09a0337871131",
+  "sources": {
+    "src/tileops/_kernels/attention/topk_select_decode_probe_ascend.py": "db7d295663b9c63a32e5d92c9dab97a8ad0119c8dd6d61288e0bb8a473e59c52",
+    "src/tileops/_kernels/attention/topk_select_decode_pipeline_ascend.py": "e41991586ca33997d861dc9fe2d2e3acd0856bdf12a3c0845c1f3c54d2ebd64a"
+  },
+  "tools": {
+    "run.py": "657933826feae57cc9e58d9a7b01c2e95ff53175c319ff6de156a8e914cd940f",
+    "run.sh": "2f50d68fde0694e9d110b6bd74dc6fd91d6be831ea1d599b8a59c4196ccb3470",
+    "pack.py": "74225f4976af7e584e0e9c2c8f8b807837b4b2a601aec3e1f685597ef2e8c113",
+    "ge_model.py": "a9c05855a9fb869a07de644c8f5c04658611ba600476d12b8a4a9f15b760bdec",
+    "profile_support.py": "de695df66fe5bfc7088e4bbbd70d947c6c387b5e40af13236eb5ae3b537d350e",
+    "kernel_task_profile.py": "b86a46b778d0b350ae853bbb45d3dc646f863cdeec3d57593959d955af3ae1c4",
+    "cann/build.cpp": "e751e8202fad7bb958008d35d5d90621c0d77b7f7d6e68960900bd62bba38401",
+    "cann/top_k_v2_proto.h": "a187576305386920b8ccd54068a57edabc3919f8c3dac65aa103617971fabfed"
+  }
+}
