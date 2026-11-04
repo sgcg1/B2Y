@@ -1,0 +1,151 @@
+{
+  "snapshot_commit": "e287c428bf5bcdb8279b0e4764f4b7914ec66003",
+  "verified_snapshot_files": [
+    "math/top_k_v2/op_host/arch35/sort_with_index_tiling.h",
+    "math/top_k_v2/op_host/arch35/top_k_v2_tiling_arch35.cpp",
+    "math/top_k_v2/op_host/arch35/top_k_v2_tiling_arch35.h",
+    "math/top_k_v2/op_host/arch35/top_k_v2_tiling_base.cpp",
+    "math/top_k_v2/op_host/arch35/top_k_v2_tiling_base.h",
+    "math/top_k_v2/op_host/config/ascend350/top_k_v2_binary.json",
+    "math/top_k_v2/op_host/config/ascend350/top_k_v2_simplified_key.ini",
+    "math/top_k_v2/op_host/config/ascend950/top_k_v2_binary.json",
+    "math/top_k_v2/op_host/config/ascend950/top_k_v2_simplified_key.ini",
+    "math/top_k_v2/op_host/config/ascend960dt/top_k_v2_binary.json",
+    "math/top_k_v2/op_host/config/ascend960dt/top_k_v2_simplified_key.ini",
+    "math/top_k_v2/op_host/config/ascend960pr/top_k_v2_binary.json",
+    "math/top_k_v2/op_host/config/ascend960pr/top_k_v2_simplified_key.ini",
+    "math/top_k_v2/op_host/top_k_v2_def.cpp",
+    "math/top_k_v2/op_host/top_k_v2_infershape.cpp",
+    "math/top_k_v2/op_kernel/arch35/common/top_k_small_axis_insertion_base.h",
+    "math/top_k_v2/op_kernel/arch35/radix_sort_top_k.h",
+    "math/top_k_v2/op_kernel/arch35/radix_sort_top_k_base.h",
+    "math/top_k_v2/op_kernel/arch35/radix_sort_top_k_inter_core_template_optimization.h",
+    "math/top_k_v2/op_kernel/arch35/radix_sort_top_k_single_block.h",
+    "math/top_k_v2/op_kernel/arch35/radix_sort_top_k_single_core.h",
+    "math/top_k_v2/op_kernel/arch35/radix_sort_topk_b16.h",
+    "math/top_k_v2/op_kernel/arch35/radix_sort_topk_b32.h",
+    "math/top_k_v2/op_kernel/arch35/radix_sort_topk_b64.h",
+    "math/top_k_v2/op_kernel/arch35/radix_sort_topk_b8.h",
+    "math/top_k_v2/op_kernel/arch35/radix_topk_constant.h",
+    "math/top_k_v2/op_kernel/arch35/radix_topk_util.h",
+    "math/top_k_v2/op_kernel/arch35/sort_and_top_k_more_core.h",
+    "math/top_k_v2/op_kernel/arch35/sort_with_index_entry.h",
+    "math/top_k_v2/op_kernel/arch35/sort_with_index_merge_sort.h",
+    "math/top_k_v2/op_kernel/arch35/sort_with_index_multi_block.h",
+    "math/top_k_v2/op_kernel/arch35/sort_with_index_single_block.h",
+    "math/top_k_v2/op_kernel/arch35/top_k_constant_var_simd.h",
+    "math/top_k_v2/op_kernel/arch35/top_k_merge_sort.h",
+    "math/top_k_v2/op_kernel/arch35/top_k_merge_sort_intra_core.h",
+    "math/top_k_v2/op_kernel/arch35/top_k_merge_sort_more_core.h",
+    "math/top_k_v2/op_kernel/arch35/top_k_merge_sort_simd.h",
+    "math/top_k_v2/op_kernel/arch35/top_k_non_last_small_non_transpose.h",
+    "math/top_k_v2/op_kernel/arch35/top_k_radix_block_sort_b16.h",
+    "math/top_k_v2/op_kernel/arch35/top_k_radix_block_sort_b32.h",
+    "math/top_k_v2/op_kernel/arch35/top_k_radix_block_sort_b64.h",
+    "math/top_k_v2/op_kernel/arch35/top_k_radix_block_sort_b8.h",
+    "math/top_k_v2/op_kernel/arch35/top_k_small_axis_insertion.h",
+    "math/top_k_v2/op_kernel/arch35/top_k_small_axis_two_stage.h",
+    "math/top_k_v2/op_kernel/arch35/top_k_small_bitonic_common.h",
+    "math/top_k_v2/op_kernel/arch35/top_k_small_bitonic_packed_simt.h",
+    "math/top_k_v2/op_kernel/arch35/top_k_small_bitonic_reg_finalize.h",
+    "math/top_k_v2/op_kernel/arch35/top_k_small_size_bitonic_sort.h",
+    "math/top_k_v2/op_kernel/arch35/top_k_util_type_simd.h",
+    "math/top_k_v2/op_kernel/top_k_v2_apt.cpp",
+    "math/top_k_v2/tests/ut/op_host/arch35/test_top_k_v2_tiling.cpp",
+    "math/top_k_v2/tests/ut/op_host/test_top_k_v2_infershape.cpp"
+  ],
+  "profile_source": "r14 repeat1",
+  "device_rows": [
+    {
+      "label": "random-control",
+      "candidate_event_us": 54.733000695705414,
+      "cann_event_us": 19.635499455034733,
+      "event_slowdown": 2.787451412735587,
+      "finish_us": 20.4765,
+      "device_envelope_us": 54.0055,
+      "cann_device_us": 9.286000000000001,
+      "cann_block_nums": [
+        "56"
+      ],
+      "finish_block_nums": [
+        "1"
+      ]
+    },
+    {
+      "label": "boundary-2048",
+      "candidate_event_us": 102.62550041079521,
+      "cann_event_us": 19.783000461757183,
+      "event_slowdown": 5.187559925966848,
+      "finish_us": 66.8175,
+      "device_envelope_us": 107.0565,
+      "cann_device_us": 10.665,
+      "cann_block_nums": [
+        "56"
+      ],
+      "finish_block_nums": [
+        "1"
+      ]
+    },
+    {
+      "label": "boundary-2049",
+      "candidate_event_us": 346.7319905757904,
+      "cann_event_us": 19.798999652266502,
+      "event_slowdown": 17.51260147813064,
+      "finish_us": 310.754,
+      "device_envelope_us": 344.751,
+      "cann_device_us": 10.689,
+      "cann_block_nums": [
+        "56"
+      ],
+      "finish_block_nums": [
+        "1"
+      ]
+    },
+    {
+      "label": "quantized-four-levels",
+      "candidate_event_us": 356.97999596595764,
+      "cann_event_us": 20.000499673187733,
+      "event_slowdown": 17.848553876107296,
+      "finish_us": 322.0925,
+      "device_envelope_us": 354.66049999999996,
+      "cann_device_us": 10.617,
+      "cann_block_nums": [
+        "56"
+      ],
+      "finish_block_nums": [
+        "1"
+      ]
+    },
+    {
+      "label": "close-fp32",
+      "candidate_event_us": 313.6789947748184,
+      "cann_event_us": 20.077000372111797,
+      "event_slowdown": 15.623797826419233,
+      "finish_us": 278.2675,
+      "device_envelope_us": 313.437,
+      "cann_device_us": 10.051,
+      "cann_block_nums": [
+        "56"
+      ],
+      "finish_block_nums": [
+        "1"
+      ]
+    },
+    {
+      "label": "shuffled-two-levels",
+      "candidate_event_us": 364.30399119853973,
+      "cann_event_us": 19.91050038486719,
+      "event_slowdown": 18.297078634720094,
+      "finish_us": 328.997,
+      "device_envelope_us": 362.2985,
+      "cann_device_us": 10.6465,
+      "cann_block_nums": [
+        "56"
+      ],
+      "finish_block_nums": [
+        "1"
+      ]
+    }
+  ],
+  "model_matches_actual_input_sha": true
+}

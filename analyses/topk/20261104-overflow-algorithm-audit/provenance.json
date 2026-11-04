@@ -1,0 +1,24 @@
+{
+  "kernel_commit": "928b34fd2b36c3c1c29eafed87bb8dbf43d342d2",
+  "kernel_sha256": "2dff3208d48d2f3071d903cc7e3e19cbbf2f896e6762102ed5dba24d3e9e5bb4",
+  "profile_sources": [
+    "experiments/topk/20261104-formal-decode-r14-091517/restored/"
+  ],
+  "model": "CPU interpreter executes actual finish AST with full N16384/K2048; exact sets checked; logical loop/atomic counts only, not physical NPU instructions, timing or memory transactions",
+  "new_device_runs": 0,
+  "optimization_status": "paused_by_user_pending_algorithm_review",
+  "files": [
+    {
+      "file": "cpu-finish-model.py",
+      "sha256": "cc181e5c1a127abf0d25eed2f6b721696f3384118bbf0f8de3152422a5aa0b5a"
+    },
+    {
+      "file": "logical-work-counts.json",
+      "sha256": "5dc2ebd95c7f28ee1be3b92bdad52fe999cdfca925c1f82b9947d6b4d5c0b474"
+    },
+    {
+      "file": "source-and-device-evidence.json",
+      "sha256": "dd02d4ee3a36025026ff645257da1ae64f311060788bbc5d6ed21305762f11fb"
+    }
+  ]
+}

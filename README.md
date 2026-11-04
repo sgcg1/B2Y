@@ -1,3 +1,5 @@
+当前状态：按用户要求暂停新增优化/设备试跑，转入[TopK溢出算法审计](deliveries/topk-overflow-algorithm-audit-20261104.md)。确认缓存阈值断崖、单核全行多轮扫描及热点计数等结构问题；先审查完整算法方案，历史结果全部保留。
+
 最新复核：[r14窗口预计算结果](experiments/topk/20261104-formal-decode-r14-091517/analysis.md)：非全窗快1.36%–9.20%，全窗有回退，随机仍约0.36x；保留窗口专门候选，后续主线返回候选可缓存路径，无需重跑。
 
 最新入口：[窗口内预计算r14](diagnostics/topk-formal-decode-r14/README.md)：928b34fd已推送个人fork，仅限制粗桶/完整键预计算范围，保留整行DMA；新增窗口长度覆盖，尚无设备结果。
