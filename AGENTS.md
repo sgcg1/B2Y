@@ -1,3 +1,5 @@
+最新950PR对照修复：[静态模型注册与执行记录区分](experiments/topk/20261104-950pr-device-compare-r1-112402/analysis.md)。GE构建和计时前正确性通过；原始记录离线重放通过，尚无完整性能对照。更新后仍使用[同一入口](diagnostics/topk-950pr-device-compare-r1/README.md)，无需改环境或内核。
+
 950PR对照首轮修复：[GE临时路径过长](experiments/topk/20261104-950pr-device-compare-r1-110915/analysis.md)。已改短TMPDIR并增加Manager预检，尚无设备耗时；更新B2Y后使用[原测量入口](diagnostics/topk-950pr-device-compare-r1/README.md)重新运行，无需改内核或系统环境。
 
 当前执行入口：[950PR指定规格设备耗时对照](diagnostics/topk-950pr-device-compare-r1/README.md)。同输入、同设备计时比较当前保留r12组合与原生GE TopKV2；三个独立进程，各侧15次单调用采样。仅测量、不新增优化；尚无本轮NPU结果，不使用截图历史耗时作为固定目标。

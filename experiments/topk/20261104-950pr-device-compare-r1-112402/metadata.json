@@ -1,0 +1,27 @@
+{
+  "id": "20261104-950pr-device-compare-r1-112402",
+  "title": "950PR计时解析误将GE静态注册视为执行任务",
+  "status": "failed_profile_static_registration",
+  "received_commit": "1814504",
+  "run_date": "2026-11-04",
+  "files": [
+    {
+      "source": "AAA_Results/topk-950pr-device-compare-r1-20261104-112402-177291-repeat-1.json",
+      "archive": "raw/topk-950pr-device-compare-r1-20261104-112402-177291-repeat-1.json",
+      "bytes": 513210,
+      "sha256": "fff776b960eaae85d909cc016b35e4501d795fa01270dcd16b0400ff3196812a"
+    },
+    {
+      "source": "AAA_Results/topk-950pr-device-compare-r1-20261104-112402-177291-repeat-1.log",
+      "archive": "raw/topk-950pr-device-compare-r1-20261104-112402-177291-repeat-1.log",
+      "bytes": 2475,
+      "sha256": "61eb70405d6092d8089655cbf9cbc3980f9e343fb8deb19d3456981f119c50d7"
+    }
+  ],
+  "missing": [
+    "TopKV2 measurement window (not reached)",
+    "15 paired samples and repeats 2/3 (stopped)"
+  ],
+  "validation": "Both implementations passed pre-measurement correctness",
+  "interpretation": "No complete comparable timing result"
+}

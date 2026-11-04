@@ -1,5 +1,6 @@
 """CPU-only checks for the actual measurement/transport failure boundaries."""
 import ast
+import base64
 import hashlib
 import json
 from pathlib import Path
@@ -81,6 +82,44 @@ class SupportTest(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError, "AF_UNIX"):
             run.check_socket_path(original)
         self.assertLess(run.check_socket_path("/tmp/tk-12345678"), 100)
+
+    def test_uploaded_window_with_inactive_model_registration(self):
+        archive = HERE.parents[1] / "experiments/topk/20261104-950pr-device-compare-r1-112402/raw/topk-950pr-device-compare-r1-20261104-112402-177291-repeat-1.json"
+        report = json.loads(archive.read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for name, item in report["evidence"].items():
+                if name.startswith("profile-0-ours/"):
+                    target = root / name
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    raw = base64.b64decode(item["base64"])
+                    self.assertEqual(hashlib.sha256(raw).hexdigest(), item["sha256"])
+                    target.write_bytes(raw)
+            result = profile_support.read_profile(root/"profile-0-ours",4)
+            self.assertEqual(result["profile_kernel_count"],4)
+            self.assertAlmostEqual(result["latency_ms"]*1000,58.37)
+            self.assertEqual(set(result["coverage"]["inactive_registered_tasks"]),{"8"})
+            # The exact registration also exists in the earlier flush self-test.
+            self.assertEqual(result["added_aicpu_us"],0)
+
+    def test_static_registration_does_not_hide_a_missing_launch(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root/"ffts_profile.slice_0").write_bytes(record(7,"AIV",1000,6000))
+            (root/"hash_dic.slice_0").write_text("11:kernel_a\n12:registered_model\n")
+            (root/"aging.compact.task_track.slice_0").write_bytes(tracked(7,11))
+            v = list(struct.unpack("<8q",tracked(8,12)))
+            v[4] = 109
+            (root/"unaging.compact.task_track.slice_0").write_bytes(struct.pack("<8q",*v))
+            self.assertEqual(profile_support.read_profile(root,1)["profile_kernel_count"],1)
+            # If its launch was recorded, absent device activity must still fail.
+            with (root/"aging.compact.task_track.slice_0").open("ab") as handle:
+                handle.write(tracked(8,12))
+            with self.assertRaisesRegex(AssertionError,"uncovered tracked"):
+                profile_support.read_profile(root,1)
+            with (root/"ffts_profile.slice_0").open("ab") as handle:
+                handle.write(record(8,"AIV",7000,10000))
+            self.assertEqual(profile_support.read_profile(root,2)["profile_kernel_count"],2)
 
     def test_identity_and_syntax(self):
         identity = json.loads((HERE/"identity.json").read_text())

@@ -96,13 +96,33 @@ def decode(path):
                 )
         assert not pending, ("unmatched start", pending)
     covered = ffts | {t["seq"] for t in tasks if t["type"] in (4, 5)}
-    missing = {seq: name for seq, name in names.items() if seq not in covered}
+    # GE re-emits persistent model registration (unaging type 109) in every
+    # profiling session, even when that model is not executed. It is metadata,
+    # not evidence of an execution whose device duration went missing.
+    registered, launched = set(), set()
+    for f in path.rglob("*task_track.slice_*"):
+        if f.name.endswith((".done", ".complete")):
+            continue
+        data = f.read_bytes()
+        assert len(data) % 64 == 0, "Truncated task track"
+        for v in struct.iter_unpack("<8q", data):
+            if not v[5]:
+                continue
+            seq = (v[3] >> 32) & 65535
+            if f.name.startswith("unaging.") and v[4] == 109:
+                registered.add(seq)
+            else:
+                launched.add(seq)
+    observed = ffts | {t["seq"] for t in tasks}
+    inactive = registered - launched - observed
+    missing = {seq: name for seq, name in names.items() if seq not in covered and seq not in inactive}
     assert not missing, ("uncovered tracked kernels", missing)
     additions = [t for t in tasks if t["name"] and not t["ffts_counted"]]
     assert all(t["type"] in (4, 5) for t in additions), additions
     return dict(
         tasks=tasks,
         ffts_sequences=sorted(ffts),
+        inactive_registered_tasks={str(seq): names[seq] for seq in sorted(inactive)},
         added_aicpu=additions,
         added_us=sum(t["duration_us"] for t in additions),
     )
