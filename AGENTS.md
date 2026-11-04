@@ -1,3 +1,5 @@
+最新算法方向：[分块精确排序＋截断归并](deliveries/topk-new-algorithm-truncated-merge-20261104.md)。用户要求独立新算法；现明确P4×4096局部Top2048，再两层截断归并。已完成证明和30项CPU原型验证，尚未实现NPU内核或取得新设备耗时，不继续旧radix开关微调。
+
 最新审查：[整体算法与执行结构](deliveries/topk-overall-algorithm-execution-audit-20261104.md)。确认普通路径的逐元素原子压缩、固定候选域重扫、冗余前缀轮及提前退出控制骨架；建议重设计向量阈值选择/统一收集，并对照批排序归并。尚未实现新内核或启动NPU实验。
 
 新会话优先阅读：[2026-11-04会话交接](deliveries/topk-session-handoff-20261104.md)。已完成950PR同规格对照，0.1846x TopKV2；无运行阻塞，整体算法审计待续。本轮无需重跑，暂停新增优化状态保持。

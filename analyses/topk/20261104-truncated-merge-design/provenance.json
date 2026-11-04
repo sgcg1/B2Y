@@ -1,0 +1,8 @@
+{
+  "purpose": "Independent new algorithm design and CPU correctness prototype, not measured NPU code",
+  "files": {
+    ".gitattributes": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9",
+    "reference.py": "f6ffd582d25a0564959ec37b9105720f6665a55c53a889bf84c04e496212d991",
+    "validation.json": "d9bba40d953fc8516c88c3cdbb95a8a02800b75c0969ece6597161502d15b4af"
+  }
+}

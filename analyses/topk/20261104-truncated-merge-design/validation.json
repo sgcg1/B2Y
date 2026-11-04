@@ -1,0 +1,252 @@
+{
+  "implementation": "CPU reference only; no timing claims",
+  "N": 16384,
+  "K": 2048,
+  "parts": 4,
+  "cases": [
+    {
+      "name": "random",
+      "window": [
+        0,
+        16384
+      ],
+      "passed": true
+    },
+    {
+      "name": "all-equal",
+      "window": [
+        0,
+        16384
+      ],
+      "passed": true
+    },
+    {
+      "name": "four-level",
+      "window": [
+        0,
+        16384
+      ],
+      "passed": true
+    },
+    {
+      "name": "increasing",
+      "window": [
+        0,
+        16384
+      ],
+      "passed": true
+    },
+    {
+      "name": "decreasing",
+      "window": [
+        0,
+        16384
+      ],
+      "passed": true
+    },
+    {
+      "name": "all-winners-in-one-part",
+      "window": [
+        0,
+        16384
+      ],
+      "passed": true
+    },
+    {
+      "name": "nan-inf-zero",
+      "window": [
+        0,
+        16384
+      ],
+      "passed": true
+    },
+    {
+      "name": "window-0",
+      "window": [
+        4093,
+        4093
+      ],
+      "passed": true
+    },
+    {
+      "name": "window-1",
+      "window": [
+        4093,
+        4094
+      ],
+      "passed": true
+    },
+    {
+      "name": "window-2047",
+      "window": [
+        4093,
+        6140
+      ],
+      "passed": true
+    },
+    {
+      "name": "window-2048",
+      "window": [
+        4093,
+        6141
+      ],
+      "passed": true
+    },
+    {
+      "name": "window-2049",
+      "window": [
+        4093,
+        6142
+      ],
+      "passed": true
+    },
+    {
+      "name": "window-4096",
+      "window": [
+        4093,
+        8189
+      ],
+      "passed": true
+    },
+    {
+      "name": "window-8192",
+      "window": [
+        17,
+        8209
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed-0",
+      "window": [
+        3299,
+        12658
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed-1",
+      "window": [
+        1152,
+        6325
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed-2",
+      "window": [
+        11145,
+        14906
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed-3",
+      "window": [
+        5353,
+        14744
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed-4",
+      "window": [
+        913,
+        11097
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed-5",
+      "window": [
+        8005,
+        11554
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed-6",
+      "window": [
+        1331,
+        10329
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed-7",
+      "window": [
+        1200,
+        9667
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed-8",
+      "window": [
+        1854,
+        6063
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed-9",
+      "window": [
+        945,
+        1095
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed-10",
+      "window": [
+        4436,
+        16084
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed-11",
+      "window": [
+        13953,
+        14790
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed-12",
+      "window": [
+        12437,
+        16115
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed-13",
+      "window": [
+        5584,
+        9448
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed-14",
+      "window": [
+        6148,
+        12022
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed-15",
+      "window": [
+        13918,
+        14224
+      ],
+      "passed": true
+    }
+  ],
+  "case_count": 30,
+  "unsafe_local_K_over_P_counterexample": "Only 512 of 2048 true winners retained",
+  "logical_full_window_GM_bytes": 204800,
+  "batch_merge": "Two sorted head blocks, emit prefix, advance only actual consumed counts; exercised throughout all merge trees"
+}
