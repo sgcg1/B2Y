@@ -45,8 +45,6 @@ def hist_atomic_scatter(N: int):
                         if i < N:
                             digit = T.alloc_var(T.int32)
                             digit = _coarse_byte(x[i])
-                            T.assume(digit >= 0)
-                            T.assume(digit < 256)
                             T.atomic_add(hist[T.max(0, T.min(digit, 255))], 1)
             with T.SimtVF(threads=128):
                 for bucket in T.Parallel(256):
