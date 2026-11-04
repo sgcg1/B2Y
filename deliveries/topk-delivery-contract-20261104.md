@@ -1,3 +1,5 @@
+最新目标覆盖（2026-11-04）：同一950PR环境下稳定优于原生ops-math，截图耗时不作为固定门槛。以下旧“43.7μs参考目标”仅保留历史上下文；详见[最新测量链路](topk-ops-math-measurement-trace-20261104.md)。正式项目认证与开发对照分开。
+
 # TopKSelect交付目标与验收规格校正
 
 用户于2026-11-04指定最终跟踪及PR目标为https://github.com/yyttt6/TileOPs ，PR基分支ascend950；规范入口https://github.com/yyttt6/TileOPs/issues/1 。个人fork sgcg1/TileOPs继续作为开发提交副本，B2Y用于材料/结果传输，二者不是最终验收目标。已在本地添加upstream指向yyttt6/TileOPs并fetch，记录目标分支f0072a85a3ce1a4bcc520ba12cd09a0337871131。

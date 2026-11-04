@@ -1,3 +1,5 @@
+最新目标：[950PR同环境稳定优于ops-math](deliveries/topk-ops-math-measurement-trace-20261104.md)，不以截图43.7μs为固定阈值。已核对launcher/PR快照/原生计时链路；实际TopKSelect ops-math适配入口尚待确认，不能用旧GE事件代替。
+
 正式测量状态：[公共协议就绪检查](deliveries/topk-public-measurement-readiness-20261104.md)。用户仅能用旧yjl 950PR环境，目标canonical环境不匹配且TopKSelect尚未接入目标分支；正式耗时未知，不伪造或降级验收，无新NPU运行。
 
 交付目标校正：[TopKSelect单case规格与PR规范](deliveries/topk-delivery-contract-20261104.md)。最终PR目标yyttt6/TileOPs:ascend950，当前范围ds-v32-topk-decode-b1；截图ops-math=0.0437ms，历史开发倍率不能作正式验收。算法审计暂停状态保持。

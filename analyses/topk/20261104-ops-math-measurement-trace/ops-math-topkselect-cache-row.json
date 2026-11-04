@@ -1,0 +1,85 @@
+{
+  "library": "ops-math",
+  "op": "TopKSelectFwdOp",
+  "case": "ds-v32-topk-decode-b1",
+  "latency_us": 43.69473333333333,
+  "samples": 15,
+  "measurement_id": "5932d6a499aab10ba6df28994b763394342c6fd6b40020706193a0689e4ff41e",
+  "protocol": "ascend950-isolated-ffts-v2",
+  "workload": {
+    "op": "TopKSelectFwdOp",
+    "case_id": "ds-v32-topk-decode-b1",
+    "family": "attention",
+    "tensors": {
+      "index_score": [
+        [
+          1,
+          1,
+          16384,
+          1
+        ],
+        "float32"
+      ],
+      "starts": [
+        [
+          1,
+          1
+        ],
+        "int32"
+      ],
+      "ends": [
+        [
+          1,
+          1
+        ],
+        "int32"
+      ],
+      "indexes": [
+        [
+          1,
+          1,
+          1,
+          2048
+        ],
+        "int32"
+      ]
+    },
+    "params": {
+      "index_score": [
+        [
+          1,
+          1,
+          16384,
+          1
+        ],
+        "float32"
+      ],
+      "starts": [
+        [
+          1,
+          1
+        ],
+        "int32"
+      ],
+      "ends": [
+        [
+          1,
+          1
+        ],
+        "int32"
+      ],
+      "indexes": [
+        [
+          1,
+          1,
+          1,
+          2048
+        ],
+        "int32"
+      ],
+      "topk": 2048
+    }
+  },
+  "tileops_latency_us": null,
+  "ratio": null
+}
