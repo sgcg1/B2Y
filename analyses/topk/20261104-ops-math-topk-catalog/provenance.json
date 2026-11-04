@@ -1,0 +1,47 @@
+{
+  "repository": "hicann/ops-math public mirror",
+  "commit": "e287c428bf5bcdb8279b0e4764f4b7914ec66003",
+  "enumerated_path": "math",
+  "checked_at": "2026-11-04",
+  "direct_source_check": true,
+  "new_device_runs": 0,
+  "installed_current_aclnn_route_not_executed": true,
+  "files": [
+    {
+      "file": "additional-source-index.json",
+      "sha256": "a9cc735fa7cb7c25fd552a5703bc9c5101f493906a9482362d91e669b0fdc224"
+    },
+    {
+      "file": "math-entries.json",
+      "sha256": "4d257e68dd8e9e9325be35c4374617f12730743bb117e5d0262cedb220da8b88"
+    },
+    {
+      "file": "radix_top_k-README.md",
+      "sha256": "94c6ab0a9d9231eeeee208e148ec8f53a6afc1f68f1db79ae95adeca2ccc63d9"
+    },
+    {
+      "file": "topk-op_api-topk.cpp",
+      "sha256": "b96c9bec211fb01772dfc590982fb700dd716bf14394804ca0de96ee60c9c11d"
+    },
+    {
+      "file": "topk-op_graph-topk_proto.h",
+      "sha256": "210d19503f9f7e373138d7147bf6d1ea774357a4687e3564a29a52cca19f7c59"
+    },
+    {
+      "file": "topk-README.md",
+      "sha256": "830e5b7b2ea97d69da0da54b937e912f1f1cac2febea4ae9f62085ae80b3d0e7"
+    },
+    {
+      "file": "top_k_v2-README.md",
+      "sha256": "d2eceb365f4bd9fdf361c12f7ce4133d153201439edbbce225ed2a04f8d29f07"
+    },
+    {
+      "file": "top_k_v2_d-op_graph-top_k_v2_d_proto.h",
+      "sha256": "cbc4148c22fdb7dd2bf5506e58581e74e4427e50528d035c191f948c8335a6cb"
+    },
+    {
+      "file": "top_k_v2_d-README.md",
+      "sha256": "2f957c62b82390fad3924b13d21babff5c141e7f09e5e1b0637fcc351b9ee2f0"
+    }
+  ]
+}

@@ -1,3 +1,5 @@
+直接源码核对：[ops-math Top-K同类算子](deliveries/topk-ops-math-alternatives-20261104.md)。存在TopK/TopKV2D等，不能凭排除法认定唯一；950PR普通FP32 AiCore调度指向TopKV2，可据此建立新原生基线，网页历史adapter仍未还原。
+
 调用归属核对：[ops-math与GE TopKV2关系](deliveries/topk-ops-math-call-confirmation-20261104.md)。ops-math是库，TopKV2是其中算子；旧GE日志确认加载ops_math实现，但网页历史adapter仍未公开核实。后续950PR同环境对照需固定官方原生入口与完整适配边界。
 
 最新目标：[950PR同环境稳定优于ops-math](deliveries/topk-ops-math-measurement-trace-20261104.md)，不以截图43.7μs为固定阈值。已核对launcher/PR快照/原生计时链路；实际TopKSelect ops-math适配入口尚待确认，不能用旧GE事件代替。
