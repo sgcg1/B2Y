@@ -1,3 +1,18 @@
+root@1c26d9767e3f:/home/y00937463/B2Y/diagnostics/topk-vhist-capability-r1# bash run.sh 
+Traceback (most recent call last):
+  File "/home/y00937463/B2Y/diagnostics/topk-vhist-capability-r1/probe.py", line 200, in <module>
+    main()
+  File "/home/y00937463/B2Y/diagnostics/topk-vhist-capability-r1/probe.py", line 153, in main
+    root.mkdir(parents=True, exist_ok=False)
+  File "/usr/local/python3.12.14/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/home/y00937463/runs/vhist-probe-r1-20261104-154940'
+
+
+
+
+
+
 https://yyttt6.github.io/TileOPs.github.io/benchmarks/attention/?h=topkse#topkselectfwd
 
 
