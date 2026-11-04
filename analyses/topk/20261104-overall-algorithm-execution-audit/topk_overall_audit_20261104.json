@@ -1,0 +1,202 @@
+{
+  "kernel_commit": "5eb130eff798e06341d67fd6899f67a9f66ffb20",
+  "source_path": "src/tileops/_kernels/attention/topk_select_decode_pipeline_ascend.py",
+  "source_sha256": "e41991586ca33997d861dc9fe2d2e3acd0856bdf12a3c0845c1f3c54d2ebd64a",
+  "real_meta": [
+    188,
+    1744,
+    894,
+    16384
+  ],
+  "real_case_source_semantic_counts": {
+    "hist_atomic_updates": 16384,
+    "coarse_computations_hist_and_compact": 32768,
+    "compact_returning_atomics": 2638,
+    "remaining_quota": 304,
+    "boundary_count": 894
+  },
+  "generated_code": {
+    "hist": {
+      "sha256": "b4ef0ab8a5c4217e20188940721658c9ebb1fbf5bf3b8a609ca95c38ee5246d1",
+      "simt_vf_definitions": 3,
+      "static_vf_call_sites": 3,
+      "markers": [
+        [
+          36,
+          "asc_atomic_add((&(((__ubuf__ int32_t*)buf_dyn_shmem)[(max(0, min(digit, 255)) + 4096)])), 1);"
+        ]
+      ]
+    },
+    "prepare": {
+      "sha256": "2dc0804fbfe8815056d8bc23227f2db139a58b042a3ca3054a620d72c65afed8",
+      "simt_vf_definitions": 6,
+      "static_vf_call_sites": 6,
+      "markers": []
+    },
+    "compact": {
+      "sha256": "98445ae2aabe03273b7a77c136b85906310a663e108c002f0c4adff4026b2ce4",
+      "simt_vf_definitions": 2,
+      "static_vf_call_sites": 2,
+      "markers": [
+        [
+          38,
+          "int32_t pos = (asc_atomic_add((&(((__ubuf__ int32_t*)buf_dyn_shmem)[4096])), 1) + offsets[(((int32_t)block_idx) * 2)]);"
+        ],
+        [
+          44,
+          "int32_t slot = (asc_atomic_add((&(((__ubuf__ int32_t*)buf_dyn_shmem)[4097])), 1) + offsets[((((int32_t)block_idx) * 2) + 1)]);"
+        ]
+      ]
+    },
+    "finish": {
+      "sha256": "4d20923a1c521937ce6d850f8f54432338323e118bba392ca33d906315eaec03",
+      "simt_vf_definitions": 16,
+      "static_vf_call_sites": 16,
+      "markers": [
+        [
+          155,
+          "asc_atomic_add((&(((__ubuf__ int32_t*)buf_dyn_shmem)[(max(0, min(digit, 255)) + 36864)])), 1);"
+        ],
+        [
+          274,
+          "int32_t pos = (asc_atomic_add((&(((__ubuf__ int32_t*)buf_dyn_shmem)[(max(0, min(digit, 255)) + 36864)])), 1) + ((__ubuf__ int32_t*)buf_dyn_shmem)[37521]);"
+        ],
+        [
+          384,
+          "for (int32_t round = 0; round < __loop_bound_0; ++round) {"
+        ],
+        [
+          385,
+          "asc_sync_wait(PIPE_V, PIPE_S, static_cast<event_t>(0));"
+        ],
+        [
+          386,
+          "bool __cond_2 = (0 < ((__ubuf__ int32_t*)buf_dyn_shmem)[37520]);"
+        ],
+        [
+          430,
+          "asc_sync_wait(PIPE_V, PIPE_S, static_cast<event_t>(0));"
+        ]
+      ]
+    }
+  },
+  "coarse_prefix_proof": {
+    "model": "CPU IEEE RNE, same coarse helper as prior oracle; not a new device experiment",
+    "lower_inclusive": 0.999755859375,
+    "upper_exclusive": 1.24951171875,
+    "fp32_encodings_checked": 2097152,
+    "full_key_high_byte": 191,
+    "finding": "first full-FP32-byte round cannot distinguish bucket-188 members"
+  },
+  "synthetic_finish_work": {
+    "label": "synthetic-same-coarse-counts-not-real-input",
+    "input_sha256": "d137c863aebe3a8ee92ec7ee1806c5a34038dff41341d11a1d08117c4a9757c0",
+    "window": [
+      0,
+      16384
+    ],
+    "coarse_boundary": 894,
+    "accepted_initial": 1744,
+    "pending_quota": 304,
+    "logical_counts": {
+      "hist_slots": 2688,
+      "emit_slots": 2688,
+      "hist_atomics": 1820,
+      "output_atomics": 304,
+      "score_calls": 894,
+      "coarse_calls": 0,
+      "vf_calls": 27
+    },
+    "rounds": [
+      {
+        "round": 0,
+        "quota_before": 304,
+        "quota_after": 304,
+        "accepted": 0,
+        "hist_slots": 896,
+        "emit_slots": 896,
+        "hist_atomics": 894,
+        "peak_hist_bin": 894,
+        "vf_calls": 8
+      },
+      {
+        "round": 1,
+        "quota_before": 304,
+        "quota_after": 18,
+        "accepted": 286,
+        "hist_slots": 896,
+        "emit_slots": 896,
+        "hist_atomics": 894,
+        "peak_hist_bin": 32,
+        "vf_calls": 8
+      },
+      {
+        "round": 2,
+        "quota_before": 18,
+        "quota_after": 0,
+        "accepted": 18,
+        "hist_slots": 896,
+        "emit_slots": 896,
+        "hist_atomics": 32,
+        "peak_hist_bin": 1,
+        "vf_calls": 8
+      },
+      {
+        "round": 3,
+        "quota_before": 0,
+        "quota_after": 0,
+        "accepted": 18,
+        "hist_slots": 0,
+        "emit_slots": 0,
+        "hist_atomics": 0,
+        "peak_hist_bin": 0,
+        "vf_calls": 0
+      },
+      {
+        "round": 4,
+        "quota_before": 0,
+        "quota_after": 0,
+        "accepted": 18,
+        "hist_slots": 0,
+        "emit_slots": 0,
+        "hist_atomics": 0,
+        "peak_hist_bin": 0,
+        "vf_calls": 0
+      },
+      {
+        "round": 5,
+        "quota_before": 0,
+        "quota_after": 0,
+        "accepted": 18,
+        "hist_slots": 0,
+        "emit_slots": 0,
+        "hist_atomics": 0,
+        "peak_hist_bin": 0,
+        "vf_calls": 0
+      },
+      {
+        "round": 6,
+        "quota_before": 0,
+        "quota_after": 0,
+        "accepted": 18,
+        "hist_slots": 0,
+        "emit_slots": 0,
+        "hist_atomics": 0,
+        "peak_hist_bin": 0,
+        "vf_calls": 0
+      },
+      {
+        "round": 7,
+        "quota_before": 0,
+        "quota_after": 0,
+        "accepted": 18,
+        "hist_slots": 0,
+        "emit_slots": 0,
+        "hist_atomics": 0,
+        "peak_hist_bin": 0,
+        "vf_calls": 0
+      }
+    ],
+    "exact_set_passed": true
+  }
+}

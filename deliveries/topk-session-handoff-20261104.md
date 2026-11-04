@@ -2,6 +2,8 @@
 
 更新日期：2026-11-04（Asia/Shanghai）。本文件是新会话的优先入口。历史20261102交接及“正式验收环境阻塞”文档保留作历史记录；目标和当前状态以本文及最新结果为准。
 
+> 交接后新增：用户已要求继续整体算法审查，最新结论见[整体算法与执行结构](topk-overall-algorithm-execution-audit-20261104.md)。普通路径新增源码/生成CPP和CPU验证；仍未实现新优化或新增NPU结果。以下历史状态保留。
+
 ## 我们在做什么任务
 
 优化TileOPs的TopKSelectFwd。用户最新目标是：在**同一现有950PR环境、指定规格下，当前实现稳定优于原生ops-math TopKV2**。不再把截图43.7μs作为固定门槛，也不要求先取得server2环境才能测量。最终应对接`yyttt6/TileOPs`的`ascend950`分支，遵守其[issue #1](https://github.com/yyttt6/TileOPs/issues/1)及仓库规范。准备PR前应重新读取实际规范，不能凭本文推断全部验收细节。
