@@ -9,6 +9,7 @@ from pathlib import Path
 import statistics
 import subprocess
 import sys
+import tempfile
 import traceback
 
 COMMIT = "5eb130eff798e06341d67fd6899f67a9f66ffb20"
@@ -50,6 +51,29 @@ def check_device(root, label):
     return {"sha256": sha(text.encode()), "device0_pids": seen, "allowed_pids": sorted(own)}
 
 
+def check_socket_path(directory):
+    # CPython creates pymp-XXXXXXXX/listener-XXXXXXXX under its temp directory.
+    probe = str(Path(directory) / "pymp-12345678" / "listener-12345678")
+    assert len(os.fsencode(probe)) <= 100, "Private TMPDIR would exceed AF_UNIX socket path budget"
+    return len(os.fsencode(probe))
+
+
+def configure_temp(report):
+    short = tempfile.mkdtemp(prefix="tk-", dir="/tmp")
+    budget = check_socket_path(short)
+    for name in ("TMPDIR", "TMP", "TEMP"):
+        os.environ[name] = short
+    tempfile.tempdir = short
+    report["private_tmp"] = {"path": short, "socket_probe_path_bytes": budget,
+                             "socket_probe_budget_bytes": 100}
+    # Exercise the same standard-library Manager primitive GE failed to create.
+    code = "import multiprocessing,tempfile,json; m=multiprocessing.Manager(); print(json.dumps({'tempdir':tempfile.gettempdir(),'manager':'ok'})); m.shutdown()"
+    result = subprocess.run([sys.executable, "-c", code], text=True,
+                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=30)
+    report["private_tmp"]["manager_probe"] = {"returncode": result.returncode, "log": result.stdout}
+    assert result.returncode == 0, "Private temp multiprocessing.Manager preflight failed"
+
+
 def execute(args, report, root):
     report["occupancy"] = [check_device(root, "preflight")]
     identity = json.loads((TOOL / "identity.json").read_text())
@@ -65,8 +89,9 @@ def execute(args, report, root):
         target = root / (suffix + ".py")
         target.write_bytes(raw)
         sources[suffix] = target
+    configure_temp(report)
     # Cache changes are confined to this run; never mutate shared toolchain settings.
-    for name, sub in [("TILELANG_CACHE_DIR", "tilelang-cache"), ("TMPDIR", "tmp"),
+    for name, sub in [("TILELANG_CACHE_DIR", "tilelang-cache"),
                       ("ASCEND_CACHE_PATH", "ascend-cache"), ("ASCEND_WORK_PATH", "work")]:
         target = root / sub
         target.mkdir()
@@ -144,7 +169,9 @@ def execute(args, report, root):
     for name, command in [("ge-compiler", cmd), ("ge-build", [str(model/"build"), "1", "16384", "2048", "decode"])]:
         result = subprocess.run(command, cwd=model, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         (root / (name + ".log")).write_text(result.stdout)
-        assert result.returncode == 0, name + " failed; inspect log"
+        if result.returncode != 0:
+            print(result.stdout, file=sys.stderr, flush=True)
+            raise RuntimeError(name + " failed; inspect " + str(root / (name + ".log")))
     values = torch.empty((1,2048), dtype=torch.float32, device="npu")
     ge = GeTopK(model/"decode.om", x.view(1,16384), values, outputs["topkv2"].view(1,2048))
     report["ge"] = {"description": ge.description, "om_sha256": sha((model/"decode.om").read_bytes()),

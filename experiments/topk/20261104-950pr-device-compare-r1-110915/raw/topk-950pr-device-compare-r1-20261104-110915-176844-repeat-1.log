@@ -1,0 +1,20 @@
+COMPILE hist
+2026-11-04 11:09:34  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-04 11:09:36  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE prepare
+2026-11-04 11:09:36  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-04 11:09:39  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE compact
+2026-11-04 11:09:39  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-04 11:09:42  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+COMPILE finish
+Traceback (most recent call last):
+  File "/home/y00937463/B2Y/diagnostics/topk-950pr-device-compare-r1/run.py", line 241, in main
+    execute(args, report, root)
+  File "/home/y00937463/B2Y/diagnostics/topk-950pr-device-compare-r1/run.py", line 147, in execute
+    assert result.returncode == 0, name + " failed; inspect log"
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ge-build failed; inspect log
+
+2026-11-04 11:09:42  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-04 11:09:55  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`

@@ -5,7 +5,7 @@
     "src/tileops/_kernels/attention/topk_select_decode_pipeline_ascend.py": "e41991586ca33997d861dc9fe2d2e3acd0856bdf12a3c0845c1f3c54d2ebd64a"
   },
   "tools": {
-    "run.py": "657933826feae57cc9e58d9a7b01c2e95ff53175c319ff6de156a8e914cd940f",
+    "run.py": "6453592e4b324c5a0da4e619fbdae19f51deda54a1f746b9577cc95b4813439d",
     "run.sh": "2f50d68fde0694e9d110b6bd74dc6fd91d6be831ea1d599b8a59c4196ccb3470",
     "pack.py": "74225f4976af7e584e0e9c2c8f8b807837b4b2a601aec3e1f685597ef2e8c113",
     "ge_model.py": "a9c05855a9fb869a07de644c8f5c04658611ba600476d12b8a4a9f15b760bdec",

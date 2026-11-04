@@ -1,3 +1,5 @@
+950PR对照首轮修复：[GE临时路径过长](experiments/topk/20261104-950pr-device-compare-r1-110915/analysis.md)。已改短TMPDIR并增加Manager预检，尚无设备耗时；更新B2Y后使用[原测量入口](diagnostics/topk-950pr-device-compare-r1/README.md)重新运行，无需改内核或系统环境。
+
 当前执行入口：[950PR指定规格设备耗时对照](diagnostics/topk-950pr-device-compare-r1/README.md)。同输入、同设备计时比较当前保留r12组合与原生GE TopKV2；三个独立进程，各侧15次单调用采样。仅测量、不新增优化；尚无本轮NPU结果，不使用截图历史耗时作为固定目标。
 
 直接源码核对：[ops-math Top-K同类算子](deliveries/topk-ops-math-alternatives-20261104.md)。存在TopK/TopKV2D等，不能凭排除法认定唯一；950PR普通FP32 AiCore调度指向TopKV2，可据此建立新原生基线，网页历史adapter仍未还原。

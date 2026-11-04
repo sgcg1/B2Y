@@ -228,6 +228,12 @@
       "title": "窗口预计算非全窗快1.4%–9.2%，全窗权衡；主线返回可缓存路径",
       "status": "window_precompute_narrow_gain_full_window_tradeoff_cached_goal_unchanged",
       "metadata": "20261104-formal-decode-r14-091517/metadata.json"
+    },
+    {
+      "id": "20261104-950pr-device-compare-r1-110915",
+      "title": "950PR同规格对照：GE初始化因AF_UNIX路径过长失败",
+      "status": "failed_ge_init_tmp_path",
+      "metadata": "20261104-950pr-device-compare-r1-110915/metadata.json"
     }
   ]
 }

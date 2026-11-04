@@ -76,6 +76,12 @@ class SupportTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory, patch("run.subprocess.check_output",return_value=table), patch("pathlib.Path.read_text",return_value="NSpid: 123\n"):
             self.assertEqual(run.check_device(Path(directory),"test")["device0_pids"],[])
 
+    def test_original_temp_path_rejected_and_short_path_fits(self):
+        original = "/home/y00937463/topk-950pr-device-compare-r1-20261104-110915-176844/repeat-1/tmp"
+        with self.assertRaisesRegex(AssertionError, "AF_UNIX"):
+            run.check_socket_path(original)
+        self.assertLess(run.check_socket_path("/tmp/tk-12345678"), 100)
+
     def test_identity_and_syntax(self):
         identity = json.loads((HERE/"identity.json").read_text())
         for name, expected in identity["tools"].items():

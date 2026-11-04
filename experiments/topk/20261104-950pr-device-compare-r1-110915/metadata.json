@@ -1,0 +1,31 @@
+{
+  "id": "20261104-950pr-device-compare-r1-110915",
+  "title": "950PR同规格对照：GE初始化因AF_UNIX路径过长失败",
+  "status": "failed_ge_init_tmp_path",
+  "received_commit": "55f8045",
+  "run_id": "topk-950pr-device-compare-r1-20261104-110915-176844",
+  "run_date": "2026-11-04",
+  "files": [
+    {
+      "source": "AAA_Results/topk-950pr-device-compare-r1-20261104-110915-176844-repeat-1.json",
+      "archive": "raw/topk-950pr-device-compare-r1-20261104-110915-176844-repeat-1.json",
+      "bytes": 195912,
+      "sha256": "f13df77c9d3d27fa0233589719a59af243121794276251aca0a609bd6ced25f1"
+    },
+    {
+      "source": "AAA_Results/topk-950pr-device-compare-r1-20261104-110915-176844-repeat-1.log",
+      "archive": "raw/topk-950pr-device-compare-r1-20261104-110915-176844-repeat-1.log",
+      "bytes": 1491,
+      "sha256": "24f54f27ae0627db0fc3b3129a7e9e02e776a24986f4411cabd00af3081f9f09"
+    }
+  ],
+  "missing": [
+    "repeat-2 and repeat-3 (stopped by launcher)",
+    "device latency samples (not reached)"
+  ],
+  "decoded_evidence": {
+    "path": "ge-build.decoded.log",
+    "source": "repeat-1 JSON evidence.ge-build.log.base64",
+    "sha256": "b159a973363ad764d585c70a8b1de41811348f8821a41ef1940843e888fa11bb"
+  }
+}

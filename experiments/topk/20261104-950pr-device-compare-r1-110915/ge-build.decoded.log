@@ -1,0 +1,34 @@
+Process SyncManager-1:
+Traceback (most recent call last):
+  File "/usr/local/python3.12.14/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/python3.12.14/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/python3.12.14/lib/python3.12/multiprocessing/managers.py", line 591, in _run_server
+    server = cls._Server(registry, address, authkey, serializer)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/multiprocessing/managers.py", line 156, in __init__
+    self.listener = Listener(address=address, backlog=128)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/multiprocessing/connection.py", line 464, in __init__
+    self._listener = SocketListener(address, family, backlog)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.14/lib/python3.12/multiprocessing/connection.py", line 608, in __init__
+    self._socket.bind(address)
+OSError: AF_UNIX path too long
+initialize_status=4294967295
+initialize_error=[PID: 177207] 2026-11-04-11:09:58.663.112 Resource_Error(EC0009): Computing resources are insufficient. Reason: Python built-in object multiprocessing.Manager instantiation failed.
+        Possible Cause: 1. Memory resources are insufficient.	2. The number of file handles exceeds the limit.
+        Solution: 1. Check whether the memory usage reaches the upper limit.	2. Check whether the file handle usage reaches the system limit.
+TraceBack (most recent call last):
+        AOE failed to call InitCannKB.[FUNC:Initialize][FILE:python_adapter_manager.cc][LINE:50]
+        Failed to initialize TeConfigInfo.[FUNC:TeInnerErrMessageReport][FILE:common_utils.cc][LINE:374]
+        [GraphOpt][InitializeInner][InitTbeFunc] Failed to init tbe.[FUNC:InitializeTeFusion][FILE:tbe_op_store_adapter.cc][LINE:1983]
+        [GraphOpt][InitializeInner][InitTeFusion]: Failed to initialize TeFusion.[FUNC:InitializeInner][FILE:tbe_op_store_adapter.cc][LINE:1950]
+        [SubGraphOpt][PreCompileOp][InitAdapter] InitializeAdapter adapter [tbe_op_adapter] failed! Ret [4294967295][FUNC:InitializeAdapter][FILE:op_store_adapter_manager.cc][LINE:80]
+        [SubGraphOpt][PreCompileOp][Init] Initialize op store adapter failed, OpsStoreName[tbe-custom].[FUNC:Initialize][FILE:op_store_adapter_manager.cc][LINE:121]
+        [FusionMngr][Init] Op store adapter manager init failed.[FUNC:Initialize][FILE:fusion_manager.cc][LINE:119]
+        PluginManager InvokeAll failed.[FUNC:Initialize][FILE:ops_kernel_manager.cc][LINE:98]
+        OpsManager initialize failed.[FUNC:InnerInitialize][FILE:gelib.cc][LINE:225]
+        GELib::InnerInitialize failed.[FUNC:Initialize][FILE:gelib.cc][LINE:163]
+

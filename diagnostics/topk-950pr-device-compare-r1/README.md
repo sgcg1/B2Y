@@ -2,6 +2,10 @@
 
 本轮只测量，不增加优化。以现有yjl容器、950PR、卡0为准；同环境实测TopKV2为比较目标，不使用截图43.7微秒作固定门槛，也不称为server2正式验收。
 
+## 首次运行修复（2026-11-04）
+
+首轮已确认失败在GE初始化内部的`multiprocessing.Manager`，底层错误是`AF_UNIX path too long`，没有设备耗时。已改用独立短目录`/tmp/tk-随机值`作为本轮TMPDIR/TMP/TEMP，并在导入NPU运行时前实际执行Manager预检。无须修改环境或内核。更新B2Y后执行下方原入口即可；输出新运行目录，旧结果保留。详见[失败归档](../../experiments/topk/20261104-950pr-device-compare-r1-110915/analysis.md)。
+
 ## 在现有容器中执行
 
 先将B2Y更新到包含本目录的版本。保留原有CANN、Python和TileLang环境，不重建容器。TileOPs本地Git对象必须包含已运行过的`5eb130eff798e06341d67fd6899f67a9f66ffb20`；工具从Git读取该版本两个模块到本轮私有目录，不切换分支或覆盖工作区。
