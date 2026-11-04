@@ -1,0 +1,21 @@
+{
+  "report": "experiments/topk/20261104-formal-decode-r14-091517/restored/topk-formal-decode-r14-20261104-091517-158683-repeat-1.txt",
+  "report_sha256": "7ba562a21081a84a78be787604ee2be9e42a397e53e522ca806a0e8916c4f447",
+  "observed_path": "CANN9.3.0/opp/built-in/op_impl/ai_core/tbe/impl/ops_math/dynamic/../ascendc/top_k_v2/top_k_v2_apt.cpp",
+  "our_ge_om": {
+    "sha256": "de6a1e0133ed92517b3082a4fdf19bda07bf23c5774cea19c1162ec910d38655",
+    "bytes": 22873,
+    "largest": true,
+    "sorted": false,
+    "indices_dtype": "INT32",
+    "sort_policy": 0,
+    "precision": "must_keep_origin_dtype",
+    "shape": [
+      1,
+      16384
+    ],
+    "K": 2048
+  },
+  "historical_website_native_adapter": "not exposed in inspected public snapshot or launcher/timing sources",
+  "user_confirmed_available_sources": "public repositories only"
+}
