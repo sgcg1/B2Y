@@ -1,3 +1,5 @@
+当前独立验证入口：[M消费数统计能力探针](diagnostics/topk-merge-consumption-probe-r1/README.md)。按用户要求独立测试二分消费数、手写树归约及T.cumsum；不采用对方探针结论，96组CPU自检通过，设备结果待回传；不等于完整M归并/TopK验证。
+
 方案对比审查：[A与截断归并](deliveries/topk-solution-a-vs-truncated-merge-review-20261104.md)。A缺跨核数据流、完整分数驻留与最坏精化算法，当前探针为O(256N)逐桶归约，无atomic不等于高效hist；B算法闭合但无设备性能胜出证据。未改A或运行探针。
 
 最新算法方向：[分块精确排序＋截断归并](deliveries/topk-new-algorithm-truncated-merge-20261104.md)。用户要求独立新算法；现明确P4×4096局部Top2048，再两层截断归并。已完成证明和30项CPU原型验证，尚未实现NPU内核或取得新设备耗时，不继续旧radix开关微调。
