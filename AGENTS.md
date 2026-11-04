@@ -1,3 +1,5 @@
+交付目标校正：[TopKSelect单case规格与PR规范](deliveries/topk-delivery-contract-20261104.md)。最终PR目标yyttt6/TileOPs:ascend950，当前范围ds-v32-topk-decode-b1；截图ops-math=0.0437ms，历史开发倍率不能作正式验收。算法审计暂停状态保持。
+
 当前状态：按用户要求暂停新增优化/设备试跑，转入[TopK溢出算法审计](deliveries/topk-overflow-algorithm-audit-20261104.md)。确认缓存阈值断崖、单核全行多轮扫描及热点计数等结构问题；先审查完整算法方案，历史结果全部保留。
 
 最新复核：[r14窗口预计算结果](experiments/topk/20261104-formal-decode-r14-091517/analysis.md)：非全窗快1.36%–9.20%，全窗有回退，随机仍约0.36x；保留窗口专门候选，后续主线返回候选可缓存路径，无需重跑。
