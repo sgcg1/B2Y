@@ -1,0 +1,144 @@
+{
+  "id": "20261104-formal-decode-r14-091517",
+  "status": "window_precompute_narrow_gain_full_window_tradeoff_cached_goal_unchanged",
+  "accepted": false,
+  "candidate_commit": "928b34fd",
+  "previous_commit": "5e01bbeb",
+  "source_commit": "ffe6f3f",
+  "files": [
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-1.txt-part-0001.txt",
+      "bytes": 65536,
+      "sha256": "6fe54bf927aa68df40cf1aff97e79b8349c82590cefad667786172e765724415"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-1.txt-part-0002.txt",
+      "bytes": 65536,
+      "sha256": "5ccb24eb938f55dbc614214f313e9b8a18ee0ed07b35a235fe457d4f2e00cdd2"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-1.txt-part-0003.txt",
+      "bytes": 65536,
+      "sha256": "7bbfbefab3dee9bffd7d376d21745295fd16b9ab5164db5813ae9a1b8af07c1f"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-1.txt-part-0004.txt",
+      "bytes": 65536,
+      "sha256": "1199d26b1945b32d96f055a428f7d7e28db97e2fade0ee6f70c4b3cf2e13d974"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-1.txt-part-0005.txt",
+      "bytes": 65536,
+      "sha256": "a01b8602299e3f8fad60f3fc436f3ead2274d7d8a971ae456e5452e3c27b547c"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-1.txt-part-0006.txt",
+      "bytes": 65536,
+      "sha256": "d674beca01107e6d969e50926fc238e6ea938a55a5d7ba8a808c52aec44933f3"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-1.txt-part-0007.txt",
+      "bytes": 65536,
+      "sha256": "805fcf2eea96556cad72d409999fe3bf470dcc3448aa3af1327058edccdffba1"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-1.txt-part-0008.txt",
+      "bytes": 65536,
+      "sha256": "ca113b3b2e8110198c32a2297ad88d604365ba8785af6b9451d616317059bd61"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-1.txt-part-0009.txt",
+      "bytes": 65536,
+      "sha256": "16aa10c5b021e41eedf3f0763d4eb8cf5ab11ad5b9000d5478f751607f28cad4"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-1.txt-part-0010.txt",
+      "bytes": 65536,
+      "sha256": "20947e406e728ad126dd238ddf4957a7419e6861ad703b5a349566a860ecfd6d"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-1.txt-part-0011.txt",
+      "bytes": 37188,
+      "sha256": "c5e28ba66dd9fb3a211c3f51b930c8b7f8d2ae08ac258d8acf64279cdb7ce83e"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-2.txt-part-0001.txt",
+      "bytes": 65536,
+      "sha256": "18b65cada815d3a2225f4f8b5b84bbcb5bb7d585a1e2972dbeafd0f31dc3c1b1"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-2.txt-part-0002.txt",
+      "bytes": 65536,
+      "sha256": "e9b62d216f6961e49445a9c0f5599f92d1b3276c5ed69fc08e09886aa33c4295"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-2.txt-part-0003.txt",
+      "bytes": 65536,
+      "sha256": "69394a2398bd22d000d6ed065ba191f0bb4938f35dd20afced9bd23cce759679"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-2.txt-part-0004.txt",
+      "bytes": 65536,
+      "sha256": "71152ae5002c654e6358793b13771334cecde4cd1ccca56b64761ca4562ae45b"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-2.txt-part-0005.txt",
+      "bytes": 65536,
+      "sha256": "2badad5239704c602ec011606ee13f72948353aa5754db2bea472ae25040309d"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-2.txt-part-0006.txt",
+      "bytes": 65536,
+      "sha256": "0b1c9a2674680a8e92a45e8bfa164a0b19c176e7259c802f3d41b33c0bc4d201"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-2.txt-part-0007.txt",
+      "bytes": 65536,
+      "sha256": "dcc0372ccf1502c591874e0c620e0323f1f87a05439944c66cb22ab37042c1cb"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-2.txt-part-0008.txt",
+      "bytes": 65536,
+      "sha256": "ba301648916ef2eb6389932e8a6c81484a5dab9c70a7ac7bbadd5373b7e7af8a"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-2.txt-part-0009.txt",
+      "bytes": 65536,
+      "sha256": "97ad05fd3de19328a058edba40a23b3a5b4f01920dc5d89b036e88fbde1fe449"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-2.txt-part-0010.txt",
+      "bytes": 65536,
+      "sha256": "f18533a75b26640c058dbe5aed1a5efae7829c6f794a94213ae89b41fc920952"
+    },
+    {
+      "file": "parts/parts-20261104T092208Z-topk-formal-decode-r14-20261104-091517-158683-repeat-2.txt-part-0011.txt",
+      "bytes": 37488,
+      "sha256": "cf6b05700be1e3ba0f9a466e95192f680d7d520d56ef1c07e10b6bb3541df2d1"
+    }
+  ],
+  "restored": [
+    {
+      "file": "restored/topk-formal-decode-r14-20261104-091517-158683-repeat-1.txt",
+      "bytes": 8399015,
+      "sha256": "7ba562a21081a84a78be787604ee2be9e42a397e53e522ca806a0e8916c4f447",
+      "source_manifest_sha_crosscheck": false,
+      "gzip_crc_and_size_verified": true
+    },
+    {
+      "file": "restored/topk-formal-decode-r14-20261104-091517-158683-repeat-2.txt",
+      "bytes": 8398399,
+      "sha256": "862a07870e0f32c350352642cbc867ff16c7152d9347dfdc06e9eb0a92b3d275",
+      "source_manifest_sha_crosscheck": false,
+      "gzip_crc_and_size_verified": true
+    }
+  ],
+  "source_manifest_received": false,
+  "limitations": [
+    "source-side SHA manifest not received",
+    "original terminal logs not received",
+    "both runs completed_with_profile_review",
+    "window length sweep also differs in data distribution",
+    "fixed shape not full acceptance"
+  ]
+}
