@@ -6,6 +6,8 @@
 
 > 最新方向更正：用户要求独立的新算法，不接受围绕旧流程微调。当前明确方案为[分块精确排序＋截断归并](topk-new-algorithm-truncated-merge-20261104.md)，已有正确性证明与30项CPU原型验证；NPU内核未实现、无新性能结果。新会话优先读此方案，上一份审查中阈值选择优先级已被取代。
 
+> 2026-11-05新证据：[独立消费数设备探针](../experiments/topk/20261105-merge-consumption-probe-r1-090941/analysis.md)已完成，二分/显式树各96组×3次通过；scan_control编译失败是对照结果，非整轮失败。消费数无scan硬依赖已验证，实际设备排序/多批归并及性能仍待验证。本轮无需重跑。
+
 ## 我们在做什么任务
 
 优化TileOPs的TopKSelectFwd。用户最新目标是：在**同一现有950PR环境、指定规格下，当前实现稳定优于原生ops-math TopKV2**。不再把截图43.7μs作为固定门槛，也不要求先取得server2环境才能测量。最终应对接`yyttt6/TileOPs`的`ascend950`分支，遵守其[issue #1](https://github.com/yyttt6/TileOPs/issues/1)及仓库规范。准备PR前应重新读取实际规范，不能凭本文推断全部验收细节。

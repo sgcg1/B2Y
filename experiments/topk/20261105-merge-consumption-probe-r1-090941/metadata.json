@@ -1,0 +1,40 @@
+{
+  "id": "20261105-merge-consumption-probe-r1-090941",
+  "title": "独立设备验证：消费数可不依赖scan与atomic",
+  "status": "complete_non_scan_methods_passed_scan_unsupported",
+  "source_commit": "cf37ecc",
+  "tool_commit": "087c04d",
+  "run_date": "2026-11-05",
+  "files": [
+    {
+      "source": "AAA_Results/topk-merge-consumption-probe-r1-20261105-090941-124.json",
+      "archive": "raw/topk-merge-consumption-probe-r1-20261105-090941-124.json",
+      "bytes": 134128,
+      "sha256": "a3ff5e07cf73e7f0f923a02564163fa098b3760c087f3160ea6951c07393505a"
+    },
+    {
+      "source": "AAA_Results/topk-merge-consumption-probe-r1-20261105-090941-124.log",
+      "archive": "raw/topk-merge-consumption-probe-r1-20261105-090941-124.log",
+      "bytes": 842,
+      "sha256": "4ff3841bb52a52fe2231e7b222e7a9f734160093bac8a54b390d2c401caa20ed"
+    }
+  ],
+  "verified": {
+    "cases": 96,
+    "executions_per_method": 3,
+    "methods_passed": [
+      "binary_consumption",
+      "tree_consumption"
+    ],
+    "input_sha256_reconstructed": "2e2ce85ba758d591f11a4a46f85cff0dfe9b83e2cf30b37dc55a4255b8eb8ed0",
+    "embedded_evidence_files": 14,
+    "inputs_preserved": true,
+    "reported_outputs_rechecked": true,
+    "scan_control": "compile_failed, no target-specific Ascend cumsum implementation"
+  },
+  "limits": [
+    "No timing measurements",
+    "CPU supplied the correct merged prefix tags and last element",
+    "Does not validate NPU merge/sort or complete M TopK correctness/performance"
+  ]
+}

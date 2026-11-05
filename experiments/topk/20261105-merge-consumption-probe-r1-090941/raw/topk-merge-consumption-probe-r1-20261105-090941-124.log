@@ -1,0 +1,12 @@
+COMPILE binary_consumption
+2026-11-05 09:09:48  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-05 09:09:51  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+RESULT binary_consumption passed
+COMPILE tree_consumption
+2026-11-05 09:09:53  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-05 09:09:55  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+RESULT tree_consumption passed
+COMPILE scan_control
+2026-11-05 09:09:57  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+COMPILE_FAILED scan_control
+VERDICT non_scan_consumption_demonstrated

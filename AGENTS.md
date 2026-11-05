@@ -1,3 +1,5 @@
+最新独立设备验证：[M消费数无scan路径通过](experiments/topk/20261105-merge-consumption-probe-r1-090941/analysis.md)。二分与显式树归约均96组×3次通过；仅T.cumsum对照编译失败，非整轮失败。本轮无需重跑；没有计时或实际设备排序/归并，不能宣称M完整可行或达标。
+
 当前独立验证入口：[M消费数统计能力探针](diagnostics/topk-merge-consumption-probe-r1/README.md)。按用户要求独立测试二分消费数、手写树归约及T.cumsum；不采用对方探针结论，96组CPU自检通过，设备结果待回传；不等于完整M归并/TopK验证。
 
 方案对比审查：[A与截断归并](deliveries/topk-solution-a-vs-truncated-merge-review-20261104.md)。A缺跨核数据流、完整分数驻留与最坏精化算法，当前探针为O(256N)逐桶归约，无atomic不等于高效hist；B算法闭合但无设备性能胜出证据。未改A或运行探针。
