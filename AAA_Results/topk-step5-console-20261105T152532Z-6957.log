@@ -1,0 +1,55 @@
+[W1105 15:26:03.057525505 ToKernelNpu.cpp:40] Warning: Device do not support double dtype now, dtype cast replace with float. (function operator())
+2026-11-05 15:25:44  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-05 15:26:03  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+2026-11-05 15:26:05  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[3]`
+2026-11-05 15:26:21  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+CANDIDATE_VALIDATED {'H': 128, 'PARALLEL_SCAN': True}
+2026-11-05 15:26:23  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[3]`
+2026-11-05 15:26:41  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+CANDIDATE_VALIDATED {'H': 64, 'PARALLEL_SCAN': False}
+2026-11-05 15:26:43  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[3]`
+2026-11-05 15:27:01  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+CANDIDATE_VALIDATED {'H': 128, 'PARALLEL_SCAN': False}
+2026-11-05 15:27:03  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[3]`
+2026-11-05 15:27:21  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+CANDIDATE_VALIDATED {'H': 256, 'PARALLEL_SCAN': False}
+2026-11-05 15:27:21,589 INFO:Auto-tuning with 0.9 CPU utilizations, 256 CPUs available, 230 CPUs will be used
+2026-11-05 15:27:21,591 WARNING:Benchmark timeout is enforced in benchmark workers by running each benchmark call in a daemon sub-thread and waiting up to the configured timeout.
+Compiling configurations:   0%|          | 0/4 [00:00<?, ?it/s]
+Bench configurations:   0%|          | 0/4 [00:00<?, ?it/s][A                                                               
+                                                           [ACompiling configurations:   0%|          | 0/4 [00:00<?, ?it/s]
+Bench configurations:   0%|          | 0/4 [00:00<?, ?it/s][A                                                               
+                                                           [ACompiling configurations:  25%|██▌       | 1/4 [00:00<00:00, 169.56it/s]
+Bench configurations:   0%|          | 0/4 [00:00<?, ?it/s][A                                                                        
+                                                           [ACompiling configurations:  50%|█████     | 2/4 [00:00<00:00, 316.63it/s]
+Bench configurations:   0%|          | 0/4 [00:00<?, ?it/s][A                                                                        
+                                                           [ACompiling configurations:  75%|███████▌  | 3/4 [00:00<00:00, 444.37it/s]
+Bench configurations:   0%|          | 0/4 [00:00<?, ?it/s][A
+Bench configurations:  25%|██▌       | 1/4 [00:00<00:00, 17.74it/s, best_latency=0.219][A                                                                        
+                                                                                       [ACompiling configurations: 100%|██████████| 4/4 [00:00<00:00, 70.62it/s]
+Bench configurations:  25%|██▌       | 1/4 [00:00<00:00, 17.68it/s, best_latency=0.219][A
+Bench configurations:  50%|█████     | 2/4 [00:00<00:00, 16.46it/s, best_latency=0.219][A
+Bench configurations:  50%|█████     | 2/4 [00:00<00:00, 16.46it/s, best_latency=0.219][A                                                                       
+                                                                                       [ACompiling configurations: 100%|██████████| 4/4 [00:00<00:00, 32.77it/s]
+Bench configurations:  50%|█████     | 2/4 [00:00<00:00, 16.46it/s, best_latency=0.219][A
+Bench configurations:  75%|███████▌  | 3/4 [00:00<00:00, 16.46it/s, best_latency=0.18] [A                                                                       
+                                                                                      [ACompiling configurations: 100%|██████████| 4/4 [00:00<00:00, 24.32it/s]
+Bench configurations:  75%|███████▌  | 3/4 [00:00<00:00, 16.46it/s, best_latency=0.18][A
+Bench configurations: 100%|██████████| 4/4 [00:00<00:00, 16.46it/s, best_latency=0.154][A                                                                       
+                                                                                       [ACompiling configurations: 100%|██████████| 4/4 [00:00<00:00, 19.71it/s]
+Bench configurations: 100%|██████████| 4/4 [00:00<00:00, 16.46it/s, best_latency=0.154][A
+Bench configurations: 100%|██████████| 4/4 [00:00<00:00, 16.46it/s, best_latency=0.154][ACompiling configurations: 100%|██████████| 4/4 [00:00<00:00, 19.70it/s]
+Bench configurations: 100%|██████████| 4/4 [00:00<00:00, 19.71it/s, best_latency=0.154]
+UPLOAD_MANIFEST /home/y00937463/B2Y/AAA_Results/topk-42-step5-r1-20261105-152532-6960-parts-manifest.json
+UPLOAD_PART /home/y00937463/B2Y/AAA_Results/topk-42-step5-r1-20261105-152532-6960-parts-topk-42-step5-r1-20261105-152532-6960.json-part-0001.txt
+UPLOAD_PART /home/y00937463/B2Y/AAA_Results/topk-42-step5-r1-20261105-152532-6960-parts-topk-42-step5-r1-20261105-152532-6960.json-part-0002.txt
+2026-11-05 15:27:21  [TileLang:tilelang.cache.kernel_cache:WARNING] (kernel_cache.py:379): Found kernel 'main' in memory cache. For better performance, consider using `@tilelang.jit` instead of direct kernel caching.
+2026-11-05 15:27:21  [TileLang:tilelang.cache.kernel_cache:WARNING] (kernel_cache.py:379): Found kernel 'main' in memory cache. For better performance, consider using `@tilelang.jit` instead of direct kernel caching.
+2026-11-05 15:27:21  [TileLang:tilelang.cache.kernel_cache:WARNING] (kernel_cache.py:379): Found kernel 'main' in memory cache. For better performance, consider using `@tilelang.jit` instead of direct kernel caching.
+2026-11-05 15:27:21  [TileLang:tilelang.cache.kernel_cache:WARNING] (kernel_cache.py:379): Found kernel 'main' in memory cache. For better performance, consider using `@tilelang.jit` instead of direct kernel caching.
+Tuned Latency 0.21889346837997437 with config {'H': 128, 'PARALLEL_SCAN': False} at index 2
+Tuned Latency 0.35793402791023254 with config {'H': 64, 'PARALLEL_SCAN': False} at index 1
+Tuned Latency 0.17990194261074066 with config {'H': 128, 'PARALLEL_SCAN': True} at index 0
+Tuned Latency 0.154153972864151 with config {'H': 256, 'PARALLEL_SCAN': False} at index 3
+STATUS development_autotuner_search_complete
+UPLOAD_RESULT /home/y00937463/B2Y/AAA_Results/topk-42-step5-r1-20261105-152532-6960.json
