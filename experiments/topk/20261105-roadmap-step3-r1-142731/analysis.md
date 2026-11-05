@@ -1,0 +1,11 @@
+# 第3步TopK公共接入通过；第4步边界待补
+
+运行源727132f7dc387cdc6c56eec2400e42d038245b1c，回传254b46a。原JSON与分片逐字节一致；内嵌证据SHA全部通过；JUnit重新计数279 contracts通过、101 benchmark-contracts通过和14 skipped。预编译及最终CPP一致，编译stderr为空。
+
+公共Op选中tileops.kernels.ascend.attention.topk_select.AscendTopKSelectKernel，原精确radix内核通过公共manifest Decode b1 case检查。完整输出1/1、无unchecked_reason，输入保护沿用公共验证。不修改reference、精度阈值或manifest。环境为原yjl/Ascend950PR_9579、CANN现有环境、TileLang0176ba14。
+
+报告max_abs_err=15796是无序索引张量逐位置差值的通用诊断值，不能当作分数误差或错误率。workloads/numerics.py在Custom validator成功后才计算诊断；TopK公共validator核对窗口、唯一性、padding和排序后的选中分数，故索引排列不同不构成失败。未隐藏该值。
+
+没有性能计时，无新算法性能结论；第3步源接口/显式加载/编译/调用验证完成。没有安装entry-point自动发现收据，未使用宿主共享guard，不称正式验收。第4步仅manifest Decode通过，空/短/边界窗口、重复分数和确定性回归待补，不能提前进入AutoTuner。
+
+实现现已按用户授权直接推送个人fork sgcg1/TileOPs的codex/topk-select-ascend950-42分支。后续B2Y脚本直接读取服务器TileOPs checkout并核对commit，不再默认bundle传源码。目标PR仍yyttt6/TileOPs:ascend950，未创建PR或推送目标仓。

@@ -1,3 +1,20 @@
+## 本轮结果与后续交付方式
+
+**第3步已通过，不需要重跑。** 公共Op分派/编译/调用及完整Decode输出检查通过，CPU279+101项通过/14 skip，详见[归档分析](../../experiments/topk/20261105-roadmap-step3-r1-142731/analysis.md)。无性能计时；下一步第4步边界/确定性回归，尚不调参。
+
+按用户新指示，实现已直接推送[个人fork开发分支](https://github.com/sgcg1/TileOPs/tree/codex/topk-select-ascend950-42)，源码727132f7。当前脚本已改为读取已有checkout，不再还原bundle；下文旧bundle描述仅为历史运行方式。
+
+后续在服务器更新TileOPs（先确认原工作区改动已保留；命令不含reset或强推）：
+
+```bash
+cd /home/y00937463/TileOPs
+git fetch origin
+git switch codex/topk-select-ascend950-42
+git pull --ff-only
+```
+
+B2Y照常更新。当前run.sh默认TileOPs路径/home/y00937463/TileOPs，实际路径不同时用TILEOPS_REPO=/实际路径/TileOPs bash diagnostics/topk-42-step3-r1/run.sh。脚本核对完整727132f7 SHA及已跟踪文件无改动，失败不自行切换/覆盖代码。只在需要复现本轮时运行；下一轮边界测试会提供单独入口。无需pip安装或变更环境。
+
 # 第3步：TopK公共后端接入，原yjl开发验证
 
 用户最新要求覆盖此前配置安排：跳过第2步剩余事项，直接使用原yjl；不执行host-setup/verifier-run，不要求新容器。第2步只记录CPU passed，BMM/共享预约/canonical环境未完成，不伪造通过。
@@ -11,7 +28,7 @@ cd /home/y00937463/B2Y
 bash diagnostics/topk-42-step3-r1/run.sh
 ```
 
-原环境已有Python/CANN/TileLang保持不变，不安装包、不下载依赖、不修改原TileOPs checkout。用此前B2Y的冻结基础bundle及本次增量bundle还原独立目录；不需要GitHub访问。依赖diagnostics/topk-42-step2-r1的三份原始bundle，请完整更新B2Y。
+原环境已有Python/CANN/TileLang保持不变，不安装包、不下载依赖。当前脚本读取上文已有TileOPs checkout，不改动源码；原bundle运行结果保留供溯源。
 
 ## 改动与顺序
 

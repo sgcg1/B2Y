@@ -1,0 +1,7 @@
+[W1105 14:31:21.082077410 ToKernelNpu.cpp:40] Warning: Device do not support double dtype now, dtype cast replace with float. (function operator())
+UPLOAD_MANIFEST /home/y00937463/B2Y/AAA_Results/topk-42-step3-r1-20261105-142731-5695-parts-manifest.json
+UPLOAD_PART /home/y00937463/B2Y/AAA_Results/topk-42-step3-r1-20261105-142731-5695-parts-topk-42-step3-r1-20261105-142731-5695.json-part-0001.txt
+2026-11-05 14:31:02  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-05 14:31:21  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+STATUS development_decode_correctness_passed
+UPLOAD_RESULT /home/y00937463/B2Y/AAA_Results/topk-42-step3-r1-20261105-142731-5695.json

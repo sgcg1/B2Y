@@ -1,0 +1,49 @@
+{
+  "id": "20261105-roadmap-step3-r1-142731",
+  "title": "第3步公共TopK分派和Decode完整输出验证通过",
+  "status": "development_decode_correctness_passed",
+  "received_commit": "254b46a",
+  "source_sha": "727132f7dc387cdc6c56eec2400e42d038245b1c",
+  "files": [
+    {
+      "source": "AAA_Results/topk-42-step3-r1-20261105-142731-5695-parts-manifest.json",
+      "archive": "raw/topk-42-step3-r1-20261105-142731-5695-parts-manifest.json",
+      "bytes": 794,
+      "sha256": "04fbde5ca065336ae154494e03d3c6710ac810e11823a7e9a8484be3ea38e869"
+    },
+    {
+      "source": "AAA_Results/topk-42-step3-r1-20261105-142731-5695-parts-topk-42-step3-r1-20261105-142731-5695.json-part-0001.txt",
+      "archive": "raw/topk-42-step3-r1-20261105-142731-5695-parts-topk-42-step3-r1-20261105-142731-5695.json-part-0001.txt",
+      "bytes": 58068,
+      "sha256": "3305cd88342928b59cb22fdb560e0192a960c86f92a51374ce3fd4d2f7c6b360"
+    },
+    {
+      "source": "AAA_Results/topk-42-step3-r1-20261105-142731-5695.json",
+      "archive": "raw/topk-42-step3-r1-20261105-142731-5695.json",
+      "bytes": 248979,
+      "sha256": "225af919d2bea5bb71562aeaad55efa6b1eded3f44e970d41990c26e9f4371fa"
+    },
+    {
+      "source": "AAA_Results/topk-step3-console-20261105T142731Z-5692.log",
+      "archive": "raw/topk-step3-console-20261105T142731Z-5692.log",
+      "bytes": 784,
+      "sha256": "74306c384f3df55ec45ed5cc3b0f5d05989d059e5c96e3d75e8b1037b62d375b"
+    }
+  ],
+  "verified": {
+    "direct_and_shards_identical": true,
+    "embedded_evidence_hashes": 19,
+    "junit_recount": {
+      "contracts": {
+        "passed": 279,
+        "skipped": 0
+      },
+      "benchmark-contracts": {
+        "passed": 101,
+        "skipped": 14
+      }
+    },
+    "generated_cpp_identical": true
+  },
+  "scope": "yjl development verification; step2 remainder deferred; no formal performance receipt"
+}

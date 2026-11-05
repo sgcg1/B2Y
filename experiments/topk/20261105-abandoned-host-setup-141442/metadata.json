@@ -1,0 +1,14 @@
+{
+  "id": "20261105-abandoned-host-setup-141442",
+  "title": "已取消新容器方案：Ascend runtime创建任务失败",
+  "status": "abandoned_setup_runtime_failure",
+  "received_commit": "254b46a",
+  "files": [
+    {
+      "source": "AAA_Results/topk-host-setup-20261105T141442Z-3108785.log",
+      "archive": "raw/topk-host-setup-20261105T141442Z-3108785.log",
+      "bytes": 749,
+      "sha256": "384cab5150aaed27677c06abcc4926e4e7f5ab3b6628990970741d790717ffc6"
+    }
+  ]
+}

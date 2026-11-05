@@ -1,3 +1,5 @@
+最新结果：[第3步公共TopK接入及Decode输出通过](experiments/topk/20261105-roadmap-step3-r1-142731/analysis.md)。CPU279+101项通过/14 skip，无ThreadSync、完整输出1/1通过；无计时。代码727132f7已推个人fork分支codex/topk-select-ascend950-42，后续直接读取服务器TileOPs checkout，不默认bundle。无需重跑；下一步第4步边界与确定性回归。
+
 当前入口：[第3步TopK公共后端接入，原yjl验证](diagnostics/topk-42-step3-r1/README.md)。用户最新决定覆盖此前安排：忽略第2步剩余配置，始终用原yjl；停止host-setup/新容器流程，CPU通过但BMM/宿主预约仍未完成。候选727132f7复用既有精确radix表达，通过Kernel/Interface注册；本地6项refusal检查通过，公共CPU/设备验证待回传。不宣称新算法、正式收据或性能提升。
 
 第2步当前执行：[保留yjl、创建独立共享预约验证容器](diagnostics/topk-42-step2-r1/README.md)。配置已齐全，不再重复只读探针；yjl空闲时快照会短暂暂停，另建仅卡0验证容器并共享宿主锁/PID。脚本已准备，设备检查与BMM待执行，不提前进入第3步。

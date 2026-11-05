@@ -20,25 +20,18 @@ def load(path,name):
 
 def main():
     root=Path('/home/y00937463')/('topk-42-step3-r1-'+datetime.datetime.now().strftime('%Y%m%d-%H%M%S')+'-'+str(os.getpid()))
-    root.mkdir();source=root/'TileOPs'
+    root.mkdir();source=Path(os.environ.get('TILEOPS_REPO','/home/y00937463/TileOPs')).resolve()
     report={'status':'failed','scope':'yjl development public API correctness; no shared host reservation or formal receipt',
             'step2':'CPU passed; remainder explicitly deferred by user','step3':'pending','step4':'pending','timing':'not_requested'}
     try:
         identity=json.loads((HERE/'identity.json').read_text())
         for name,digest in identity.items():assert hashlib.sha256((HERE/name).read_bytes()).hexdigest()==digest,name
         report['tool_identity']=identity
-        prior=HERE.parent/'topk-42-step2-r1'
-        base_identity=json.loads((prior/'identity.json').read_text())
-        parts=sorted(prior.glob('target.bundle.part*'))
-        assert len(parts)==3
-        for part in parts:assert hashlib.sha256(part.read_bytes()).hexdigest()==base_identity[part.name]
-        bundle=root/'base.bundle';bundle.write_bytes(b''.join(p.read_bytes() for p in parts))
-        with (root/'checkout.log').open('w') as log:
-            for args in [
-                ['git','clone','--branch','codex/topk-select-ascend950-42',str(bundle),str(source)],
-                ['git','-C',str(source),'fetch',str(HERE/'step3.bundle'),'refs/heads/codex/topk-select-ascend950-42'],
-                ['git','-C',str(source),'merge','--ff-only','FETCH_HEAD']]:subprocess.run(args,stdout=log,stderr=subprocess.STDOUT,check=True)
-        sha=subprocess.check_output(['git','rev-parse','HEAD'],cwd=source,text=True).strip();assert sha.startswith(CANDIDATE)
+        assert (source/'.git').exists(),'TileOPs checkout not found; set TILEOPS_REPO'
+        sha=subprocess.check_output(['git','rev-parse','HEAD'],cwd=source,text=True).strip()
+        assert sha=='727132f7dc387cdc6c56eec2400e42d038245b1c','Pull the documented candidate branch before running'
+        subprocess.run(['git','diff','--exit-code','HEAD','--'],cwd=source,check=True)
+        report['source_checkout']=str(source)
         report['source_sha']=sha
         env=dict(os.environ,TORCH_DEVICE_BACKEND_AUTOLOAD='0',PYTHONDONTWRITEBYTECODE='1')
         with (root/'cpu.log').open('w') as log:

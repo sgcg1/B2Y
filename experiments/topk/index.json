@@ -294,6 +294,18 @@
       "title": "第2步完整设备配置已核对，准备独立共享预约验证容器",
       "status": "configuration_received_setup_pending",
       "metadata": "20261105-roadmap-step2-host-config-113905/metadata.json"
+    },
+    {
+      "id": "20261105-roadmap-step3-r1-142731",
+      "title": "第3步公共TopK分派和Decode完整输出验证通过",
+      "status": "development_decode_correctness_passed",
+      "metadata": "20261105-roadmap-step3-r1-142731/metadata.json"
+    },
+    {
+      "id": "20261105-abandoned-host-setup-141442",
+      "title": "已取消新容器方案：Ascend runtime创建任务失败",
+      "status": "abandoned_setup_runtime_failure",
+      "metadata": "20261105-abandoned-host-setup-141442/metadata.json"
     }
   ]
 }

@@ -1,3 +1,5 @@
+最新结果：[第3步公共TopK Decode正确性通过](20261105-roadmap-step3-r1-142731/analysis.md)。代码727132f7，完整输出检查通过；CPU279+101/14 skip。未计时，边界待补。另已归档[废弃配置路线的runtime启动失败](20261105-abandoned-host-setup-141442/analysis.md)，不再重试新容器。
+
 最新配置：[第2步独立验证容器方案](20261105-roadmap-step2-host-config-113905/analysis.md)。环境配置已核对，准备快照复用工具链、host PID和共享锁；操作待执行，无新BMM结果。
 
 最新结果：[第2步宿主预约配置阻塞](20261105-roadmap-step2-host-inspect-112739/analysis.md)。宿主共享锁存在，yjl不可见且PID命名空间独立；CPU通过，BMM未执行。
