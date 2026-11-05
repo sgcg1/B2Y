@@ -1,3 +1,5 @@
+最新结果：[第4步边界及确定性12/12通过](20261105-roadmap-step4-r1-151116/analysis.md)。0失败/错误/skip，各3次，公共manifest检查通过，无性能计时；下一步第5步AutoTuner配置搜索。
+
 最新结果：[第3步公共TopK Decode正确性通过](20261105-roadmap-step3-r1-142731/analysis.md)。代码727132f7，完整输出检查通过；CPU279+101/14 skip。未计时，边界待补。另已归档[废弃配置路线的runtime启动失败](20261105-abandoned-host-setup-141442/analysis.md)，不再重试新容器。
 
 最新配置：[第2步独立验证容器方案](20261105-roadmap-step2-host-config-113905/analysis.md)。环境配置已核对，准备快照复用工具链、host PID和共享锁；操作待执行，无新BMM结果。

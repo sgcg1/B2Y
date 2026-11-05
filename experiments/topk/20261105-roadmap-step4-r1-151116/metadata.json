@@ -1,0 +1,49 @@
+{
+  "id": "20261105-roadmap-step4-r1-151116",
+  "title": "第4步Decode十二项边界和确定性回归通过",
+  "status": "development_boundary_correctness_passed",
+  "received_commit": "7081aa0",
+  "source_sha": "c70ffa3ae43b91afd86a7995aa30395e9cdcb237",
+  "files": [
+    {
+      "source": "AAA_Results/topk-42-step4-r1-20261105-151116-6611-parts-manifest.json",
+      "archive": "raw/topk-42-step4-r1-20261105-151116-6611-parts-manifest.json",
+      "bytes": 794,
+      "sha256": "754a32a940446e35e86752ae012094eb4ac5f20cfdb2e41774f5d7ba54945117"
+    },
+    {
+      "source": "AAA_Results/topk-42-step4-r1-20261105-151116-6611-parts-topk-42-step4-r1-20261105-151116-6611.json-part-0001.txt",
+      "archive": "raw/topk-42-step4-r1-20261105-151116-6611-parts-topk-42-step4-r1-20261105-151116-6611.json-part-0001.txt",
+      "bytes": 35408,
+      "sha256": "4f63aeb922e44ff74d8f3fe0d095119863689a1b139975128fb0d9420d7d6d60"
+    },
+    {
+      "source": "AAA_Results/topk-42-step4-r1-20261105-151116-6611.json",
+      "archive": "raw/topk-42-step4-r1-20261105-151116-6611.json",
+      "bytes": 142402,
+      "sha256": "b0f354c526f688ae697cfd8066f8bfb77b677889dc12da5458f99e16d2950d1d"
+    },
+    {
+      "source": "AAA_Results/topk-step4-console-20261105T151116Z-6608.log",
+      "archive": "raw/topk-step4-console-20261105T151116Z-6608.log",
+      "bytes": 2858,
+      "sha256": "7f6df9e8d6f4c2829bf486d44bfd8e854d5c2a455657261033b769311028c58e"
+    }
+  ],
+  "verified": {
+    "direct_and_shards_identical": true,
+    "embedded_evidence_hashes": 12,
+    "junit_passed": 12,
+    "junit_failures": 0,
+    "junit_errors": 0,
+    "junit_skipped": 0,
+    "node_delta_new": 12,
+    "cpp_identical": true
+  },
+  "timing": "not_requested",
+  "limits": [
+    "Original yjl development environment; no shared host reservation/formal receipt",
+    "Only frozen Decode case and twelve boundary fixtures; not Prefill/all TopK specs",
+    "Finite values and signed zero tested; no new NaN policy established"
+  ]
+}

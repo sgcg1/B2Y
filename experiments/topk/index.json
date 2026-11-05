@@ -306,6 +306,12 @@
       "title": "已取消新容器方案：Ascend runtime创建任务失败",
       "status": "abandoned_setup_runtime_failure",
       "metadata": "20261105-abandoned-host-setup-141442/metadata.json"
+    },
+    {
+      "id": "20261105-roadmap-step4-r1-151116",
+      "title": "第4步Decode十二项边界和确定性回归通过",
+      "status": "development_boundary_correctness_passed",
+      "metadata": "20261105-roadmap-step4-r1-151116/metadata.json"
     }
   ]
 }

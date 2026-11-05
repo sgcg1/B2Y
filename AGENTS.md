@@ -1,3 +1,5 @@
+最新结果：[第4步Decode边界回归12/12通过](experiments/topk/20261105-roadmap-step4-r1-151116/analysis.md)。源c70ffa3a，JUnit独立核对0失败/错误/skip，12项各3次，输入位模式和选中集合一致；公共manifest也通过。无计时，不重复运行。本范围开发第4步完成，下一步第5步合法AutoTuner搜索；第2步余项及正式验收限制仍保留。
+
 当前入口：[第4步Decode边界与确定性回归](diagnostics/topk-42-step4-r1/README.md)。TileOPs个人fork分支已推c70ffa3a，仅新增12项源仓测试，生产内核/适配器未改；窗口K±1、尾窗、同分/完整FP32/负数/±0各3次，复用公共验证。原yjl、直接拉两仓，不使用bundle或新容器。设备待回传；本机缺pytest，未声称实际测试通过，不提前AutoTuner。
 
 最新结果：[第3步公共TopK接入及Decode输出通过](experiments/topk/20261105-roadmap-step3-r1-142731/analysis.md)。CPU279+101项通过/14 skip，无ThreadSync、完整输出1/1通过；无计时。代码727132f7已推个人fork分支codex/topk-select-ascend950-42，后续直接读取服务器TileOPs checkout，不默认bundle。无需重跑；下一步第4步边界与确定性回归。

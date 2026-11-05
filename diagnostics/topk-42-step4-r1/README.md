@@ -1,3 +1,5 @@
+**本轮已完成，无需重跑。** [结果分析](../../experiments/topk/20261105-roadmap-step4-r1-151116/analysis.md)：12项各3次通过，0失败/错误/skip；公共manifest也通过，无计时。下文保留复现入口。
+
 # 第4步：Decode边界与确定性回归
 
 使用原yjl，算法和接口保持727132f7版本不变，本次TileOPs仅新增tests/ops/test_topk_select_ascend_decode.py。当前源码c70ffa3a，分支codex/topk-select-ascend950-42，个人fork sgcg1/TileOPs；最终PR目标仍yyttt6/TileOPs:ascend950。第2步剩余事项按用户决定暂停，不把开发检查标为正式共享预约验收。
