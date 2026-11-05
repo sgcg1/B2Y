@@ -1,3 +1,5 @@
+当前唯一执行入口：[按4.2顺序补齐第2步](diagnostics/topk-42-step2-r1/README.md)。用户要求跳过认领，其余按序推进；已冻结目标ascend950起点4409536e并建独立分支，先做公共CPU与已有BMM环境检查。暂停新性能/直方图试跑，未获公共收据不得进入第3—6步；不以私人锁替代host guard，不把950PR标为canonical通过。
+
 最新回传：[原生直方图r1调用前dtype失败](experiments/topk/20261105-native-histogram-r1-105405/analysis.md)。full_zero编译及原生标记通过；int16输出未转uint16 view导致FFI拒绝，0项设备验证、无耗时。已修复runner绑定，更新后按原生直方图r1入口重试；不改内核/oracle，不据失败判断硬件能力。
 
 当前执行入口：[原生SIMD直方图r1](diagnostics/topk-native-histogram-r1/README.md)。核对现场嵌套接口与原生生成代码后，测试256桶频数/累计计数、mask、非零初值和64向量累积；54项CPU数学检查通过，设备待回传。单block预制字节探针，不是完整FP32 TopK或DT性能预测。
