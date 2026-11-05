@@ -1,3 +1,5 @@
+当前执行入口：[原生SIMD直方图r1](diagnostics/topk-native-histogram-r1/README.md)。核对现场嵌套接口与原生生成代码后，测试256桶频数/累计计数、mask、非零初值和64向量累积；54项CPU数学检查通过，设备待回传。单block预制字节探针，不是完整FP32 TopK或DT性能预测。
+
 最新结果：[阈值原语r1](experiments/topk/20261105-threshold-primitives-r1-102742/analysis.md)。SIMT键转换46.002μs、融合收集67.951μs，正确性通过但不宜集成。关键发现：嵌套simd.py和codegen有频数/累计直方图线索，顶层无导出不等于后端无能力。下一步核对现场SIMD API并直接测试；本轮无需重跑。
 
 当前执行入口：[阈值关键原语r1](diagnostics/topk-threshold-primitives-r1/README.md)。测完整键与CPU给定阈值的SIMT收集表达，采集后端hist/sort源码证据；不猜向量hist接口。48项实际AST CPU检查通过，设备待回传；不是完整TopK或原生向量收集，保持28核PR与原N/K。
