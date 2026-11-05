@@ -14,6 +14,8 @@
 
 > 最新r2结果：[实际设备归并正确但慢](../experiments/topk/20261105-merge-execution-r2-093737/analysis.md)。R128/R256分别58.458/55.391μs，仅单个节点；停止直接集成此SIMT排名路径，先验证低成本向量排序/归并能力。本轮无需重跑。用户明确后续按28核PR开发，完整性能保持原验收规格，不缩数据为7/8，不线性外推DT32核。
 
+> 最新路线建议：[T完整键阈值选择](topk-route-selection-and-performance-budget-20261105.md)。基于M单节点55μs负面结果，停止其SIMT排名落地集成；优先验证真向量hist/收集，原生SIMD归并保留备选。条件预算不是预测，无新方案设备成绩，原验收规格和28核PR约束保持。
+
 ## 我们在做什么任务
 
 优化TileOPs的TopKSelectFwd。用户最新目标是：在**同一现有950PR环境、指定规格下，当前实现稳定优于原生ops-math TopKV2**。不再把截图43.7μs作为固定门槛，也不要求先取得server2环境才能测量。最终应对接`yyttt6/TileOPs`的`ascend950`分支，遵守其[issue #1](https://github.com/yyttt6/TileOPs/issues/1)及仓库规范。准备PR前应重新读取实际规范，不能凭本文推断全部验收细节。

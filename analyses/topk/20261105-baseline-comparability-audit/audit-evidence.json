@@ -1,0 +1,831 @@
+{
+  "client_date": "2026-11-05",
+  "site_commit": "95f95ca9f8437ee14a6d23062bbbe4cb15bc6aa5",
+  "latest_target_commit_checked": "4409536e1f0dba8dca7141d6aee6fc6677afa9ce",
+  "sources": {
+    "repository_snapshot": {
+      "url": "https://raw.githubusercontent.com/yyttt6/TileOPs.github.io/95f95ca9f8437ee14a6d23062bbbe4cb15bc6aa5/data/baseline-cache/snapshot.json",
+      "bytes": 5706587,
+      "sha256": "cd35c585cc97fadb890eb2b4ff2b257e774ed9243ad1050f9b32067d78760881",
+      "frozen_at": "2026-11-04T02:57:13.983767+00:00",
+      "rows": [
+        {
+          "library": "sgl-kernel-npu",
+          "op": "TopKSelectFwdOp",
+          "case": "ds-v32-topk-decode-b1",
+          "latency_us": 2753.3523999999998,
+          "samples": 15,
+          "measurement_id": "67c23e94f96ab2991106d1c2e8e1b63a782ce224dd42e7cdf8fc96585cfa06fa",
+          "protocol": "ascend950-isolated-ffts-v2",
+          "workload": {
+            "op": "TopKSelectFwdOp",
+            "case_id": "ds-v32-topk-decode-b1",
+            "family": "attention",
+            "tensors": {
+              "index_score": [
+                [
+                  1,
+                  1,
+                  16384,
+                  1
+                ],
+                "float32"
+              ],
+              "starts": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "ends": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "indexes": [
+                [
+                  1,
+                  1,
+                  1,
+                  2048
+                ],
+                "int32"
+              ]
+            },
+            "params": {
+              "index_score": [
+                [
+                  1,
+                  1,
+                  16384,
+                  1
+                ],
+                "float32"
+              ],
+              "starts": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "ends": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "indexes": [
+                [
+                  1,
+                  1,
+                  1,
+                  2048
+                ],
+                "int32"
+              ],
+              "topk": 2048
+            }
+          },
+          "tileops_latency_us": null,
+          "ratio": null
+        },
+        {
+          "library": "ops-transformer",
+          "op": "TopKSelectFwdOp",
+          "case": "ds-v32-topk-decode-b1",
+          "latency_us": 812.4271999999999,
+          "samples": 15,
+          "measurement_id": "c04c2e3b3d79b9aca5dd9f5e55198490ac423278c0f7a14685c06366d8c08ffd",
+          "protocol": "ascend950-isolated-ffts-v2",
+          "workload": {
+            "op": "TopKSelectFwdOp",
+            "case_id": "ds-v32-topk-decode-b1",
+            "family": "attention",
+            "tensors": {
+              "index_score": [
+                [
+                  1,
+                  1,
+                  16384,
+                  1
+                ],
+                "float32"
+              ],
+              "starts": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "ends": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "indexes": [
+                [
+                  1,
+                  1,
+                  1,
+                  2048
+                ],
+                "int32"
+              ]
+            },
+            "params": {
+              "index_score": [
+                [
+                  1,
+                  1,
+                  16384,
+                  1
+                ],
+                "float32"
+              ],
+              "starts": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "ends": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "indexes": [
+                [
+                  1,
+                  1,
+                  1,
+                  2048
+                ],
+                "int32"
+              ],
+              "topk": 2048
+            }
+          },
+          "tileops_latency_us": null,
+          "ratio": null
+        },
+        {
+          "library": "ops-math",
+          "op": "TopKSelectFwdOp",
+          "case": "ds-v32-topk-decode-b1",
+          "latency_us": 43.69473333333333,
+          "samples": 15,
+          "measurement_id": "5932d6a499aab10ba6df28994b763394342c6fd6b40020706193a0689e4ff41e",
+          "protocol": "ascend950-isolated-ffts-v2",
+          "workload": {
+            "op": "TopKSelectFwdOp",
+            "case_id": "ds-v32-topk-decode-b1",
+            "family": "attention",
+            "tensors": {
+              "index_score": [
+                [
+                  1,
+                  1,
+                  16384,
+                  1
+                ],
+                "float32"
+              ],
+              "starts": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "ends": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "indexes": [
+                [
+                  1,
+                  1,
+                  1,
+                  2048
+                ],
+                "int32"
+              ]
+            },
+            "params": {
+              "index_score": [
+                [
+                  1,
+                  1,
+                  16384,
+                  1
+                ],
+                "float32"
+              ],
+              "starts": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "ends": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "indexes": [
+                [
+                  1,
+                  1,
+                  1,
+                  2048
+                ],
+                "int32"
+              ],
+              "topk": 2048
+            }
+          },
+          "tileops_latency_us": null,
+          "ratio": null
+        },
+        {
+          "library": "torch-eager",
+          "op": "TopKSelectFwdOp",
+          "case": "ds-v32-topk-decode-b1",
+          "latency_us": 73.53293333333333,
+          "samples": 15,
+          "measurement_id": "b9ac66c7647f8b9b055fc2bec6d176189cf69355527e35db582c4961a0f0c8d9",
+          "protocol": "ascend950-isolated-ffts-v3",
+          "parser_revision": "v3-task-coverage-full32-20261103",
+          "workload": {
+            "op": "TopKSelectFwdOp",
+            "case_id": "ds-v32-topk-decode-b1",
+            "family": "attention",
+            "tensors": {
+              "index_score": [
+                [
+                  1,
+                  1,
+                  16384,
+                  1
+                ],
+                "float32"
+              ],
+              "starts": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "ends": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "indexes": [
+                [
+                  1,
+                  1,
+                  1,
+                  2048
+                ],
+                "int32"
+              ]
+            },
+            "params": {
+              "index_score": [
+                [
+                  1,
+                  1,
+                  16384,
+                  1
+                ],
+                "float32"
+              ],
+              "starts": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "ends": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "indexes": [
+                [
+                  1,
+                  1,
+                  1,
+                  2048
+                ],
+                "int32"
+              ],
+              "topk": 2048
+            }
+          },
+          "tileops_latency_us": null,
+          "ratio": null
+        }
+      ],
+      "native_row_matches_old": true
+    },
+    "deployed_snapshot": {
+      "url": "https://yyttt6.github.io/TileOPs.github.io/benchmarks/baseline-cache.json",
+      "bytes": 5905539,
+      "sha256": "e468749d113ea31765078c9832389e04f93eb9e9a48e43398142e4c0a62c653b",
+      "frozen_at": "2026-11-04T02:57:13.983767+00:00",
+      "rows": [
+        {
+          "library": "sgl-kernel-npu",
+          "op": "TopKSelectFwdOp",
+          "case": "ds-v32-topk-decode-b1",
+          "latency_us": 2753.3523999999998,
+          "samples": 15,
+          "measurement_id": "67c23e94f96ab2991106d1c2e8e1b63a782ce224dd42e7cdf8fc96585cfa06fa",
+          "protocol": "ascend950-isolated-ffts-v2",
+          "workload": {
+            "op": "TopKSelectFwdOp",
+            "case_id": "ds-v32-topk-decode-b1",
+            "family": "attention",
+            "tensors": {
+              "index_score": [
+                [
+                  1,
+                  1,
+                  16384,
+                  1
+                ],
+                "float32"
+              ],
+              "starts": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "ends": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "indexes": [
+                [
+                  1,
+                  1,
+                  1,
+                  2048
+                ],
+                "int32"
+              ]
+            },
+            "params": {
+              "index_score": [
+                [
+                  1,
+                  1,
+                  16384,
+                  1
+                ],
+                "float32"
+              ],
+              "starts": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "ends": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "indexes": [
+                [
+                  1,
+                  1,
+                  1,
+                  2048
+                ],
+                "int32"
+              ],
+              "topk": 2048
+            }
+          },
+          "tileops_latency_us": null,
+          "ratio": null
+        },
+        {
+          "library": "ops-transformer",
+          "op": "TopKSelectFwdOp",
+          "case": "ds-v32-topk-decode-b1",
+          "latency_us": 812.4271999999999,
+          "samples": 15,
+          "measurement_id": "c04c2e3b3d79b9aca5dd9f5e55198490ac423278c0f7a14685c06366d8c08ffd",
+          "protocol": "ascend950-isolated-ffts-v2",
+          "workload": {
+            "op": "TopKSelectFwdOp",
+            "case_id": "ds-v32-topk-decode-b1",
+            "family": "attention",
+            "tensors": {
+              "index_score": [
+                [
+                  1,
+                  1,
+                  16384,
+                  1
+                ],
+                "float32"
+              ],
+              "starts": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "ends": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "indexes": [
+                [
+                  1,
+                  1,
+                  1,
+                  2048
+                ],
+                "int32"
+              ]
+            },
+            "params": {
+              "index_score": [
+                [
+                  1,
+                  1,
+                  16384,
+                  1
+                ],
+                "float32"
+              ],
+              "starts": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "ends": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "indexes": [
+                [
+                  1,
+                  1,
+                  1,
+                  2048
+                ],
+                "int32"
+              ],
+              "topk": 2048
+            }
+          },
+          "tileops_latency_us": null,
+          "ratio": null
+        },
+        {
+          "library": "ops-math",
+          "op": "TopKSelectFwdOp",
+          "case": "ds-v32-topk-decode-b1",
+          "latency_us": 43.69473333333333,
+          "samples": 15,
+          "measurement_id": "5932d6a499aab10ba6df28994b763394342c6fd6b40020706193a0689e4ff41e",
+          "protocol": "ascend950-isolated-ffts-v2",
+          "workload": {
+            "op": "TopKSelectFwdOp",
+            "case_id": "ds-v32-topk-decode-b1",
+            "family": "attention",
+            "tensors": {
+              "index_score": [
+                [
+                  1,
+                  1,
+                  16384,
+                  1
+                ],
+                "float32"
+              ],
+              "starts": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "ends": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "indexes": [
+                [
+                  1,
+                  1,
+                  1,
+                  2048
+                ],
+                "int32"
+              ]
+            },
+            "params": {
+              "index_score": [
+                [
+                  1,
+                  1,
+                  16384,
+                  1
+                ],
+                "float32"
+              ],
+              "starts": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "ends": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "indexes": [
+                [
+                  1,
+                  1,
+                  1,
+                  2048
+                ],
+                "int32"
+              ],
+              "topk": 2048
+            }
+          },
+          "tileops_latency_us": null,
+          "ratio": null
+        },
+        {
+          "library": "torch-eager",
+          "op": "TopKSelectFwdOp",
+          "case": "ds-v32-topk-decode-b1",
+          "latency_us": 73.53293333333333,
+          "samples": 15,
+          "measurement_id": "b9ac66c7647f8b9b055fc2bec6d176189cf69355527e35db582c4961a0f0c8d9",
+          "protocol": "ascend950-isolated-ffts-v3",
+          "parser_revision": "v3-task-coverage-full32-20261103",
+          "workload": {
+            "op": "TopKSelectFwdOp",
+            "case_id": "ds-v32-topk-decode-b1",
+            "family": "attention",
+            "tensors": {
+              "index_score": [
+                [
+                  1,
+                  1,
+                  16384,
+                  1
+                ],
+                "float32"
+              ],
+              "starts": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "ends": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "indexes": [
+                [
+                  1,
+                  1,
+                  1,
+                  2048
+                ],
+                "int32"
+              ]
+            },
+            "params": {
+              "index_score": [
+                [
+                  1,
+                  1,
+                  16384,
+                  1
+                ],
+                "float32"
+              ],
+              "starts": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "ends": [
+                [
+                  1,
+                  1
+                ],
+                "int32"
+              ],
+              "indexes": [
+                [
+                  1,
+                  1,
+                  1,
+                  2048
+                ],
+                "int32"
+              ],
+              "topk": 2048
+            }
+          },
+          "ratio": null,
+          "tileops_latency_us": null
+        }
+      ],
+      "native_row_matches_old": true
+    },
+    "renderer": {
+      "url": "https://raw.githubusercontent.com/yyttt6/TileOPs.github.io/95f95ca9f8437ee14a6d23062bbbe4cb15bc6aa5/scripts/render_baseline_cache.py",
+      "bytes": 13690,
+      "sha256": "95b746fbf7149cb478f859dd2ee66739cbba82ebfbcab9d853de2917e6b5ba48"
+    }
+  },
+  "old_snapshot": {
+    "commit": "b1b6bd3ac9b98bcff6cb2b085cd85532cba12411",
+    "frozen_at": "2026-11-02T02:15:50.349860+00:00",
+    "row": {
+      "library": "ops-math",
+      "op": "TopKSelectFwdOp",
+      "case": "ds-v32-topk-decode-b1",
+      "latency_us": 43.69473333333333,
+      "samples": 15,
+      "measurement_id": "5932d6a499aab10ba6df28994b763394342c6fd6b40020706193a0689e4ff41e",
+      "protocol": "ascend950-isolated-ffts-v2",
+      "workload": {
+        "op": "TopKSelectFwdOp",
+        "case_id": "ds-v32-topk-decode-b1",
+        "family": "attention",
+        "tensors": {
+          "index_score": [
+            [
+              1,
+              1,
+              16384,
+              1
+            ],
+            "float32"
+          ],
+          "starts": [
+            [
+              1,
+              1
+            ],
+            "int32"
+          ],
+          "ends": [
+            [
+              1,
+              1
+            ],
+            "int32"
+          ],
+          "indexes": [
+            [
+              1,
+              1,
+              1,
+              2048
+            ],
+            "int32"
+          ]
+        },
+        "params": {
+          "index_score": [
+            [
+              1,
+              1,
+              16384,
+              1
+            ],
+            "float32"
+          ],
+          "starts": [
+            [
+              1,
+              1
+            ],
+            "int32"
+          ],
+          "ends": [
+            [
+              1,
+              1
+            ],
+            "int32"
+          ],
+          "indexes": [
+            [
+              1,
+              1,
+              1,
+              2048
+            ],
+            "int32"
+          ],
+          "topk": 2048
+        }
+      },
+      "tileops_latency_us": null,
+      "ratio": null
+    }
+  },
+  "local_trace_crosscheck": {
+    "samples": 45,
+    "ffts_named_mean_us": 10.639244444444444,
+    "stars_named_mean_us": 10.908133333333334,
+    "unnamed_record_types": {
+      "3": {
+        "records": 180,
+        "mean_record_us": 0.007
+      },
+      "20": {
+        "records": 45,
+        "mean_record_us": 3.182111111111111
+      },
+      "6": {
+        "records": 45,
+        "mean_record_us": 0.028022222222222223
+      },
+      "7": {
+        "records": 45,
+        "mean_record_us": 0.028
+      }
+    },
+    "limits": "Unnamed records excluded by named-kernel timer; meanings and historical v2 accounting not yet aligned"
+  },
+  "hardware_preference": {
+    "development": "950PR, 28 cores",
+    "acceptance": "950DT, 32 cores",
+    "source": "Explicit user statement, not newly queried properties",
+    "rule": "Do not assume 32 participants in development or extrapolate performance by 32/28"
+  }
+}

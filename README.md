@@ -1,3 +1,5 @@
+最新路线建议：[单核完整键阈值选择与条件预算](deliveries/topk-route-selection-and-performance-budget-20261105.md)。停止SIMT排名M直接集成，优先验证真实向量hist/最终收集；未测性能不报8–14μs预测。按28核PR、原完整验收规格开发，M原生SIMD路线仅作备选。
+
 最新结果：[实际归并r2](experiments/topk/20261105-merge-execution-r2-093737/analysis.md)：无同步诊断，两档各32组×3次设备正确性通过，但单节点58.458/55.391μs，不宜直接集成完整M。无需重跑；须先验证低成本向量排序/归并路线，无新全TopK性能。开发按28核PR，完整测试保持原验收规格，不缩7/8、不按32/28外推。
 
 当前入口：[实际归并r2同步重试](diagnostics/topk-merge-execution-r2/README.md)。r1两档编译完成但有ThreadSync诊断，守卫拒绝执行，无设备结果或耗时；已归档。r2只改有界地址与分歧共享写表达，64项CPU实际AST通过，继续保留同步守卫。
