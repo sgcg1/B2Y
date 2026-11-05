@@ -8,6 +8,8 @@
 
 > 2026-11-05新证据：[独立消费数设备探针](../experiments/topk/20261105-merge-consumption-probe-r1-090941/analysis.md)已完成，二分/显式树各96组×3次通过；scan_control编译失败是对照结果，非整轮失败。消费数无scan硬依赖已验证，实际设备排序/多批归并及性能仍待验证。本轮无需重跑。
 
+> 当前下一步入口：[M实际设备归并r1](../diagnostics/topk-merge-execution-r1/README.md)。用户已要求继续设备验证；新候选以SIMT并行排名生成真实归并输出并按消费数推进，64项实际AST的CPU检查通过，尚无此轮设备结果。只测归并节点，不得将其耗时称为完整TopK。
+
 ## 我们在做什么任务
 
 优化TileOPs的TopKSelectFwd。用户最新目标是：在**同一现有950PR环境、指定规格下，当前实现稳定优于原生ops-math TopKV2**。不再把截图43.7μs作为固定门槛，也不要求先取得server2环境才能测量。最终应对接`yyttt6/TileOPs`的`ascend950`分支，遵守其[issue #1](https://github.com/yyttt6/TileOPs/issues/1)及仓库规范。准备PR前应重新读取实际规范，不能凭本文推断全部验收细节。

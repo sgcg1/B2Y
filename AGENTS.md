@@ -1,3 +1,5 @@
+当前执行入口：[M实际设备归并r1](diagnostics/topk-merge-execution-r1/README.md)。NPU生成完整键归并输出并连续推进批次，R128/R256各32组正确性及单节点设备计时。实际内核AST的64项CPU验证通过；设备结果待回传，不等于完整TopK或SIMD merge已验证。
+
 最新独立设备验证：[M消费数无scan路径通过](experiments/topk/20261105-merge-consumption-probe-r1-090941/analysis.md)。二分与显式树归约均96组×3次通过；仅T.cumsum对照编译失败，非整轮失败。本轮无需重跑；没有计时或实际设备排序/归并，不能宣称M完整可行或达标。
 
 当前独立验证入口：[M消费数统计能力探针](diagnostics/topk-merge-consumption-probe-r1/README.md)。按用户要求独立测试二分消费数、手写树归约及T.cumsum；不采用对方探针结论，96组CPU自检通过，设备结果待回传；不等于完整M归并/TopK验证。
