@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "encoding": "gzip+base64",
+  "part_max_bytes": 65536,
+  "files": [
+    {
+      "original_name": "topk-42-step2-r1-20261105-111338-4799.json",
+      "source_path": "/home/y00937463/B2Y/AAA_Results/topk-42-step2-r1-20261105-111338-4799.json",
+      "original_bytes": 119752,
+      "original_sha256": "eee61099af7f0809c742e2c75f21d56c5952166abbfef46e74b9fab3cacd25cd",
+      "gzip_bytes": 21273,
+      "gzip_sha256": "0b1812139df2c7ad48e1d60b3d8cf352322dc5398da9942c49c2757791a9ed33",
+      "parts": [
+        {
+          "name": "topk-42-step2-r1-20261105-111338-4799-parts-topk-42-step2-r1-20261105-111338-4799.json-part-0001.txt",
+          "bytes": 28364,
+          "sha256": "f2ec2f369c450610ad32e80cd8c79e99a53e3cedff36c2ef432146fdff05c51e"
+        }
+      ]
+    }
+  ]
+}
