@@ -101,7 +101,10 @@ def execute(root,report):
         if not all(record['native_markers'].values()):
             record['status']='rejected_native_lowering_unverified';continue
         output=torch.empty((4,128),dtype=torch.int16,device='npu')
-        def invoke():program(x,tags,output)
+        output_u16=output.view(torch.uint16)
+        assert output_u16.dtype==torch.uint16 and output_u16.data_ptr()==output.data_ptr()
+        record['output_binding']={'storage_dtype':str(output.dtype),'kernel_dtype':str(output_u16.dtype),'shared_storage':True}
+        def invoke():program(x,tags,output_u16)
         def actual_values():return (output.cpu().to(torch.int32)&65535).tolist()
         record['validation']=[]
         for c in cases:

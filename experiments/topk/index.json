@@ -270,6 +270,12 @@
       "title": "阈值原语r1：SIMT表达成本高，发现嵌套SIMD直方图源码",
       "status": "correctness_passed_simt_cost_high_nested_histogram_discovered",
       "metadata": "20261105-threshold-primitives-r1-102742/metadata.json"
+    },
+    {
+      "id": "20261105-native-histogram-r1-105405",
+      "title": "原生直方图r1编译通过，输出类型检查阻断调用",
+      "status": "failed_host_output_dtype_before_execution",
+      "metadata": "20261105-native-histogram-r1-105405/metadata.json"
     }
   ]
 }

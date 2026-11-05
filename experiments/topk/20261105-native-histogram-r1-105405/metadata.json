@@ -1,0 +1,46 @@
+{
+  "id": "20261105-native-histogram-r1-105405",
+  "title": "原生直方图r1编译通过，输出类型检查阻断调用",
+  "status": "failed_host_output_dtype_before_execution",
+  "received_commit": "f7556dd",
+  "tool_commit": "465bdbe",
+  "files": [
+    {
+      "source": "AAA_Results/topk-native-histogram-r1-20261105-105405-3212-parts-manifest.json",
+      "archive": "raw/topk-native-histogram-r1-20261105-105405-3212-parts-manifest.json",
+      "bytes": 826,
+      "sha256": "f0314196d9559866eb51d9ad2712368342bdb5507888e6ff9b2988020567fff1"
+    },
+    {
+      "source": "AAA_Results/topk-native-histogram-r1-20261105-105405-3212-parts-topk-native-histogram-r1-20261105-105405-3212.json-part-0001.txt",
+      "archive": "raw/topk-native-histogram-r1-20261105-105405-3212-parts-topk-native-histogram-r1-20261105-105405-3212.json-part-0001.txt",
+      "bytes": 58668,
+      "sha256": "18dd9f1a819ad038aacb0db8d3a26a608c09c4e7870e10626ec6760f735bd1a5"
+    },
+    {
+      "source": "AAA_Results/topk-native-histogram-r1-20261105-105405-3212.json",
+      "archive": "raw/topk-native-histogram-r1-20261105-105405-3212.json",
+      "bytes": 188516,
+      "sha256": "0bc0bca7ad1c01eb4646aea909f6b6aa26b46bb53f2b16fb6bbae92124e43c08"
+    },
+    {
+      "source": "AAA_Results/topk-native-histogram-r1-20261105-105405-3212.log",
+      "archive": "raw/topk-native-histogram-r1-20261105-105405-3212.log",
+      "bytes": 1612,
+      "sha256": "3e8584d9c505c0cdbd1b3697014d367b66cda9c4117f08dc5818b0b09cc24df5"
+    }
+  ],
+  "verified": {
+    "direct_and_shards_identical": true,
+    "embedded_evidence_hashes": 8,
+    "native_generated_markers": {
+      "simd_inst::dhistv2": true,
+      "simd_inst::chistv2": true,
+      "Bin_N0": true,
+      "Bin_N1": true
+    },
+    "device_validation_cases": 0,
+    "timing_windows": 0
+  },
+  "root_cause": "uint16 kernel output passed as int16 tensor; missing dtype view in runner"
+}

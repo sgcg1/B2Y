@@ -1,3 +1,5 @@
+最新回传：[原生直方图r1调用前dtype失败](20261105-native-histogram-r1-105405/analysis.md)。full_zero编译及原生标记通过；int16输出未转uint16 view导致FFI拒绝，0项设备验证、无耗时。已修复runner绑定，更新后按原生直方图r1入口重试；不改内核/oracle，不据失败判断硬件能力。
+
 最新结果：[阈值原语r1](20261105-threshold-primitives-r1-102742/analysis.md)：两项24组×3次通过，SIMT键转换46.002μs、融合收集67.951μs，不可相加。发现嵌套SIMD频数/累计histogram源码与codegen线索，实际API/指令/耗时尚待验证。
 
 最新结果：[实际归并r2正确但慢](20261105-merge-execution-r2-093737/analysis.md)：两档32组×3次设备验证通过，R128为58.458μs、R256为55.391μs/节点。10窗口重放一致；暂停直接集成SIMT排名路径，下一道关卡是低成本向量排序/归并表达。

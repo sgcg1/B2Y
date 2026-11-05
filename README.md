@@ -1,3 +1,5 @@
+最新回传：[原生直方图r1调用前dtype失败](experiments/topk/20261105-native-histogram-r1-105405/analysis.md)。full_zero编译及原生标记通过；int16输出未转uint16 view导致FFI拒绝，0项设备验证、无耗时。已修复runner绑定，更新后按原生直方图r1入口重试；不改内核/oracle，不据失败判断硬件能力。
+
 当前执行入口：[原生SIMD直方图r1](diagnostics/topk-native-histogram-r1/README.md)。核对现场嵌套接口与原生生成代码后，测试256桶频数/累计计数、mask、非零初值和64向量累积；54项CPU数学检查通过，设备待回传。单block预制字节探针，不是完整FP32 TopK或DT性能预测。
 
 最新结果：[阈值原语r1](experiments/topk/20261105-threshold-primitives-r1-102742/analysis.md)。SIMT键转换46.002μs、融合收集67.951μs，正确性通过但不宜集成。关键发现：嵌套simd.py和codegen有频数/累计直方图线索，顶层无导出不等于后端无能力。下一步核对现场SIMD API并直接测试；本轮无需重跑。

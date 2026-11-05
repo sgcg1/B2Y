@@ -1,6 +1,10 @@
 # 原生SIMD直方图验证 r1
 
-本轮承接阈值原语r1的源码发现，直接验证嵌套 `T.simd.dhistv2/chistv2`，不继续旧TopK开关微调。**尚无本轮设备结果。**
+本轮承接阈值原语r1的源码发现，直接验证嵌套 `T.simd.dhistv2/chistv2`，不继续旧TopK开关微调。**首次运行在输出dtype参数检查失败，已修复，需要更新后重试。**
+
+## 首次回传与修复
+
+[失败分析与原始证据](../../experiments/topk/20261105-native-histogram-r1-105405/analysis.md)：full_zero编译通过并含原生hist标记，但int16输出直接传入uint16签名，FFI在首用例调用前拒绝；没有设备正确性或耗时。现保留int16 storage做初始化/解码，传入共享storage的uint16 view；不改内核与oracle。请更新本仓后按下方入口重试一次。
 
 ## 现有 yjl 容器执行
 

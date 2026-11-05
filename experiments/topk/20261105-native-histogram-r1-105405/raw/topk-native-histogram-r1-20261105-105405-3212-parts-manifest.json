@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "encoding": "gzip+base64",
+  "part_max_bytes": 65536,
+  "files": [
+    {
+      "original_name": "topk-native-histogram-r1-20261105-105405-3212.json",
+      "source_path": "/home/y00937463/B2Y/AAA_Results/topk-native-histogram-r1-20261105-105405-3212.json",
+      "original_bytes": 188516,
+      "original_sha256": "0bc0bca7ad1c01eb4646aea909f6b6aa26b46bb53f2b16fb6bbae92124e43c08",
+      "gzip_bytes": 43999,
+      "gzip_sha256": "1f560fc5216b2fb9739fc172209dc629f79365c594410c7857aa4b3d3e88429d",
+      "parts": [
+        {
+          "name": "topk-native-histogram-r1-20261105-105405-3212-parts-topk-native-histogram-r1-20261105-105405-3212.json-part-0001.txt",
+          "bytes": 58668,
+          "sha256": "18dd9f1a819ad038aacb0db8d3a26a608c09c4e7870e10626ec6760f735bd1a5"
+        }
+      ]
+    }
+  ]
+}
