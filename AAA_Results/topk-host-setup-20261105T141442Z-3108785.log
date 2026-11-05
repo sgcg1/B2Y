@@ -1,0 +1,6 @@
+SNAPSHOT_IMAGE: topk-yjl-snapshot:20261105141442-3108785
+Creating filesystem snapshot; Docker briefly pauses yjl during commit.
+sha256:f15b843453298421fa8d3fdec7c31d0907f3fa76ffc1e6f19c1a3cb689e344e4
+1cef7a0cda54646f7d75db55ba713f2ad67e52b4d66663d5773214dc0fa93f26
+Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: unable to retrieve OCI runtime error (open /run/containerd/io.containerd.runtime.v2.task/moby/1cef7a0cda54646f7d75db55ba713f2ad67e52b4d66663d5773214dc0fa93f26/log.json: no such file or directory): /usr/local/Ascend/Ascend-Docker-Runtime/ascend-docker-runtime did not terminate successfully: exit status 1: unknown
+Error: failed to start containers: yjl-topk-guard
