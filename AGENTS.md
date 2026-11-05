@@ -1,3 +1,5 @@
+第2步结果：[公共CPU通过，宿主预约条件阻塞](experiments/topk/20261105-roadmap-step2-r1-111338/analysis.md)。279+101项通过，14项公共规则skip；BMM未执行，无设备收据，next_step_allowed=false。无需重跑CPU，先按[环境阻塞说明](deliveries/topk-roadmap-step2-environment-blocker-20261105.md)确认站点共享guard/锁与PID可见性，再补BMM；不进入第3步或性能优化。
+
 当前唯一执行入口：[按4.2顺序补齐第2步](diagnostics/topk-42-step2-r1/README.md)。用户要求跳过认领，其余按序推进；已冻结目标ascend950起点4409536e并建独立分支，先做公共CPU与已有BMM环境检查。暂停新性能/直方图试跑，未获公共收据不得进入第3—6步；不以私人锁替代host guard，不把950PR标为canonical通过。
 
 最新回传：[原生直方图r1调用前dtype失败](experiments/topk/20261105-native-histogram-r1-105405/analysis.md)。full_zero编译及原生标记通过；int16输出未转uint16 view导致FFI拒绝，0项设备验证、无耗时。已修复runner绑定，更新后按原生直方图r1入口重试；不改内核/oracle，不据失败判断硬件能力。

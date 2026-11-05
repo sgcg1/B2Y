@@ -1,0 +1,48 @@
+{
+  "id": "20261105-roadmap-step2-r1-111338",
+  "title": "4.2第2步：公共CPU检查通过，宿主预约入口阻塞BMM",
+  "status": "partial_cpu_passed_host_guard_missing",
+  "received_commit": "264cee2",
+  "tool_commit": "51ae902",
+  "target_sha": "4409536e1f0dba8dca7141d6aee6fc6677afa9ce",
+  "files": [
+    {
+      "source": "AAA_Results/topk-42-step2-r1-20261105-111338-4799-parts-manifest.json",
+      "archive": "raw/topk-42-step2-r1-20261105-111338-4799-parts-manifest.json",
+      "bytes": 794,
+      "sha256": "0560d0088657355425297c4edb01615710d7b20b1dbe9c996d9fedae6fba0b3c"
+    },
+    {
+      "source": "AAA_Results/topk-42-step2-r1-20261105-111338-4799-parts-topk-42-step2-r1-20261105-111338-4799.json-part-0001.txt",
+      "archive": "raw/topk-42-step2-r1-20261105-111338-4799-parts-topk-42-step2-r1-20261105-111338-4799.json-part-0001.txt",
+      "bytes": 28364,
+      "sha256": "f2ec2f369c450610ad32e80cd8c79e99a53e3cedff36c2ef432146fdff05c51e"
+    },
+    {
+      "source": "AAA_Results/topk-42-step2-r1-20261105-111338-4799.json",
+      "archive": "raw/topk-42-step2-r1-20261105-111338-4799.json",
+      "bytes": 119752,
+      "sha256": "eee61099af7f0809c742e2c75f21d56c5952166abbfef46e74b9fab3cacd25cd"
+    }
+  ],
+  "verified": {
+    "direct_and_shards_identical": true,
+    "embedded_evidence_hashes": 11,
+    "junit_recount": {
+      "contracts": {
+        "failure": 0,
+        "error": 0,
+        "skipped": 0,
+        "passed": 279
+      },
+      "benchmark-contracts": {
+        "failure": 0,
+        "error": 0,
+        "skipped": 14,
+        "passed": 101
+      }
+    }
+  },
+  "bmm_executed": false,
+  "next_step_allowed": false
+}

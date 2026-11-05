@@ -276,6 +276,12 @@
       "title": "原生直方图r1编译通过，输出类型检查阻断调用",
       "status": "failed_host_output_dtype_before_execution",
       "metadata": "20261105-native-histogram-r1-105405/metadata.json"
+    },
+    {
+      "id": "20261105-roadmap-step2-r1-111338",
+      "title": "4.2第2步：公共CPU检查通过，宿主预约入口阻塞BMM",
+      "status": "partial_cpu_passed_host_guard_missing",
+      "metadata": "20261105-roadmap-step2-r1-111338/metadata.json"
     }
   ]
 }

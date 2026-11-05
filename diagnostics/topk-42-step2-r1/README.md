@@ -1,3 +1,5 @@
+本轮CPU检查已通过，BMM被共享预约条件阻塞；**不要原样重跑本脚本**。先阅读[结果](../../experiments/topk/20261105-roadmap-step2-r1-111338/analysis.md)与[环境处理说明](../../deliveries/topk-roadmap-step2-environment-blocker-20261105.md)。下文保留首次执行的复现入口。
+
 # 4.2 第2步：公共环境检查（先完成此步）
 
 遵用户要求跳过认领手续，其余严格按issue4.2顺序推进。停止新的算法/性能探针；上轮直方图修复保留，但先不要重跑。
