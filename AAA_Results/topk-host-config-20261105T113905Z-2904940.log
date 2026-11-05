@@ -1,0 +1,27 @@
+Container=/yjl
+ImageID=sha256:5039210f3b913368a1f4ee5e0d43b41a66109eb37da7ed97e50a5dbe9dd76f4d
+ImageName=quay.io/celenewyear/tilelang-ascend:cann9.3.0-weekly.20260930-ubuntu22.04-py3.12
+WorkingDir=/workspace
+User=
+Runtime=ascend
+Devices=[{"PathOnHost":"/dev/davinci0","PathInContainer":"/dev/davinci0","CgroupPermissions":"rwm"},{"PathOnHost":"/dev/davinci1","PathInContainer":"/dev/davinci1","CgroupPermissions":"rwm"},{"PathOnHost":"/dev/davinci2","PathInContainer":"/dev/davinci2","CgroupPermissions":"rwm"},{"PathOnHost":"/dev/davinci3","PathInContainer":"/dev/davinci3","CgroupPermissions":"rwm"},{"PathOnHost":"/dev/davinci4","PathInContainer":"/dev/davinci4","CgroupPermissions":"rwm"},{"PathOnHost":"/dev/davinci5","PathInContainer":"/dev/davinci5","CgroupPermissions":"rwm"},{"PathOnHost":"/dev/davinci6","PathInContainer":"/dev/davinci6","CgroupPermissions":"rwm"},{"PathOnHost":"/dev/davinci7","PathInContainer":"/dev/davinci7","CgroupPermissions":"rwm"},{"PathOnHost":"/dev/davinci_manager","PathInContainer":"/dev/davinci_manager","CgroupPermissions":"rwm"},{"PathOnHost":"/dev/hisi_hdc","PathInContainer":"/dev/hisi_hdc","CgroupPermissions":"rwm"}]
+DeviceRequests=null
+DeviceCgroupRules=null
+NetworkMode=bridge
+PortBindings={}
+PidMode=
+IpcMode=shareable
+ShmSize=67108864
+CapAdd=["SYS_ADMIN"]
+CapDrop=null
+SecurityOpt=["seccomp=unconfined"]
+Privileged=false
+RestartPolicy={"Name":"no","MaximumRetryCount":0}
+Ulimits=null
+Mount= bind /usr/local/dcmi -> /usr/local/dcmi RW= true
+Mount= bind /etc/ascend_install.info -> /etc/ascend_install.info RW= true
+Mount= bind /home -> /home RW= true
+Mount= bind /usr/local/Ascend/driver/lib64 -> /usr/local/Ascend/driver/lib64 RW= true
+Mount= bind /usr/local/Ascend/driver/version.info -> /usr/local/Ascend/driver/version.info RW= true
+Mount= bind /usr/local/bin/npu-smi -> /usr/local/bin/npu-smi RW= true
+
