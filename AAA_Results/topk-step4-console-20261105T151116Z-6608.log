@@ -1,0 +1,24 @@
+[W1105 15:11:57.329089560 ToKernelNpu.cpp:40] Warning: Device do not support double dtype now, dtype cast replace with float. (function operator())
+2026-11-05 15:11:38  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-05 15:11:56  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+............UPLOAD_MANIFEST /home/y00937463/B2Y/AAA_Results/topk-42-step4-r1-20261105-151116-6611-parts-manifest.json
+UPLOAD_PART /home/y00937463/B2Y/AAA_Results/topk-42-step4-r1-20261105-151116-6611-parts-topk-42-step4-r1-20261105-151116-6611.json-part-0001.txt
+
+======================================================== fixture duration top =========================================================
+total          name                                                                                   num med            max           
+0:00:00.005740 tests::setup                                                                            12 0:00:00.000396 0:00:00.001355
+0:00:00.006352 grand total                                                                             48 0:00:00.000206 0:00:00.001355
+======================================================= test call duration top ========================================================
+total          name                                                                                   num med            max           
+0:00:00.061570 tests/ops/test_topk_select_ascend_decode.py::test_topk_select_ascend_decode_boundaries  12 0:00:00.004474 0:00:00.006934
+0:00:00.061570 grand total                                                                             12 0:00:00.004474 0:00:00.006934
+======================================================= test setup duration top =======================================================
+total          name                                                                                   num med            max           
+0:00:00.007869 tests/ops/test_topk_select_ascend_decode.py::test_topk_select_ascend_decode_boundaries  12 0:00:00.000554 0:00:00.001741
+0:00:00.007869 grand total                                                                             12 0:00:00.000554 0:00:00.001741
+===================================================== test teardown duration top ======================================================
+total          name                                                                                   num med            max           
+0:00:00.001378 grand total                                                                             12 0:00:00.000112 0:00:00.000140
+12 passed in 0.10s
+STATUS development_boundary_correctness_passed
+UPLOAD_RESULT /home/y00937463/B2Y/AAA_Results/topk-42-step4-r1-20261105-151116-6611.json
