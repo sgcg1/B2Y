@@ -258,6 +258,12 @@
       "title": "实际归并r1：ThreadSync守卫拒绝执行",
       "status": "blocked_sync_diagnostic_before_execution",
       "metadata": "20261105-merge-execution-r1-093046/metadata.json"
+    },
+    {
+      "id": "20261105-merge-execution-r2-093737",
+      "title": "精确归并r2：正确性通过，单节点55–58us不宜集成",
+      "status": "correctness_passed_rank_merge_rejected_for_integration_cost",
+      "metadata": "20261105-merge-execution-r2-093737/metadata.json"
     }
   ]
 }

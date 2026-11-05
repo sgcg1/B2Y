@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "encoding": "gzip+base64",
+  "part_max_bytes": 65536,
+  "files": [
+    {
+      "original_name": "topk-merge-execution-r2-20261105-093737-980.json",
+      "source_path": "/home/y00937463/B2Y/AAA_Results/topk-merge-execution-r2-20261105-093737-980.json",
+      "original_bytes": 722073,
+      "original_sha256": "7079be84b49f3f4194a1180b54fa34f432f8d6549e8639d00a87128107ebaa8b",
+      "gzip_bytes": 75635,
+      "gzip_sha256": "2dba92331580a0575daa1faaa6e606258716dc3e0340617aa7dfd2bf40a1d6e8",
+      "parts": [
+        {
+          "name": "topk-merge-execution-r2-20261105-093737-980-parts-topk-merge-execution-r2-20261105-093737-980.json-part-0001.txt",
+          "bytes": 65536,
+          "sha256": "892303d041351a21a7f54c00fe385ae550d24635e04b34f899bb3cad773bab7e"
+        },
+        {
+          "name": "topk-merge-execution-r2-20261105-093737-980-parts-topk-merge-execution-r2-20261105-093737-980.json-part-0002.txt",
+          "bytes": 35312,
+          "sha256": "d773302de3cfc49a74bdaf458a6cd860498e82d0279fb6e17ec72a8c972969e2"
+        }
+      ]
+    }
+  ]
+}

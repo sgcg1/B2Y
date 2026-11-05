@@ -1,0 +1,89 @@
+{
+  "id": "20261105-merge-execution-r2-093737",
+  "title": "精确归并r2：正确性通过，单节点55–58us不宜集成",
+  "status": "correctness_passed_rank_merge_rejected_for_integration_cost",
+  "received_commit": "6a0fc2f",
+  "tool_commit": "10c4e38",
+  "run_date": "2026-11-05",
+  "files": [
+    {
+      "source": "AAA_Results/topk-merge-execution-r2-20261105-093737-980.json",
+      "archive": "raw/topk-merge-execution-r2-20261105-093737-980.json",
+      "bytes": 722073,
+      "sha256": "7079be84b49f3f4194a1180b54fa34f432f8d6549e8639d00a87128107ebaa8b"
+    },
+    {
+      "source": "AAA_Results/topk-merge-execution-r2-20261105-093737-980.log",
+      "archive": "raw/topk-merge-execution-r2-20261105-093737-980.log",
+      "bytes": 3029,
+      "sha256": "49d545ad2a3b23ee4fc0b6de3697e7a195d19529d8327095cb8a8e84244b41cc"
+    },
+    {
+      "source": "AAA_Results/topk-merge-execution-r2-20261105-093737-980-parts-manifest.json",
+      "archive": "raw/topk-merge-execution-r2-20261105-093737-980-parts-manifest.json",
+      "bytes": 1086,
+      "sha256": "8a01300b3e471f5578df54fdd6c69ac0bd7522ad42d44a990a0b1208aae4171f"
+    },
+    {
+      "source": "AAA_Results/topk-merge-execution-r2-20261105-093737-980-parts-topk-merge-execution-r2-20261105-093737-980.json-part-0001.txt",
+      "archive": "raw/topk-merge-execution-r2-20261105-093737-980-parts-topk-merge-execution-r2-20261105-093737-980.json-part-0001.txt",
+      "bytes": 65536,
+      "sha256": "892303d041351a21a7f54c00fe385ae550d24635e04b34f899bb3cad773bab7e"
+    },
+    {
+      "source": "AAA_Results/topk-merge-execution-r2-20261105-093737-980-parts-topk-merge-execution-r2-20261105-093737-980.json-part-0002.txt",
+      "archive": "raw/topk-merge-execution-r2-20261105-093737-980-parts-topk-merge-execution-r2-20261105-093737-980.json-part-0002.txt",
+      "bytes": 35312,
+      "sha256": "d773302de3cfc49a74bdaf458a6cd860498e82d0279fb6e17ec72a8c972969e2"
+    }
+  ],
+  "validation": {
+    "cases_per_width": 32,
+    "repeats": 3,
+    "batch_widths": [
+      128,
+      256
+    ],
+    "input_and_output_hashes": "reconstructed and matched",
+    "all_batch_traces": "matched independent full-sort oracle",
+    "timing_windows_replayed": 10,
+    "embedded_evidence_sha256_files": 128,
+    "direct_and_parts_report": "identical",
+    "inputs_preserved": true
+  },
+  "timing_us": {
+    "128": {
+      "samples": [
+        58.465,
+        58.545,
+        58.479000000000006,
+        58.317,
+        58.485
+      ],
+      "mean": 58.458200000000005,
+      "stdev": 0.08465931726632415,
+      "min": 58.317,
+      "max": 58.545
+    },
+    "256": {
+      "samples": [
+        55.172,
+        55.443,
+        55.209,
+        55.358,
+        55.771
+      ],
+      "mean": 55.3906,
+      "stdev": 0.23941449413099486,
+      "min": 55.172,
+      "max": 55.771
+    }
+  },
+  "hardware": "Ascend950PR_9579; user specifies 28-core PR development environment",
+  "limits": [
+    "One two-list merge node, not N16384 TopK",
+    "Single device process, 5 samples per width",
+    "SIMT per-element ranking, not native SIMD merge",
+    "Cannot scale by 3 or 32/28; cannot report full-M ratio against website"
+  ]
+}
