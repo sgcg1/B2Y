@@ -35,7 +35,7 @@ class UploadTest(unittest.TestCase):
             self.assertEqual(len(module.select_files(root)),9)
             original_git=module.git
             def local_git(*args,**kwargs):
-                if args==('remote','get-url','origin'):return 'https://gitcode.com/JotaroSSR/B2Y.git'
+                if args==('remote','get-url','origin'):return 'https://github.com/sgcg1/B2Y.git'
                 return original_git(*args,**kwargs)
             with patch.object(module,'ROOT',root),patch.object(module,'git',local_git),patch.object(sys,'argv',['upload.py','--upload']):
                 # First failure leaves exactly one committed file; resume must push it first.

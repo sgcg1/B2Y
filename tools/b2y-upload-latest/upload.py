@@ -89,9 +89,9 @@ def main():
     if git('diff','--cached','--name-only'):raise ValueError('Index contains staged changes; preserve/finish them first')
     url=git('remote','get-url','origin')
     parsed=urlsplit(url)
-    https=parsed.scheme=='https' and parsed.hostname=='gitcode.com' and parsed.path.rstrip('/').removesuffix('.git')=='/JotaroSSR/B2Y' and not parsed.username and not parsed.password
-    ssh=url in ('git@gitcode.com:JotaroSSR/B2Y.git','git@gitcode.com:JotaroSSR/B2Y')
-    if not (https or ssh):raise ValueError('Expected B2Y GitCode remote, without an embedded token')
+    https=parsed.scheme=='https' and parsed.hostname=='github.com' and parsed.path.rstrip('/').removesuffix('.git')=='/sgcg1/B2Y' and not parsed.username and not parsed.password
+    ssh=url in ('git@github.com:sgcg1/B2Y.git','git@github.com:sgcg1/B2Y')
+    if not (https or ssh):raise ValueError('Expected sgcg1/B2Y GitHub remote, without an embedded token')
     synchronize(files)
     for index,name in enumerate(files,1):
         synchronize(files)

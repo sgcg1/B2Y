@@ -1,3 +1,5 @@
+B2Y当前远端：[GitHub sgcg1/B2Y](https://github.com/sgcg1/B2Y)。用户已指定后续只用GitHub；本地origin fetch/push及main上游已切换，GitCode保留备用gitcode远端。服务器迁移命令见[指南](deliveries/b2y-github-migration-20261105.md)，逐文件上传工具已同步改为GitHub；历史GitCode链接仅作原证据出处。
+
 当前入口：[第6步默认与优选原始设备交错对照](diagnostics/topk-42-step6-compare-r1/README.md)。TileOPs仍8b277187，默认不改；原yjl三独立进程、随机/同分/相邻FP32三类、每方法每类15样本共90个FFTS窗口，候选前置完整回归，保留全部原始证据，不混Event或TopKV2旧数据。设备待回传。
 
 最新结果：[第5步四档AutoTuner完成](experiments/topk/20261105-roadmap-step5-r1-152532/analysis.md)。四档及winner边界均通过，256/串行event选择延迟154.154μs vs原128/并行179.902μs，低14.31%；单轮搜索不能称稳定收益/正式耗时。实跑run rep100而旧记录50，已纠正复现脚本。默认未改，无需重跑；下一步第6步原始设备交错复测并回归后决定接入。
