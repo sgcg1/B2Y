@@ -1,3 +1,15 @@
+## 当前下一步：在宿主机只读检查
+
+用户已确认可以进入宿主机终端。更新容器内B2Y后，在**宿主机**执行：
+
+```bash
+docker exec yjl cat /home/y00937463/B2Y/diagnostics/topk-42-step2-r1/host-inspect.sh | bash -s -- yjl
+```
+
+此命令不是在容器内运行。若容器名并非yjl，将命令中两处yjl改为实际容器名。脚本只查看guard候选文件、共享锁元数据、容器挂载及PID命名空间，不运行NPU、不创建锁、不重启容器、不打印环境变量或令牌。
+
+结果自动写回容器B2Y/AAA_Results/topk-step2-host-inspect-时间-PID.log；上传该日志即可。先据结果决定是否复用已有宿主预约或需要站点配置；不盲目重建容器，也不原样重跑公共CPU。
+
 本轮CPU检查已通过，BMM被共享预约条件阻塞；**不要原样重跑本脚本**。先阅读[结果](../../experiments/topk/20261105-roadmap-step2-r1-111338/analysis.md)与[环境处理说明](../../deliveries/topk-roadmap-step2-environment-blocker-20261105.md)。下文保留首次执行的复现入口。
 
 # 4.2 第2步：公共环境检查（先完成此步）
