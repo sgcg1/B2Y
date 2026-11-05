@@ -22,7 +22,7 @@ def main():
     root=Path('/home/y00937463')/('topk-42-step5-r1-'+datetime.datetime.now().strftime('%Y%m%d-%H%M%S')+'-'+str(os.getpid()))
     root.mkdir();source=Path(os.environ.get('TILEOPS_REPO','/home/y00937463/TileOPs')).resolve()
     report={'status':'failed','scope':'yjl development public API correctness; no shared host reservation or formal receipt',
-            'step2':'CPU passed; remainder explicitly deferred by user','step3':'previously_passed','step4':'previously_passed_c70ffa3a','timing':'not_requested'}
+            'step2':'CPU passed; remainder explicitly deferred by user','step3':'previously_passed','step4':'previously_passed_c70ffa3a','timing':'autotuner_selection_only_no_formal_profiler'}
     try:
         identity=json.loads((HERE/'identity.json').read_text())
         for name,digest in identity.items():assert hashlib.sha256((HERE/name).read_bytes()).hexdigest()==digest,name
@@ -147,14 +147,14 @@ def main():
             'sha256':[hashlib.sha256(x.cpu().numpy().tobytes()).hexdigest() for x in supplied]}
         def supply(params):return supplied
         report['stage']='autotuner-search';report['trials']=[]
-        report['search_protocol']={'warmup_argument':25,'rep_argument':50,'backend':'event',
+        report['search_protocol']={'warmup_argument':25,'rep_argument':100,'backend':'event',
             'validation':'All admitted configs validated externally with public workload before search; no elementwise comparison of unordered indices',
             'score_scope':'TileLang config-selection latency only; not formal profiler samples or TopKV2 comparison'}
         tuner=AutoTuner.from_kernel(decode_select_prim,accepted)
         tuner.set_compile_args(out_idx=[3],target='ascend')
         # Unordered index outputs need the public set/value validator above; never use allclose on indices.
-        tuner.set_profile_args(warmup=25,rep=50,supply_prog=supply,skip_check=True,backend='event')
-        options={};run_params=inspect.signature(tuner.run).parameters
+        tuner.set_profile_args(warmup=25,rep=100,supply_prog=supply,skip_check=True,backend='event')
+        options={'warmup':25,'rep':100};run_params=inspect.signature(tuner.run).parameters
         if 'on_trial' in run_params:options['on_trial']=lambda event:report['trials'].append(event)
         if 'benchmark_multi_gpu' in run_params:options['benchmark_multi_gpu']=False
         if 'use_pipeline' in run_params:options['use_pipeline']=False

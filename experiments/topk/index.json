@@ -312,6 +312,12 @@
       "title": "第4步Decode十二项边界和确定性回归通过",
       "status": "development_boundary_correctness_passed",
       "metadata": "20261105-roadmap-step4-r1-151116/metadata.json"
+    },
+    {
+      "id": "20261105-roadmap-step5-r1-152532",
+      "title": "第5步四档真实AutoTuner完成，H256串行扫描优选待设备复测",
+      "status": "search_passed_winner_pending_stability_and_public_integration",
+      "metadata": "20261105-roadmap-step5-r1-152532/metadata.json"
     }
   ]
 }

@@ -1,3 +1,5 @@
+最新结果：[第5步AutoTuner优选H256串行](20261105-roadmap-step5-r1-152532/analysis.md)。4档及优选均正确，选择延迟低14.31%，无稳定/正式收益结论；实际rep100、旧记录50已说明。默认未改。
+
 最新结果：[第4步边界及确定性12/12通过](20261105-roadmap-step4-r1-151116/analysis.md)。0失败/错误/skip，各3次，公共manifest检查通过，无性能计时；下一步第5步AutoTuner配置搜索。
 
 最新结果：[第3步公共TopK Decode正确性通过](20261105-roadmap-step3-r1-142731/analysis.md)。代码727132f7，完整输出检查通过；CPU279+101/14 skip。未计时，边界待补。另已归档[废弃配置路线的runtime启动失败](20261105-abandoned-host-setup-141442/analysis.md)，不再重试新容器。

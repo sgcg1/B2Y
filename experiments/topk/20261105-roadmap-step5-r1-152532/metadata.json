@@ -1,0 +1,107 @@
+{
+  "id": "20261105-roadmap-step5-r1-152532",
+  "title": "第5步四档真实AutoTuner完成，H256串行扫描优选待设备复测",
+  "status": "search_passed_winner_pending_stability_and_public_integration",
+  "received_commit": "d11d26a",
+  "source_sha": "8b27718757f42175dc940326a1278be22bf97c3d",
+  "files": [
+    {
+      "source": "AAA_Results/topk-42-step5-r1-20261105-152532-6960-parts-manifest.json",
+      "archive": "raw/topk-42-step5-r1-20261105-152532-6960-parts-manifest.json",
+      "bytes": 1050,
+      "sha256": "e6f4b93ab687e16df3b0620c508c939f615d3704c748779d23557c653b251981"
+    },
+    {
+      "source": "AAA_Results/topk-42-step5-r1-20261105-152532-6960-parts-topk-42-step5-r1-20261105-152532-6960.json-part-0001.txt",
+      "archive": "raw/topk-42-step5-r1-20261105-152532-6960-parts-topk-42-step5-r1-20261105-152532-6960.json-part-0001.txt",
+      "bytes": 65536,
+      "sha256": "5d901a2680fae271c9c0342a4b50f97c40917a3fedfda40c8743ce5e8f4f21a2"
+    },
+    {
+      "source": "AAA_Results/topk-42-step5-r1-20261105-152532-6960-parts-topk-42-step5-r1-20261105-152532-6960.json-part-0002.txt",
+      "archive": "raw/topk-42-step5-r1-20261105-152532-6960-parts-topk-42-step5-r1-20261105-152532-6960.json-part-0002.txt",
+      "bytes": 61944,
+      "sha256": "34d9c7cda7fd142d0cd691d1913da28befd5c6bccbb89a125fa1fc8953e57bbc"
+    },
+    {
+      "source": "AAA_Results/topk-step5-console-20261105T152532Z-6957.log",
+      "archive": "raw/topk-step5-console-20261105T152532Z-6957.log",
+      "bytes": 7200,
+      "sha256": "c4a95ac3ce87ec42d139e8aa61d0035e1b588565d559c9eb7419e3e9241a84dd"
+    },
+    {
+      "source": "losslessly reconstructed from submitted manifest and parts",
+      "archive": "raw/topk-42-step5-r1-20261105-152532-6960.json",
+      "bytes": 605337,
+      "sha256": "4d48caef3abd0e7e621e1af5e88f5955a3e88d4a6c1a65a781de6d1197a9a41f"
+    }
+  ],
+  "verified": {
+    "embedded_evidence_hashes": 39,
+    "trial_configs": 4,
+    "candidate_boundary_invocations": 144,
+    "winner_boundary_invocations": 36,
+    "winner_cpp_matches_candidate": true
+  },
+  "trials": [
+    {
+      "status": "ok",
+      "index": 2,
+      "config": {
+        "H": 128,
+        "PARALLEL_SCAN": false
+      },
+      "latency_ms": 0.21889346837997437,
+      "validation": "not_run",
+      "error": null
+    },
+    {
+      "status": "ok",
+      "index": 1,
+      "config": {
+        "H": 64,
+        "PARALLEL_SCAN": false
+      },
+      "latency_ms": 0.35793402791023254,
+      "validation": "not_run",
+      "error": null
+    },
+    {
+      "status": "ok",
+      "index": 0,
+      "config": {
+        "H": 128,
+        "PARALLEL_SCAN": true
+      },
+      "latency_ms": 0.17990194261074066,
+      "validation": "not_run",
+      "error": null
+    },
+    {
+      "status": "ok",
+      "index": 3,
+      "config": {
+        "H": 256,
+        "PARALLEL_SCAN": false
+      },
+      "latency_ms": 0.154153972864151,
+      "validation": "not_run",
+      "error": null
+    }
+  ],
+  "winner": {
+    "H": 256,
+    "PARALLEL_SCAN": false
+  },
+  "selection_latency_reduction": 0.1431222441121791,
+  "actual_run_arguments": {
+    "warmup": 25,
+    "rep": 100
+  },
+  "reported_profile_arguments": {
+    "warmup": 25,
+    "rep": 50
+  },
+  "timing_scope": "single AutoTuner event search, no formal profiler or stable improvement claim",
+  "production_default_changed": false
+}

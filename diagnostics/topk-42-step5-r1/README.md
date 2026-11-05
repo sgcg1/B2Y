@@ -1,3 +1,5 @@
+**本轮搜索已完成，无需重跑。** [复核分析](../../experiments/topk/20261105-roadmap-step5-r1-152532/analysis.md)：四档正确性通过，256线程串行优选，event选择延迟较原配置低14.31%；未确认稳定FFTS收益，默认未改。原脚本profile记录rep50，但run()默认实际覆盖为rep100；复现入口已统一显式25/100，原证据保留。下文为复现说明。
+
 # 第5步：真实TileLang AutoTuner有限配置搜索
 
 使用原yjl。TileOPs个人fork分支codex/topk-select-ascend950-42，源码8b27718757f42175dc940326a1278be22bf97c3d；新增tuning.py作为原内核TIR入口，生产默认Kernel及radix算法未改，不是新算法或已获得性能提升。目标PR仍yyttt6/TileOPs:ascend950。
@@ -46,7 +48,7 @@ AutoTuner内部skip_check=True是**显式采用前置公共完整验证**：索�
 
 ## 计时边界与结果解释
 
-使用AutoTuner的event配置选择后端，warmup参数25、rep参数50，具体循环/时长由现场库实现，源码随结果保留；这不等价于正式3次warmup/15次独立profiler。只用于当前随机输入选配置，不能当作正式设备耗时、不能与旧FFTS或截图数据直接相除。不会升级工具链来适配；现场AutoTuner不支持NPU或签名不同则保留实际错误。
+使用AutoTuner的event配置选择后端，warmup参数25、rep参数100，具体循环/时长由现场库实现，源码随结果保留；这不等价于正式3次warmup/15次独立profiler。只用于当前随机输入选配置，不能当作正式设备耗时、不能与旧FFTS或截图数据直接相除。不会升级工具链来适配；现场AutoTuner不支持NPU或签名不同则保留实际错误。
 
 当前默认仍不变。拿到搜索结果后先审查各配置是否实际完成测量、收益是否可信，再将优选配置接回公共Kernel并完整回归；不会自动把单次最快配置当作稳定收益或算子验收成绩。
 

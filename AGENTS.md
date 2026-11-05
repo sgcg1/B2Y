@@ -1,3 +1,5 @@
+最新结果：[第5步四档AutoTuner完成](experiments/topk/20261105-roadmap-step5-r1-152532/analysis.md)。四档及winner边界均通过，256/串行event选择延迟154.154μs vs原128/并行179.902μs，低14.31%；单轮搜索不能称稳定收益/正式耗时。实跑run rep100而旧记录50，已纠正复现脚本。默认未改，无需重跑；下一步第6步原始设备交错复测并回归后决定接入。
+
 当前入口：[第5步有限AutoTuner搜索](diagnostics/topk-42-step5-r1/README.md)。个人fork已推8b277187，仅新增TIR调参入口；4档H/扫描调度含默认，先编译诊断+各12项边界×3，再真实AutoTuner选择并优选后复验。原yjl、直接拉两仓，不修改默认算法；搜索event时间不作正式性能。设备待回传，不预报收益。
 
 最新结果：[第4步Decode边界回归12/12通过](experiments/topk/20261105-roadmap-step4-r1-151116/analysis.md)。源c70ffa3a，JUnit独立核对0失败/错误/skip，12项各3次，输入位模式和选中集合一致；公共manifest也通过。无计时，不重复运行。本范围开发第4步完成，下一步第5步合法AutoTuner搜索；第2步余项及正式验收限制仍保留。
