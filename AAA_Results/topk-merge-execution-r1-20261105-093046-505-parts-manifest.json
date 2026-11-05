@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "encoding": "gzip+base64",
+  "part_max_bytes": 65536,
+  "files": [
+    {
+      "original_name": "topk-merge-execution-r1-20261105-093046-505.json",
+      "source_path": "/home/y00937463/B2Y/AAA_Results/topk-merge-execution-r1-20261105-093046-505.json",
+      "original_bytes": 174883,
+      "original_sha256": "b2f309684f2de9c2a783dd0e97a94a4d25f5d39780aecda6752eab2ab376bc61",
+      "gzip_bytes": 24696,
+      "gzip_sha256": "fa96ddbe92e846833e47c990b3b316dd09e4b47810a3ad8ef55e7dc1a62633fa",
+      "parts": [
+        {
+          "name": "topk-merge-execution-r1-20261105-093046-505-parts-topk-merge-execution-r1-20261105-093046-505.json-part-0001.txt",
+          "bytes": 32928,
+          "sha256": "e6892e3fc3473c4a77cabc9efc23c6fd0603e7c0e8af5c0bd9f0408fc6dee26f"
+        }
+      ]
+    }
+  ]
+}
