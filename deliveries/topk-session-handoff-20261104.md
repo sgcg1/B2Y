@@ -18,6 +18,8 @@
 
 > 当前测试入口：[阈值关键原语r1](../diagnostics/topk-threshold-primitives-r1/README.md)。用户已授权测试：完整键、给定阈值收集和后端源码能力证据；48项实际AST CPU检查通过，尚无本轮设备结果。没有调用未确认的hist接口，也不把SIMT收集当原生压缩；完整T能力仍未闭合。
 
+> 最新阈值原语r1结果：[正确但SIMT成本过高、发现嵌套SIMD直方图](../experiments/topk/20261105-threshold-primitives-r1-102742/analysis.md)。转换46.002μs、含转换收集67.951μs不可相加；均24组×3次通过。源码找到simd.py频数/累计hist与codegen线索，下一步核对现场签名并测真正SIMD；本轮不重跑，无完整新TopK性能。
+
 ## 我们在做什么任务
 
 优化TileOPs的TopKSelectFwd。用户最新目标是：在**同一现有950PR环境、指定规格下，当前实现稳定优于原生ops-math TopKV2**。不再把截图43.7μs作为固定门槛，也不要求先取得server2环境才能测量。最终应对接`yyttt6/TileOPs`的`ascend950`分支，遵守其[issue #1](https://github.com/yyttt6/TileOPs/issues/1)及仓库规范。准备PR前应重新读取实际规范，不能凭本文推断全部验收细节。

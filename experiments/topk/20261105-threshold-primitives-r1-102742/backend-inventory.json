@@ -1,0 +1,347 @@
+{
+  "exports": {
+    "CommReducer": {
+      "signature": "(lhs: list[tvm.tirx.expr.Var], rhs: list[tvm.tirx.expr.Var], result: list[tvm.ir.expr.PrimExpr], identity_element: list[tvm.ir.expr.PrimExpr], span: tvm.ir.base.Span | None = None) -> None",
+      "doc": "Commutative reduce operator\n\nParameters\n----------\nlhs : List[Var]\n   The left arguments of the reducer.\n\nrhs : List[Var]\n   The right arguments of the reducer.\n\nresult : List[PrimExpr]\n   The reduction results.\n\nidentity_element : List[PrimExpr]\n   The identity elements.\n\nspan : Optional[Span]\n    The location of this expression in the source code."
+    },
+    "Fragment": {
+      "signature": "(shape, forward_fn=None, forward_thread_fn=None, replicate=1, forward_index_fn=None)",
+      "doc": "A Fragment layout object that encapsulates iteration variables (forward_vars),\nthread iteration variables (forward_thread), and index transformations\n(forward_index). This class supports replication (thread_replicate) and\nindex mapping for fine-grained control over multi-dimensional data layouts."
+    },
+    "FragmentBuffer": {
+      "signature": "(shape: 'ShapeType', dtype: 'DType' = 'float32', data=None, strides=None, elem_offset=None, scope=None, align=None, offset_factor=None, buffer_type='', axis_separators=None) -> 'tirx.Buffer'",
+      "doc": "Proxy class for fragment memory buffers.\n\nThis class represents tensor proxies specifically for local fragment memory,\ntypically used in GPU tensor core operations."
+    },
+    "PartialFragment": {
+      "signature": "(shape, forward_fn=None, forward_thread_fn=None, replicate=1, forward_index_fn=None, combine=None)",
+      "doc": "Layout of a reducer's per-thread partials.\n\nSame algebra as Fragment, but the replication coordinate enumerates\naddends that still await the finalize collective (combine lanes), not\nequal copies of a finished value. Inferred by layout inference for\n``local.reducer`` buffers, or supplied by the user via\n``T.annotate_layout({acc: PartialFragment(...)})`` to pin the reducer's\nphysical plan."
+    },
+    "Reduce": {
+      "signature": "(combiner: tvm.tirx.expr.CommReducer, src: list[tvm.ir.expr.PrimExpr], rdom: list[tvm.tirx.expr.IterVar], condition: tvm.ir.expr.PrimExpr, value_index: int, init: list[tvm.ir.expr.PrimExpr] | None = None, span: tvm.ir.base.Span | None = None) -> None",
+      "doc": "Reduce node.\n\nParameters\n----------\ncombiner : CommReducer\n    The combiner.\n\nsrc : list of Expr\n    The source expression.\n\nrdom : list of IterVar\n    The iteration domain\n\ncondition : PrimExpr\n    The reduce condition.\n\nvalue_index : int\n    The value index.\n\ninit : list of Expr\n    The initial value for output. This can be an int, float or ProducerLoad\n\nspan : Optional[Span]\n    The location of"
+    },
+    "Shuffle": {
+      "signature": "(vectors: list[tvm.ir.expr.PrimExpr], indices: list[tvm.ir.expr.PrimExpr], span: tvm.ir.base.Span | None = None) -> None",
+      "doc": "Shuffle node.\n\nParameters\n----------\nvectors : List[PrimExpr]\n    The vectors\n\nindices : List[PrimExpr]\n    The indices\n\nspan : Optional[Span]\n    The location of this expression in the source code."
+    },
+    "SimdVF": {
+      "signature": "(latency: 'int' = 0, lanes: 'int' = 128) -> 'SimdVFFrame'",
+      "doc": "Construct a SimdVF region for Ascend NPU MicroAPI operations.\n\nParameters\n----------\nlatency : int\n    Measured latency in cycles. Zero uses the scheduler's latency model.\nlanes : int\n    Logical lane count for the PTO SIMD vector path. Must be one of\n    64, 128, or 256; the default is 128. AscendC lowering ignores this\n    parameter and keeps its physical register width.\n\nReturns\n-------\nres : S"
+    },
+    "SimdVFFrame": {
+      "signature": "(stmts)",
+      "doc": "Frame for SimdVF (SIMD Vector Fragment) region.\n\nThis is a register-level SIMD region without thread dimensions. The C++\nframe generates the ``SIMD_VF`` block and its scope marker."
+    },
+    "SimtVF": {
+      "signature": "(threads: 'int | list[int] | tuple' = 128, latency: 'int' = 0) -> 'SimtVFFrame'",
+      "doc": "Construct a dedicated SIMT vector-fragment region frame.\n\nParameters\n----------\nthreads : int | list[int] | tuple\n    Thread count for the SimtVF frame. A sequence may contain up to three\n    dimensions; omitted dimensions default to one.\nlatency : int\n    Measured latency in cycles. Zero uses the scheduler's latency model.\n\nReturns\n-------\nres : SimtVFFrame\n    The SimtVFFrame used to denote a SI"
+    },
+    "SimtVFFrame": {
+      "signature": "(stmts, thread_extents, thread_vars)",
+      "doc": "Frame for SimtVF (SIMT Vector Fixed) region.\n\nThe C++ frame generates the ``SIMT_VF`` block and its thread-extent\nbindings. The Python frame additionally maintains the active SIMT context."
+    },
+    "alloc_fragment": {
+      "signature": "(shape: 'ShapeType', dtype: 'DType', scope='local.fragment') -> 'Buffer'",
+      "doc": "Allocate a fragment memory buffer for specialized operations.\n\nArgs:\n    shape (tuple): The shape of the buffer to allocate\n    dtype (str): The data type of the buffer (e.g., 'float32', 'int32')\n    scope (str, optional): The memory scope. Defaults to \"local.fragment\"\n\nReturns:\n    T.Buffer: A TVM buffer object allocated in fragment memory"
+    },
+    "alloc_reducer": {
+      "signature": "(shape: 'ShapeType', dtype: 'DType', op: 'ReducerOp' = 'sum', replication=None) -> 'Buffer'",
+      "doc": "Allocate a reducer: a first-class deferred reduction epoch handle.\n\nThe reducer lives in the virtual ``local.reducer`` scope and may only be\naccessed through the epoch operations::\n\n    acc = T.alloc_reducer(shape, dtype, op=\"sum\")\n    T.reducer_init(acc)          # or T.reducer_init(acc, init_value)\n    for ...:\n        T.reducer_update(acc[indices], contribution)\n    dst = T.alloc_fragment(shape"
+    },
+    "ballot": {
+      "signature": "(predicate: 'int | PrimExpr') -> 'PrimExpr'",
+      "doc": "Full-warp / full-wavefront ballot. Equivalent to\n``ballot_sync(predicate)`` (i.e. with the default full warp mask).\n\nReturns:\n    uint64: Bitmask with bit N set if lane N's predicate is non-zero."
+    },
+    "ballot_sync": {
+      "signature": "(predicate: 'int | PrimExpr', mask: 'int | PrimExpr' = T.uint32(4294967295)) -> 'PrimExpr'",
+      "doc": "Return a ``uint64`` bitmask of lanes in ``mask`` whose predicate is set.\n\nCUDA: ``__ballot_sync(mask, predicate)`` returns ``unsigned int``; codegen\nzero-extends it to ``uint64`` (upper 32 bits always zero for 32-wide warps).\nHIP: ``__ballot(predicate)`` returns ``uint64`` natively, covering all\n64 wavefront lanes. The mask argument is ignored on HIP.\n\nReturns:\n    uint64: Bitmask with bit N set i"
+    },
+    "comm_reducer": {
+      "signature": "(combiner: collections.abc.Callable, identity: list[tvm.ir.expr.PrimExpr]) -> tvm.tirx.expr.CommReducer",
+      "doc": "Create a CommReducer from lambda inputs/outputs and the identities\n\nParameters\n----------\ncombiner : Callable\n    A binary function which takes two PrimExpr as input to return a PrimExpr.\n\nidentity : List[PrimExpr]\n    A list of types of output PrimExpr.\n\nReturns\n-------\nres : CommReducer\n    The CommReducer."
+    },
+    "cumsum": {
+      "signature": "(src: 'BufferLikeType', dst: 'BufferLikeType | None' = None, dim: 'int' = 0, reverse: 'bool' = False, annotations: 'dict | None' = None) -> 'tirx.PrimExpr | None'",
+      "doc": "Compute the cumulative sum of `src` along `dim`, writing results to `dst`.\n\nNegative `dim` indices are normalized (Python-style). If `dst` is None, the operation is performed in-place into `src`. Raises ValueError when `dim` is out of bounds for `src.shape`. When `src.scope() == \"local.fragment\"`, this delegates to `cumsum_fragment`; otherwise it emits the `tl.cumsum` intrinsic.\n\nSupports Buffer, "
+    },
+    "finalize_reducer": {
+      "signature": "(reducer: 'tirx.Buffer', dst: 'tirx.Buffer | None' = None, batch: 'int' = 1, annotations: 'dict | None' = None) -> 'tirx.PrimExpr'",
+      "doc": "Close a reducer epoch.\n\nv2 form (``dst`` given): complete the cross-participant communication the\nchosen physical plan requires, combine the optional ``T.reducer_init``\nstarting value exactly once per logical output, and write the logical\nresult into the independent destination fragment ``dst``. After this\ncall the reducer handle is dead; read results from ``dst``.\n\nLegacy v1 form (``dst`` omitted"
+    },
+    "popcount": {
+      "signature": "(x)",
+      "doc": "Count the number of set bits in input x.\n\nParameters\n----------\nx : PrimExpr\n    Input argument.\n\nReturns\n-------\ny : PrimExpr\n    The result."
+    },
+    "reduce": {
+      "signature": "(buffer: 'tirx.Buffer', out: 'tirx.Buffer', reduce_type: 'str', dim: 'int', clear: 'bool', batch: 'int' = 1, annotations: 'dict | None' = None) -> 'None'",
+      "doc": "Common :func:`tilelang.language.reduce_op.reduce` plus the SimdVF path."
+    },
+    "reduce_absmax": {
+      "signature": "(buffer: 'tirx.Buffer', out: 'tirx.Buffer', dim: 'int' = -1, clear: 'bool' = True, batch: 'int' = 1, annotations: 'dict | None' = None) -> 'None'",
+      "doc": "See :func:`tilelang.language.reduce_op.reduce_absmax`."
+    },
+    "reduce_abssum": {
+      "signature": "(buffer: 'tirx.Buffer', out: 'tirx.Buffer', dim: 'int' = -1, batch: 'int' = 1, annotations: 'dict | None' = None) -> 'None'",
+      "doc": "See :func:`tilelang.language.reduce_op.reduce_abssum`."
+    },
+    "reduce_bitand": {
+      "signature": "(buffer: 'tirx.Buffer', out: 'tirx.Buffer', dim: 'int' = -1, clear: 'bool' = True, batch: 'int' = 1, annotations: 'dict | None' = None) -> 'None'",
+      "doc": "See :func:`tilelang.language.reduce_op.reduce_bitand`."
+    },
+    "reduce_bitor": {
+      "signature": "(buffer: 'tirx.Buffer', out: 'tirx.Buffer', dim: 'int' = -1, clear: 'bool' = True, batch: 'int' = 1, annotations: 'dict | None' = None) -> 'None'",
+      "doc": "See :func:`tilelang.language.reduce_op.reduce_bitor`."
+    },
+    "reduce_bitxor": {
+      "signature": "(buffer: 'tirx.Buffer', out: 'tirx.Buffer', dim: 'int' = -1, clear: 'bool' = True, batch: 'int' = 1, annotations: 'dict | None' = None) -> 'None'",
+      "doc": "See :func:`tilelang.language.reduce_op.reduce_bitxor`."
+    },
+    "reduce_max": {
+      "signature": "(buffer: 'tirx.Buffer', out: 'tirx.Buffer', dim: 'int' = -1, clear: 'bool' = True, batch: 'int' = 1, annotations: 'dict | None' = None) -> 'None'",
+      "doc": "See :func:`tilelang.language.reduce_op.reduce_max`."
+    },
+    "reduce_min": {
+      "signature": "(buffer: 'tirx.Buffer', out: 'tirx.Buffer', dim: 'int' = -1, clear: 'bool' = True, batch: 'int' = 1, annotations: 'dict | None' = None) -> 'None'",
+      "doc": "See :func:`tilelang.language.reduce_op.reduce_min`."
+    },
+    "reduce_op": {
+      "signature": "module",
+      "doc": "Ascend dialect of the reduce operators.\n\nSame surface as :mod:`tilelang.language.reduce_op`, plus the SimdVF direct\npath: a SimdVF region has no thread domain, so the common implementation's\nfragment round-trip (alloc_fragment + copy in + reduce + copy out) for\nshared-to-shared reductions cannot lower there. Inside SimdVF the reduce is\nemitted directly on the UB regions and AscendSimdVFLowerParall"
+    },
+    "reduce_sum": {
+      "signature": "(buffer: 'tirx.Buffer', out: 'tirx.Buffer', dim: 'int' = -1, clear: 'bool' = True, batch: 'int' = 1, annotations: 'dict | None' = None) -> 'None'",
+      "doc": "See :func:`tilelang.language.reduce_op.reduce_sum`."
+    },
+    "reducer_init": {
+      "signature": "(reducer: 'tirx.Buffer', init=None) -> 'tirx.PrimExpr'",
+      "doc": "Open a reducer epoch, optionally with a logical starting value.\n\nMust appear exactly once per `T.alloc_reducer` allocation, before any\n`T.reducer_update`. The whole epoch (init, updates, finalize) may sit\ninside thread-uniform serial loops or conditionals \u2014 the epoch then\nreopens once per dynamic execution \u2014 but init and finalize must share\nthe same enclosing loop/branch scope. Without `init`, the"
+    },
+    "reducer_update": {
+      "signature": "(target: 'tirx.BufferLoad', value) -> 'tirx.PrimExpr'",
+      "doc": "Contribute `value` to one logical output of a reducer.\n\n`target` must be written as `acc[indices]` directly in the first argument\nposition; it is an update-target descriptor, not a read of the reducer's\ncurrent value. Each dynamic logical iteration of the enclosing\n`T.Parallel` loop contributes exactly once, regardless of how the loop is\nphysically replicated over threads.\n\nArgs:\n    target (tirx."
+    },
+    "tvm_fill_fragment": {
+      "signature": "(fragment, m, n, k, index, value)",
+      "doc": "TVM intrinsic for tensor core fill_fragment operators\n\nParameters\n----------\nfragment : Var\n    The wmma fragment\n\nm : UIntImm\n    The shape of wmma fragment.\n\nn : UIntImm\n    The shape of wmma fragment.\n\nk : UIntImm\n    The shape of wmma fragment.\n\nindex : Expr\n    The fragment index.\n\nvalue : Expr\n    The value to be filled in fragment.\n\nReturns\n-------\ncall : PrimExpr\n    The call expression."
+    },
+    "tvm_thread_allreduce": {
+      "signature": "(*freduce_args)",
+      "doc": "Perform allreduce inside threadblock.\n\nParameters\n----------\nfreduce_args : Expr\n    The args.\n\nReturns\n-------\ncall : PrimExpr\n    The call expression."
+    },
+    "tvm_warp_shuffle": {
+      "signature": "(mask, value, warp_id, width, warp_size)",
+      "doc": "Exchange value between threads inside a warp.\n\nParameters\n----------\nmask : PrimExpr\n    The warp mask indicates active threads inside warp.\nvalue : PrimExpr\n    The value to exchange.\nwarp_id : PrimExpr\n    The source lane index to fetch value.\nwidth : PrimExpr\n    The width of sub-sections to perform warp shuffle.\nwarp_size : PrimExpr\n    The warp size.\n\nReturns\n-------\ncall : PrimExpr\n    The c"
+    },
+    "tvm_warp_shuffle_down": {
+      "signature": "(mask, value, offset, width, warp_size)",
+      "doc": "Copy value from a lane with higher (by offset) index relative to caller.\n\nParameters\n----------\nmask : PrimExpr\n    The warp mask indicates active threads inside warp.\nvalue : PrimExpr\n    The value to exchange.\noffset : PrimExpr\n    The difference between source lane index and destination lane index:\n    `offset = src_lane_idx - dst_lane_idx`\nwidth : PrimExpr\n    The width of sub-sections to perf"
+    },
+    "tvm_warp_shuffle_up": {
+      "signature": "(mask, value, offset, width, warp_size)",
+      "doc": "Copy value from a lane with lower (by offset) index relative to caller.\n\nParameters\n----------\nmask : PrimExpr\n    The warp mask indicates active threads inside warp.\nvalue : PrimExpr\n    The value to exchange.\noffset : PrimExpr\n    The difference between source lane index and destination lane index:\n    `offset = dst_lane_idx - src_lane_idx`\nwidth : PrimExpr\n    The width of sub-sections to perfo"
+    },
+    "warp_reduce_bitand": {
+      "signature": "(value: 'tirx.PrimExpr') -> 'tirx.PrimExpr'",
+      "doc": "Perform warp reduction bitwise-and on a register value.\n\nThis function reduces a value across all threads in a warp using shuffle operations.\nEach thread provides a  register `value`, and after the reduction, all threads\nwill have the bitwise-and of all values across the warp.\n\nArgs:\n    value (tirx.PrimExpr): The input register value to reduce\n\nReturns:\n    tirx.PrimExpr: The reduced bitwise-and "
+    },
+    "warp_reduce_bitor": {
+      "signature": "(value: 'tirx.PrimExpr') -> 'tirx.PrimExpr'",
+      "doc": "Perform warp reduction bitwise-or on a register value.\n\nThis function reduces a value across all threads in a warp using shuffle operations.\nEach thread provides a  register `value`, and after the reduction, all threads\nwill have the bitwise-or of all values across the warp.\n\nArgs:\n    value (tirx.PrimExpr): The input register value to reduce\n\nReturns:\n    tirx.PrimExpr: The reduced bitwise-or val"
+    },
+    "warp_reduce_max": {
+      "signature": "(value: 'tirx.PrimExpr') -> 'tirx.PrimExpr'",
+      "doc": "Perform warp reduction max on a register value.\n\nThis function reduces a value across all threads in a warp using shuffle operations.\nEach thread provides a  register `value`, and after the reduction, all threads\nwill have the max of all values across the warp.\n\nArgs:\n    value (tirx.PrimExpr): The input register value to reduce\n\nReturns:\n    tirx.PrimExpr: The reduced max value (same on all threa"
+    },
+    "warp_reduce_min": {
+      "signature": "(value: 'tirx.PrimExpr') -> 'tirx.PrimExpr'",
+      "doc": "Perform warp reduction min on a register value.\n\nThis function reduces a value across all threads in a warp using shuffle operations.\nEach thread provides a  register `value`, and after the reduction, all threads\nwill have the min of all values across the warp.\n\nArgs:\n    value (tirx.PrimExpr): The input register value to reduce\n\nReturns:\n    tirx.PrimExpr: The reduced min value (same on all threa"
+    },
+    "warp_reduce_sum": {
+      "signature": "(value: 'tirx.PrimExpr') -> 'tirx.PrimExpr'",
+      "doc": "Perform warp reduction sum on a register value.\n\nThis function reduces a value across all threads in a warp using shuffle operations.\nEach thread provides a  register `value`, and after the reduction, all threads\nwill have the sum of all values across the warp.\n\nArgs:\n    value (tirx.PrimExpr): The input register value to reduce\n\nReturns:\n    tirx.PrimExpr: The reduced sum value (same on all threa"
+    }
+  },
+  "roots": [
+    {
+      "path": "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/ascend",
+      "exists": true
+    },
+    {
+      "path": "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/language",
+      "exists": true
+    },
+    {
+      "path": "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/src/ascend",
+      "exists": true
+    },
+    {
+      "path": "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/src/op",
+      "exists": true
+    },
+    {
+      "path": "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/src/tl_templates/ascend",
+      "exists": true
+    },
+    {
+      "path": "/home/y00937463/tilelang/src/ascend",
+      "exists": true
+    },
+    {
+      "path": "/home/y00937463/tilelang/src/op",
+      "exists": true
+    }
+  ],
+  "source_files_scanned": 366,
+  "bytes_read": 7033103,
+  "matches": [
+    {
+      "path": "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/ascend/language/simd.py",
+      "sha256": "9a7403dadb15ab5842988deb33d90bfbaec2f916ebc6de3bae273de1a611c302",
+      "hits": [
+        {
+          "line": 732,
+          "text": "        raise TypeError(f\"Histogram bin must be the integer 0 or 1, got {bin!r}\")"
+        },
+        {
+          "line": 734,
+          "text": "        raise ValueError(f\"Histogram bin must be 0 or 1, got {bin}\")"
+        },
+        {
+          "line": 756,
+          "text": "    \"\"\"Accumulate a frequency histogram of a uint8 vector into a uint16 vector."
+        },
+        {
+          "line": 765,
+          "text": "    \"\"\"Accumulate a cumulative histogram of a uint8 vector into a uint16 vector."
+        }
+      ],
+      "hits_truncated": false
+    },
+    {
+      "path": "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/language/experimental/gemm_sp_op.py",
+      "sha256": "a73bd61536a24b478714cf42ef533fc02e48536d45da4f0384769d11c658d07c",
+      "hits": [
+        {
+          "line": 128,
+          "text": "        A_sparse: Compressed sparse matrix containing only non-zero elements."
+        },
+        {
+          "line": 184,
+          "text": "        A_sparse: Compressed sparse matrix containing only non-zero elements."
+        },
+        {
+          "line": 241,
+          "text": "        A_sparse: Compressed sparse matrix containing only non-zero elements."
+        }
+      ],
+      "hits_truncated": false
+    },
+    {
+      "path": "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/src/ascend/codegen/codegen_ascend.cc",
+      "sha256": "e406224ad3c3a33050e1125ee3495ba35f531e4148ad0f4a80a03a5bedc30d6e",
+      "hits": [
+        {
+          "line": 2099,
+          "text": "  // --- SimdVF histogram: (dst, src, mask, bin) ---"
+        }
+      ],
+      "hits_truncated": false
+    },
+    {
+      "path": "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/src/ascend/codegen/codegen_pto.cc",
+      "sha256": "a2718d8c4e5b5fc4fa71a5c5fa0005cce7aace346202416d340590c49212ab15",
+      "hits": [
+        {
+          "line": 6575,
+          "text": "  // Histogram updates a mutable vector destination."
+        },
+        {
+          "line": 6579,
+          "text": "        << \"tl.simd histogram expects 4 arguments (dst, src, mask, bin)\";"
+        }
+      ],
+      "hits_truncated": false
+    },
+    {
+      "path": "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/src/ascend/op/builtin.h",
+      "sha256": "ffde552c07a5aa9db71d892da96fa362b8c8d7f2a4eab1685385b798017b21da",
+      "hits": [
+        {
+          "line": 221,
+          "text": "// -- SFU / irregular / histogram"
+        }
+      ],
+      "hits_truncated": false
+    },
+    {
+      "path": "/usr/local/python3.12.14/lib/python3.12/site-packages/tilelang/src/op/reduce.cc",
+      "sha256": "df27370a49d206e574e52d23ab7421fa46d7e665a4415447fc79d52c61875c70",
+      "hits": [
+        {
+          "line": 166,
+          "text": " * - Performs iterator compression for local reduction loops using `analyzer`."
+        },
+        {
+          "line": 178,
+          "text": " * @param analyzer Analyzer used for iterator compression and arithmetic"
+        }
+      ],
+      "hits_truncated": false
+    },
+    {
+      "path": "/home/y00937463/tilelang/src/ascend/codegen/codegen_ascend.cc",
+      "sha256": "e406224ad3c3a33050e1125ee3495ba35f531e4148ad0f4a80a03a5bedc30d6e",
+      "hits": [
+        {
+          "line": 2099,
+          "text": "  // --- SimdVF histogram: (dst, src, mask, bin) ---"
+        }
+      ],
+      "hits_truncated": false
+    },
+    {
+      "path": "/home/y00937463/tilelang/src/ascend/codegen/codegen_pto.cc",
+      "sha256": "a2718d8c4e5b5fc4fa71a5c5fa0005cce7aace346202416d340590c49212ab15",
+      "hits": [
+        {
+          "line": 6575,
+          "text": "  // Histogram updates a mutable vector destination."
+        },
+        {
+          "line": 6579,
+          "text": "        << \"tl.simd histogram expects 4 arguments (dst, src, mask, bin)\";"
+        }
+      ],
+      "hits_truncated": false
+    },
+    {
+      "path": "/home/y00937463/tilelang/src/ascend/op/builtin.h",
+      "sha256": "ffde552c07a5aa9db71d892da96fa362b8c8d7f2a4eab1685385b798017b21da",
+      "hits": [
+        {
+          "line": 221,
+          "text": "// -- SFU / irregular / histogram"
+        }
+      ],
+      "hits_truncated": false
+    },
+    {
+      "path": "/home/y00937463/tilelang/src/op/reduce.cc",
+      "sha256": "df27370a49d206e574e52d23ab7421fa46d7e665a4415447fc79d52c61875c70",
+      "hits": [
+        {
+          "line": 166,
+          "text": " * - Performs iterator compression for local reduction loops using `analyzer`."
+        },
+        {
+          "line": 178,
+          "text": " * @param analyzer Analyzer used for iterator compression and arithmetic"
+        }
+      ],
+      "hits_truncated": false
+    }
+  ],
+  "truncated": false,
+  "histogram_device_test": "not_exercised_no_verified_callable_signature",
+  "interpretation": "Discovery evidence only. Absence from names is not proof of hardware incapability; no unverified function was invoked."
+}

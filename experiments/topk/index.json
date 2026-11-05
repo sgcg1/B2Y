@@ -264,6 +264,12 @@
       "title": "精确归并r2：正确性通过，单节点55–58us不宜集成",
       "status": "correctness_passed_rank_merge_rejected_for_integration_cost",
       "metadata": "20261105-merge-execution-r2-093737/metadata.json"
+    },
+    {
+      "id": "20261105-threshold-primitives-r1-102742",
+      "title": "阈值原语r1：SIMT表达成本高，发现嵌套SIMD直方图源码",
+      "status": "correctness_passed_simt_cost_high_nested_histogram_discovered",
+      "metadata": "20261105-threshold-primitives-r1-102742/metadata.json"
     }
   ]
 }

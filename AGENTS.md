@@ -1,3 +1,5 @@
+最新结果：[阈值原语r1](experiments/topk/20261105-threshold-primitives-r1-102742/analysis.md)。SIMT键转换46.002μs、融合收集67.951μs，正确性通过但不宜集成。关键发现：嵌套simd.py和codegen有频数/累计直方图线索，顶层无导出不等于后端无能力。下一步核对现场SIMD API并直接测试；本轮无需重跑。
+
 当前执行入口：[阈值关键原语r1](diagnostics/topk-threshold-primitives-r1/README.md)。测完整键与CPU给定阈值的SIMT收集表达，采集后端hist/sort源码证据；不猜向量hist接口。48项实际AST CPU检查通过，设备待回传；不是完整TopK或原生向量收集，保持28核PR与原N/K。
 
 最新路线建议：[单核完整键阈值选择与条件预算](deliveries/topk-route-selection-and-performance-budget-20261105.md)。停止SIMT排名M直接集成，优先验证真实向量hist/最终收集；未测性能不报8–14μs预测。按28核PR、原完整验收规格开发，M原生SIMD路线仅作备选。

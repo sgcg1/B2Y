@@ -1,0 +1,84 @@
+{
+  "id": "20261105-threshold-primitives-r1-102742",
+  "title": "阈值原语r1：SIMT表达成本高，发现嵌套SIMD直方图源码",
+  "status": "correctness_passed_simt_cost_high_nested_histogram_discovered",
+  "received_commit": "2c69c29",
+  "tool_commit": "573ab5d",
+  "run_date": "2026-11-05",
+  "files": [
+    {
+      "source": "AAA_Results/topk-threshold-primitives-r1-20261105-102742-2240.json",
+      "archive": "raw/topk-threshold-primitives-r1-20261105-102742-2240.json",
+      "bytes": 638977,
+      "sha256": "3662152e2b912d45f1103662b49370744cd65e42eae2ec02e22137a8f7847b14"
+    },
+    {
+      "source": "AAA_Results/topk-threshold-primitives-r1-20261105-102742-2240.log",
+      "archive": "raw/topk-threshold-primitives-r1-20261105-102742-2240.log",
+      "bytes": 2827,
+      "sha256": "8562aceac276a6d308efa68ab3c8cf6f2f97023d1e1c7ff771228fc2dd0b8c58"
+    },
+    {
+      "source": "AAA_Results/topk-threshold-primitives-r1-20261105-102742-2240-parts-manifest.json",
+      "archive": "raw/topk-threshold-primitives-r1-20261105-102742-2240-parts-manifest.json",
+      "bytes": 1122,
+      "sha256": "0e3bedaefd17c44c3d65b094a2d2caa35659feb296ab690f9fa0284f5a9255dd"
+    },
+    {
+      "source": "AAA_Results/topk-threshold-primitives-r1-20261105-102742-2240-parts-topk-threshold-primitives-r1-20261105-102742-2240.json-part-0001.txt",
+      "archive": "raw/topk-threshold-primitives-r1-20261105-102742-2240-parts-topk-threshold-primitives-r1-20261105-102742-2240.json-part-0001.txt",
+      "bytes": 65536,
+      "sha256": "a642f829c60f2fc89cb0caa00793d04e31450360d30dab9e7de5697e72b69eaa"
+    },
+    {
+      "source": "AAA_Results/topk-threshold-primitives-r1-20261105-102742-2240-parts-topk-threshold-primitives-r1-20261105-102742-2240.json-part-0002.txt",
+      "archive": "raw/topk-threshold-primitives-r1-20261105-102742-2240-parts-topk-threshold-primitives-r1-20261105-102742-2240.json-part-0002.txt",
+      "bytes": 24364,
+      "sha256": "7bed7638fca80377136b79beec55e44488f0af6d23fbe9f5f0108c0712eb9898"
+    }
+  ],
+  "verified": {
+    "input_cases_per_method": 24,
+    "repeats": 3,
+    "independent_output_hashes": 48,
+    "all_source_score_hashes": true,
+    "timing_windows_replayed": 10,
+    "embedded_evidence_hashes": 122,
+    "direct_and_shards_identical": true
+  },
+  "timing_us": {
+    "encode_keys": {
+      "samples": [
+        45.888999999999996,
+        46.327,
+        46.03,
+        46.086,
+        45.678999999999995
+      ],
+      "mean": 46.002199999999995,
+      "stdev": 0.24008477669356862,
+      "min": 45.678999999999995,
+      "max": 46.327
+    },
+    "collect_given_threshold": {
+      "samples": [
+        67.866,
+        67.993,
+        67.973,
+        67.959,
+        67.964
+      ],
+      "mean": 67.951,
+      "stdev": 0.04925951684700026,
+      "min": 67.866,
+      "max": 67.993
+    }
+  },
+  "native_histogram_status": "not_executed; server source inventory found nested SIMD frequency/cumulative histogram and codegen entries",
+  "limits": [
+    "CPU supplies exact threshold; no device threshold selection",
+    "SIMT key/collection expressions, not native SIMD performance",
+    "Do not add the two timings; fused collection includes encoding",
+    "Nested source/API still needs exact installed signature and generated-instruction validation"
+  ]
+}
