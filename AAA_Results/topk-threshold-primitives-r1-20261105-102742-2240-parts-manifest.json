@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "encoding": "gzip+base64",
+  "part_max_bytes": 65536,
+  "files": [
+    {
+      "original_name": "topk-threshold-primitives-r1-20261105-102742-2240.json",
+      "source_path": "/home/y00937463/B2Y/AAA_Results/topk-threshold-primitives-r1-20261105-102742-2240.json",
+      "original_bytes": 638977,
+      "original_sha256": "3662152e2b912d45f1103662b49370744cd65e42eae2ec02e22137a8f7847b14",
+      "gzip_bytes": 67425,
+      "gzip_sha256": "eff4b4d2db6bcc6cec1439be6d05e8c2851f40efb477cefdde1351efe54da380",
+      "parts": [
+        {
+          "name": "topk-threshold-primitives-r1-20261105-102742-2240-parts-topk-threshold-primitives-r1-20261105-102742-2240.json-part-0001.txt",
+          "bytes": 65536,
+          "sha256": "a642f829c60f2fc89cb0caa00793d04e31450360d30dab9e7de5697e72b69eaa"
+        },
+        {
+          "name": "topk-threshold-primitives-r1-20261105-102742-2240-parts-topk-threshold-primitives-r1-20261105-102742-2240.json-part-0002.txt",
+          "bytes": 24364,
+          "sha256": "7bed7638fca80377136b79beec55e44488f0af6d23fbe9f5f0108c0712eb9898"
+        }
+      ]
+    }
+  ]
+}
