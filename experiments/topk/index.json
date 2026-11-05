@@ -288,6 +288,12 @@
       "title": "第2步宿主检查：共享锁存在但yjl不可见、PID命名空间独立",
       "status": "blocked_host_reservation_container_configuration",
       "metadata": "20261105-roadmap-step2-host-inspect-112739/metadata.json"
+    },
+    {
+      "id": "20261105-roadmap-step2-host-config-113905",
+      "title": "第2步完整设备配置已核对，准备独立共享预约验证容器",
+      "status": "configuration_received_setup_pending",
+      "metadata": "20261105-roadmap-step2-host-config-113905/metadata.json"
     }
   ]
 }

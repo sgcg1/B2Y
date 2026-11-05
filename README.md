@@ -1,3 +1,5 @@
+第2步当前执行：[保留yjl、创建独立共享预约验证容器](diagnostics/topk-42-step2-r1/README.md)。配置已齐全，不再重复只读探针；yjl空闲时快照会短暂暂停，另建仅卡0验证容器并共享宿主锁/PID。脚本已准备，设备检查与BMM待执行，不提前进入第3步。
+
 最新第2步宿主检查：[共享锁宿主存在、yjl缺挂载且独立PID](experiments/topk/20261105-roadmap-step2-host-inspect-112739/analysis.md)。CPU通过仍有效；BMM未执行。先按[宿主配置处理要求](deliveries/topk-roadmap-step2-host-remediation-20261105.md)落实站点guard/共享锁/进程可见性，禁止猜测重建或裸跑。保持第2步，不继续优化。
 
 第2步结果：[公共CPU通过，宿主预约条件阻塞](experiments/topk/20261105-roadmap-step2-r1-111338/analysis.md)。279+101项通过，14项公共规则skip；BMM未执行，无设备收据，next_step_allowed=false。无需重跑CPU，先按[环境阻塞说明](deliveries/topk-roadmap-step2-environment-blocker-20261105.md)确认站点共享guard/锁与PID可见性，再补BMM；不进入第3步或性能优化。

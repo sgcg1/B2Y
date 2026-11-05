@@ -1,0 +1,16 @@
+{
+  "id": "20261105-roadmap-step2-host-config-113905",
+  "title": "第2步完整设备配置已核对，准备独立共享预约验证容器",
+  "status": "configuration_received_setup_pending",
+  "received_commit": "df9524a",
+  "tool_commit": "9ff8cd3",
+  "files": [
+    {
+      "source": "AAA_Results/topk-host-config-20261105T113905Z-2904940.log",
+      "archive": "raw/topk-host-config-20261105T113905Z-2904940.log",
+      "bytes": 1857,
+      "sha256": "f3bb377d31e31459b0a4fb5e75f16f733735cf732aa1b90991bd17ba64e7b585"
+    }
+  ],
+  "bmm_executed": false
+}

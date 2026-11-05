@@ -1,3 +1,9 @@
+## 当前可执行方案：另建验证容器，保留yjl
+
+设备配置已由提交df9524a核对，操作入口见[第2步配置与验证命令](../diagnostics/topk-42-step2-r1/README.md)。先在yjl空闲时生成工具链文件系统快照（会短暂暂停yjl），另建yjl-topk-guard，增加共享锁和host PID，只映射卡0；原容器不删除、不重建。随后在新容器运行公共CPU与带真实共享预约的BMM。下面旧的采集入口只作历史记录，无需重跑。
+
+Docker commit会保存容器文件变化但不包含挂载卷，且默认暂停源容器；原/home bind数据继续复用。依据[Docker commit官方文档](https://docs.docker.com/reference/cli/docker/container/commit/)。host PID等启动配置依据[Docker run官方文档](https://docs.docker.com/reference/cli/docker/container/run/)。当前仅脚本及语法检查完成，远端操作、站点认证和BMM结果仍待执行。
+
 ## 当前操作（用户已确认保留共享锁）
 
 先更新容器内B2Y，然后在宿主机执行：

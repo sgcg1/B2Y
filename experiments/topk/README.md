@@ -1,3 +1,5 @@
+最新配置：[第2步独立验证容器方案](20261105-roadmap-step2-host-config-113905/analysis.md)。环境配置已核对，准备快照复用工具链、host PID和共享锁；操作待执行，无新BMM结果。
+
 最新结果：[第2步宿主预约配置阻塞](20261105-roadmap-step2-host-inspect-112739/analysis.md)。宿主共享锁存在，yjl不可见且PID命名空间独立；CPU通过，BMM未执行。
 
 最新结果：[4.2第2步CPU通过、宿主预约阻塞](20261105-roadmap-step2-r1-111338/analysis.md)。公共receipt通过，279+101项通过/14项skip；BMM未执行，继续停在第2步，不重复CPU或开展性能优化。

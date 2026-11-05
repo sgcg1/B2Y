@@ -1,3 +1,27 @@
+## 当前操作：独立验证容器（配置已核对，无需继续采集）
+
+**先确保yjl没有正在运行的任务。** 下面第一条命令创建可写层快照，Docker会在快照期间短暂暂停yjl；不删除/重建原容器，但需在空闲时执行。快照可能占用较多本机磁盘，所需空间取决于原容器可写层。若磁盘不足则停止并回传错误，不清理其他镜像。
+
+新验证容器名yjl-topk-guard，共享宿主PID和已有锁，只暴露卡0及管理设备；沿用原来的SYS_ADMIN/seccomp设置，host PID增加宿主进程可见性。/home仍共享，不能在新旧容器同时修改同一源码或运行设备任务。快照仅保留文件系统，不保存进程内存，bind数据由原挂载继续提供。镜像可能含本地认证配置，仅保留本机，不推送镜像。
+
+更新B2Y后，在**宿主机**依次执行：
+
+```bash
+docker exec yjl cat /home/y00937463/B2Y/diagnostics/topk-42-step2-r1/host-setup.sh | bash -s -- --apply-when-yjl-idle
+```
+
+第一条成功后：
+
+```bash
+docker exec yjl cat /home/y00937463/B2Y/diagnostics/topk-42-step2-r1/verifier-run.sh | bash
+```
+
+第一条从yjl生成快照，创建验证容器，保留真实共享锁inode并输出主机/容器锁及PID命名空间标识。不会初始化、替换锁或影响其他卡。已有同名容器时拒绝覆盖。失败保留新镜像/容器用于排查，不自动删除。
+
+第二条只在新容器本地editable注册冻结TileOPs，禁止下载/升级依赖；随后重新运行公共CPU（新容器包注册状态发生变化，故需重验）及通过原始公共guard运行BMM。使用冻结目标仓自带guard，不安装/修改宿主全局脚本，不伪装站点认证。guard负责设备空闲与外来进程检查，预约失败不绕过。
+
+上传AAA_Results/topk-host-setup-*.log、topk-verifier-run-*.log，以及新step2 JSON或其全部分片+manifest。失败也上传现有日志。不重复运行首次host-inspect/host-config探针。
+
 宿主检查已回传，**不需要再运行同一检查脚本**。当前需要落实[宿主预约配置](../../deliveries/topk-roadmap-step2-host-remediation-20261105.md)，并非重跑CPU或BMM。以下保留历史入口。
 
 ## 当前下一步：在宿主机只读检查
