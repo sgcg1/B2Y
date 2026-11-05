@@ -1,0 +1,46 @@
+COMPILE full_zero
+2026-11-05 11:02:45  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-05 11:02:47  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+VALIDATION_PASSED full_zero 18 x 3
+2026-11-05 11:02:47  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `_tilelang_profiler_cache_flush` with `out_idx=[]`
+2026-11-05 11:02:49  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `_tilelang_profiler_cache_flush`
+[2026-11-05 11:02:49] [WARNING] [3476] profiler.py: Profiler won't be using warmup, this can skew profiler results
+[2026-11-05 11:02:51] [WARNING] [3476] profiler.py: Profiler won't be using warmup, this can skew profiler results
+DEVICE_SAMPLE full_zero 0 1.718 us
+[2026-11-05 11:02:53] [WARNING] [3476] profiler.py: Profiler won't be using warmup, this can skew profiler results
+DEVICE_SAMPLE full_zero 1 1.7229999999999999 us
+[2026-11-05 11:02:55] [WARNING] [3476] profiler.py: Profiler won't be using warmup, this can skew profiler results
+DEVICE_SAMPLE full_zero 2 1.764 us
+[2026-11-05 11:02:57] [WARNING] [3476] profiler.py: Profiler won't be using warmup, this can skew profiler results
+DEVICE_SAMPLE full_zero 3 1.859 us
+[2026-11-05 11:02:59] [WARNING] [3476] profiler.py: Profiler won't be using warmup, this can skew profiler results
+DEVICE_SAMPLE full_zero 4 1.8439999999999999 us
+COMPILE masked_zero
+2026-11-05 11:03:01  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-05 11:03:03  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+VALIDATION_PASSED masked_zero 18 x 3
+[2026-11-05 11:03:05] [WARNING] [3476] profiler.py: Profiler won't be using warmup, this can skew profiler results
+DEVICE_SAMPLE masked_zero 0 1.921 us
+[2026-11-05 11:03:07] [WARNING] [3476] profiler.py: Profiler won't be using warmup, this can skew profiler results
+DEVICE_SAMPLE masked_zero 1 1.936 us
+[2026-11-05 11:03:09] [WARNING] [3476] profiler.py: Profiler won't be using warmup, this can skew profiler results
+DEVICE_SAMPLE masked_zero 2 1.914 us
+[2026-11-05 11:03:11] [WARNING] [3476] profiler.py: Profiler won't be using warmup, this can skew profiler results
+DEVICE_SAMPLE masked_zero 3 1.7979999999999998 us
+[2026-11-05 11:03:13] [WARNING] [3476] profiler.py: Profiler won't be using warmup, this can skew profiler results
+DEVICE_SAMPLE masked_zero 4 1.7930000000000001 us
+COMPILE masked_seeded
+2026-11-05 11:03:15  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:137): TileLang begins to compile kernel `main` with `out_idx=[]`
+2026-11-05 11:03:17  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:145): TileLang completes to compile kernel `main`
+VALIDATION_PASSED masked_seeded 18 x 3
+[2026-11-05 11:03:19] [WARNING] [3476] profiler.py: Profiler won't be using warmup, this can skew profiler results
+DEVICE_SAMPLE masked_seeded 0 1.839 us
+[2026-11-05 11:03:21] [WARNING] [3476] profiler.py: Profiler won't be using warmup, this can skew profiler results
+DEVICE_SAMPLE masked_seeded 1 1.923 us
+[2026-11-05 11:03:23] [WARNING] [3476] profiler.py: Profiler won't be using warmup, this can skew profiler results
+DEVICE_SAMPLE masked_seeded 2 1.9989999999999999 us
+[2026-11-05 11:03:25] [WARNING] [3476] profiler.py: Profiler won't be using warmup, this can skew profiler results
+DEVICE_SAMPLE masked_seeded 3 1.9300000000000002 us
+[2026-11-05 11:03:27] [WARNING] [3476] profiler.py: Profiler won't be using warmup, this can skew profiler results
+DEVICE_SAMPLE masked_seeded 4 2.111 us
+RUN_STATUS complete ROUTE_FEASIBILITY native_histogram_only_full_key_selection_and_collection_not_tested

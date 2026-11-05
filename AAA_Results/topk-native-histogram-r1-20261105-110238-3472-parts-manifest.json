@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "encoding": "gzip+base64",
+  "part_max_bytes": 65536,
+  "files": [
+    {
+      "original_name": "topk-native-histogram-r1-20261105-110238-3472.json",
+      "source_path": "/home/y00937463/B2Y/AAA_Results/topk-native-histogram-r1-20261105-110238-3472.json",
+      "original_bytes": 1458897,
+      "original_sha256": "f561549b746758bef838bdbe2d5c9d86c7bebd968c3888281966f17ce7b72406",
+      "gzip_bytes": 120758,
+      "gzip_sha256": "1351fb44e376dc0af0ed4a52dda90e0266b47da836e8fee5c3dc3368f2aff46c",
+      "parts": [
+        {
+          "name": "topk-native-histogram-r1-20261105-110238-3472-parts-topk-native-histogram-r1-20261105-110238-3472.json-part-0001.txt",
+          "bytes": 65536,
+          "sha256": "20387d238954eed0e7279e0b0f319e31fa46f0571dd1be4e77a658c3a4a77e79"
+        },
+        {
+          "name": "topk-native-histogram-r1-20261105-110238-3472-parts-topk-native-histogram-r1-20261105-110238-3472.json-part-0002.txt",
+          "bytes": 65536,
+          "sha256": "94cd0021e1582a12c67b7ce1a7868331d02c818967e8f5fc99c1b17b8be9df34"
+        },
+        {
+          "name": "topk-native-histogram-r1-20261105-110238-3472-parts-topk-native-histogram-r1-20261105-110238-3472.json-part-0003.txt",
+          "bytes": 29940,
+          "sha256": "d6e55ec914cdb98c95fefbec80612f1f302f0a789618aac006f80048fc962d47"
+        }
+      ]
+    }
+  ]
+}
