@@ -1,0 +1,38 @@
+{
+  "id": "20261105-merge-execution-r1-093046",
+  "title": "实际归并r1：ThreadSync守卫拒绝执行",
+  "status": "blocked_sync_diagnostic_before_execution",
+  "received_commit": "9c89df7",
+  "tool_commit": "a033233",
+  "run_date": "2026-11-05",
+  "files": [
+    {
+      "source": "AAA_Results/topk-merge-execution-r1-20261105-093046-505.json",
+      "archive": "raw/topk-merge-execution-r1-20261105-093046-505.json",
+      "bytes": 174883,
+      "sha256": "b2f309684f2de9c2a783dd0e97a94a4d25f5d39780aecda6752eab2ab376bc61"
+    },
+    {
+      "source": "AAA_Results/topk-merge-execution-r1-20261105-093046-505.log",
+      "archive": "raw/topk-merge-execution-r1-20261105-093046-505.log",
+      "bytes": 555,
+      "sha256": "78162e140d8650dd56150a1f3488befc86521f42ec51989a0a760fcf3971ff41"
+    },
+    {
+      "source": "AAA_Results/topk-merge-execution-r1-20261105-093046-505-parts-manifest.json",
+      "archive": "raw/topk-merge-execution-r1-20261105-093046-505-parts-manifest.json",
+      "bytes": 818,
+      "sha256": "8daba66794f0f675c6927c3778bd2a616219944bb20af950356d8f48136e1bfe"
+    },
+    {
+      "source": "AAA_Results/topk-merge-execution-r1-20261105-093046-505-parts-topk-merge-execution-r1-20261105-093046-505.json-part-0001.txt",
+      "archive": "raw/topk-merge-execution-r1-20261105-093046-505-parts-topk-merge-execution-r1-20261105-093046-505.json-part-0001.txt",
+      "bytes": 32928,
+      "sha256": "e6892e3fc3473c4a77cabc9efc23c6fd0603e7c0e8af5c0bd9f0408fc6dee26f"
+    }
+  ],
+  "embedded_evidence_files_verified": 12,
+  "transport_duplicate_verified": true,
+  "device_merge_execution": false,
+  "timing_samples": 0
+}

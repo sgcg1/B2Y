@@ -2,6 +2,10 @@
 
 2026-11-05。上轮只验证消费数统计；本轮由设备真实计算归并输出，验证R128与R256两种批宽，完成连续批次推进并测一个归并节点的设备时间。它仍不是完整N16384 TopK实现。
 
+## 本轮已停止：请勿原样重跑
+
+两种批宽均被ThreadSync守卫拒绝执行，无设备归并结果或耗时。详见[失败分析](../../experiments/topk/20261105-merge-execution-r1-093046/analysis.md)。当前使用[独立r2重试入口](../topk-merge-execution-r2/README.md)，原始工具保留。
+
 ## 在现有yjl容器执行
 
 更新B2Y后，保持原有CANN、TileLang和Python环境。容器已在运行时直接执行以下命令，不重建环境、不更新TileOPs。

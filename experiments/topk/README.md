@@ -1,3 +1,5 @@
+最新复核：[实际归并r1同步诊断](20261105-merge-execution-r1-093046/analysis.md)：两档完成编译，但ThreadSync守卫拒绝执行，设备正确性和耗时未知。r2已改有界访问与分歧写表达，继续保留守卫。
+
 最新结果：[独立M消费数探针](20261105-merge-consumption-probe-r1-090941/analysis.md)：二分与树归约通过，scan对照失败；无scan/atomic硬依赖的反例已设备验证，无完整M性能数据。
 
 最新结果：[950PR完整同规格对照](20261104-950pr-device-compare-r1-113714/analysis.md)：45样本/侧，57.639μs vs 10.639μs，0.1846x TopKV2；90窗口原始设备记录重放一致。普通随机路径未达目标，尚未新增优化。

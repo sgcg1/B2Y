@@ -1,0 +1,14 @@
+{
+  "kernel_ast_cases": 64,
+  "batch_sizes": [
+    128,
+    256
+  ],
+  "verified": [
+    "exact key/id output",
+    "every batch cumulative left/right consumption",
+    "bounds",
+    "exactly one merge write per valid output slot"
+  ],
+  "scope": "CPU execution of actual kernel AST; not device compilation or timing"
+}

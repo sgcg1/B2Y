@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+tools=/home/y00937463/B2Y/diagnostics/topk-merge-execution-r2
+python=/usr/local/python3.12.14/bin/python3
+test -n "${ASCEND_HOME_PATH:-}" || { echo "ERROR: load existing CANN environment first."; exit 1; }
+test -x "$python"
+exec 9>/home/y00937463/.topk-950pr-device-compare.lock
+flock -n 9 || { echo "ERROR: another benchmark copy is running."; exit 1; }
+root="/home/y00937463/topk-merge-execution-r2-$(date +%Y%m%d-%H%M%S)-$$"
+mkdir "$root"
+status=0
+PYTHONDONTWRITEBYTECODE=1 "$python" "$tools/run.py" --output "$root/data" > "$root/run.log" 2>&1 || status=$?
+target="/home/y00937463/B2Y/AAA_Results/$(basename "$root")"
+mkdir -p /home/y00937463/B2Y/AAA_Results
+cp --no-clobber "$root/run.log" "$target.log"
+if test -f "$root/data/merge-return.json"; then
+  cp --no-clobber "$root/data/merge-return.json" "$target.json"
+  echo "UPLOAD_RESULT: $target.json"
+  PYTHONDONTWRITEBYTECODE=1 "$python" "$tools/pack.py" "$target.json"
+fi
+echo "UPLOAD_LOG: $target.log"
+echo "RAW_OUTPUT: $root"
+echo "Keep originals. Upload JSON+log, or all printed parts+manifest+log if needed."
+exit "$status"

@@ -252,6 +252,12 @@
       "title": "独立设备验证：消费数可不依赖scan与atomic",
       "status": "complete_non_scan_methods_passed_scan_unsupported",
       "metadata": "20261105-merge-consumption-probe-r1-090941/metadata.json"
+    },
+    {
+      "id": "20261105-merge-execution-r1-093046",
+      "title": "实际归并r1：ThreadSync守卫拒绝执行",
+      "status": "blocked_sync_diagnostic_before_execution",
+      "metadata": "20261105-merge-execution-r1-093046/metadata.json"
     }
   ]
 }
