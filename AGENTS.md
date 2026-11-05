@@ -1,3 +1,5 @@
+当前执行入口：[阈值关键原语r1](diagnostics/topk-threshold-primitives-r1/README.md)。测完整键与CPU给定阈值的SIMT收集表达，采集后端hist/sort源码证据；不猜向量hist接口。48项实际AST CPU检查通过，设备待回传；不是完整TopK或原生向量收集，保持28核PR与原N/K。
+
 最新路线建议：[单核完整键阈值选择与条件预算](deliveries/topk-route-selection-and-performance-budget-20261105.md)。停止SIMT排名M直接集成，优先验证真实向量hist/最终收集；未测性能不报8–14μs预测。按28核PR、原完整验收规格开发，M原生SIMD路线仅作备选。
 
 最新结果：[实际归并r2](experiments/topk/20261105-merge-execution-r2-093737/analysis.md)：无同步诊断，两档各32组×3次设备正确性通过，但单节点58.458/55.391μs，不宜直接集成完整M。无需重跑；须先验证低成本向量排序/归并路线，无新全TopK性能。开发按28核PR，完整测试保持原验收规格，不缩7/8、不按32/28外推。

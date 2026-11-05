@@ -16,6 +16,8 @@
 
 > 最新路线建议：[T完整键阈值选择](topk-route-selection-and-performance-budget-20261105.md)。基于M单节点55μs负面结果，停止其SIMT排名落地集成；优先验证真向量hist/收集，原生SIMD归并保留备选。条件预算不是预测，无新方案设备成绩，原验收规格和28核PR约束保持。
 
+> 当前测试入口：[阈值关键原语r1](../diagnostics/topk-threshold-primitives-r1/README.md)。用户已授权测试：完整键、给定阈值收集和后端源码能力证据；48项实际AST CPU检查通过，尚无本轮设备结果。没有调用未确认的hist接口，也不把SIMT收集当原生压缩；完整T能力仍未闭合。
+
 ## 我们在做什么任务
 
 优化TileOPs的TopKSelectFwd。用户最新目标是：在**同一现有950PR环境、指定规格下，当前实现稳定优于原生ops-math TopKV2**。不再把截图43.7μs作为固定门槛，也不要求先取得server2环境才能测量。最终应对接`yyttt6/TileOPs`的`ascend950`分支，遵守其[issue #1](https://github.com/yyttt6/TileOPs/issues/1)及仓库规范。准备PR前应重新读取实际规范，不能凭本文推断全部验收细节。

@@ -1,0 +1,12 @@
+{
+  "actual_kernel_ast_cases": 48,
+  "inputs": 24,
+  "scope": "CPU logical validation only; no device performance",
+  "verified": [
+    "complete canonical keys",
+    "exact threshold-given collection",
+    "stable tie",
+    "short-window padding",
+    "bounds and unique output writes"
+  ]
+}
