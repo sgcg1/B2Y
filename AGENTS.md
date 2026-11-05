@@ -1,3 +1,5 @@
+当前入口：[第3步TopK公共后端接入，原yjl验证](diagnostics/topk-42-step3-r1/README.md)。用户最新决定覆盖此前安排：忽略第2步剩余配置，始终用原yjl；停止host-setup/新容器流程，CPU通过但BMM/宿主预约仍未完成。候选727132f7复用既有精确radix表达，通过Kernel/Interface注册；本地6项refusal检查通过，公共CPU/设备验证待回传。不宣称新算法、正式收据或性能提升。
+
 第2步当前执行：[保留yjl、创建独立共享预约验证容器](diagnostics/topk-42-step2-r1/README.md)。配置已齐全，不再重复只读探针；yjl空闲时快照会短暂暂停，另建仅卡0验证容器并共享宿主锁/PID。脚本已准备，设备检查与BMM待执行，不提前进入第3步。
 
 最新第2步宿主检查：[共享锁宿主存在、yjl缺挂载且独立PID](experiments/topk/20261105-roadmap-step2-host-inspect-112739/analysis.md)。CPU通过仍有效；BMM未执行。先按[宿主配置处理要求](deliveries/topk-roadmap-step2-host-remediation-20261105.md)落实站点guard/共享锁/进程可见性，禁止猜测重建或裸跑。保持第2步，不继续优化。
