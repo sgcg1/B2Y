@@ -1,0 +1,26 @@
+{
+  "id": "20261105-roadmap-step2-host-inspect-112739",
+  "title": "第2步宿主检查：共享锁存在但yjl不可见、PID命名空间独立",
+  "status": "blocked_host_reservation_container_configuration",
+  "received_commit": "f79c469",
+  "tool_commit": "31a6ef4",
+  "files": [
+    {
+      "source": "AAA_Results/topk-step2-host-inspect-20261105T112739Z-2887840.log",
+      "archive": "raw/topk-step2-host-inspect-20261105T112739Z-2887840.log",
+      "bytes": 1031,
+      "sha256": "793372290a4d9a0ed63a6bef1acf1817c4ae59628bdc702e3e80cb461b85c9d3"
+    }
+  ],
+  "observations": {
+    "host_lock_exists": true,
+    "container_lock_visible": false,
+    "host_pid_namespace": "pid:[4026531836]",
+    "container_pid_namespace": "pid:[4026543727]",
+    "container_pidmode": "",
+    "container_running": true,
+    "guard_candidates_found": false
+  },
+  "bmm_executed": false,
+  "next_step_allowed": false
+}

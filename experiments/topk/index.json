@@ -282,6 +282,12 @@
       "title": "4.2第2步：公共CPU检查通过，宿主预约入口阻塞BMM",
       "status": "partial_cpu_passed_host_guard_missing",
       "metadata": "20261105-roadmap-step2-r1-111338/metadata.json"
+    },
+    {
+      "id": "20261105-roadmap-step2-host-inspect-112739",
+      "title": "第2步宿主检查：共享锁存在但yjl不可见、PID命名空间独立",
+      "status": "blocked_host_reservation_container_configuration",
+      "metadata": "20261105-roadmap-step2-host-inspect-112739/metadata.json"
     }
   ]
 }

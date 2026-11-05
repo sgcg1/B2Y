@@ -1,3 +1,5 @@
+最新结果：[第2步宿主预约配置阻塞](20261105-roadmap-step2-host-inspect-112739/analysis.md)。宿主共享锁存在，yjl不可见且PID命名空间独立；CPU通过，BMM未执行。
+
 最新结果：[4.2第2步CPU通过、宿主预约阻塞](20261105-roadmap-step2-r1-111338/analysis.md)。公共receipt通过，279+101项通过/14项skip；BMM未执行，继续停在第2步，不重复CPU或开展性能优化。
 
 最新回传：[原生直方图r1调用前dtype失败](20261105-native-histogram-r1-105405/analysis.md)。full_zero编译及原生标记通过；int16输出未转uint16 view导致FFI拒绝，0项设备验证、无耗时。已修复runner绑定，更新后按原生直方图r1入口重试；不改内核/oracle，不据失败判断硬件能力。

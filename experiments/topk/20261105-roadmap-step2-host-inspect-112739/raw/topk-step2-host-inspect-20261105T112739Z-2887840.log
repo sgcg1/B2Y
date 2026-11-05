@@ -1,0 +1,23 @@
+HOST_READ_ONLY_INSPECTION_V1
+Thu 05 Nov 2026 11:27:39 AM UTC
+CONTAINER: yjl
+HOST_PID_NAMESPACE: pid:[4026531836]
+Running=true HostPID=2718947 PidMode= Privileged=false
+CONTAINER_MOUNTS (sources and destinations only; no environment/credentials)
+bind /etc/ascend_install.info -> /etc/ascend_install.info RW= true
+bind /home -> /home RW= true
+bind /usr/local/Ascend/driver/lib64 -> /usr/local/Ascend/driver/lib64 RW= true
+bind /usr/local/Ascend/driver/version.info -> /usr/local/Ascend/driver/version.info RW= true
+bind /usr/local/bin/npu-smi -> /usr/local/bin/npu-smi RW= true
+bind /usr/local/dcmi -> /usr/local/dcmi RW= true
+
+HOST_GUARD_CANDIDATES
+HOST_LOCK (metadata only; never acquire/delete/change it)
+/run/lock/ascend-npu device=28 inode=5 mode=755 owner=0:0
+/run/lock/ascend-npu/device-0.lock device=28 inode=6 mode=666 owner=0:0
+CONTAINER_VIEW
+PID_NAMESPACE: pid:[4026543727]
+MISSING /run/lock/ascend-npu
+MISSING /run/lock/ascend-npu/device-0.lock
+MISSING /usr/local/libexec/ascend-npu/npu_guard.py
+END_READ_ONLY_INSPECTION
